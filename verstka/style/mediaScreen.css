@@ -1,0 +1,183 @@
+/*--------------------------- медиа запросы ------------------------ */
+@media  screen and (max-width: 1200px) { 
+    .container {
+        width: 1140px;
+    }
+    .cakes_logo{
+        font-size: 40px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container{
+        width: 960px;
+    }
+    .header{
+        padding: 20px; 
+     }
+     .header_nav_list_item{
+        margin: 0 5px;
+     }
+     .assortment_img{
+        width: 330px;
+        height: 330px;
+    }
+
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+    .container{
+        width: 720px;
+    }
+    .header{
+        padding: 20px; 
+     }
+     .cakes_logo{
+        font-size: 55px !important;
+    }
+    .slide_content{
+        position: relative;
+        z-index: 10;
+       padding:15px;
+       color: white;
+        text-align: center;
+        font-weight:900;
+        padding-top: 100px;
+        margin: 0 auto;
+    }
+    .swiper-slide::before{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .assortment_img{
+        width: 350px;
+        height: 350px;
+    }
+    
+     
+}
+
+
+
+@media screen and (max-width: 767px) {
+    .container{
+        width: 540px;
+    }
+    .header{
+        padding: 20px; 
+     }
+     .header_nav_list{
+        display: none;
+    }
+    .mobile_none{
+        display: none;
+    }
+    .nav_item i{
+        font-size: 30px;
+    }
+    .cakes_logo{
+        font-size: 65px !important;
+    }
+    .slide_content{
+        position: relative;
+        z-index: 10;
+       padding:15px;
+       color: white;
+        text-align: center;
+        font-weight:900;
+        padding-top: 100px;
+        margin: 0 auto;
+    }
+    .slide_content h3{
+        font-size: 45px;
+    }
+    
+    .slide_content p{
+        font-size: 20px;
+    }
+    .swiper-slide::before{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .assortment_img{
+        width: 330px;
+        height: 330px;
+    }
+    .fa-brands{
+        padding: 20px 0;
+    }
+    .choco_img{
+        width: 150px;
+        top: -100px;
+    }
+     
+}
+
+
+
+
+@media screen and (max-width: 575px) {
+
+	.container{
+	
+	width:100%;
+	padding: 0 15px;
+	}
+    .header{
+       padding: 20px; 
+    }
+    .header_nav_list{
+        flex-direction: column;
+    }
+    .header_nav_list_item {
+        padding: 10px 0;
+    }
+ 
+    .cakes_logo{
+        font-size: 65px !important;
+    }
+    .slide_content{
+        position: relative;
+        z-index: 10;
+       padding:15px;
+       color: white;
+        text-align: center;
+        margin-bottom: 89px;
+        font-weight:900;
+        margin-top: 50%;
+    }
+    .slide_content h3{
+        font-size: 45px;
+    }
+    
+    .slide_content p{
+        font-size: 20px;
+    }
+    .swiper-slide::before{
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+    .adv_content{
+        font-size: 16px;
+        margin-bottom: 50px;
+    }
+    .assortment_img{
+        width: 280px;
+        height: 280px;
+    }
+    .callback_form{
+        width: 100%;
+    }
+
+    .fa-brands{
+        padding: 20px 0;
+    }
+    .cakes_logo_footer{
+        font-size: 50px !important;
+    }
+    .choco_img{
+        width: 150px;
+        top: -100px;
+    }
+
+}

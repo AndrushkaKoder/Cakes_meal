@@ -1,0 +1,447 @@
+/* новая версия
+
+font-family: 'Ms Madi', cursive;
+font-family: 'Playfair Display', serif;
+font-family: 'Roboto', sans-serif; */
+
+:root{
+    --color1:#f0c76e;
+    --color2:#663300;
+};
+
+main{
+    background: url('/images/bg/bg1.jpg');
+}
+
+body{
+    font-family: 'Roboto', sans-serif;
+    background: url("/images/bg/bg1.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: 'Playfair Display', serif;
+    
+}
+a{
+    text-decoration: none;
+    color:white;
+    
+}
+
+li{
+    list-style: none;
+}
+
+.r_{
+    padding: 50px 0;
+}
+/* ------------------------------------------------ */
+
+
+.showBurger{
+    display: block;
+}
+.hideBurger{
+    display: none;
+}
+
+
+
+header{
+position: absolute;
+top: 0;
+left:0;
+z-index: 5;
+min-width: 100%;
+color: white;
+
+}
+
+
+.header_fixed{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background: var(--color2);
+    opacity: 0.9;
+    animation-name: show_header;
+    animation-duration: 0.5s;
+}
+@keyframes show_header {
+    0%{
+        opacity: 0;
+        top: -100px;
+    }
+    100%{
+        opacity: 0.9;
+        top: 0;
+    }
+    
+}
+
+.cakes_logo{
+    font-family: 'Ms Madi', cursive;
+    font-size: 45px;
+    font-weight: bold;
+    color: var(--color1);
+}
+.cakes_logo a{
+    color: white;
+    font-size: 50px;
+}
+.cakes_logo:hover{
+    color: #f0c76e;
+}
+
+.header_nav_list{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0; 
+    margin-bottom: 0;  
+}
+.header_nav_list_item a{
+    font-size: 20px;
+}
+.header_nav_list_item a:hover{
+    color: #f0c76e;
+    border-bottom: 2px solid #f0c76e;
+}
+
+
+/* корзина и лайки */
+.nav_item{
+    font-size: 20px;
+    margin: 0 15px;
+    transition: .2s ease all;
+}
+.nav_item:hover{
+color: var(--color1);
+transform: scale(1.1);
+}
+.dropdown-item:hover{
+    border-bottom: none !important;
+}
+
+
+
+.header_swiper{
+    position: relative;
+}
+
+.swiper{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-color: black;
+}
+.swiper-slide{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: white;
+    font-weight: bold;
+    margin: 0 auto;
+}
+.slide_content{
+    position: relative;
+    z-index: 10;
+    padding: 0 150px;
+}
+.slide_content h3{
+    font-size: 45px;
+}
+
+.slide_content p{
+    font-size: 20px;
+}
+
+.slide1{
+    background: url('/images/slides/slideFive.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide2{
+    background: url('/images/slides/slideTwo.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide3{
+    background: url('/images/slides/slideOne.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.slide4{
+    background: url('/images/slides/slide1.jpg');
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.swiper-slide::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+    /* backdrop-filter: blur(5px); */
+}
+
+/* раскрывающееся бургер меню */
+
+.burger_section{
+    min-width: 30%;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all;
+    background: var(--color2);
+    z-index: 10;
+    opacity: 0.9;
+    display: none;
+    
+}
+
+.cross{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+}
+.burger_section_content_list{
+    display: flex;
+    flex-direction: column;
+}
+.burger_section_content_list li{
+    margin: 10px 0;
+}
+
+/* скрыть-показать бургер меню */
+.showBurgerMenu{
+    display: block;
+}
+.hideBurgerMenu{
+    display: none;
+}
+
+
+
+/* секция Немного о нас */
+
+
+.title{
+    padding: 55px 0;
+    font-size: 35px;
+    color: var(--color2);
+}
+
+.title_adv{
+    padding: 40px 0;
+    font-size: 25px;
+    color: var(--color2);
+}
+
+
+
+/* ассортимент */
+
+.assortment_button{
+   
+    width: 250px;
+    display: block;
+    padding: 10px;
+    /* border: 2px solid black; */
+    background: #ffa60d;
+    border-radius: 30px;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    transition: .3s ease all;
+    box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.2);
+}
+.assortment_button:hover{
+    transform: scale(1.04);
+    background: #ffa60d;
+    /* border-color: #ffa60d; */
+    color: black;
+    box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.5);
+}
+.assortment_button:active{
+    transform: scale(0.9);
+}
+
+.assortment_img{
+width: 400px;
+height: 400px;
+border-radius: 5px;
+}
+
+
+/* ссылка на конструктор */
+
+.constructor{
+    position: relative;
+    background: url(/images/constructorBG.jpg) fixed 50% no-repeat;
+    color: white;
+    padding: 120px 0;
+}
+
+.constructor::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 2;
+
+}
+.constructor_title{
+    position: relative;
+    z-index: 5;
+    font-size: 40px;
+}
+.constructor_descr{
+    font-size: 1.25rem;
+    position: relative;
+    z-index: 5;
+}
+
+.constructor_btn{
+    position: relative;
+    z-index: 5;
+    margin: auto;
+    background-color: #ffa60d;
+}
+
+
+/* часто задаваемые вопросы */
+
+.questions_title{
+    font-size: 35px;
+    color: var(--color2);
+    padding: 40px 0;
+}
+
+.questions_content{
+    height: 450px;
+}
+
+
+
+/* остались вопросы */
+.callback{
+    position: relative;
+}
+
+.callback_title{
+    font-size: 35px;
+    color: var(--color2);
+}
+.callback_descr{
+    font-size: 1.25rem;
+}
+
+.callback_form{
+    width: 50%;
+    margin: auto;
+}
+
+#name{
+    padding: 10px;
+}
+#phone{
+    padding: 10px;
+}
+.callback_button{
+    margin: 50px auto;
+    border: none;
+}
+
+.personal_data_p{
+    margin: auto;
+    font-size: 12px;
+}
+.personal_data{
+    font-size: 12px;
+    color: var(--color2);
+}
+
+.choco_img{
+position: absolute;
+top: 0;
+left: 0;
+width: 200px;
+z-index: -5;
+}
+
+
+
+/* футер */
+.footer{
+    margin-top:100px;
+    background: linear-gradient(to top left, #884003, #010101);
+    min-height: 20vh;
+    padding: 20px;
+}
+.fa-brands{
+    font-size:40px;
+    transition: .5s ease all;
+}
+.fa-brands:hover{
+    transform: scale(1.2);
+    /* transform: rotate(360deg); */
+}
+.fa-vk:hover{
+    color:  #4680C2;
+}
+.fa-instagram:hover{
+   color: #d62976;
+}
+.fa-whatsapp:hover{
+    color: #5FFC7B;
+}
+.footer_phone{
+    font-size: 16px;
+}
+.footer_phone:hover{
+    color:#f0c76e;
+    text-decoration:underline; 
+}
+.footer_span{
+    margin: 0 20px;
+    color: aliceblue;
+}
+.confidential{
+    font-size: 14px;
+    margin: 20px 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
