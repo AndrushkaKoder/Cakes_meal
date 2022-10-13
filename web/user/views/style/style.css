@@ -124,8 +124,10 @@ color: white;
 
 /*поисковая строка*/
 .search_wrapper{
-    position: relative;
-    transition: 500ms ease-in-out all;
+    position: absolute;
+    width: 100%;
+    transition: 1s ease all;
+
 }
 .search_area{
     position: relative;
@@ -139,6 +141,7 @@ color: white;
     outline: unset;
     font-size: 16px;
     text-align: center;
+    border: 3px solid black;
 
 }
 .search_area input{
@@ -157,15 +160,15 @@ color: white;
 }
 
 .showSearch{
-    height: auto !important;
+    height: auto;
     top: 0;
     opacity: 1;
     z-index: 10;
     overflow: auto;
 }
 .hideSearch{
-    height: 0 !important;
     top: -200px;
+    /*height: 0;*/
     opacity: 0;
     z-index: -10;
     overflow: hidden;

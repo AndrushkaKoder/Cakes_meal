@@ -55,7 +55,7 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
 <!--                <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass"></i></a>-->
                 <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
             </div>
-            <div class="col-12">
+            <div class="col-12 position-relative">
                 <form action="" method="GET" class="search_wrapper hideSearch d-flex">
                     <div class="search_area">
                         <input type="text" id="search_area" class="">

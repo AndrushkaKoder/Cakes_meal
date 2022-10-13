@@ -1,3 +1,4 @@
+<!--КАРТОЧКА ТОВАРА-->
 <main>
     <div class="bread">
         <div class="container">
@@ -19,8 +20,8 @@
         <div class="container">
             <div class="row">
 
-                <?php if(!empty($goods)):?>
-                <?php foreach ($goods as $item):?>
+                <?php if(!empty($product)):?>
+                <?php foreach ($product as $item):?>
                         <div class="col-xl-6 col-md-6 col-sm-12">
                             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
@@ -45,15 +46,24 @@
                             </div>
                         </div>
 
-                        <div class="col-xl-6 col-md-6 col-sm-12 d-flex flex-column justify-content-between">
+                        <div class="col-xl-6 col-md-6 col-sm-12 d-flex flex-column justify-content-start">
 
                             <h3 class="product_title text-center"><?=$item['name']?></h3>
 
+                            <div class="product_price_wrapper d-flex justify-content-evenly align-items-center">
+                                <p class="product_price"><span><?=$item['price']?> </span> &#8381;</p>
+                               <button type="submit" class="m-auto text-center product_button_buy">Купить</button>
+                            </div>
+
+
                             <p class="product_description">
-                               <?=$item['short_content']?>
+                               <?=$item['long_content']?>
                             </p>
-                            <p class="product_price"><span><?=$item['price']?> </span> &#8381;</p>
-                            <p class="text-center"><button class="about_btn m-auto text-center">Купить</button></p>
+                            <hr style="background-color: black; height: 2px">
+                            <div class="product_filters text-center">
+                                Орехи, шоколад, мастика
+                            </div>
+
 
                         </div>
                 <?php endforeach;?>

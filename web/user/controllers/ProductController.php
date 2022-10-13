@@ -10,14 +10,12 @@ class ProductController extends BaseUser
 
     protected function actionInput(){
 
-
-
-//        $goods = $this->model->get('goods');
+        $product = $this->model->get('goods');
 
 
 
 
-        return compact('goods');
+        return compact('product');
 
     }
 

@@ -21,17 +21,17 @@ class IndexController extends BaseUser //будет наследоваться �
             ],
             'join' => [
                 'goods' => [
-                    'fields' => null,
-                    'type' => 'inner',
-                    'on' => ['id'=>'parent_id'],
-                    'where' => [
+                    'fields' => null, //данные о товаре
+                    'type' => 'inner', // тип join
+                    'on' => ['id'=>'parent_id'], // что вяжем
+                    'where' => [ // условия
                         'hit' => 1,
                         'visible' => 1
                     ]
                 ]
             ],
-            'order' => 'menu_position',
-            'group' => 'catalog.id'
+            'order' => 'menu_position', //сортировка по menu_position
+            'group' => 'catalog.id' // группировка
 
         ]);
 

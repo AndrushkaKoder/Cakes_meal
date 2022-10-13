@@ -37,12 +37,18 @@ section{
 }
 /* --color2:#663300; */
 /*  */
+
 .about_master_img{
-    min-height: 200px;
-    min-width: 230px;
-    max-width: 330px;
-    max-height: 300px;
-    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 300px;
+    height: 300px;
+
+    background: black;
+}
+.about_master_img img{
+    width: 100%;
 }
 
 .about_btn{

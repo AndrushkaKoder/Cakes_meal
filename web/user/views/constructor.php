@@ -38,7 +38,7 @@
 
         <div class="container">
 
-            <form action="zakaz.html" method="POST" class="form_constructor" data-constructor>
+            <form action="zakaz.html" method="GET" class="form_constructor" data-constructor>
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12">
 

@@ -74,7 +74,7 @@
                         <div class="col-xl-7 col-md-6 col-sm-12 revert">
                             <h2 class="featurette-heading title_adv"><?=$item['name']?></span></h2>
                             <p class="lead"><?=$item['short_content']?></p>
-                            <p><a href="<?= $this->alias(['catalog'=>$item['alias']])?>" class="assortment_button wow bounceInUp" data-wow-duration="1.5s">подробнее</a></p>
+                            <p><a href="<?=$this->alias(['catalog'=>$item['alias']])?>" class="assortment_button wow bounceInUp" data-wow-duration="1.5s">подробнее</a></p>
                         </div>
                         <div class="col-xl-5 col-md-6 col-sm-12 d-flex justify-content-center">
                             <img src="/web/userFiles/<?=$item['img']?>" alt="bisquit" class="assortment_img">

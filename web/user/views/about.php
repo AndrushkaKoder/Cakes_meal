@@ -46,8 +46,11 @@
     <section class="about_master">
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <img src="<?=$this->getTemplateImg()?>/elena.jpg" alt="master" class="about_master_img">
+                <div class="col-12 d-flex justify-content-center">
+                    <div class="about_master_img">
+                        <img src="<?=$this->getTemplateImg()?>/elena2.png" alt="master">
+                    </div>
+
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-center m-auto p-5">
                     <h3 class="about_master_name">Елена</h3>
