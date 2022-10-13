@@ -126,7 +126,7 @@ color: white;
 .search_wrapper{
     position: absolute;
     width: 100%;
-    transition: 1s ease all;
+    transition: 500ms ease all;
 
 }
 .search_area{

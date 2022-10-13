@@ -2,10 +2,13 @@
 
 namespace web\user\controllers;
 
+use web\user\helpers\CatalogHelper;
 use web\user\models\Model;
 
 abstract class BaseUser extends \core\system\Controller
 {
+    use CatalogHelper;
+
     protected $model;
 
     protected $menu;

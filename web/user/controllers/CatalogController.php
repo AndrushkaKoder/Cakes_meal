@@ -2,6 +2,8 @@
 
 namespace web\user\controllers;
 
+use core\exceptions\RouteException;
+
 class CatalogController extends BaseUser
 {
 
@@ -21,23 +23,32 @@ class CatalogController extends BaseUser
 
         $data = $this->model->get('catalog', [
             'where' => $where,
-            'join' => [
-                'goods' => [
-                    'where' => [
-                        'visible' => 1
-                    ],
-                    'on' => [
-                        'id' => 'parent_id'
-                    ]
-                ]
-            ],
-            'join_structure' => true,
-//            'return_query' => true,
-//            'single' => true
+            'join_structure' => true
+
+
         ]);
 
+        if(!$data){
+            throw new RouteException('Отсутствуют разделы в каталоге');
+        }
+
+        $catalogFilters = $catalogPrices = null;
+
+        $goods = $this->getGoods([
+            'where' => [
+                'visible' => 1,
+                'parent_id' => array_column($data, 'id')
+            ]
+        ], $catalogFilters, $catalogPrices);
+
+        if($goods){
+            foreach ($goods as $item){
+              $data[$item['parent_id']]['join']['goods'][$item['id']] = $item;
+            }
+        }
+
         $h1 = $single ? $data[key($data)]['name'] : 'Каталог';
-        return compact('data', 'h1');
+        return compact('data', 'h1', 'catalogPrices', 'catalogFilters');
 
     }
 

@@ -208,9 +208,9 @@ abstract class BaseModel extends BaseModelMethods
 
         if(isset($set['pagination']) && $set['pagination']){
 
-            $this->postNumber = isset($set['pagination']['qty']) ? (int)$set['pagination']['qty'] : QTY;
+            $this->postNumber = isset($set['pagination']['qty']) ? (int)$set['pagination']['qty'] : \App::PAGINATION('user', 'QTY');
 
-            $this->linkNumber = isset($set['pagination']['qty_links']) ? (int)$set['pagination']['qty_links'] : QTY_LINKS;
+            $this->linkNumber = isset($set['pagination']['qty_links']) ? (int)$set['pagination']['qty_links'] : \App::PAGINATION('user', 'QTY_LINKS');
 
             $this->page = !is_array($set['pagination']) ? (int)$set['pagination'] : (int)$set['pagination']['page'];
 
