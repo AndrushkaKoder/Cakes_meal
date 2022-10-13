@@ -113,9 +113,9 @@
 
                         <?php foreach ($item['join']['goods'] as $value):?>
                             <div href="#" class="col-lg-4 col-md-6 col-sm-12 wow bounceInUp" data-wow-duration="1s">
-                                <a href="<?=$this->alias('product')?>" class="assortment_item" style="display: block; cursor: pointer; width: 90%; margin: auto; color: black">
+                                <a href="<?=$this->alias('product')?>" class="assortment_item" style="display: block; cursor: pointer; width: 90%; color: black">
                                     <div class="assortment_image">
-                                        <img src="<?=$this->img($value['img'])?>" alt="бисквит">
+                                        <img src="<?=$this->img($value['img'])?>" alt="изображение">
                                     </div>
                                     <div class="assortment_title">
                                         <?=$value['name']?>

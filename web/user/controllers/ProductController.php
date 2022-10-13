@@ -10,6 +10,15 @@ class ProductController extends BaseUser
 
     protected function actionInput(){
 
+
+
+//        $goods = $this->model->get('goods');
+
+
+
+
+        return compact('goods');
+
     }
 
 }

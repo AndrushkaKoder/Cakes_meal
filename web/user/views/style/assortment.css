@@ -94,10 +94,8 @@ input[type='number'] {
 /*АССОРТИМЕНТ*/
 .assortment_item{
     width: 90%;
-    margin: auto;
-    /* padding: 10px; */
     background: white;
-    margin-bottom: 30px;
+    margin: 10px auto;
     box-shadow: 1px 7px 8px 8px rgba(34, 60, 80, 0.2);
     border-radius: 10px;
     overflow: hidden;
