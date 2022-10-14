@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-    <img style="position: absolute; top:0; right: 0; width: 300px; height: 300px; z-index: -5; background:url('<?=$this->getTemplateImg()?>/bg/landing-1-slide-1.png" alt="#" class="constructor_img">
+
 
 
     <!-- конструктор -->

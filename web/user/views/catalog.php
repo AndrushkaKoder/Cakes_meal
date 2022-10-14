@@ -43,10 +43,15 @@
                                                 <div id="slider" class="m-auto" style="width: 50%; margin: 20px 0"></div>
                                                 <!--   range slider  -->
                                                 <div class="slider_values d-flex">
-                                                    <input type="text" id="min_value" placeholder="от 500 &#8381">
-                                                    <input type="text" id="max_value" placeholder="до 10000 &#8381">
+                                                    <input type="text" id="min_value" data-min_price = "<?=$catalogPrices['min_price']?>">
+                                                    <input type="text" id="max_value" data-max_price = "<?=$catalogPrices['max_price']?>">
                                                 </div>
                                             </div>
+
+                                            <script>
+                                                let minValuePrice = <?=$catalogPrices['min_price']?>;
+                                                let maxValuePrice = <?=$catalogPrices['max_price']?>;
+                                            </script>
                                         <?php endif;?>
 
                                         <?php if(!empty($catalogFilters)):?>
@@ -115,9 +120,15 @@
                                         <?=$value['short_content']?>
                                     </div>
                                     <div class="assortment_price">
-                                        <span class="assortment_price_num"><?=$value['price'] ?? 0?></span>
-                                        <span>&#8381;/кг</span>
+                                        <span class="assortment_price_num"><?=$value['price'] ?? 0?> <span> &#8381;/шт</span></span>
+                                        <span class="assortment_price_old" style="font-size: 18px">1650 <span style="font-size: 16px"> &#8381;/шт</span></span>
+
                                     </div>
+
+<!--                                    <div class="assortment_price_old">-->
+<!--                                        -->
+<!--                                        <span>&#8381;/кг</span>-->
+<!--                                    </div>-->
                                     <div class="assortment_btn">
                                         <button class="assortment_btn_button">Купить</button>
                                     </div>

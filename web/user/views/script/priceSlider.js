@@ -1,14 +1,15 @@
 
 let rangeSlider = document.getElementById('slider');
 
+
 if(rangeSlider){
     noUiSlider.create(rangeSlider, {
-        start: [500, 10000],
+        start: [minValuePrice, maxValuePrice],
         connect: true,
-        step:100,
+        step:10,
         range: {
-            'min': [500],
-            'max': [10000]
+            'min': [minValuePrice],
+            'max': [maxValuePrice]
         }
     });
 

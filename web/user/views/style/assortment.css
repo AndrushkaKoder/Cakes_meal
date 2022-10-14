@@ -132,6 +132,14 @@ input[type='number'] {
     font-weight: bold;
     padding: 10px;
 }
+.assortment_price_old{
+    font-size: 18px;
+    padding: 10px;
+    text-decoration: line-through;
+    text-decoration-color: darkred;
+    text-decoration-thickness: 2px;
+
+}
 .assortment_btn{
     padding: 20px 10px;
     display: flex;
