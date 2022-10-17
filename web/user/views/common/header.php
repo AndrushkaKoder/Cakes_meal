@@ -50,7 +50,7 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
             <div class="col-lg-2 col-md-2 col-sm-12 d-flex justify-content-center align-items-center" data-nav_wrapper style="position: relative">
 
                 <a href="tel:89308478453" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
-                <a href="<?=$this->alias('cart')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="<?=$this->alias('basket')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i></a>
                 <a href="#" class="nav_item" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
 <!--                <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass"></i></a>-->
                 <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
@@ -81,19 +81,16 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
     </div>
     <div class="burger_section_content">
         <ul class="burger_section_content_list">
-            <li class="header_nav_list_item"><a href="<?=\App::PATH()?>index">Главная</a></li>
-            <li class="header_nav_list_item"> <a class="dropdown-toggle" href="<?=\App::PATH()?>assortment" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ассортимент</a>
+            <li class="header_nav_list_item"><a href="<?=$this->alias()?>">Главная</a></li>
+            <li class="header_nav_list_item"> <a class="dropdown-toggle" href="<?=$this->alias('catalog')?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ассортимент</a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href="#">Бисквитные торты</a></li>
-                    <li><a class="dropdown-item" href="#">Муссовые торты</a></li>
-                    <li><a class="dropdown-item" href="#">Бенто торты</a></li>
-                    <li><a class="dropdown-item" href="#">Капкейки</a></li>
-                    <li><a class="dropdown-item" href="#">Трайфлы</a></li>
-                    <li><a class="dropdown-item" href="#">Меренга</a></li>
+                    <?php foreach ($this->menu as $item):?>
+                        <li><a class="dropdown-item" href="<?=$this->alias(['catalog'=>$item['alias']])?>"><?=$item['name']?></a></li>
+                    <?php endforeach;?>
                 </ul>
             </li>
-            <li class="header_nav_list_item"><a href="<?=\App::PATH()?>constructor">Конструктор</a></li>
-            <li class="header_nav_list_item"><a href="<?=\App::PATH()?>about">О нас</a></li>
+            <li class="header_nav_list_item"><a href="<?=$this->alias('constructor')?>">Конструктор</a></li>
+            <li class="header_nav_list_item"><a href="<?=$this->alias('about')?>">О нас</a></li>
             <li class="header_nav_list_item"><a href="#footer">Контакты</a></li>
         </ul>
     </div>

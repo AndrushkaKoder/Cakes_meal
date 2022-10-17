@@ -46,7 +46,7 @@
                         </div>
 
                         <div class="col-xl-6 col-md-6 col-sm-12 d-flex flex-column justify-content-start">
-
+                            <form action="" method="GET">
                             <h3 class="product_title text-center"><?=$product['name']?></h3>
 
                             <div class="product_price_wrapper d-flex justify-content-evenly align-items-center">
@@ -54,7 +54,8 @@
                                     <span class="assortment_price_old" style="font-size: 17px">1650 &#8381</span>
                                     <span><?=$product['price']?> </span> &#8381;
                                 </p>
-                               <button type="submit" class="m-auto text-center product_button_buy">Купить</button>
+
+                               <button type="submit" class="text-center product_button_buy">Купить</button>
                             </div>
 
 
@@ -74,7 +75,7 @@
                             <?php endif;?>
 
 
-
+                            </form>
                         </div>
                 <?php endif;?>
 

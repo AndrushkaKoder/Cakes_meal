@@ -5,7 +5,7 @@
                 <div class="col-12 p-5">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="<?=\App::PATH()?>">На главную</a></li>
+                            <li class="breadcrumb-item"><a href="<?=$this->alias()?>">На главную</a></li>
                             <li class="breadcrumb-item active" aria-current="page">О нас</li>
                         </ol>
                     </nav>

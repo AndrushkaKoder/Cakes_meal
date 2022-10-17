@@ -50,7 +50,7 @@ main{
 
 .header{
     width: 100%;
-    background: var(--color2) !important;
+    background: linear-gradient(to top left, #884003, #010101) !important;
 }
 
 header.index{
@@ -142,7 +142,12 @@ color: white;
     font-size: 16px;
     text-align: center;
     border: 3px solid black;
+    transition: 200ms ease all;
+    opacity: 0.6;
 
+}
+.search_area:hover{
+    opacity: 1;
 }
 .search_area input{
     width: 95%;

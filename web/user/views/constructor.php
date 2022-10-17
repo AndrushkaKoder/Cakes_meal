@@ -6,7 +6,7 @@
                 <div class="col-12 p-5">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="<?=\App::PATH()?>">На главную</a></li>
+                            <li class="breadcrumb-item"><a href="<?=$this->alias()?>">На главную</a></li>
                             <li class="breadcrumb-item active" aria-current="page">Конструктор</li>
                         </ol>
                     </nav>
@@ -20,6 +20,7 @@
     <!-- конструктор -->
 
     <section class="constructor_title">
+        <img src="/web/user/views/images/bg/choco.jpg" class="constructor_img wow bounceInRight" alt="#">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -33,6 +34,7 @@
         </div>
 
     </section>
+
 
     <section class="section_constructor">
 

@@ -2,7 +2,7 @@
 
 namespace web\user\controllers;
 
-class CartController extends BaseUser
+class BasketController extends BaseUser
 {
     protected function actionInput(){
 
