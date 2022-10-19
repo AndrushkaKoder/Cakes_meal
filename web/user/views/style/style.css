@@ -475,7 +475,7 @@ border-radius: 5px;
 .choco_img{
 position: absolute;
 top: 0;
-left: 0;
+left: -35px;
 width: 200px;
 z-index: -5;
 }

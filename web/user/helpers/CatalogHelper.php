@@ -179,7 +179,7 @@ trait CatalogHelper
 
                 $res = $this->getChildren($id, $this->model->catalogTable, null, true);
 
-                $res && $ids = array_merge($ids, $res);
+                $res && $ids = array_merge($ids, (array)$res);
 
             }
 
@@ -193,7 +193,7 @@ trait CatalogHelper
 
     }
 
-    protected function crossDiffArr($arr, $counter = 0){
+    protected function crossDiffArr($arr){
 
         if(empty($arr))
             return [];
@@ -201,24 +201,28 @@ trait CatalogHelper
         if(count($arr) === 1)
             return array_chunk(array_shift($arr), 1);
 
-        if($counter === count($arr) - 1)
-            return $arr[$counter];
+        $result = [[]];
 
-        $buffer = $this->crossDiffArr($arr, $counter + 1);
+        foreach ($arr as $property => $property_values) {
 
-        $res = [];
+            $tmp = [];
 
-        foreach ($arr[$counter] as $a){
+            $property_values = (array)$property_values;
 
-            foreach ($buffer as $b){
+            foreach ($result as $result_item) {
 
-                $res[] = is_array($b) ? array_merge([$a], $b) : [$a, $b];
+                foreach ($property_values as $property_value) {
+
+                    $tmp[] = array_merge($result_item, [$property => $property_value]);
+
+                }
 
             }
 
+            $result = $tmp;
         }
 
-        return $res;
+        return $result;
 
     }
 

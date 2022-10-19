@@ -130,7 +130,7 @@
 <!--                                        <span>&#8381;/кг</span>-->
 <!--                                    </div>-->
                                     <div class="assortment_btn">
-                                        <button class="assortment_btn_button">Купить</button>
+                                        <button class="assortment_btn_button" <?=$this->setAddToCart($value)?>>Купить</button>
                                     </div>
                                 </a>
                             </div>

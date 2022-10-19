@@ -9,9 +9,9 @@ final class App //final - класс от которого нельзя насл
 //    приватные свойства класса App
     private static array $properties = []; // приватное свойство 'СВОЙСТВА'
 
-    private static string $configPath = 'config'; // путь до нашей конфигурационной папки отностильно класса App
+    private static string $configPath = 'config'; // путь до core/config
 
-    public static string $webDirectory = 'web'; // путь относительно Корня проекта до папки где лежит пользовательская часть приложения
+    public static string $webDirectory = 'web'; // путь относительно Корня до web.php
 
 
     private function __construct(){} // делаем приватный конструктор для того, чтобы нельзя было сделать new App
@@ -42,6 +42,8 @@ final class App //final - класс от которого нельзя насл
     }
 
     public static function run(){ // публичный статичный метод запуска приложения
+
+        session_start();
 
         $route = \core\system\Router::createRoute(); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
 

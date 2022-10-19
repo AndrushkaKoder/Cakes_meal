@@ -170,7 +170,7 @@
                         <button type="submit" class="assortment_button callback_button">Отправить</button>
                     </form>
 
-                    <img src="<?=$this->getTemplateImg()?>bg/choko1.png" alt="#" class="choco_img">
+                    <img src="<?=$this->getTemplateImg()?>bg/choko1.png" alt="#" class="choco_img wow bounceInLeft">
 
                 </div>
             </div>

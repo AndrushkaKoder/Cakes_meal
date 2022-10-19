@@ -21,18 +21,25 @@
             <div class="row">
 
                 <?php if(!empty($product)):?>
+
                  <div class="col-xl-6 col-md-6 col-sm-12">
                             <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
                                 <div class="carousel-inner">
-                                    <div class="carousel-item active" style="background: black; height: 100%">
-                                        <img src="./images/bisquit/bisquit1.jpg" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item" style="background: red; height: 100%">
-                                        <img src="../views/images/bisquit/bisquit1.jpg" class="d-block w-100" alt="...">
-                                    </div>
-                                    <div class="carousel-item" style="background: green; height: 100%">
-                                        <img src="../views/images/bisquit/bisquit3.jpg.jpg" class="d-block w-100" alt="...">
-                                    </div>
+                                    <?php if(!empty($product['gallery_img']) || !empty($product['img'])):?>
+                                        <?php if(!empty($product['img'])):?>
+                                            <div class="carousel-item active" style="background: black; height: 100%">
+                                                <img src="<?=$this->img($product['img'])?>" class="d-block w-100" alt="...">
+                                            </div>
+                                        <?php endif;?>
+
+                                        <?php if(!empty($product['gallery_img'])):?>
+                                            <?php foreach (json_decode($product['gallery_img'], true) as $key => $item):?>
+                                                <div class="carousel-item <?=!$key && !$product['img'] ? 'active' : ''?>" style="background: black; height: 100%">
+                                                    <img src="<?=$this->img($item)?>" class="d-block w-100" alt="...">
+                                                </div>
+                                            <?php endforeach;?>
+                                        <?php endif;?>
+                                    <?php endif;?>
                                 </div>
                                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
                                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>

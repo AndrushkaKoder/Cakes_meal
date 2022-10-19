@@ -11,6 +11,8 @@ class ProductController extends BaseUser
 
     protected function actionInput(){
 
+
+
         if(empty($this->parameters[0])){
             throw new RouteException('Такой страницы не существует');
         }
@@ -26,6 +28,8 @@ class ProductController extends BaseUser
         return compact('product');
 
     }
+
+
 
 }
 

@@ -3,9 +3,12 @@
 namespace core\system; // ограничение видимости класса
 
 use core\exceptions\RouteException;
+use core\traites\BaseMethods;
 
 abstract class Controller //абстрактный класс нужен только для наследования от него. Нельзя создать экземпляр абстрактного класса
 {
+
+    use BaseMethods;
 
     protected array $parameters = [];
 
