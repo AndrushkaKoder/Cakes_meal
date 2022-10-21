@@ -9,9 +9,9 @@ final class App //final - класс от которого нельзя насл
 //    приватные свойства класса App
     private static array $properties = []; // приватное свойство 'СВОЙСТВА'
 
-    private static string $configPath = 'config'; // путь до нашей конфигурационной папки отностильно класса App
+    private static string $configPath = 'config'; // путь до core/config
 
-    public static string $webDirectory = 'web'; // путь относительно Корня проекта до папки где лежит пользовательская часть приложения
+    public static string $webDirectory = 'web'; // путь относительно Корня до web.php
 
 
     private function __construct(){} // делаем приватный конструктор для того, чтобы нельзя было сделать new App
@@ -42,6 +42,8 @@ final class App //final - класс от которого нельзя насл
     }
 
     public static function run(){ // публичный статичный метод запуска приложения
+
+        session_start();
 
         $route = \core\system\Router::createRoute(); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
 
@@ -114,7 +116,7 @@ final class App //final - класс от которого нельзя насл
 
     }
 
-    private static function configApp() : void{
+    private static function configApp() : void{ //парсинг папки config
 
         $path = realpath(__DIR__) . '/' . self::$configPath; //получаем папку с конфигурацией
 
@@ -154,9 +156,9 @@ final class App //final - класс от которого нельзя насл
 
     public static function getWebPath($includeFullPath = false){ // возвращает пути. App::PATH() || App::FULL_PATH()
 
-        static $path = ''; //сюда придет относительный путь 1 раз
+        static $path = ''; //сюда придет путь относительно домена 1 раз
 
-        static $fullPath = ''; //сюда придет абсолютный путь 1 раз
+        static $fullPath = ''; //сюда придёт абсолютный путь относительно корня ОС 1 раз
 
         !$path && $path = (!empty(self::WEB('path')) ? rtrim(self::WEB('path')) : '') . '/' . self::$webDirectory . '/';
 
@@ -170,7 +172,7 @@ final class App //final - класс от которого нельзя насл
         // написать метод
     }
 
-    public static function __callStatic(string $name, array $arguments){
+    public static function __callStatic(string $name, array $arguments){ //магический метод получения данных из /core/config
 
         if(!array_key_exists($name, self::$properties)){
 
@@ -205,7 +207,5 @@ final class App //final - класс от которого нельзя насл
         return $data;
 
     }
-
-
 
 }

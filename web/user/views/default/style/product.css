@@ -1,0 +1,111 @@
+<<<<<<< HEAD:web/user/views/style/product.css
+.carousel-inner{
+    height: 450px;
+    margin-bottom: 30px;
+    border-radius: 15px !important;
+}
+.product_price_wrapper{
+    border: 2px solid black;
+    padding: 0;
+    margin-bottom: 30px;
+}
+.product_button_buy{
+    width: 50%;
+    background: black;
+    color: wheat;
+    margin: 0;
+    height: 100%;
+    border: none;
+}
+.product_title{
+    margin-bottom: 30px;
+}
+.product_description{
+    text-align: center;
+    padding: 20px 10px;
+}
+.product_price{
+    padding: 5px;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+
+/*-----*/
+@media screen and (max-width: 991px ){
+    .carousel-inner{
+        height: 350px;
+        margin: 50px 0;
+    }
+}
+
+@media screen and (max-width: 767px ){
+    .carousel-inner{
+        height: 350px;
+        margin: 50px 0;
+    }
+}
+
+@media screen and (max-width: 575px ){
+    .carousel-inner{
+        height: 350px;
+        margin: 50px 0;
+    }
+=======
+.carousel-inner{
+    height: 450px;
+    margin-bottom: 30px;
+    border-radius: 15px !important;
+}
+.product_price_wrapper{
+    border: 2px solid black;
+    padding: 0;
+    margin-bottom: 30px;
+}
+.product_button_buy{
+    width: 50%;
+    background: black;
+    color: wheat;
+    margin: 0;
+    height: 100%;
+    border: none;
+    padding: 10px;
+}
+.product_title{
+    margin-bottom: 30px;
+}
+.product_description{
+    text-align: center;
+    padding: 20px 10px;
+}
+.product_price{
+    padding: 5px;
+    margin: 0 auto;
+    width: 50%;
+    text-align: center;
+}
+
+
+/*-----*/
+@media screen and (max-width: 991px ){
+    .carousel-inner{
+        height: 350px;
+        margin: 50px 0;
+    }
+}
+
+@media screen and (max-width: 767px ){
+    .carousel-inner{
+        height: 350px;
+        margin: 50px 0;
+    }
+}
+
+@media screen and (max-width: 575px ){
+    .carousel-inner{
+        height: 350px;
+        margin: 50px 0;
+    }
+>>>>>>> 2e2162608b52d77abe9c5daf01b432e99b9bf943:web/user/views/default/style/product.css
+}
