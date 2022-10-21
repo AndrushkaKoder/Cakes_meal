@@ -24,8 +24,6 @@ class CatalogController extends BaseUser
         $data = $this->model->get('catalog', [
             'where' => $where,
             'join_structure' => true
-
-
         ]);
 
         if(!$data){
