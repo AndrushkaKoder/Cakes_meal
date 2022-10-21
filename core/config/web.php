@@ -3,7 +3,7 @@
 return [
     'web' => [
         'path' => '',
-        'views' => 'user/views',
+        'views' => 'user/views/default',
         'common' => 'common',
         'css' => 'style',
         'img'=>'images',

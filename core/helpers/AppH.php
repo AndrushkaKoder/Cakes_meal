@@ -1,8 +1,49 @@
 <?php
 
+//вспомогательный класс с вспомогательными методами
 
 class AppH
 {
+
+    public static function __callStatic(string $name, array $arguments){
+
+        $result = self::scanDir(__DIR__, function ($file, $path) use ($name, $arguments){
+
+            $className = str_replace('.php', '', $file);
+
+            if($file !== __CLASS__){
+
+               $res = include_once $path . '/' . $file;
+
+               if($res && is_int($res)){
+
+                   preg_match('/(namespace)\s+(.+?);/', file_get_contents($path . '/' . $file), $matches);
+
+                   $nameSpaceClass = '\\';
+
+                   if(!empty($matches[2])){
+
+                       $nameSpaceClass .= trim($matches[2]).'\\';
+
+                   }
+
+                   $nameSpaceClass .= $className;
+
+                   if(method_exists($nameSpaceClass, $name)){
+
+                       return $nameSpaceClass::$name(...$arguments);
+
+                   }
+
+               }
+            }
+
+        });
+
+        return $result;
+
+    }
+
 
     public static function scanDir(string $path, callable $callback){
 
@@ -14,7 +55,11 @@ class AppH
 
                 if($file !== '.' && $file !== '..'){
 
-                    $callback($file, $path); // если у файла нет . .. то вызывваем колбэк
+                   if(($res = $callback($file, $path)) !== null){
+
+                       return $res;
+
+                   }  // если у файла нет . .. то вызывваем колбэк
 
                 }
 
@@ -24,17 +69,7 @@ class AppH
 
     }
 
-    public static function clearNum($num){ // обработка входящих чисел. Вернет или число в нужной форме, или 0
 
-        return (isset($num) && $num && preg_match('/\d/', $num)) ? preg_replace('/[^\d.]/', '', str_replace(',', '.', $num)) * 1 : 0;
-
-    }
-
-    public static function clearStr(string $str, $ecran = true) :string{ //обработка строк и защита от инъекций
-
-        return $ecran ? str_replace(array("\\","\0","\n","\r","\x1a","'",'"'),array("\\\\","\\0","\\n","\\r","\Z","\'",'\"'), trim(strip_tags($str))) : trim(strip_tags($str));
-
-    }
 
     public static function recursiveBuilder(array $arr, $deep = 0, array $set = []){ // работа с данными бесконечной вложенности
 
@@ -194,7 +229,7 @@ class AppH
 
     }
 
-    public static function correctPath(){
+    public static function correctPath(){ //метод корректировки путей
         $path = '';
         foreach (func_get_args() as $item){
             $path .= '/' . $item . '/';
@@ -204,7 +239,7 @@ class AppH
 
 
 
-    public static function translit($str){
+    public static function translit($str){ //метод транслитерации
 
         $translitArr = [ 'а' => 'a', 'б' => 'b', 'в' => 'v', 'г' => 'g', 'д' => 'd', 'е' => 'e',
             'ё' => 'yo', 'ж' => 'zh', 'з' => 'z', 'и' => 'i', 'й' => 'y', 'к' => 'k',

@@ -101,6 +101,7 @@ color: white;
 .cakes_logo:hover{
     color: #f0c76e;
 }
+
 /*навигация*/
 .header_nav_list{
     display: flex;
@@ -178,33 +179,6 @@ color: white;
     z-index: -10;
     overflow: hidden;
 }
-
-
-/*@keyframes active-search {*/
-/*    0%{*/
-/*        top: -200px !important;*/
-/*        opacity: 0 !important;*/
-/*    }*/
-/*    100%{*/
-/*        top: 0 !important;*/
-/*        opacity: 1 !important;*/
-
-/*    }*/
-/*}*/
-/*@keyframes hide-search {*/
-/*    0%{*/
-/*        top: 0;*/
-/*        opacity: 1;*/
-/*    }*/
-/*    100%{*/
-/*        top: -200px;*/
-/*        opacity: 0;*/
-/*    }*/
-/*}*/
-
-
-
-
 /*поисковая строка*/
 
 
@@ -337,15 +311,6 @@ transform: scale(1.1);
     transform: rotate(180deg);
 }
 
-/*.border_content{*/
-/*    !*background: url("../images/border.jpg");*!*/
-/*    position: absolute;*/
-/*    z-index: 5;*/
-/*    bottom: -90px;*/
-/*    left: 0;*/
-/*    width: 100%;*/
-/*    height: 160px;*/
-/*}*/
 .title{
     padding: 55px 0;
     font-size: 35px;

@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Playfair+Display:ital,wght@1,500&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <?php $this->getStyles()?>
-    <link rel="shortcut icon" href="/web/user/views/images/favicon2.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/web/user/views/default/imagest/images/favicon2.png" type="image/x-icon">
     <title>Cakes Meal Калуга</title>
 </head>
 

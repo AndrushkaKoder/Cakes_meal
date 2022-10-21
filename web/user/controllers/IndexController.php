@@ -8,8 +8,10 @@ use web\user\models\Model;
 class IndexController extends BaseUser //будет наследоваться от другого класса. Пока. А тот класс будет extend от Controller
 {
 
+
     protected function actionInput(){
 
+        $this->skipRenderingTemplates = false; // true - отдавать данные в JSON без шаблонизации (для VUE/REACT)
 
         $sales = $this->model->get('sales');
 

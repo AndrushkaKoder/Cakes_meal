@@ -20,7 +20,7 @@
     <!-- конструктор -->
 
     <section class="constructor_title">
-        <img src="/web/user/views/images/bg/choco.jpg" class="constructor_img wow bounceInRight" alt="#">
+        <img src="/web/user/views/default/images/bg/choco.jpg" class="constructor_img wow bounceInRight" alt="#">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -40,7 +40,7 @@
 
         <div class="container">
 
-            <form action="zakaz.html" method="GET" class="form_constructor" data-constructor>
+            <form action="../../../../index.php" method="GET" class="form_constructor" data-constructor>
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12">
 
