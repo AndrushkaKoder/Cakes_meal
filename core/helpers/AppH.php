@@ -5,9 +5,14 @@
 class AppH
 {
 
-    public static function __callStatic(string $name, array $arguments){
+    // 1)__callStatic по средствам callback вызывает self::scanDir
+    // 2) self::scanDir обрабатывает данные и возвращает их в self::scanDir
+    // 3) в $result залетают данные из self::scanDir
+    // 4) в __callStatic возвращает данные в себя из $result
 
-        $result = self::scanDir(__DIR__, function ($file, $path) use ($name, $arguments){
+    public static function __callStatic(string $name, array $arguments){ // 4)сюда возвращаются данные из $result и работают где нужно(строка 43)
+
+        $result = self::scanDir(__DIR__, function ($file, $path) use ($name, $arguments){ // 2)в $result залетают данные из self::ScanDir(строка 34)
 
             $className = str_replace('.php', '', $file);
 
@@ -31,7 +36,7 @@ class AppH
 
                    if(method_exists($nameSpaceClass, $name)){
 
-                       return $nameSpaceClass::$name(...$arguments);
+                       return $nameSpaceClass::$name(...$arguments); // 1)возвращает данные в self::ScanDir
 
                    }
 
@@ -40,9 +45,11 @@ class AppH
 
         });
 
-        return $result;
+        return $result; // 3)возврат $result в __callStatic
 
     }
+
+
 
 
     public static function scanDir(string $path, callable $callback){
@@ -309,6 +316,9 @@ class AppH
         return $link;
 
     }
+
+
+
 
 }
 

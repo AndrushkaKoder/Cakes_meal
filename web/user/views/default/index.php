@@ -7,13 +7,14 @@
                 <!-- Slides -->
                 <?php foreach ($sales as $item):?>
                     <div class="swiper-slide" style="background:url('/web/userFiles/<?=$item['img']?>'); background-size: cover; background-position: top">
-                        <div class="slide_content wow bounceInRight" data-wow-duration="1s">
+                        <div class="slide_content" data-wow-duration="1s">
                             <h3><?=$item['name']?></h3>
                             <p><?=$item['short_content']?></p>
                         </div>
                     </div>
                 <?php endforeach;?>
             </div>
+
 <!--            <div class="swiper-pagination">-->
                 <!-- <i class="fa-solid fa-cupcake swiper_pagination_img" style="font-size:20px;"></i>
                 <i class="fa-solid fa-cupcake swiper_pagination_img"></i>

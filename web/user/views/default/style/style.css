@@ -242,6 +242,26 @@ transform: scale(1.1);
     z-index: 2;
     /* backdrop-filter: blur(5px); */
 }
+
+
+.swiper-slide-active .slide_content{
+    animation: sliden forwards;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
+}
+
+
+@keyframes sliden{
+    from{
+        opacity: 0;
+        right: -1000px;
+    }
+
+    to{
+        right: 0;
+        opacity: 1;
+    }
+}
 /*СЛАЙДЕР КОНЕЦ*/
 
 

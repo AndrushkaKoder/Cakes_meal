@@ -163,7 +163,7 @@ trait CatalogHelper
 
         if(empty($where['pagination'])){
 
-            $where['pagination'] = \AppH::clearNum($_GET['page'] ?? 2) ?? 2;
+            $where['pagination'] = \AppH::clearNum($_GET['page'] ?? 1) ?? 1;
 
         }
 

@@ -60,29 +60,21 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     }
 
+    const slidesContentText = document.querySelectorAll('.slide_content');
+
+    function showSlideTextAnimate(){
+        slidesContentText.forEach((slide, i)=>{
+            slide.classList.add('bounceInUp')
+            setTimeout(()=>{
+                slide.classList.remove('bounceInUp')
+            },1000)
 
 
-    // function showSearch(){
-    //     searchWrapper.classList.remove('hideSearch');
-    //     searchWrapper.classList.add('showSearch');
-    // }
+        })
+    }
 
-    //
-    //
-    // hideSearch()
-    //
-    // searchBtn.addEventListener('click', (e)=>{
-    //         e.preventDefault();
-    //         e.stopPropagation();
-    //         showSearch();
-    //
-    //
-    // })
-    // document.addEventListener('click', (e)=>{
-    //     if(!e.target.closest('.search_area')){
-    //         hideSearch()
-    //     }
-    // })
+    showSlideTextAnimate()
+
 
 
 
