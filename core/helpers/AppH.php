@@ -5,7 +5,7 @@ class AppH
 
     public static function __callStatic(string $name, array $arguments){
 
-        static $methods = [];
+       static $methods = [];
 
         if(!empty($methods[$name])){
 
@@ -17,7 +17,7 @@ class AppH
 
             $className = str_replace('.php', '', $file);
 
-            if($file !== __CLASS__){
+            if($className !== __CLASS__){
 
                $res = include_once $path . '/' . $file;
 

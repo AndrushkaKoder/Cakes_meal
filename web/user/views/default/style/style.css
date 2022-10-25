@@ -122,6 +122,24 @@ color: white;
     border-bottom: unset;
 }
 
+.nav_bucket{
+    position: relative !important;
+}
+
+.cart_counter{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+    background: orange;
+    color: white;
+    border-radius: 100%;
+    top: -12px;
+    right: -12px;
+    font-size: 12px;
+}
 
 /*поисковая строка*/
 .search_wrapper{

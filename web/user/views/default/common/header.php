@@ -50,7 +50,7 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
             <div class="col-lg-2 col-md-2 col-sm-12 d-flex justify-content-center align-items-center" data-nav_wrapper style="position: relative">
 
                 <a href="tel:89308478453" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
-                <a href="<?=$this->alias('basket')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i></a>
+                <a href="<?=$this->alias('cart')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i> <span class="cart_counter" data-totalQTY><?=$this->cart['total_qty'] ?? 0?></span></a>
                 <a href="#" class="nav_item" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
 <!--                <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass"></i></a>-->
                 <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
