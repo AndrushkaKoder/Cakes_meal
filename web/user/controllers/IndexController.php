@@ -48,6 +48,4 @@ class IndexController extends BaseUser //будет наследоваться �
     }
 
 
-
-
 }

@@ -1,18 +1,19 @@
 <?php
 
-//вспомогательный класс с вспомогательными методами
-
 class AppH
 {
 
-    // 1)__callStatic по средствам callback вызывает self::scanDir
-    // 2) self::scanDir обрабатывает данные и возвращает их в self::scanDir
-    // 3) в $result залетают данные из self::scanDir
-    // 4) в __callStatic возвращает данные в себя из $result
+    public static function __callStatic(string $name, array $arguments){
 
-    public static function __callStatic(string $name, array $arguments){ // 4)сюда возвращаются данные из $result и работают где нужно(строка 43)
+        static $methods = [];
 
-        $result = self::scanDir(__DIR__, function ($file, $path) use ($name, $arguments){ // 2)в $result залетают данные из self::ScanDir(строка 34)
+        if(!empty($methods[$name])){
+
+            return $methods[$name]::$name(...$arguments);
+
+        }
+
+        $result = self::scanDir(__DIR__, function ($file, $path) use ($name, $arguments, &$methods){
 
             $className = str_replace('.php', '', $file);
 
@@ -20,7 +21,7 @@ class AppH
 
                $res = include_once $path . '/' . $file;
 
-               if($res && is_int($res)){
+               if($res){
 
                    preg_match('/(namespace)\s+(.+?);/', file_get_contents($path . '/' . $file), $matches);
 
@@ -36,7 +37,9 @@ class AppH
 
                    if(method_exists($nameSpaceClass, $name)){
 
-                       return $nameSpaceClass::$name(...$arguments); // 1)возвращает данные в self::ScanDir
+                       $methods[$name] = $nameSpaceClass;
+
+                       return $nameSpaceClass::$name(...$arguments);
 
                    }
 
@@ -45,11 +48,9 @@ class AppH
 
         });
 
-        return $result; // 3)возврат $result в __callStatic
+        return $result;
 
     }
-
-
 
 
     public static function scanDir(string $path, callable $callback){
@@ -317,8 +318,4 @@ class AppH
 
     }
 
-
-
-
 }
-

@@ -369,6 +369,4 @@ abstract class BaseUser extends \core\system\Controller
 
     }
 
-
-
 }

@@ -9,6 +9,7 @@ class CatalogController extends BaseUser
 
 
     protected function actionInput(){
+
         $where = [
             'visible' => 1
         ];
@@ -24,8 +25,6 @@ class CatalogController extends BaseUser
         $data = $this->model->get('catalog', [
             'where' => $where,
             'join_structure' => true
-
-
         ]);
 
         if(!$data){
@@ -42,12 +41,16 @@ class CatalogController extends BaseUser
         ], $catalogFilters, $catalogPrices);
 
         if($goods){
+
             foreach ($goods as $item){
-              $data[$item['parent_id']]['join']['goods'][$item['id']] = $item;
+
+                $data[$item['parent_id']]['join']['goods'][$item['id']] = $item;
+
             }
         }
 
         $h1 = $single ? $data[key($data)]['name'] : 'Каталог';
+
         return compact('data', 'h1', 'catalogPrices', 'catalogFilters');
 
     }
