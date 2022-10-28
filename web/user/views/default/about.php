@@ -48,7 +48,7 @@
             <div class="row">
                 <div class="col-12 d-flex justify-content-center">
                     <div class="about_master_img">
-                        <img src="<?=$this->getTemplateImg()?>../../../../index.php" alt="master">
+                        <img src="/web/user/views/default/images/elena2.png" alt="master">
                     </div>
 
                 </div>

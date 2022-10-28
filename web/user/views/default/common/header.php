@@ -18,6 +18,9 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
 <!---->
 <body style="background:url(<?=$this->getTemplateImg()?>bg/bg1.jpg)">
 <!-- хедер -->
+
+<div class="carcas">
+
 <header  class="<?=$headerClass?> header" data-header style="position: absolute; top: 0; left: 0; z-index: 10; background: transparent">
 
     <div class="container">

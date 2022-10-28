@@ -43,8 +43,8 @@
                                                 <div id="slider" class="m-auto" style="width: 50%; margin: 20px 0"></div>
                                                 <!--   range slider  -->
                                                 <div class="slider_values d-flex">
-                                                    <input type="text" id="min_value" data-min_price = "<?=$catalogPrices['min_price']?>">
-                                                    <input type="text" id="max_value" data-max_price = "<?=$catalogPrices['max_price']?>">
+                                                    <input type="text" id="min_value" name="min_price" data-min_price = "<?=$catalogPrices['min_price']?>">
+                                                    <input type="text" id="max_value" name="max_price" data-max_price = "<?=$catalogPrices['max_price']?>">
                                                 </div>
                                             </div>
 
@@ -119,16 +119,17 @@
                                     <div class="assortment_descr">
                                         <?=$value['short_content']?>
                                     </div>
+                                    <!-- старая новая цена -->
                                     <div class="assortment_price">
-                                        <span class="assortment_price_old" style="font-size: 18px">1650 <span style="font-size: 16px"> &#8381;/шт</span></span>
+                                        <?php if(!empty($value['old_price'])):?>
+                                            <span class="assortment_price_old" style="font-size: 18px"><?=$value['old_price']?> <span style="font-size: 16px"> &#8381;/шт</span></span>
+                                        <?php endif;?>
+
                                         <span class="assortment_price_num"><?=$value['price'] ?? 0?> <span> &#8381;/шт</span></span>
 
                                     </div>
 
-<!--                                    <div class="assortment_price_old">-->
-<!--                                        -->
-<!--                                        <span>&#8381;/кг</span>-->
-<!--                                    </div>-->
+                                        <!-- кнопка Купить -->
                                     <div class="assortment_btn">
                                         <button class="assortment_btn_button" <?=$this->setAddToCart($value)?>>Купить</button>
                                     </div>

@@ -58,7 +58,7 @@ position: absolute;
 top: 0;
 left:0;
 z-index: 5;
-min-width: 100%;
+width: 100%;
 color: white;
     background: transparent !important;
 }

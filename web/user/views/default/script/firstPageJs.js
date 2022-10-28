@@ -47,13 +47,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
     }
 
     nawWrapper.addEventListener("click", (event)=>{
-        
+
         if(event.target.closest('.burger_nav_button')){
+            event.preventDefault()
             showBurgerMenu();
         } 
 
     })
     burgerMenu.addEventListener("click", (event)=>{
+        // event.preventDefault()
         if(event.target.closest('.cross_button')){
             hideBurgerMenu()
         }

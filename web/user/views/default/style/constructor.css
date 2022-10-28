@@ -1,4 +1,4 @@
-<<<<<<< HEAD:web/user/views/style/constructor.css
+/*<<<<<<< HEAD:web/user/views/style/constructor.css*/
 .constructor_item{
     text-align: center;
 }
@@ -19,214 +19,7 @@
 }
 .constructor_img{
     position: absolute;
-    top: 0;
-    right: 0;
-    z-index: -5;
-    width: 450px;
-    height: 300px;
-}
-
-/* стилизация формы конструктора */
-.item_title{
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 30px;
-    margin: 10px 0;
-    color:#663300;
-}
-.item_content{
-    flex-wrap: wrap;
-    justify-content: center;
-}
-.item_label{
-    position: relative;
-}
-.type_cake{
-    position: absolute;
-    opacity: 0;
-    z-index: -1;
-}
-label{
-    font-size: 14px;
-    margin-right: 15px;
-    text-align: center;
-    border: 1px solid black;
-    color: black;
-    border-radius: 20px;
-    padding: 8px 25px;
-    cursor: pointer;
-    margin: 15px 10px;
-    transition: .3s ease all;
-}
-label:hover{
-    background: #ffa60d;
-    border-color: #ffa60d;
-}
-
-input[type="radio"]:checked + label{
-    background: #ffa60d;
-    border: 1px solid #ffa60d;
-}
-input[type="checkbox"]:checked + label{
-    background: #ffa60d;
-    border:1px solid #ffa60d;
-}
-
-/* textarea */
-.constructor_input_user{
-    width: 80%;
-    padding: 10px;
-    font-size: 20px;
-    border-radius: 20px;
-    border: unset;
-    background: inherit;
-    border: 1px solid black;
-    margin: 20px 0;
-}
-
-[data-text],[data-wish]{
-    width: 80%;
-}
-
-.item_after{
-    margin: 20px 0;
-}
-.border{  
-    border: 8px solid #50e3c2 !important;
-}
-
-/* .constructor_form_after{
-    border: 8px solid #50e3c2;
-} */
-
-#userName, #userPhone, #userData{
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: unset;
-    background: inherit;
-    border-bottom: 1px solid black;
-    outline: unset;
-}
-
-
-
-
-/* кнопка отправить */
-.constructor_button_offer{
-    display: block;
-    padding: 10px 20px;
-    border: 1px solid black;
-    border-radius: 30px;
-    text-align: center;
-    color: black;
-    font-weight: bold;
-    transition: .3s ease all;
-    box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.2);
-}
-.constructor_button_offer:hover{
-    transform: scale(1.02);
-    background: #ffa60d;
-    border-color: #ffa60d;
-    color: black;
-    box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.5);
-}
-.constructor_button_offer:active{
-    transform: scale(0.9);
-}
-
-
-/* классы скрытия и показа */
-.show{
-    display: block !important;
-}
-.hide{
-    display: none;
-}
-
-.activeButton{
-    background-color: #50e3c2;
-}
-
-.modal_descr{
-    color: black;
-}
-
-
-/* медиазапросы */
-@media  screen and (max-width: 1200px) {
-    .container {
-        width: 1140px;
-    }
-}
-
-@media screen and (max-width: 1199px) {
-    .container{
-        width: 960px;
-    }
-
-    
-}
-
-@media screen and (max-width: 991px) {
-    .container{
-        width: 720px;
-    }
-    [ data-right_form]{
-        display: none;
-    }
-    
-}
-
-@media screen and (max-width: 767px) {
-    .container{
-        width: 540px;
-    }
-    [ data-right_form]{
-        display: none;
-    }
-    .constructor_img{
-        display: none;
-    }
-    
-}
-
-
-@media screen and (max-width: 575px) {
-
-	.container{
-	
-	width:100%;
-	padding: 0 15px;
-	}
-    [ data-right_form]{
-        display: none;
-    }
-    .constructor_input_user{
-        width: 100%;
-    }
-
-=======
-.constructor_item{
-    text-align: center;
-}
-.constructor_wrapper{
-    margin: 0 !important;
-}
-
-.constructor_title{
-    position: relative;
-}
-.constructor_title_tile{
-    font-size: 35px;
-    color:#663300;
-}
-.constructor_descr{
-    font-size: 20px;
-    text-align: center;
-}
-.constructor_img{
-    position: absolute;
-    top: -150px;
+    top: -120px;
     right: 0;
     z-index: -5;
     width: 300px;
@@ -331,7 +124,7 @@ input[type="checkbox"]:checked + label{
     box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.2);
 }
 .constructor_button_offer:hover{
-    transform: scale(1.02);
+    /*transform: scale(1.02);*/
     background: #ffa60d;
     border-color: #ffa60d;
     color: black;
@@ -381,12 +174,223 @@ input[type="checkbox"]:checked + label{
     [ data-right_form]{
         display: none;
     }
+    
+}
+
+@media screen and (max-width: 767px) {
+    .container{
+        width: 540px;
+    }
+    [ data-right_form]{
+        display: none;
+    }
+    .constructor_img{
+        display: none;
+    }
+    
+}
+
+
+/*@media screen and (max-width: 575px) {*/
+
+/*	.container{*/
+
+/*	width:100%;*/
+/*	padding: 0 15px;*/
+/*	}*/
+/*    [ data-right_form]{*/
+/*        display: none;*/
+/*    }*/
+/*    .constructor_input_user{*/
+/*        width: 100%;*/
+/*    }*/
+
+/*=======*/
+.constructor_item{
+    text-align: center;
+}
+.constructor_wrapper{
+    margin: 0 !important;
+}
+
+.constructor_title{
+    position: relative;
+}
+.constructor_title_tile{
+    font-size: 35px;
+    color:#663300;
+}
+.constructor_descr{
+    font-size: 20px;
+    text-align: center;
+}
+.constructor_img{
+    position: absolute;
+    top: -150px;
+    right: 0;
+    z-index: -5;
+    width: 300px;
+    height: 300px;
+}
+
+/* стилизация формы конструктора */
+.item_title{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    margin: 10px 0;
+    color:#663300;
+}
+.item_content{
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.item_label{
+    position: relative;
+}
+.type_cake{
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+label{
+    font-size: 14px;
+    margin-right: 15px;
+    text-align: center;
+    border: 1px solid black;
+    color: black;
+    border-radius: 20px;
+    padding: 8px 25px;
+    cursor: pointer;
+    margin: 15px 10px;
+    transition: .3s ease all;
+}
+label:hover{
+    background: #ffa60d;
+    border-color: #ffa60d;
+}
+
+input[type="radio"]:checked + label{
+    background: #ffa60d;
+    border: 1px solid #ffa60d;
+}
+input[type="checkbox"]:checked + label{
+    background: #ffa60d;
+    border:1px solid #ffa60d;
+}
+
+/* textarea */
+.constructor_input_user{
+    width: 80%;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: unset;
+    background: inherit;
+    border: 1px solid black;
+    margin: 20px 0;
+}
+
+[data-text],[data-wish]{
+    width: 80%;
+}
+
+.item_after{
+    margin: 20px 0;
+}
+.border{
+    border: 8px solid #50e3c2 !important;
+}
+
+/* .constructor_form_after{
+    border: 8px solid #50e3c2;
+} */
+
+#userName, #userPhone, #userData{
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: unset;
+    background: inherit;
+    border-bottom: 1px solid black;
+    outline: unset;
+}
+
+
+
+
+/* кнопка отправить */
+.constructor_button_offer{
+    display: block;
+    padding: 10px 20px;
+    border: 1px solid black;
+    border-radius: 30px;
+    text-align: center;
+    color: black;
+    font-size: 14px;
+    /*font-weight: bold;*/
+    transition: .3s ease all;
+    box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.2);
+}
+.constructor_button_offer:hover{
+    /*transform: scale(1.02);*/
+    background: #ffa60d;
+    border-color: #ffa60d;
+    color: black;
+    box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.5);
+}
+.constructor_button_offer:active{
+    transform: scale(0.9);
+}
+
+
+/* классы скрытия и показа */
+.show{
+    display: block !important;
+}
+.hide{
+    display: none;
+}
+
+.activeButton{
+    background-color: #50e3c2;
+}
+
+.modal_descr{
+    color: black;
+}
+
+
+/* медиазапросы */
+@media  screen and (max-width: 1200px) {
+    .container {
+        width: 1140px;
+    }
+}
+
+@media screen and (max-width: 1199px) {
+    .container{
+        width: 960px;
+    }
+
+
+}
+
+@media screen and (max-width: 991px) {
+    .container{
+        width: 720px;
+    }
+    [ data-right_form]{
+        display: none;
+    }
     .constructor_img{
         width: 200px;
         height: 200px;
         top: -50px;
     }
-    
+    .constructor_button_offer{
+        font-size: 14px;
+    }
+
 }
 
 @media screen and (max-width: 767px) {
@@ -399,14 +403,17 @@ input[type="checkbox"]:checked + label{
     .constructor_img{
 
     }
-    
+    .constructor_button_offer{
+        font-size: 14px;
+    }
+
 }
 
 
 @media screen and (max-width: 575px) {
 
 	.container{
-	
+
 	width:100%;
 	padding: 0 15px;
 	}
@@ -421,6 +428,10 @@ input[type="checkbox"]:checked + label{
         height: 200px;
         top: -120px;
     }
-
->>>>>>> 2e2162608b52d77abe9c5daf01b432e99b9bf943:web/user/views/default/style/constructor.css
+    .constructor_button_offer{
+    font-size: 14px;
+    }
 }
+
+/*>>>>>>> 2e2162608b52d77abe9c5daf01b432e99b9bf943:web/user/views/default/style/constructor.css*/
+/*}*/

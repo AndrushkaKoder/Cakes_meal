@@ -76,9 +76,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
     showSlideTextAnimate()
 
 
-
-
-
 })
 
 

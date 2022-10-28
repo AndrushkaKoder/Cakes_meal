@@ -58,11 +58,14 @@
 
                             <div class="product_price_wrapper d-flex justify-content-evenly align-items-center">
                                 <p class="product_price">
-                                    <span class="assortment_price_old" style="font-size: 17px">1650 &#8381</span>
+                                    <?php if(!empty($product['old_price'])):?>
+                                        <span class="assortment_price_old" style="font-size: 17px"><?=$product['old_price']?> &#8381</span>
+                                    <?php endif;?>
+
                                     <span><?=$product['price']?> </span> &#8381;
                                 </p>
 
-                               <button type="submit" class="text-center product_button_buy">Купить</button>
+                               <button type="submit" class="text-center product_button_buy" <?=$this->setAddToCart($product)?>>Купить</button>
                             </div>
 
 

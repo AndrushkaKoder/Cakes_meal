@@ -538,21 +538,22 @@ let addToCart = (() => {
 
     }
 
-    function _incDecQuantity(e){
+    function _incDecQuantity(e){ //принимает event
 
-        e.preventDefault()
+        e.preventDefault() //убирает стандартное поведение
 
-        let quantities = this.productContainer.querySelectorAll('[data-quantity]')
+        //productContainer - это Document
+        let quantities = this.productContainer.querySelectorAll('[data-quantity]') // получаем все элементы с data-quantity в nodeList
 
-        if(quantities.length){
+        if(quantities.length){ // если они есть
 
-            let value = null
+            let value = null //заводим value
 
-            quantities.forEach(item => {
+            quantities.forEach(item => { // перебираем nodeList
 
-                if(value === null){
+                if(value === null){ //если value === null
 
-                    value = +_setCorrectFloatValue(item.value)
+                    value = +_setCorrectFloatValue(item.value) // прогоняем value через _setCorrectFloatValue
 
                     if(isNaN(value)){
 
@@ -562,13 +563,13 @@ let addToCart = (() => {
 
                 }
 
-                if(this.hasAttribute('data-quantityPlus')){
+                if(this.hasAttribute('data-quantityPlus')){ //если есть атрибут
 
-                    item.value = ++value
+                    item.value = ++value //добавляем ++ к value
 
                 }else{
 
-                    item.value = value <= 1 ? 1 : --value
+                    item.value = value <= 1 ? 1 : --value //либо item.value = 1, либо --value
 
                 }
 
@@ -607,7 +608,7 @@ let addToCart = (() => {
 
             }
 
-            addToCart.dispatchEvent(new Event('click'))
+            addToCart.dispatchEvent(new Event('click')) //имитация события 'click'
 
         }
 

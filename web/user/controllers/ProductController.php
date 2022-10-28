@@ -24,7 +24,7 @@ class ProductController extends BaseUser
          ],
          'single' => true
      ]);
-
+        $a=1;
         return compact('product');
 
     }

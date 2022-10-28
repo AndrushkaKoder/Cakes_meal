@@ -60,12 +60,13 @@ section{
     border-radius: 30px;
     text-align: center;
     color: black;
+    font-size: 14px;
     font-weight: bold;
     transition: .3s ease all;
     box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.2);
 }
 .about_btn:hover{
-    transform: scale(1.04);
+
     background: #ffa60d;
     border-color: #ffa60d;
     color: black;
