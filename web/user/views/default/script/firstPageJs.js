@@ -51,13 +51,17 @@ window.addEventListener("DOMContentLoaded", ()=>{
         if(event.target.closest('.burger_nav_button')){
             event.preventDefault()
             showBurgerMenu();
+            document.body.style.overflow = 'hidden'
         } 
 
     })
     burgerMenu.addEventListener("click", (event)=>{
-        // event.preventDefault()
+
         if(event.target.closest('.cross_button')){
-            hideBurgerMenu()
+
+            setTimeout(hideBurgerMenu, 200)
+            document.body.style.overflow = 'visible'
+
         }
     })
     window.addEventListener("resize", ()=>{

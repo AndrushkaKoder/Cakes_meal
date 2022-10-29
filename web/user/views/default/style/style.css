@@ -296,14 +296,23 @@ transform: scale(1.1);
     opacity: 0.9;
     display: none;
 }
+.burger_section_wrapper{
+    width: 30%;
+    margin: 30px auto;
+}
 .cross{
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 30px;
     color: white;
     font-size: 30px;
     cursor: pointer;
+    width: 50%;
+    margin: auto;
+    transition: .3s ease all;
+}
+.cross:active{
+    transform: rotate(360deg);
 }
 .burger_section_content_list{
     display: flex;
@@ -524,6 +533,22 @@ z-index: -5;
     font-size: 14px;
     margin: 20px 0;
 }
+
+/*.arrowUp{*/
+/*    width: 40px;*/
+/*    height: 40px;*/
+/*    background: black;*/
+/*    color: white;*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    border-radius: 100%;*/
+/*    cursor: pointer;*/
+/*    position: fixed;*/
+/*    top: 50%;*/
+/*    right: 5px;*/
+/*    z-index: 9999;*/
+/*}*/
 
 
 /*МЕДИА ЗАПРОСЫ ДЛЯ INDEX*/
