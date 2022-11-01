@@ -18,7 +18,7 @@
 
     <section class="basket">
 
-        <form action="" method="POST" class="basketForm">
+        <form action="<?=$this->alias(['cart'=>'order'])?>" method="POST" class="basketForm">
             <div class="container">
 
                 <div class="row">
@@ -101,6 +101,7 @@
                                         <div class="item_content item_content_name d-flex flex-column justify-content-center">
                                             <input type="text" name="name" id="userNameTotal" placeholder="Имя" required>
                                             <input type="text" name="phone" id="userPhoneTotal" placeholder="Телефон" required>
+                                            <input type="email" name="email" placeholder="e-mail">
                                         </div>
                                     </div>
 
@@ -108,7 +109,7 @@
                                         <h5>Дата</h5>
                                         <p class="basket_modal_descr">В какой день привезти Ваш заказ</p>
                                         <div class="item_content item_content_name">
-                                            <input type="date" name="delivery_date" id="userDataTotal" style="width: 100%">
+                                            <input type="date" name="date_delivery" id="userDataTotal" style="width: 100%">
                                         </div>
                                     </div>
 
@@ -116,7 +117,7 @@
                                         <h5>Куда Вам привезти?</h5>
                                         <p class="basket_modal_descr">Укажите Ваш адрес, и мы доставим заказ прямо в руки</p>
                                         <div class="item_content item_content_name">
-                                        <input type="text" name="address" id="userAddressTotal" placeholder="Адрес доставки" style="width: 100%;" required>
+                                        <input type="text" name="address" id="userAddressTotal" placeholder="Адрес доставки" style="width: 100%;">
                                         </div>
                                     </div>
 
@@ -142,19 +143,19 @@
                                         </p>
                                         <div class="collapse textarea_area" id="collapseExample">
                                             <div class="card card-body">
-                                                <textarea name="userComment" id="userComment" cols="10" rows="5" placeholder="Мы исполняем желания"></textarea>
+                                                <textarea name="comment" id="userComment" cols="10" rows="5" placeholder="Мы исполняем желания"></textarea>
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="basket_modal_item d-flex justify-content-around p-3">
                                         <p>Итого:</p>
-                                        <p class="basket_total_price"> <?=$this->cart['total_sum']?> &#8381;</p>
+                                        <p class="basket_total_price" data-totalSum> <?=$this->cart['total_sum']?> &#8381;</p>
                                     </div>
 
                                     <div class="backet_modal_item text-center">
                                        <div class="item_content d-flex justify-content-center align-items-center">
-                                           <input type="checkbox" name="basket_privacy_check" id="basket_privacy_check" required>
+                                           <input type="checkbox" name="basket_privacy_check" id="basket_privacy_check" required checked>
                                            <p class="privacy_descr">Я согласен(согласна) на обработку персональных данных</p>
                                        </div>
                                         <p><a href="<?=$this->alias('privacy')?>" class="privacy_basket">Политика конфиденциальности</a></p>

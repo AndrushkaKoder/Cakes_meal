@@ -30,6 +30,8 @@
 <?php endif;?>
 
 
+
+
 <main>
     <!-- ПРЕИМУЩЕСТВА -->
     <?php if(!empty($tizzers)):?>
@@ -46,8 +48,8 @@
                 <div class="row justify-content-evenly">
 
                     <?php foreach ($tizzers as $item):?>
-                        <div class="col-lg-4 d-flex justify-content-center align-items-center flex-column text-center  wow bounceInLeft" data-wow-duration="1s"  data-wow-delay="1s">
-                            <img src="/web/userFiles/<?=$item['img']?>" alt="" width="60px">
+                        <div class="col-lg-4 d-flex align-items-center flex-column text-center  wow bounceInLeft" data-wow-duration="1s"  data-wow-delay="1s">
+                            <img src="/web/userFiles/<?=$item['img']?>" alt="" width="85px">
                             <h2><?=$item['name']?></h2>
                             <p><?=$item['short_content']?></p>
                         </div>
@@ -71,11 +73,12 @@
                 </div>
 
                 <?php foreach ($assortment as $item):?>
-                    <div class="row featurette wow bounceInUp" data-wow-duration="2s" data-wow-delay="">
-                        <div class="col-xl-7 col-md-6 col-sm-12 revert">
+
+                    <div class="row featurette wow bounceInUp <?=$item['id'] % 2 === 0 ? 'flex-row-reverse' : ''?>" data-wow-duration="2s" data-wow-delay="">
+                        <div class="col-xl-7 col-md-6 col-sm-12 revert text-center">
                             <h2 class="featurette-heading title_adv"><?=$item['name']?></span></h2>
                             <p class="lead"><?=$item['short_content']?></p>
-                            <p><a href="<?=$this->alias(['catalog'=>$item['alias']])?>" class="assortment_button wow bounceInUp" data-wow-duration="1.5s">подробнее</a></p>
+                            <p><a href="<?=$this->alias(['catalog'=>$item['alias']])?>" class="assortment_button wow bounceInUp" data-wow-duration="1s">подробнее</a></p>
                         </div>
                         <div class="col-xl-5 col-md-6 col-sm-12 d-flex justify-content-center">
                             <img src="/web/userFiles/<?=$item['img']?>" alt="bisquit" class="assortment_img">
@@ -113,7 +116,7 @@
         <section class="questions">
 
             <div class="container">
-                <div class="questions_wrapper  wow bounceInUp" data-wow-duration="3s">
+                <div class="questions_wrapper  wow bounceInUp" data-wow-duration="2s">
 
                     <div class="questions_title text-center">
                         <h2>Часто задаваемые вопросы</h2>

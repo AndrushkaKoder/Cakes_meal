@@ -91,9 +91,9 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 //    ВАРИАНТ 2
 
-const lables = document.querySelectorAll('input');
+const labels = document.querySelectorAll('input');
 constructor.addEventListener("change", (event)=>{
-  for(item of lables){
+  for(item of labels){
     if(event.target.closest('[data-bisquit_cake]')){
         showBisquitMenu()
         hideMussMenu()

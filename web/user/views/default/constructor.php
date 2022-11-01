@@ -1,4 +1,4 @@
-<main>
+    <main>
     <div class="bread">
         <div class="container">
             <div class="row p-5">
@@ -19,7 +19,7 @@
     <!-- конструктор -->
 
     <section class="constructor_title">
-        <img src="/web/user/views/default/images/bg/choco.jpg" class="constructor_img wow bounceInRight" alt="#">
+        <img src="/web/user/views/default/images/bg/choco.jpg" class="constructor_img" alt="#">
         <div class="container">
             <div class="row">
                 <div class="col-12">
@@ -114,8 +114,8 @@
                                         <label for="osnova__dva_choko__muss">Два шоколада</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_muss"  id="osnova__yogurt__muss" class="type_cake" value="Мусс">
-                                        <label for="osnova__yogurt__muss">Йогуртовая</label>
+                                        <input type="radio" name="osnova_muss"  id="osnova__cheese__muss" class="type_cake" value="Мусс">
+                                        <label for="osnova__yogurt__muss">Крем-чиз</label>
                                     </div>
                                 </div>
                             </div>

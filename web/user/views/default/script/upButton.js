@@ -1,13 +1,12 @@
-//должен быть подключен font awesome
+// принимает два параметра: Ширина экрана и на каком скролле от верха (px) появится кнопка
 
 
-function createUpArrow(){
+function createUpArrow(clientWidth, scrollY){
     const arrowStyle = {
         width: '40px',
         height: '40px',
         background: 'black',
         color: 'white',
-        // display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
         borderRadius: '100%',
@@ -35,7 +34,7 @@ function createUpArrow(){
     })
 
    window.addEventListener('scroll', ()=>{
-       if(window.innerWidth < 991 && window.scrollY > 1000){
+       if(window.innerWidth < clientWidth && window.scrollY > scrollY){
            arrowUp.style.display = 'flex'
        } else{
            arrowUp.style.display = 'none'
@@ -44,5 +43,5 @@ function createUpArrow(){
 
 }
 
-createUpArrow()
+createUpArrow(991, 1200)
 

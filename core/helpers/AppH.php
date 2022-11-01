@@ -318,4 +318,17 @@ class AppH
 
     }
 
+
+    public static function isPost(){
+
+        return $_SERVER['REQUEST_METHOD'] == 'POST';
+
+    }
+
+    public static function isAjax(){
+
+        return isset($_SERVER['HTTP_X_REQUESTED_WITH']) && $_SERVER['HTTP_X_REQUESTED_WITH'] === 'XMLHttpRequest';
+
+    }
+
 }

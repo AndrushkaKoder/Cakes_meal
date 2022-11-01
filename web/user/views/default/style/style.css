@@ -1,7 +1,23 @@
-
 /*font-family: 'Ms Madi', cursive;*/
 /*font-family: 'Playfair Display', serif;*/
 /*font-family: 'Roboto', sans-serif; **/
+
+/*стилизация скроллбара*/
+::-webkit-scrollbar {
+    display: none;
+    /*background: transparent;*/
+/*}*/
+/*::-webkit-scrollbar-track{*/
+/*    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;*/
+/*    background-color: #f9f9fd;*/
+/*    border-radius: 10px;*/
+/*}*/
+/*::-webkit-scrollbar-thumb{*/
+/*    border-radius: 10px;*/
+/*    background: linear-gradient(180deg, #00c6fb, #005bea);*/
+}
+/*стилизация скроллбара*/
+
 
 *{
     box-sizing: border-box;
@@ -12,14 +28,12 @@
 }
 body{
     font-family: 'Roboto', sans-serif;
-    /*background: url("/images/bg/bg1.jpg");*/
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
 }
 h1,h2,h3,h4,h5,h6{
     font-family: 'Playfair Display', serif;
-    
 }
 a{
     text-decoration: none;
@@ -52,17 +66,15 @@ main{
     width: 100%;
     background: linear-gradient(to top left, #884003, #010101) !important;
 }
-
 header.index{
-position: absolute;
-top: 0;
-left:0;
-z-index: 5;
-width: 100%;
-color: white;
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: 5;
+    width: 100%;
+    color: white;
     background: transparent !important;
 }
-
 .header_fixed.index{
     width: 100% !important;
     position: fixed !important;
@@ -85,8 +97,8 @@ color: white;
         opacity: 0.9;
         top: 0;
     }
-    
 }
+
 /*логотип*/
 .cakes_logo{
     font-family: 'Ms Madi', cursive;
@@ -146,7 +158,6 @@ color: white;
     position: absolute;
     width: 100%;
     transition: 500ms ease all;
-
 }
 .search_area{
     position: relative;
@@ -156,14 +167,13 @@ color: white;
     margin: 20px auto;
     padding: 5px;
     border-radius: 20px;
-    border: none;
+    /*border: none;*/
     outline: unset;
     font-size: 16px;
     text-align: center;
     border: 3px solid black;
     transition: 200ms ease all;
     opacity: 0.6;
-
 }
 .search_area:hover{
     opacity: 1;
@@ -182,7 +192,6 @@ color: white;
     top: 15px;
     right: 10px;
 }
-
 .showSearch{
     height: auto;
     top: 0;
@@ -258,18 +267,8 @@ transform: scale(1.1);
     height: 100%;
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 2;
-    /* backdrop-filter: blur(5px); */
 }
-
-
-.swiper-slide-active .slide_content{
-    animation: sliden forwards;
-    animation-duration: 2s;
-    animation-timing-function: ease-in-out;
-}
-
-
-@keyframes sliden{
+@keyframes textFromSlide{
     from{
         opacity: 0;
         right: -1000px;
@@ -279,6 +278,11 @@ transform: scale(1.1);
         right: 0;
         opacity: 1;
     }
+}
+.swiper-slide-active .slide_content{
+    animation: textFromSlide forwards;
+    animation-duration: 2s;
+    animation-timing-function: ease-in-out;
 }
 /*СЛАЙДЕР КОНЕЦ*/
 
@@ -329,7 +333,7 @@ transform: scale(1.1);
 .hideBurgerMenu{
     display: none;
 }
-
+/* скрыть-показать бургер меню */
 
 
 /* секция Немного о нас */
@@ -363,7 +367,6 @@ transform: scale(1.1);
     font-size: 35px;
     color: var(--color2);
 }
-
 .title_adv{
     padding: 40px 0;
     font-size: 25px;
@@ -374,10 +377,11 @@ transform: scale(1.1);
 
 /* ассортимент */
 .assortment_button{
+    margin: 10px auto;
+    font-size: 14px;
     width: 250px;
     display: block;
     padding: 10px;
-    /* border: 2px solid black; */
     background: #ffa60d;
     border-radius: 30px;
     text-align: center;
@@ -389,7 +393,6 @@ transform: scale(1.1);
 .assortment_button:hover{
     transform: scale(1.04);
     background: #ffa60d;
-    /* border-color: #ffa60d; */
     color: black;
     box-shadow: 5px 7px 8px 3px rgba(34, 60, 80, 0.5);
 }
@@ -397,9 +400,9 @@ transform: scale(1.1);
     transform: scale(0.9);
 }
 .assortment_img{
-width: 400px;
-height: 400px;
-border-radius: 5px;
+    width: 400px;
+    height: 400px;
+    border-radius: 5px;
 }
 
 
@@ -485,11 +488,11 @@ border-radius: 5px;
     color: var(--color2);
 }
 .choco_img{
-position: absolute;
-top: 0;
-left: -35px;
-width: 200px;
-z-index: -5;
+    position: absolute;
+    top: 0;
+    left: -35px;
+    width: 200px;
+    z-index: -5;
 }
 
 
@@ -519,7 +522,7 @@ z-index: -5;
     color: #5FFC7B;
 }
 .footer_phone{
-    font-size: 16px;
+    font-size: 18px;
 }
 .footer_phone:hover{
     color:#f0c76e;
@@ -590,7 +593,7 @@ z-index: -5;
     .slide_content{
         position: relative;
         z-index: 10;
-        padding:15px;
+        /*padding:15px;*/
         color: white;
         text-align: center;
         font-weight:900;
@@ -632,7 +635,7 @@ z-index: -5;
     .slide_content{
         position: relative;
         z-index: 10;
-        padding:15px;
+        /*padding:15px;*/
         color: white;
         text-align: center;
         font-weight:900;

@@ -228,6 +228,7 @@ trait CatalogModelHelper
 
             }
 
+
             if(!empty($filters)){
 
                 $goodsCountDb = $this->get($this->filtersGoodsTable, [
@@ -253,6 +254,7 @@ trait CatalogModelHelper
 
                 $catalogFilters = [];
 
+                //отсюда разбирать метод
                 foreach ($filters as $item){
 
                     $parent = [];
