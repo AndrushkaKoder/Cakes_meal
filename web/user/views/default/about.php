@@ -1,8 +1,8 @@
 <main>
     <div class="bread">
         <div class="container">
-            <div class="row p-5">
-                <div class="col-12 p-5">
+            <div class="row p-2">
+                <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?=$this->alias()?>">На главную</a></li>
@@ -54,7 +54,7 @@
                 </div>
                 <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 text-center m-auto p-5">
                     <h3 class="about_master_name">Елена</h3>
-                    <p class="about_content text-center">Шеф кондитер</p>
+                    <p class="about_content text-center">Шеф-кондитер</p>
                     <p class="about_content text-center">Мы приготовим заказной торт для вашего торжества. Делаем торты на заказ любой сложности и размера.
                         Чем больше, тем вкуснее. Смотрите какие они у нас получаются классные!
                     </p>

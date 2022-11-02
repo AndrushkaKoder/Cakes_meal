@@ -1,8 +1,8 @@
     <main>
     <div class="bread">
         <div class="container">
-            <div class="row p-5">
-                <div class="col-12 p-5">
+            <div class="row p-2">
+                <div class="col-12">
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?=$this->alias()?>">На главную</a></li>

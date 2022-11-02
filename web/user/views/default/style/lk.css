@@ -1,0 +1,39 @@
+.lk_wrapper_data{
+    background: white;
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    margin: 10px 0;
+}
+.lk_wrapper_orders{
+    background: white;
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+    margin: 10px 0;
+    overflow-y:scroll;
+}
+.lk_form{
+    width: 70%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.lk_form input{
+    border: unset;
+    outline: none;
+    border-bottom: 2px solid rgba(0,0,0,0.5);
+}
+.order_item_date{
+    text-align: center;
+}
+.order_total_sum{
+    width: 80%;
+    text-align: right;
+}
+.order_item_position{
+    display: flex;
+    justify-content: space-evenly;
+}

@@ -63,11 +63,12 @@ main{
 
 
 .header{
+    position: static !important;
     width: 100%;
     background: linear-gradient(to top left, #884003, #010101) !important;
 }
 header.index{
-    position: absolute;
+    position: absolute !important;
     top: 0;
     left:0;
     z-index: 5;
@@ -610,6 +611,9 @@ transform: scale(1.1);
     .search_area{
         width: 100%;
     }
+    .nav_item{
+        margin: 0 10px;
+    }
 
 
 }
@@ -671,6 +675,9 @@ transform: scale(1.1);
     }
     .search_area{
         width: 100%;
+    }
+    .nav_item{
+        margin: 0 15px;
     }
 
 }
@@ -742,6 +749,10 @@ transform: scale(1.1);
     .search_area{
         width: 100%;
     }
+    .nav_item{
+        margin: 0 15px;
+    }
+
 
 
 }

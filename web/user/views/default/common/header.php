@@ -57,6 +57,7 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
                 <a href="#" class="nav_item" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
 <!--                <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass"></i></a>-->
                 <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
+                <a href="<?=$this->alias('lk')?>" class="nav_item"><i class="fa-solid fa-user"></i></a>
             </div>
             <div class="col-12 position-relative">
                 <form action="" method="GET" class="search_wrapper hideSearch d-flex">
