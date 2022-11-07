@@ -1,21 +1,25 @@
 .lk_wrapper_data{
     background: white;
     width: 100%;
-    height: 500px;
+    height: 550px;
     border-radius: 5px;
     margin: 10px 0;
 }
 .lk_wrapper_orders{
     background: white;
     width: 100%;
-    height: 500px;
+    height: 550px;
     border-radius: 5px;
     margin: 10px 0;
     overflow-y:scroll;
+    scrollbar-track-color: red;
+}
+.lk_wrapper_data_title{
+    font-weight: bold;
 }
 .lk_form{
     width: 70%;
-    height: 100%;
+    height: 90%;
     margin: auto;
     display: flex;
     flex-direction: column;

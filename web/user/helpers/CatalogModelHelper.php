@@ -255,37 +255,37 @@ trait CatalogModelHelper
                 $catalogFilters = [];
 
                 //отсюда разбирать метод
-                foreach ($filters as $item){
+                foreach ($filters as $item){ // в $filters залетают все позиции из фильтров (55шт)
 
                     $parent = [];
 
                     $child = [];
 
-                    foreach ($item as $row => $rowValue){
+                    foreach ($item as $row => $rowValue){ // перебор всех товаров из фильтров (name=>прага)
 
-                        if(strpos($row, 'f_') === 0) {
+                        if(strpos($row, 'f_') === 0) { //если на первом месте в ключах стоит f_
 
-                            $name = preg_replace('/^f_/', '', $row);
+                            $name = preg_replace('/^f_/', '', $row); // f_ меняется на '' в $row
 
-                            $parent[$name] = $rowValue;
+                            $parent[$name] = $rowValue; // заполняем массив $parent['name'] значениями из массивов $item
 
                         }else{
 
-                            $child[$row] = $rowValue;
+                            $child[$row] = $rowValue; //заполняем массив $child['row'] значениями из массивов $item
 
                         }
 
                     }
 
-                    if(isset($goodsCount[$child['id']]['count'])){
+                    if(isset($goodsCount[$child['id']]['count'])){ //если существует $goodsCount (а он существует и заполнен массивами с [id] и [count])
 
-                        $child['count'] = $goodsCount[$child['id']]['count'];
+                        $child['count'] = $goodsCount[$child['id']]['count']; //в массив $child['count'] кладем все из $goodsCount
 
                     }
 
-                    if(empty($parent['id'])){
+                    if(empty($parent['id'])){ // если отсутвует $prarent['id']
 
-                        $parent = $child;
+                        $parent = $child; //приравниваем первый массив ко второму
 
                         if(!empty($item[$this->goodsTable . '_value'])){
 

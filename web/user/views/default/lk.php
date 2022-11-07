@@ -26,12 +26,15 @@
             <div class="row">
                 <div class="col-xl-6 col-md-6 col-sm-12">
                     <div class="lk_wrapper_data">
-                        <p class="text-center">Личные данные</p>
+                        <p class="lk_wrapper_data_title text-center">Личные данные</p>
                         <form action="#" method="post" class="lk_form">
-                            <input type="text" name="name" id="lk_name" value="Кеша">
-                            <input type="text" name="surname" id="lk_surname" value="Иванов">
-                            <input type="number" name="phoneNumber" id="lk_phoneNumber" value="894235325243">
-                            <input type="email" name="email" id="lk_email" value="sfsdf@yandex.ru">
+                            <input type="text" name="name" id="lk_name" placeholder="Ваше имя" value="Аркадий">
+                            <input type="text" name="surname" id="lk_surname" placeholder="Ваша фамилия" value="Залупкин">
+                            <input type="number" name="phone_number" id="lk_phoneNumber" placeholder="Контактный номер" value="894235325243">
+                            <input type="email" name="email" id="lk_email" placeholder="Электронная почта" value="sfsdf@yandex.ru">
+                            <input type="text" name="birthday" id="birthday" placeholder="Дата рождения" value="01.01.2000">
+                            <input type="password" name="password" id="password" placeholder="Введите новый пароль">
+                            <input type="password" name="password_repeat" id="password" placeholder="Повторите пароль">
                             <button type="button" class="assortment_button">Сохранить</button>
                         </form>
 
@@ -39,7 +42,7 @@
                 </div>
                 <div class="col-xl-6 col-md-6 col-sm-12">
                     <div class="lk_wrapper_orders">
-                        <p class="text-center">Заказы</p>
+                        <p class="lk_wrapper_data_title text-center">Заказы</p>
                         <hr>
 
                         <div class="order_item">

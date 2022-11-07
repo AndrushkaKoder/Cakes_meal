@@ -14,14 +14,14 @@
 <?php
 $headerClass = $this->getController() === 'index' ? 'index' : '';
 
+$display = $this->getController() === 'login' ? 'none' : 'block';
 ?>
 <!---->
 <body style="background:url(<?=$this->getTemplateImg()?>bg/bg1.jpg)">
 <!-- хедер -->
 
-<div class="carcas">
 
-<header  class="<?=$headerClass?> header" data-header style="position: absolute; top: 0; left: 0; z-index: 10; background: transparent">
+<header  class="<?=$headerClass?> header" data-header style="position: absolute; top: 0; left: 0; z-index: 10; background: transparent; display: <?=$display?>">
 
     <div class="container">
         <div class="row">
@@ -34,7 +34,7 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
                     <li class="header_nav_list_item"><a href="<?=$this->alias()?>">Главная</a></li>
                     <?php if(!empty($this->menu)):?>
                         <li class="header_nav_list_item dropdownWrapper">
-                            <a class="dropdown" id="no_border" href="<?=$this->alias('catalog')?>" role="button"  aria-expanded="false">Ассортимент</a>
+                            <a class="dropdown-toggle" id="no_border" href="<?=$this->alias('catalog')?>" role="button"  aria-expanded="false">Ассортимент</a>
                             <ul class="dropdown-menu">
 
                                 <?php foreach ($this->menu as $item):?>
@@ -55,9 +55,60 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
                 <a href="tel:89308478453" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
                 <a href="<?=$this->alias('cart')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i> <span class="cart_counter" data-totalQTY><?=$this->cart['total_qty'] ?? 0?></span></a>
                 <a href="#" class="nav_item" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
-<!--                <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass"></i></a>-->
-                <a href="" class="nav_item"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
-                <a href="<?=$this->alias('lk')?>" class="nav_item"><i class="fa-solid fa-user"></i></a>
+
+                <a href="" class="nav_item search_button"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
+
+
+                <!--попап регистрации-->
+                <button type="button" class="nav_item lk_button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    <i class="fa-solid fa-user"></i>
+                </button>
+
+                <div class="modal fade"  id="exampleModal" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header lk_popUp_header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Войти в аккаунт</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+
+
+                                <form action="" method="post">
+                                    <div class="mb-3">
+                                        <input type="phone" name="phoneLogin" class="form-control lk_popUp_input" placeholder="Телефон">
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="password" name="passwordLogin" class="form-control lk_popUp_input" placeholder="Пароль">
+                                    </div>
+                                    <?php if(!$login):?>
+                                        <div class="alert alert-danger m-3 text-center" role="alert">
+                                            <?='неверный логин или пароль'?> <br>
+                                            <span class="lk_forget_password">Забыли пароль? <a href="">восстановить</a></span>
+                                        </div>
+
+                                    <?php else:?>
+                                        <div class="alert alert-success m-3 text-center" role="alert">
+                                            <?='Добро пожаловать'?> <br>
+                                        </div>
+                                    <?php endif;?>
+
+                                    <div class="m-3 text-center">
+                                        <button type="submit" class="assortment_button">Войти</button>
+                                    </div>
+                                </form>
+
+
+                            </div>
+                            <div class="modal-footer lk_popUp_footer text-start">
+                               <p>Нет аккаунта? <a href="<?=$this->alias('login')?>">Регистрация</a></p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--попап регистрации-->
+
             </div>
             <div class="col-12 position-relative">
                 <form action="" method="GET" class="search_wrapper hideSearch d-flex">
@@ -65,7 +116,6 @@ $headerClass = $this->getController() === 'index' ? 'index' : '';
                         <input type="text" id="search_area" class="">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass search_button"></i></button>
                     </div>
-
                 </form>
             </div>
 

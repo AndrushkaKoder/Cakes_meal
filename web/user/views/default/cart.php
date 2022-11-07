@@ -52,9 +52,6 @@
                             <p class="text-center">общая сумма заказа: <span style="text-decoration: underline" data-totalSum><?=$this->cart['total_sum'] ?? 0?></span>&#8381; </p>
                         </div>
                     </div>
-                    <div class="col-12">
-
-                    </div>
 
                 </div>
 
@@ -83,7 +80,7 @@
 
                 <!-- модалка заказа -->
                 <?php if(!empty($this->cart['total_sum'])):?>
-                <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal fade" id="staticBackdrop"  data-bs-backdrop="static" data-bs-keyboard="true" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">

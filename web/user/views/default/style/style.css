@@ -6,21 +6,25 @@
 ::-webkit-scrollbar {
     display: none;
     /*background: transparent;*/
-/*}*/
+    /*background: lightblue;*/
+}
 /*::-webkit-scrollbar-track{*/
 /*    -webkit-box-shadow: 5px 5px 5px -5px rgba(34, 60, 80, 0.2) inset;*/
 /*    background-color: #f9f9fd;*/
-/*    border-radius: 10px;*/
+/*    border-radius: 5px;*/
 /*}*/
 /*::-webkit-scrollbar-thumb{*/
 /*    border-radius: 10px;*/
 /*    background: linear-gradient(180deg, #00c6fb, #005bea);*/
-}
+/*}*/
 /*стилизация скроллбара*/
 
 
 *{
     box-sizing: border-box;
+}
+.modal-backdrop{
+ position: static;
 }
 :root{
     --color1:#f0c76e;
@@ -186,6 +190,18 @@ header.index{
     border: none;
     outline: none;
 }
+.search_button{
+    display: block !important;
+}
+.lk_button{
+    background: transparent;
+    border: unset;
+    color: white;
+    padding: 0;
+}
+.lk_button:hover{
+    color: var(--color1);
+}
 .search_area button{
     background: white;
     border: none;
@@ -219,10 +235,34 @@ header.index{
 }
 .nav_item:hover{
 color: var(--color1);
-transform: scale(1.1);
+/*transform: scale(1.1);*/
 }
 .dropdown-item:hover{
     border-bottom: none !important;
+}
+
+.lk_popUp_header{
+    color: black;
+}
+.lk_popUp_footer{
+    justify-content: center;
+    color: black;
+}
+.lk_popUp_footer p{
+    font-size: 14px;
+}
+.lk_popUp_footer a{
+    color: #663300;
+}
+.lk_popUp_input{
+    border-radius: 15px;
+    padding: 15px;
+}
+.lk_forget_password{
+    font-size: 13px;
+}
+.lk_forget_password a{
+    color: var(--color2);
 }
 
 
@@ -385,6 +425,7 @@ transform: scale(1.1);
     padding: 10px;
     background: #ffa60d;
     border-radius: 30px;
+    border: none;
     text-align: center;
     color: black;
     font-weight: bold;

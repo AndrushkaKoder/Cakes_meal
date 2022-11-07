@@ -76,7 +76,7 @@
     transform: scale(1.1);
 }
 .basket_counter_input{
-    width: 15px;
+    width: 25px;
     border: none;
     margin: 0 20px;
     outline: none;
@@ -157,6 +157,7 @@
     color: black;
 }
 #userTotalPay{
+    outline: none;
     border: unset;
     padding: 5px;
     color: black;

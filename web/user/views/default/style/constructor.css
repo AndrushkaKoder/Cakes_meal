@@ -19,7 +19,7 @@
 }
 .constructor_img{
     position: absolute;
-    top: -120px;
+    top: 200px !important;
     right: 0;
     z-index: -5;
     width: 300px;
