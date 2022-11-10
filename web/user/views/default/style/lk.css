@@ -17,6 +17,11 @@
 .lk_wrapper_data_title{
     font-weight: bold;
 }
+.lk_button_exit{
+    width: 100px;
+    height: auto;
+    border-radius: 20px;
+}
 .lk_form{
     width: 70%;
     height: 90%;

@@ -63,6 +63,8 @@ abstract class Controller //абстрактный класс нужен тол�
 
         }
 
+        unset($_SESSION['res']);
+
         exit;
 
     }

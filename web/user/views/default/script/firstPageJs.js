@@ -73,15 +73,3 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 
 })
-
-const slideContent = document.querySelectorAll(".slide_content");
-const slides = document.querySelectorAll('.swiper-slide');
-document.addEventListener("scroll", ()=>{
-    for(el of slides){
-        if(el.classList.add('swiper-slide-active')){
-           for(item of slideContent){
-            item.classList.add('bounceInRight')
-           }
-        }
-    }
-})

@@ -757,6 +757,6 @@ function phoneValidate(item){
 
     item.addEventListener('input', _validate)
 
-    item.dispatchEvent(new Event('input'))
+    // item.dispatchEvent(new Event('input'))
 
 }

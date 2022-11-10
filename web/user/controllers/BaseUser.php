@@ -2,6 +2,7 @@
 
 namespace web\user\controllers;
 
+use core\exceptions\RouteException;
 use web\user\helpers\CartHelper;
 use web\user\helpers\CatalogHelper;
 use web\user\models\Model;
@@ -18,6 +19,8 @@ abstract class BaseUser extends \core\system\Controller
     protected function commonData(){
 
         $this->model = Model::instance();
+
+        $this->checkAuth();
 
         $this->getCartData();
 
@@ -368,5 +371,42 @@ abstract class BaseUser extends \core\system\Controller
         return null;
 
     }
+
+    protected function wordsForCounter($counter, $arrElement = 'products'){
+
+        $arr = [
+            'products' => [
+                'Товаров',
+                'Товар',
+                'Товара'
+            ],
+            'duration' => [
+                'дней',
+                'день',
+                'дня'
+            ],
+        ];
+
+        if(is_array($arrElement)){
+
+            $arr = $arrElement;
+
+        }else{
+
+            $arr = $arr[$arrElement] ?? array_shift($arr);
+
+        }
+
+        $char = (int)substr($counter, -1);
+
+        $counter = (int)substr($counter, -2);
+
+        if(($counter >= 10 && $counter <= 20) || ($char >= 5 && $char <= 9) || $char === 0) return $arr[0];
+        elseif ($char === 1) return $arr[1];
+        else return $arr[2];
+
+    }
+
+
 
 }

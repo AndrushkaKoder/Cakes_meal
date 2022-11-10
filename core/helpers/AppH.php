@@ -331,4 +331,32 @@ class AppH
 
     }
 
+    public static function redirect($http = false, $code = false){
+
+        if($code){
+            $codes = ['301' => 'HTTP/1.1 301 Move Permanently'];
+
+            if($codes[$code]) header($codes[$code]);
+        }
+
+        if($http) $redirect = $http;
+        else $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : \App::PATH();
+
+        header("Location: $redirect");
+
+        exit;
+    }
+
+    public static function clearNum($num){ // обработка входящих чисел. Вернет или число в нужной форме, или 0
+
+        return (isset($num) && $num && preg_match('/\d/', $num)) ? preg_replace('/[^\d.]/', '', str_replace(',', '.', $num)) * 1 : 0;
+
+    }
+
+    public static function clearStr(string $str, $ecran = true) :string{ //обработка строк и защита от инъекций
+
+        return $ecran ? str_replace(array("\\","\0","\n","\r","\x1a","'",'"'),array("\\\\","\\0","\\n","\\r","\Z","\'",'\"'), trim(strip_tags($str))) : trim(strip_tags($str));
+
+    }
+
 }

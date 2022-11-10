@@ -43,24 +43,11 @@ class IndexController extends BaseUser //будет наследоваться �
             'order'=>'menu_position'
         ]);
 
-
-
-        if(!empty($_POST['phoneLogin'] && !empty($_POST['passwordLogin']))){
-            $phoneLogin = $_POST['phoneLogin'];
-            $passwordLogin = md5($_POST['passwordLogin']);
-
-            $login = $this->model->get('users', [
-                'where'=>[
-                    'phone' => $phoneLogin,
-                    'password' => $passwordLogin
-                ]
-            ]);
-
             $a=1;
-        }
 
 
-        return compact('sales', 'tizzers', 'assortment', 'backgroundImage', 'questions', 'login');
+
+        return compact('sales', 'tizzers', 'assortment', 'backgroundImage', 'questions');
 
     }
 

@@ -60,21 +60,22 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
     }
 
-    const slidesContentText = document.querySelectorAll('.slide_content');
+    const registrationTitles = document.querySelectorAll('.login_registration .modal-title')
 
-    function showSlideTextAnimate(){
-        slidesContentText.forEach((slide, i)=>{
-            slide.classList.add('bounceInUp')
-            setTimeout(()=>{
-                slide.classList.remove('bounceInUp')
-            },1000)
-
-
+    registrationTitles.forEach((item, i)=>{
+        if(!i){
+            item.style.borderBottom = '2px solid orange'
+        }
+        item.addEventListener('click', ()=>{
+            let forms = item.closest('.login_registration').querySelectorAll('form')
+            let other = +!i
+            forms[i].style.display = 'block'
+            forms[other].style.display = 'none'
+            registrationTitles[other].style.borderBottom = 'none'
+            item.style.borderBottom = '2px solid orange'
+            console.log(i, !i, +!i)
         })
-    }
-
-    showSlideTextAnimate()
-
+    })
 
 })
 

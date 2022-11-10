@@ -60,50 +60,81 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
 
 
                 <!--попап регистрации-->
-                <button type="button" class="nav_item lk_button" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                <?php if(!$this->userData):?>
+                <button type="button" class="nav_item lk_button" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                     <i class="fa-solid fa-user"></i>
                 </button>
-
-                <div class="modal fade"  id="exampleModal" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <?php else:?>
+                    <a href="<?=$this->alias('lk')?>" class="nav_item search_button"> <i class="fa-solid fa-user"></i></a>
+                <?php endif;?>
+                <div class="modal fade login_registration"  id="exampleModal1" tabindex="1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header lk_popUp_header">
-                                <h1 class="modal-title fs-5" id="exampleModalLabel">Войти в аккаунт</h1>
+                               <div class="lk_popUp_titles d-flex justify-content-evenly" style="width: 100%">
+                                   <span class="modal-title fs-5" style="cursor: pointer" id="exampleModalLabel">Войти в аккаунт</span>
+                                   <span class="modal-title fs-5" style="cursor: pointer" id="exampleModalLabel">Регистрация</span>
+                               </div>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <div class="modal-body">
 
-
-                                <form action="" method="post">
+                                <!--форма авторизации-->
+                                <form action="<?=$this->alias(['login'=>'login'])?> " method="post">
                                     <div class="mb-3">
-                                        <input type="phone" name="phoneLogin" class="form-control lk_popUp_input" placeholder="Телефон">
+                                        <input type="text" name="login" class="form-control lk_popUp_input" placeholder="Телефон или e-mail">
                                     </div>
                                     <div class="mb-3">
-                                        <input type="password" name="passwordLogin" class="form-control lk_popUp_input" placeholder="Пароль">
+                                        <input type="password" name="password" class="form-control lk_popUp_input" placeholder="Пароль">
                                     </div>
-                                    <?php if(!$login):?>
-                                        <div class="alert alert-danger m-3 text-center" role="alert">
-                                            <?='неверный логин или пароль'?> <br>
-                                            <span class="lk_forget_password">Забыли пароль? <a href="">восстановить</a></span>
-                                        </div>
 
-                                    <?php else:?>
-                                        <div class="alert alert-success m-3 text-center" role="alert">
-                                            <?='Добро пожаловать'?> <br>
-                                        </div>
-                                    <?php endif;?>
 
                                     <div class="m-3 text-center">
                                         <button type="submit" class="assortment_button">Войти</button>
                                     </div>
                                 </form>
+                                <!--форма авторизации-->
+
+
+                                <!--форма регистрации-->
+                                <form action="<?=$this->alias(['login'=>'registration'])?> " method="post" class="register_form" style="display: none">
+                                    <div class="mb-3">
+                                        <p class="login_description text-center">Имя</p>
+                                        <input type="text" class="form-control" name="name" placeholder="Имя" required value="">
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="login_description text-center">Телефон</p>
+                                        <input type="tel" class="form-control" name="phone" required placeholder="Телефон">
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="login_description text-center">E-mail</p>
+                                        <input type="email" class="form-control" name="email" required placeholder="E-mail">
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="login_description text-center">Дата рождения</p>
+                                        <input type="date" class="form-control" name="birthday" id="birthday" placeholder="Это для подарка Вам">
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="login_description text-center">Пароль</p>
+                                        <input type="password" class="form-control" name="password"  required placeholder="Пароль">
+                                    </div>
+                                    <div class="mb-3">
+                                        <p class="login_description text-center">Повторите пароль</p>
+                                        <input type="password" class="form-control" name="confirm_password" required placeholder="Повторите пароль">
+                                    </div>
+
+
+                                    <label for="data_confirm" class="m-3 text-center" data-confirm>
+                                        <input id="data_confirm" type="checkbox" required checked>
+                                        <p class="privacy_descr">Я согласен(согласна) на обработку <a href="<?=$this->alias('privacy')?>" class="privacy_basket" target="_blank"> персональных данных</a></p>
+                                    </label>
+                                    <button type="submit" class="assortment_button">Регистрация</button>
+                                </form>
+                                <!--форма регистрации-->
 
 
                             </div>
-                            <div class="modal-footer lk_popUp_footer text-start">
-                               <p>Нет аккаунта? <a href="<?=$this->alias('login')?>">Регистрация</a></p>
 
-                            </div>
                         </div>
                     </div>
                 </div>

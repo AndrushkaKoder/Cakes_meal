@@ -264,6 +264,12 @@ color: var(--color1);
 .lk_forget_password a{
     color: var(--color2);
 }
+.privacy_descr{
+    color: black;
+}
+.register_form input[type="checkbox"]{
+    font-size: 18px;
+}
 
 
 /*СЛАЙДЕР*/
