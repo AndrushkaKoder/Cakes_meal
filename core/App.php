@@ -16,7 +16,7 @@ final class App //final - класс от которого нельзя насл
 
     private function __construct(){} // делаем приватный конструктор для того, чтобы нельзя было сделать new App
 
-    public static function init() : void{ //метод точки входа. В нём вызываем подключение путей и динамическое подключение классов,
+    public static function init($run = true) : void{ //метод точки входа. В нём вызываем подключение путей и динамическое подключение классов,
         //и метод конфигурации приклады и вызываем метод run
 
         self::setPathes(); // подключение путей appH
@@ -37,34 +37,33 @@ final class App //final - класс от которого нельзя насл
 
         }
 
-        self::run(); // запуск приложения
+        session_start();
+
+        $run && self::run(); // запуск приложения
 
     }
 
     public static function run(){ // публичный статичный метод запуска приложения
 
-        session_start();
+        self::execute(\core\system\Router::setRoute()); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
 
-        $route = \core\system\Router::createRoute(); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
+    }
 
-        $controller = self::getWebPath() . trim(self::WEB('controllersPath', 'userControllers'), '/') . '/' . $route['controller'];
+    public static function execute($route, $arguments = []){
 
-        $controller = str_replace('/', '\\', $controller); // в $controller залетает "\web\user\controllers\indexController"
-        
-        
+        $route['controller'] = $route['controller'] ?? \core\system\Router::getController();
 
+        $route['parameters'] = $route['parameters'] ?? \core\system\Router::getParameters();
+
+        $controller = str_replace('/', '\\', $route['controller']); // в $controller залетает "\web\user\controllers\indexController"
 
         try{
-//            $rf = new \ReflectionFunction ('Vasya');
-//            $rFile = $rf->getFileName();
-//            $rLine = $rf->getStartLine();
-//            $a = (new \ReflectionFunction('Vasya'))->getFileName();
 
             //  здесь ложится отражение метода request у класса $controller
             $object = new \ReflectionMethod($controller, 'request'); // Проверка есть ли метод request у $controller
 
             //по средствам метода ivoke отражение request вызывается у нового экземпляра класса $controller
-            $object->invoke(new $controller, $route['parameters'] ?? []); //invoke - метод объекта Reflection, который вызвает метод, поданый в конструктор, создавая при этом новый экземпляр класса
+            return $object->invoke(new $controller, $route['parameters'] ?? [], $arguments); //invoke - метод объекта Reflection, который вызвает метод, поданый в конструктор, создавая при этом новый экземпляр класса
 
         }catch (ReflectionException $e){
 
@@ -106,13 +105,15 @@ final class App //final - класс от которого нельзя насл
 
                 include_once (self::FULL_PATH() . $fileName . '.php'); //инклюдим файл (класс) по полному пути
 
-            }elseif (is_readable(self::FULL_PATH() . 'vendor/autoload.php')){ //если проект лежит в папке Vendor
-
-                include_once self::FULL_PATH() . 'vendor/autoload.php'; //инклюдим файл (класс) из папки Vendor
-
             }
 
         });
+
+        if (is_readable(self::FULL_PATH() . 'vendor/autoload.php')){ //если проект лежит в папке Vendor
+
+            include_once self::FULL_PATH() . 'vendor/autoload.php'; //инклюдим файл (класс) из папки Vendor
+
+        }
 
     }
 
@@ -172,6 +173,38 @@ final class App //final - класс от которого нельзя насл
         // написать метод
     }
 
+    public static function getWebConfig(){
+
+        $mode = \core\system\Router::getMode();
+
+        $args = func_get_args();
+
+        if(($key = array_search($mode, $args)) !== false){
+
+            unset($args[$key]);
+
+            $args = array_values($args);
+
+        }
+
+        $mode = strtoupper($mode);
+
+        if(array_key_exists($mode, self::$properties)){
+
+            $res = self::$mode(...$args);
+
+            if($res){
+
+                return $res;
+
+            }
+
+        }
+
+        return self::WEB(...func_get_args());
+
+    }
+
     public static function __callStatic(string $name, array $arguments){ //магический метод получения данных из /core/config
 
         if(!array_key_exists($name, self::$properties)){
@@ -192,7 +225,7 @@ final class App //final - класс от которого нельзя насл
 
                     if(!array_key_exists($item, $data)){
 
-                        return $data;
+                        return null;
 
                     }
 

@@ -19,21 +19,32 @@ abstract class Controller //абстрактный класс нужен тол�
     protected string $controller = '';
 
     // пройти по функции request и понять как формируется переменная $method
-    public function request(array $arguments) : void{
+    public function request(array $arguments, $returnResult = false){
 
 
-        $method = 'action' . ucfirst(str_ireplace('action', '', \App::WEB('default', 'user', 'method'))); // ucfirst приводит первый символ строки к верхнему регистру. app::web - web.php
         // в $method формируется строка 'actionInput'
         $this->parameters = $arguments; // принимаем
 
-        if(method_exists($this, 'commonData') && empty($this->skipCommonData)){
+        if(!empty(\App::getWebConfig('default', Router::getMode(), 'commonMethod')) && method_exists($this, \App::getWebConfig('default', Router::getMode(), 'commonMethod')) && empty($this->skipCommonData)){
+
             $this->commonData();
+
         }
+
+        $method = Router::getInputMethod();
 
         if(!method_exists($this, $method)){ //существует ли метод класса
 
             throw new RouteException('Method ' . $method . ' doesn`t exists in ' . (new \ReflectionClass($this))->getName());
             // если нет, создаём новое исключение - метода не существует
+        }
+
+        $data = $this->$method();
+
+        if($returnResult){
+
+            return $data;
+
         }
 
         $this->renderPage($this->$method()); //передаем в renderPage собравшийся метод
@@ -42,8 +53,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
     protected function renderPage(?array $data){  //в data ложатся комментарии со страницы
 
-
-        $layOutPath = \App::WEB('layout', 'template'); //шаблон, лежащий в web.php
+        $layOutPath = \App::getWebConfig('layout', Router::getMode(), 'template') ?: \App::getWebConfig('layout', 'template'); //шаблон, лежащий в web.php
 
         if((!$layOutPath || $this->skipRenderingTemplates)){
 
@@ -52,7 +62,7 @@ abstract class Controller //абстрактный класс нужен тол�
         }else{
 
             $layOutPathArr = preg_split('/[>\s*<]+/', $layOutPath, 0, PREG_SPLIT_NO_EMPTY); //сюда залетает массив ['header', 'template', 'sidebar', 'footer']
-    $a=1;
+
             foreach ($layOutPathArr as $item){ //перебираем массив шаблонов
 
                 $template = $this->createTemplate($item, $data); //формируем шаблон
@@ -87,23 +97,22 @@ abstract class Controller //абстрактный класс нужен тол�
 
     private function searchTemplateFile(string $file) : ?string{ //Ожидаем аргумент string, а возвращаем string || null
 
-        $viewsPath = preg_replace('/\/{2,}/', '/', \App::getWebPath(true) . trim(\App::WEB('views'), '/') . '/');
+        $common = \App::getWebConfig(Router::getMode(), 'common') ?: \App::getWebConfig('common');
 
-        $common = \App::WEB('common') ? trim(\App::WEB('common'), '/') . '/' : '';
+        $common && $common = trim($common, '/') . '/';
 
-        return is_readable($viewsPath . $common . '/' . $file . '.php') ? $viewsPath . $common . $file :
-            (is_readable($viewsPath . $file . '.php') ? $viewsPath . $file . '.php' : null);
+        return is_readable($this->getViewsPath() . $common . '/' . $file . '.php') ? $this->getViewsPath() . $common . $file :
+            (is_readable($this->getViewsPath() . $file . '.php') ? $this->getViewsPath() . $file . '.php' : null);
 
     }
 
     protected function render(?string $path = '', ?array $parameters = []) : string{
 
         $parameters && extract($parameters);
-        $a=1;
 
         if(!$path){
 
-            $path = \App::getWebPath(true) . trim(\App::WEB('views'), '/') . '/' . $this->getController();
+            $path = $this->getViewsPath() . $this->getController();
 
         }
 
@@ -132,9 +141,9 @@ abstract class Controller //абстрактный класс нужен тол�
 
     protected function getStyles() : void{
 
-        if(!empty(\App::WEB('css'))){
+        if(!empty(\App::getWebConfig('css'))){
 
-            $path = trim(\App::WEB('views'), '/') . '/' . trim(\App::WEB('css'), '/') . '/';
+            $path = \AppH::singleSlashesTrim($this->getViewsPath(), trim(\App::getWebConfig('css'))) . '/';
 
             $this->showScriptsStyles($path);
 
@@ -143,18 +152,20 @@ abstract class Controller //абстрактный класс нужен тол�
     }
 
     protected function getTemplateImg(){
-        if(!empty(\App::WEB('img'))){
+
+        if(!empty(\App::getWebConfig('img'))){
+
             return \App::getWebPath() .\App::WEB('views') .'/'. trim(\App::WEB('img'), '/') . '/';
+
         }
+
     }
-
-
 
     protected function getScripts(){
 
-        if(!empty(\App::WEB('js'))){
+        if(!empty(\App::getWebConfig('js'))){
 
-            $path = trim(\App::WEB('views'), '/') . '/' . trim(\App::WEB('js'), '/') . '/';
+            $path = \AppH::singleSlashesTrim($this->getViewsPath(), trim(\App::getWebConfig('js'))) . '/';
 
             $this->showScriptsStyles($path, 'js');
 
@@ -178,13 +189,33 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if($template){
 
-            \AppH::scanDir(\App::getWebPath(true) . $path, function ($file) use ($path, $template){
+            $templatePath = \AppH::withSlashes(\App::PATH(), \App::getWebConfig('views'), \App::getWebConfig($type));
 
-                echo str_replace('#path#', \App::getWebPath() . $path . $file, $template);
+            \AppH::scanDir($path, function ($file) use ($path, $template, $templatePath){
+
+                echo str_replace('#path#', $templatePath . $file, $template);
 
             });
 
         }
+
+    }
+
+    protected function getViewsPath() : string{
+
+        static $viewsPath = '';
+
+        if($viewsPath){
+
+            return $viewsPath;
+
+        }
+
+        $property = \App::getWebConfig(Router::getMode(), 'views') ?: \App::getWebConfig('views');
+
+        $property && $viewsPath = preg_replace('/\/{2,}/', '/', \App::FULL_PATH() . '/' . trim($property, '/') . '/');
+
+        return $viewsPath;
 
     }
 

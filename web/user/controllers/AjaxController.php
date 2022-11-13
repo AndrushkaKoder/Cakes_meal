@@ -4,7 +4,7 @@ namespace web\user\controllers;
 
 class AjaxController extends BaseUser
 {
-    protected $ajaxData = [];
+    public $ajaxData = [];
 
     protected function actionInput(){
 
@@ -17,6 +17,8 @@ class AjaxController extends BaseUser
         if(!empty($_GET['ajax']) && $_GET['ajax'] === 'add_to_cart'){
 
             return $this->addToCart();
+
+
         }
 
     }

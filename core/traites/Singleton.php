@@ -24,17 +24,17 @@ trait Singleton
 
     static public function instance(){
 
-        if(self::$_instance instanceof self){
-            return self::$_instance;
+        if(static::$_instance instanceof static){
+            return static::$_instance;
         }
 
-        self::$_instance = new self;
+        static::$_instance = new static;
 
         if(method_exists(self::$_instance, 'connect')){
-            self::$_instance->connect();
+            static::$_instance->connect();
         }
 
-        return self::$_instance;
+        return static::$_instance;
     }
 
 }

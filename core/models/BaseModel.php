@@ -3,9 +3,12 @@
 namespace core\models;
 
 use core\exceptions\DbException;
+use core\traites\Singleton;
 
 abstract class BaseModel extends BaseModelMethods
 {
+
+    use Singleton;
 
     protected $db;
     protected $bufferingErrors = false;

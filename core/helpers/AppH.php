@@ -238,14 +238,18 @@ class AppH
     }
 
     public static function correctPath(){ //метод корректировки путей
+
         $path = '';
+
         foreach (func_get_args() as $item){
+
             $path .= '/' . $item . '/';
+
         }
+
         return preg_replace('/\/{2,}/', '/', $path);
+
     }
-
-
 
     public static function translit($str){ //метод транслитерации
 
@@ -318,10 +322,26 @@ class AppH
 
     }
 
+    public static function setClassPath($path, $controllerName, $asNamespace = true){
+
+        $controller = $path . '/' . $controllerName;
+
+        $controller = preg_replace('/\/{2,}/', '/', $controller);
+
+        if($asNamespace){
+
+            $controller = str_replace('/', '\\', $controller);
+
+        }
+
+        return $controller;
+
+    }
+
 
     public static function isPost(){
 
-        return $_SERVER['REQUEST_METHOD'] == 'POST';
+        return $_SERVER['REQUEST_METHOD'] === 'POST';
 
     }
 

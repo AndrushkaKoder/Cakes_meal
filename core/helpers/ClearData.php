@@ -18,4 +18,42 @@ class ClearData
 
     }
 
+    public static function singleSlashes(){
+
+        $str = '';
+
+        foreach (func_get_args() as $item){
+
+            $str .= $item . '/';
+
+        }
+
+        return preg_replace('/\/{2,}/', '/', $str);
+
+    }
+
+    public static function singleSlashesLtrim(){
+
+        return ltrim(self::singleSlashes(...func_get_args()), '/');
+
+    }
+
+    public static function singleSlashesRtrim(){
+
+        return rtrim(self::singleSlashes(...func_get_args()), '/');
+
+    }
+
+    public static function singleSlashesTrim(){
+
+        return trim(self::singleSlashes(...func_get_args()), '/');
+
+    }
+
+    public static function withSlashes(){
+
+        return '/' . trim(self::singleSlashes(...func_get_args()), '/') . '/';
+
+    }
+
 }

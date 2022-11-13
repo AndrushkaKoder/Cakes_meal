@@ -3,22 +3,35 @@
 return [
     'web' => [
         'path' => '',
-        'views' => 'user/views/default',
         'common' => 'common',
-        'css' => 'style',
-        'img'=>'images',
-        'js' => 'script',
+        'css' => 'css',
+        'img'=>'img',
+        'js' => 'js',
         'end_slash' => '/',
         'upload_dir' => 'userFiles',
+        'settings' => [
+            'path' => 'settings'
+        ],
+        'admin' => [
+            'alias' => 'admin',
+        ],
+        'user' => [
+            'hrUrl' => true
+        ],
         'default' => [
             'user' => [
                 'controller' => 'index',
-                'method' => 'input',
-
+                'method' => 'actionInput',
+                'commonMethod' => 'commonData',
+            ],
+            'admin' => [
+                'controller' => 'index',
+                'method' => 'inputData'
             ]
         ],
         'controllersPath' => [
-          'userControllers' => 'user/controllers'
+            'user' => 'web/user/controllers',
+            'admin' => 'admin/controllers'
         ],
         'layout' => [
             'template' => '<header><template><footer>'
