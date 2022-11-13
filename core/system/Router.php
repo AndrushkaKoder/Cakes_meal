@@ -15,6 +15,9 @@ class Router
         // если будет вызов custom-site, имя контроллера сформируется как CustomSiteController
         $parameters = $url;
 
+
+
+
         return compact('controller', 'parameters');
 
     }

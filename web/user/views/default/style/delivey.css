@@ -1,0 +1,17 @@
+.delivery_subtitle{
+    font-size: 14px;
+}
+.delivery_subtitle a{
+    color: #663300;
+}
+.delivery_description{
+    padding: 30px;
+    line-height: 3em;
+}
+.delivery_description li{
+    list-style: square outside;
+}
+.delivery_address{
+    font-size: 14px;
+    text-align: center;
+}

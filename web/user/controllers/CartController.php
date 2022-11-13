@@ -16,21 +16,21 @@ class CartController extends BaseUser
     {
 
 
-        if(!empty($this->parameters['alias'])){
+        if(!empty($this->parameters[0])){
 
-            switch ($this->parameters['alias']){
+            switch ($this->parameters[0]){
 
-                case 'delete':
+                case 'remove':
 
-                    if(!empty($this->parameters['id'])){
+                    if(!empty($this->parameters[2])){
 
-                        $this->deleteCartData($this->parameters['id'], $this->parameters['offers'] ?? null);
+                        $this->deleteCartData($this->parameters[2], $this->parameters['offers'] ?? null);
 
                     }else{
 
                         $this->clearCart();
 
-                        $this->redirect();
+                        \AppH::redirect($this->alias('cart'));
 
                     }
 

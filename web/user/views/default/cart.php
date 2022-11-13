@@ -18,7 +18,7 @@
 
     <section class="basket">
 
-        <form action="<?=$this->alias(['cart'=>'order'])?>" method="POST" class="basketForm">
+        <form action="<?=$this->alias('order')?>" method="POST" class="basketForm">
             <div class="container">
 
                 <div class="row">

@@ -47,7 +47,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
 
                     <li class="header_nav_list_item"><a href="<?=$this->alias('constructor')?>">Конструктор</a></li>
                     <li class="header_nav_list_item"><a href="<?=$this->alias('about')?>">О нас</a></li>
-                    <li class="header_nav_list_item"><a href="#footer">Контакты</a></li>
+                    <li class="header_nav_list_item"><a href="<?=$this->alias('delivery')?>">Доставка</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12 d-flex justify-content-center align-items-center" data-nav_wrapper style="position: relative">

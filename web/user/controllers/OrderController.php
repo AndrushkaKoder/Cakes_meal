@@ -3,11 +3,14 @@
 namespace web\user\controllers;
 
 
+use web\user\helpers\ValidationHelper;
+
 class OrderController extends BaseUser
 {
 
+    use ValidationHelper;
 
-    protected function inputData(){
+    protected function actionInput(){
 
 
         if(\AppH::isPost()){
