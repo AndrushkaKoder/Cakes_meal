@@ -120,48 +120,54 @@ class Router
 
             self::setData($url);
 
-            if(!empty($url[1])){
-
-                $count = count($url);
-
-                $key = '';
-
-                if(!$hrUrl){
-
-                    $i = 1;
-
-                }else{
-
-                    self::$parameters['alias'] = \AppH::clearStr($url[1]);
-
-                    $i = 2;
-
-                }
-
-                for( ; $i < $count; $i++){
-
-                    if(!$key){
-
-                        $key = $url[$i];
-
-                        self::$parameters[$key] = '';
-
-                    }else{
-
-                        self::$parameters[$key] = $url[$i];
-
-                        $key = '';
-
-                    }
-                }
-
-            }
+            self::setParameters($url, $hrUrl);
 
             return ['controller' => self::$controller, 'parameters' => self::$parameters];
 
         }else{
 
             throw new RouteException('Не корректная директория сайта', 1);
+
+        }
+
+    }
+
+    protected static function setParameters($urlArr, $hrUrl){
+
+        if(!empty($url[1])){
+
+            $count = count($url);
+
+            $key = '';
+
+            if(!$hrUrl){
+
+                $i = 1;
+
+            }else{
+
+                self::$parameters['alias'] = \AppH::clearStr($url[1]);
+
+                $i = 2;
+
+            }
+
+            for( ; $i < $count; $i++){
+
+                if(!$key){
+
+                    $key = $url[$i];
+
+                    self::$parameters[$key] = '';
+
+                }else{
+
+                    self::$parameters[$key] = $url[$i];
+
+                    $key = '';
+
+                }
+            }
 
         }
 
