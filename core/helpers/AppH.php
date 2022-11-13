@@ -53,11 +53,17 @@ class AppH
     }
 
 
-    public static function scanDir(string $path, callable $callback){
+    public static function scanDir(string $path, callable $callback, $sort = false){
 
         if(file_exists($path)){
 
             $list = scandir($path); //сюда возвращается список директорий
+
+            if($sort){
+
+                sort($list);
+
+            }
 
             foreach ($list as $file){
 

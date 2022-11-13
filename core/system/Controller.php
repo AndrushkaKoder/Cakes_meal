@@ -193,9 +193,13 @@ abstract class Controller //абстрактный класс нужен тол�
 
             \AppH::scanDir($path, function ($file) use ($path, $template, $templatePath){
 
-                echo str_replace('#path#', $templatePath . $file, $template);
+                if(!preg_match('/^#/', $file)){
 
-            });
+                    echo str_replace('#path#', $templatePath . $file, $template);
+
+                }
+
+            }, true);
 
         }
 
