@@ -549,11 +549,10 @@ color: var(--color1);
 .footer{
     margin-top:100px;
     background: linear-gradient(to top left, #884003, #010101);
-    min-height: 20vh;
-    padding: 20px;
+    min-height: 10vh;
 }
 .fa-brands{
-    font-size:40px;
+    font-size:30px;
     transition: .5s ease all;
 }
 .fa-brands:hover{
@@ -577,6 +576,7 @@ color: var(--color1);
     text-decoration:underline; 
 }
 .footer_span{
+    font-size: 14px;
     margin: 0 20px;
     color: aliceblue;
 }
@@ -714,6 +714,7 @@ color: var(--color1);
         height: 330px;
     }
     .fa-brands{
+        font-size: 14px;
         padding: 20px 0;
     }
     .choco_img{

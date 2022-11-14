@@ -1,5 +1,5 @@
 .delivery_subtitle{
-    font-size: 14px;
+    font-size: 16px;
 }
 .delivery_subtitle a{
     color: #663300;
@@ -14,4 +14,21 @@
 .delivery_address{
     font-size: 14px;
     text-align: center;
+}
+.delivery_info{
+    font-size: 16px;
+    font-weight: bold;
+    color: #663300;
+}
+
+@media screen and (max-width: 767px){
+.delivery_description{
+    line-height: 2em;
+}
+}
+
+@media screen and (max-width: 575px){
+    .delivery_description{
+        padding: 0;
+    }
 }
