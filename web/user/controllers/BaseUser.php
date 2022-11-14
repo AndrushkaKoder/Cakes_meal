@@ -127,7 +127,7 @@ abstract class BaseUser extends \core\system\Controller
 
         if($img){
 
-            $path = \AppH::correctPath(\App::$webDirectory, \App::PATH(), \App::WEB('upload_dir')) . $img;
+            $path = \AppH::correctPath(\App::PATH(), \App::WEB('upload_dir')) . $img;
 
             $class = isset($set['class']) && $set['class'] ?
                 ' class="' . (is_array($set['class']) ? implode(' ', $set['class']) : $set['class']) . '" ' : '';

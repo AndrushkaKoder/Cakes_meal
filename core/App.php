@@ -7,12 +7,14 @@ final class App //final - класс от которого нельзя насл
 {
 
 //    приватные свойства класса App
+
+    private static $model = null;
+
     private static array $properties = []; // приватное свойство 'СВОЙСТВА'
 
     private static string $configPath = 'config'; // путь до core/config
 
     public static string $webDirectory = 'web'; // путь относительно Корня до web.php
-
 
     private function __construct(){} // делаем приватный конструктор для того, чтобы нельзя было сделать new App
 
@@ -71,7 +73,7 @@ final class App //final - класс от которого нельзя насл
 
         }catch (\core\exceptions\RouteException $e){
 
-            exit($e->getMessage());
+            exit($e->showMessage());
 
         }
 
@@ -79,7 +81,7 @@ final class App //final - класс от которого нельзя насл
 
     private static function setPathes() : void{ //подключение путей
 
-        self::$properties['FULL_PATH'] = realpath(__DIR__ . '/../') . '/'; //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
+        self::$properties['FULL_PATH'] = str_replace('\\', '/', realpath(__DIR__ . '/../') . '/'); //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
 
         if(!empty($_SERVER['DOCUMENT_ROOT']) && strpos(self::$properties['FULL_PATH'], $_SERVER['DOCUMENT_ROOT']) === 0){
 
@@ -90,8 +92,6 @@ final class App //final - класс от которого нельзя насл
             self::$properties['PATH'] = '/'; //если вызов сделан из консоли
 
         }
-
-        include_once realpath(__DIR__) . '/helpers/AppH.php'; // возвращает реальный путь к дериктории (абсолютный). Относительно папки core подтягиваем класс appH
 
     }
 
@@ -108,6 +108,8 @@ final class App //final - класс от которого нельзя насл
             }
 
         });
+
+        include_once realpath(__DIR__) . '/helpers/AppH.php'; // возвращает реальный путь к дериктории (абсолютный). Относительно папки core подтягиваем класс appH
 
         if (is_readable(self::FULL_PATH() . 'vendor/autoload.php')){ //если проект лежит в папке Vendor
 
@@ -238,6 +240,22 @@ final class App //final - класс от которого нельзя насл
         }
 
         return $data;
+
+    }
+
+    public static function setModel($model){
+
+        if(!self::$model){
+
+            self::$model = $model;
+
+        }
+
+    }
+
+    public static function model(){
+
+        return self::$model;
 
     }
 

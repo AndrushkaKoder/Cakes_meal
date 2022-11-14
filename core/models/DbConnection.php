@@ -25,6 +25,7 @@ class DbConnection
     public static function mysqliConnection()
     {
         return self::$db = new \mysqli(\App::DB('host'), \App::DB('user'), \App::DB('password'), \App::DB('dbName'));
+
     }
 
     public static function PDOQuery(string $query, $crud = 'c', $return_id = false, ?array $parameters = [])
@@ -76,7 +77,9 @@ class DbConnection
 
         } catch (\PDOException $e) {
 
-            exit($e->getMessage());
+            throw new DbException('Ошибка в SQL запросе: '
+                . $e->getMessage()
+            );
 
         }
     }
@@ -92,6 +95,7 @@ class DbConnection
             throw new DbException('Ошибка в SQL запросе: '
                 . $query . "\r\n" . self::$db->errno . ' ' . self::$db->error
             );
+
         }
 
         $reConnect = false;

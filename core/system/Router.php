@@ -134,9 +134,9 @@ class Router
 
     protected static function setParameters($urlArr, $hrUrl){
 
-        if(!empty($url[1])){
+        if(!empty($urlArr[1])){
 
-            $count = count($url);
+            $count = count($urlArr);
 
             $key = '';
 
@@ -146,7 +146,7 @@ class Router
 
             }else{
 
-                self::$parameters['alias'] = \AppH::clearStr($url[1]);
+                self::$parameters['alias'] = \AppH::clearStr($urlArr[1]);
 
                 $i = 2;
 
@@ -156,13 +156,13 @@ class Router
 
                 if(!$key){
 
-                    $key = $url[$i];
+                    $key = $urlArr[$i];
 
                     self::$parameters[$key] = '';
 
                 }else{
 
-                    self::$parameters[$key] = $url[$i];
+                    self::$parameters[$key] = $urlArr[$i];
 
                     $key = '';
 

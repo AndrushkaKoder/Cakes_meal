@@ -9,6 +9,7 @@ return [
         'js' => 'js',
         'end_slash' => '/',
         'upload_dir' => 'userFiles',
+        'log_dir' => 'log',
         'settings' => [
             'path' => 'settings'
         ],
@@ -31,7 +32,7 @@ return [
         ],
         'controllersPath' => [
             'user' => 'web/user/controllers',
-            'admin' => 'admin/controllers'
+            'admin' => 'core/admin/controllers'
         ],
         'layout' => [
             'template' => '<header><template><footer>'

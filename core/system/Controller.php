@@ -3,12 +3,12 @@
 namespace core\system; // ограничение видимости класса
 
 use core\exceptions\RouteException;
-use core\traites\BaseMethods;
+use core\traites\ShowDataHelper;
 
 abstract class Controller //абстрактный класс нужен только для наследования от него. Нельзя создать экземпляр абстрактного класса
 {
 
-    use BaseMethods;
+    use ShowDataHelper;
 
     protected array $parameters = [];
 
@@ -20,7 +20,6 @@ abstract class Controller //абстрактный класс нужен тол�
 
     // пройти по функции request и понять как формируется переменная $method
     public function request(array $arguments, $returnResult = false){
-
 
         // в $method формируется строка 'actionInput'
         $this->parameters = $arguments; // принимаем
@@ -112,7 +111,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!$path){
 
-            $path = $this->getViewsPath() . $this->getController();
+            $path = $this->getViewsPath() . \App::controller();
 
         }
 
@@ -143,7 +142,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!empty(\App::getWebConfig('css'))){
 
-            $path = \AppH::singleSlashesTrim($this->getViewsPath(), trim(\App::getWebConfig('css'))) . '/';
+            $path = \AppH::correctPathTrim($this->getViewsPath(), trim(\App::getWebConfig('css'))) . '/';
 
             $this->showScriptsStyles($path);
 
@@ -165,41 +164,9 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!empty(\App::getWebConfig('js'))){
 
-            $path = \AppH::singleSlashesTrim($this->getViewsPath(), trim(\App::getWebConfig('js'))) . '/';
+            $path = \AppH::correctPathTrim($this->getViewsPath(), trim(\App::getWebConfig('js'))) . '/';
 
             $this->showScriptsStyles($path, 'js');
-
-        }
-
-    }
-
-    private function showScriptsStyles($path, $type = 'css'){
-
-        $template = null;
-
-        if($type === 'css'){
-
-            $template = '<link rel="stylesheet" href="#path#">' . "\n";
-
-        }elseif ($type === 'js'){
-
-            $template = '<script src="#path#"></script>' . "\n";
-
-        }
-
-        if($template){
-
-            $templatePath = \AppH::withSlashes(\App::PATH(), \App::getWebConfig('views'), \App::getWebConfig($type));
-
-            \AppH::scanDir($path, function ($file) use ($path, $template, $templatePath){
-
-                if(!preg_match('/^#/', $file)){
-
-                    echo str_replace('#path#', $templatePath . $file, $template);
-
-                }
-
-            }, true);
 
         }
 

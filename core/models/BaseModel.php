@@ -46,9 +46,10 @@ abstract class BaseModel extends BaseModelMethods
 
         !$reConnect && $this->setStorage();
 
-       $connectMethod = \App::DB('driver').'Connection';
-       $this->db = DbConnection::$connectMethod();
-        $a=1;
+        $connectMethod = \App::DB('driver').'Connection';
+
+        $this->db = DbConnection::$connectMethod();
+
     }
 
     /**
@@ -69,6 +70,7 @@ abstract class BaseModel extends BaseModelMethods
     {
 
         $connectMethod = \App::DB('driver').'Query';
+
         return  DbConnection::$connectMethod($query, $crud, $return_id, $parameters);
 
 

@@ -31,7 +31,11 @@ trait Singleton
         static::$_instance = new static;
 
         if(method_exists(self::$_instance, 'connect')){
+
             static::$_instance->connect();
+
+            \App::setModel(static::$_instance);
+
         }
 
         return static::$_instance;

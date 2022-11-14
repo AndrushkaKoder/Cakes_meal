@@ -1,0 +1,202 @@
+@font-face {
+  font-family: "DoHeyon";
+  src: url(DoHyeon-Regular.ttf); }
+
+@font-face {
+  font-family: "Ubuntu";
+  src: url(Ubuntu-Regular.ttf);
+}
+
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.bg_logo {
+  background-image: url(../img/logo.svg);
+  -webkit-background-size: 32% 32%;
+          background-size: 32%;
+  background-repeat: no-repeat;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  background-position: 50% 50%;
+  opacity: .1; }
+
+.not_found-main {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.not_found-wrap {
+  -webkit-flex-basis: 1200px;
+      -ms-flex-preferred-size: 1200px;
+          flex-basis: 1200px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  color: #ffffff;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  height: 100vh;
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+  .not_found-wrap h1 {
+    text-align: center;
+    font-size: 140px;
+    margin: 0;
+    padding: 0;
+    text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15);
+    font-family: 'DoHeyon';
+    position: relative;
+    letter-spacing: 5px; }
+  .not_found-wrap span {
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    font-family: 'Ubuntu', sans-serif;
+    text-shadow: 0px 4px 3px rgba(0, 0, 0, 0.4), 0px 8px 13px rgba(0, 0, 0, 0.1), 0px 18px 23px rgba(0, 0, 0, 0.1); }
+
+.wraper_404 {
+  text-align: center;
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.go_back {
+  color: #ffffff;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 10px;
+  text-decoration: none;
+  width: 200px;
+  font-size: 18px;
+  margin-top: 40px;
+  -webkit-transition: all .4s;
+  -o-transition: all .4s;
+  transition: all .4s;
+  -webkit-border-radius: 2px;
+          border-radius: 2px;
+  -webkit-box-shadow: 0 0 1px #ffffff;
+          box-shadow: 0 0 1px #ffffff; }
+  .go_back:hover {
+    background: #ffffff;
+    color: #b31217;
+    -webkit-box-shadow: 0 0 2px #000000;
+            box-shadow: 0 0 2px #000000; }
+
+.b_grd {
+  background: #e52d27;
+  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to top, #b31217, #e52d27);
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-gradient(linear, left bottom, left top, from(#b31217), to(#e52d27));
+  background: -webkit-linear-gradient(bottom, #b31217, #e52d27);
+  background: -o-linear-gradient(bottom, #b31217, #e52d27);
+  background: linear-gradient(to top, #b31217, #e52d27);
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ }
+
+.rotate_sybml {
+  font-size: 140px !important;
+  -webkit-transform: rotate(40deg) !important;
+      -ms-transform: rotate(40deg) !important;
+          transform: rotate(40deg) !important;
+  font-family: 'DoHeyon' !important;
+  display: block;
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  right: -55%;
+  top: 2%;
+  text-shadow: 0 1px 0 #ccc, 0 2px 0 #c9c9c9, 0 3px 0 #bbb, 0 4px 0 #b9b9b9, 0 5px 0 #aaa, 0 6px 1px rgba(0, 0, 0, 0.1), 0 0 5px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.3), 0 3px 5px rgba(0, 0, 0, 0.2), 0 5px 10px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.2), 0 20px 20px rgba(0, 0, 0, 0.15) !important; }
+
+.not_found-txt {
+  margin-top: 40px !important;
+  position: relative; }
+
+.not-found_mask:after {
+  content: "";
+  position: absolute;
+  padding: 35px;
+  right: -6%;
+  top: 110%;
+  background: url(../img/share.svg);
+  -webkit-background-size: 100% 100%;
+          background-size: 100%;
+  background-repeat: no-repeat;
+  display: block;
+  -webkit-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg); }
+
+@media (max-width: 1057px) {
+  .bg_logo {
+    -webkit-background-size: 40% 40%;
+            background-size: 40%; } }
+
+@media (max-width: 761px) {
+  .bg_logo {
+    -webkit-background-size: 60% 60%;
+            background-size: 60%; } }
+
+@media (max-width: 489px) {
+  .bg_logo {
+    background-image: url(../img/logo.svg);
+    -webkit-background-size: 100% 100%;
+            background-size: 100%; }
+  .not_found-txt {
+    font-size: 30px !important;
+    padding-bottom: 8px !important; }
+  .not-found_mask:after {
+    right: 5%;
+    padding: 25px;
+    top: 100%;
+    -webkit-transform: rotate(-10deg);
+        -ms-transform: rotate(-10deg);
+            transform: rotate(-10deg); }
+  h1, .rotate_sybml {
+    font-size: 80px !important; }
+  .go_back {
+    width: 120px;
+    font-size: 14px;
+    margin-top: 20px; }
+  .not-found_mask {
+    position: relative;
+    width: 300px !important; } }
+
+.not-found_mask {
+  position: relative;
+  width: 420px;
+  opacity: 1;
+  margin-top: 10px !important; }
