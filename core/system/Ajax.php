@@ -17,7 +17,7 @@ class Ajax
 
     public static function route(){
 
-        $controller = \AppH::setClassPath(\App::WEB('controllersPath', 'user'), 'AjaxController');
+        $controller = \AppH::setClassPath(\App::config()->WEB('controllersPath', 'user'), 'AjaxController');
 
         self::$data = \AppH::isPost() ? $_POST : $_GET;
 
@@ -43,13 +43,13 @@ class Ajax
 
         }
 
-        $httpReferer = str_replace('/', '\/', $requestScheme . 's?://' . (preg_quote($_SERVER['SERVER_NAME'] . \App::PATH() . \App::WEB('admin', 'alias'))));
+        $httpReferer = str_replace('/', '\/', $requestScheme . 's?://' . (preg_quote($_SERVER['SERVER_NAME'] . \App::PATH() . \App::config()->WEB('admin', 'alias'))));
 
         if(isset(self::$data['ADMIN_MODE']) || preg_match('/^' . $httpReferer . '(\/?|$)/', $_SERVER['HTTP_REFERER'])){
 
             unset(self::$data['ADMIN_MODE']);
 
-            $controller = \AppH::setClassPath(\App::WEB('controllersPath', 'admin'), 'AjaxController');
+            $controller = \AppH::setClassPath(\App::config()->WEB('controllersPath', 'admin'), 'AjaxController');
 
         }
 

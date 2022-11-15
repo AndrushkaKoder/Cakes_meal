@@ -163,7 +163,7 @@ final class App //final - класс от которого нельзя насл
 
         static $fullPath = ''; //сюда придёт абсолютный путь относительно корня ОС 1 раз
 
-        !$path && $path = (!empty(self::WEB('path')) ? rtrim(self::WEB('path')) : '') . '/' . self::$webDirectory . '/';
+        !$path && $path = (!empty(self::config()->WEB('path')) ? rtrim(self::config()->WEB('path')) : '') . '/' . self::$webDirectory . '/';
 
         !$fullPath && $fullPath = preg_replace('/\/{2,}/', '/', str_replace('\\', '/', self::FULL_PATH() . $path));
 
@@ -173,6 +173,18 @@ final class App //final - класс от которого нельзя насл
 
     public function getTargetWebPath(){
         // написать метод
+    }
+
+    public static function PATH(){
+
+        return self::$properties['PATH'] ?? null;
+
+    }
+
+    public static function FULL_PATH(){
+
+        return self::$properties['FULL_PATH'] ?? null;
+
     }
 
     public static function getWebConfig(){
@@ -193,7 +205,7 @@ final class App //final - класс от которого нельзя насл
 
         if(array_key_exists($mode, self::$properties)){
 
-            $res = self::$mode(...$args);
+            $res = self::config()->$mode(...$args);
 
             if($res){
 
@@ -203,43 +215,67 @@ final class App //final - класс от которого нельзя насл
 
         }
 
-        return self::WEB(...func_get_args());
+        return self::config()->WEB(...func_get_args());
 
     }
 
-    public static function __callStatic(string $name, array $arguments){ //магический метод получения данных из /core/config
+    public static function config(){
 
-        if(!array_key_exists($name, self::$properties)){
+        static $config;
 
-            return null;
+        if(!$config){
 
-        }
+            $config = new class(self::$properties){
 
-        $data = self::$properties[$name];
+                private array $properties;
 
-        if(is_array($data)){
+                public function __construct($properties){
 
-            foreach ($arguments as $value){
+                    $this->properties = &$properties;
 
-                $value = (array)$value;
+                }
 
-                foreach ($value as $item){
+                public function __call($name, $arguments){
 
-                    if(!array_key_exists($item, $data)){
+                    if(!array_key_exists($name, $this->properties)){
 
                         return null;
 
                     }
 
-                    $data = $data[$item];
+                    $data = $this->properties[$name];
+
+                    if(is_array($data)){
+
+                        foreach ($arguments as $value){
+
+                            $value = (array)$value;
+
+                            foreach ($value as $item){
+
+                                if(!array_key_exists($item, $data)){
+
+                                    return null;
+
+                                }
+
+                                $data = $data[$item];
+
+                            }
+
+                        }
+
+                    }
+
+                    return $data;
 
                 }
 
-            }
+            };
 
         }
 
-        return $data;
+        return $config;
 
     }
 

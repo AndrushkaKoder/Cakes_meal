@@ -53,13 +53,13 @@ class Router
 
             $url = preg_split('/(\/)|(\?.*)/', $adress_str, 0, PREG_SPLIT_NO_EMPTY);
 
-            if(!empty($url[0]) && $url[0] === \App::WEB('admin', 'alias')){
+            if(!empty($url[0]) && $url[0] === \App::config()->WEB('admin', 'alias')){
 
                 array_shift($url);
 
-                self::$controller = \App::WEB('controllersPath', 'admin');
+                self::$controller = \App::config()->WEB('controllersPath', 'admin');
 
-                $hrUrl = \App::WEB('admin', 'hrUrls');
+                $hrUrl = \App::config()->WEB('admin', 'hrUrls');
 
                 self::$mode = 'admin';
 
@@ -72,7 +72,7 @@ class Router
 
                     $replacement = '';
 
-                    if(\App::WEB('end_slash')){
+                    if(\App::config()->WEB('end_slash')){
 
                         if(!preg_match('/\/(\?|$)/', $adress_str)){
 
@@ -110,9 +110,9 @@ class Router
 
                 }
 
-                $hrUrl = \App::WEB('user', 'hrUrl');
+                $hrUrl = \App::config()->WEB('user', 'hrUrl');
 
-                self::$controller = \App::WEB('controllersPath', 'user');
+                self::$controller = \App::config()->WEB('controllersPath', 'user');
 
                 self::$mode = 'user';
 
@@ -175,13 +175,13 @@ class Router
 
     protected static function setData(&$arr){
 
-        $controllerName = \App::WEB('default', self::$mode, 'controller');
+        $controllerName = \App::config()->WEB('default', self::$mode, 'controller');
 
         if(!empty($arr[0])){
 
-            if(\App::WEB('user', 'landingMode') && self::$mode !== 'admin'){
+            if(\App::config()->WEB('user', 'landingMode') && self::$mode !== 'admin'){
 
-                self::$controller .= \App::WEB('default', 'user', 'controller');
+                self::$controller .= \App::config()->WEB('default', 'user', 'controller');
 
                 $newArr = [];
 
@@ -197,9 +197,9 @@ class Router
 
             }else{
 
-                if(!empty(\App::ROUTES(self::$mode)[$arr[0]]) || !empty(\App::ROUTES($arr[0]))){
+                if(!empty(\App::config()->ROUTES(self::$mode)[$arr[0]]) || !empty(\App::config()->ROUTES($arr[0]))){
 
-                    $targetPath = \App::ROUTES(self::$mode)[$arr[0]] || \App::ROUTES($arr[0]);
+                    $targetPath = \App::config()->ROUTES(self::$mode)[$arr[0]] || \App::config()->ROUTES($arr[0]);
 
                     $route = explode('/', $targetPath);
 

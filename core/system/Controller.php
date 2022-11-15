@@ -134,7 +134,7 @@ abstract class Controller //абстрактный класс нужен тол�
     protected function getController() : string{
 
         return $this->controller ?:
-            $this->controller = preg_split('/_?controller/', strtolower(preg_replace('/([^A-Z])([A-Z])/', '$1_$2', (new \ReflectionClass($this))->getShortName())), 0, PREG_SPLIT_NO_EMPTY)[0];
+            $this->controller = preg_split('/_?controller/', strtolower(preg_replace('/([^A-Z])([A-Z])/', '$1_$2', pathinfo(Router::getController())['filename'])), 0, PREG_SPLIT_NO_EMPTY)[0];
 
     }
 
@@ -154,7 +154,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!empty(\App::getWebConfig('img'))){
 
-            return \App::getWebPath() .\App::WEB('views') .'/'. trim(\App::WEB('img'), '/') . '/';
+            return \App::getWebPath() .\App::config()->WEB('views') .'/'. trim(\App::config()->WEB('img'), '/') . '/';
 
         }
 

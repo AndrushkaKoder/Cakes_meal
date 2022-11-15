@@ -13,7 +13,7 @@ class DbConnection
     {
         try {
 
-            return self::$db = new \PDO('mysql:host=' . \App::DB('host') . ';dbname=' . \App::DB('dbName'), \App::DB('user'), \App::DB('password'));
+            return self::$db = new \PDO('mysql:host=' . \App::config()->DB('host') . ';dbname=' . \App::config()->DB('dbName'), \App::config()->DB('user'), \App::config()->DB('password'));
 
         } catch (\PDOException $e) {
 
@@ -24,7 +24,7 @@ class DbConnection
 
     public static function mysqliConnection()
     {
-        return self::$db = new \mysqli(\App::DB('host'), \App::DB('user'), \App::DB('password'), \App::DB('dbName'));
+        return self::$db = new \mysqli(\App::config()->DB('host'), \App::config()->DB('user'), \App::config()->DB('password'), \App::config()->DB('dbName'));
 
     }
 
