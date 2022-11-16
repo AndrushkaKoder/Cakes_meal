@@ -24,7 +24,7 @@ abstract class Controller //абстрактный класс нужен тол�
         // в $method формируется строка 'actionInput'
         $this->parameters = $arguments; // принимаем
 
-        if(!empty(\App::getWebConfig('default', Router::getMode(), 'commonMethod')) && method_exists($this, \App::getWebConfig('default', Router::getMode(), 'commonMethod')) && empty($this->skipCommonData)){
+        if(!empty(\App::config()->WEB('default', Router::getMode(), 'commonMethod')) && method_exists($this, \App::config()->WEB('default', Router::getMode(), 'commonMethod')) && empty($this->skipCommonData)){
 
             $this->commonData();
 
@@ -52,7 +52,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
     protected function renderPage(?array $data){  //в data ложатся комментарии со страницы
 
-        $layOutPath = \App::getWebConfig('layout', Router::getMode(), 'template') ?: \App::getWebConfig('layout', 'template'); //шаблон, лежащий в web.php
+        $layOutPath = \App::config()->WEB('layout', Router::getMode(), 'template') ?: \App::config()->WEB('layout', 'template'); //шаблон, лежащий в web.php
 
         if((!$layOutPath || $this->skipRenderingTemplates)){
 
@@ -96,7 +96,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
     private function searchTemplateFile(string $file) : ?string{ //Ожидаем аргумент string, а возвращаем string || null
 
-        $common = \App::getWebConfig(Router::getMode(), 'common') ?: \App::getWebConfig('common');
+        $common = \App::config()->WEB(Router::getMode(), 'common') ?: \App::config()->WEB('common');
 
         $common && $common = trim($common, '/') . '/';
 
@@ -140,9 +140,9 @@ abstract class Controller //абстрактный класс нужен тол�
 
     protected function getStyles() : void{
 
-        if(!empty(\App::getWebConfig('css'))){
+        if(!empty(\App::config()->WEB('css'))){
 
-            $path = \AppH::correctPathTrim($this->getViewsPath(), trim(\App::getWebConfig('css'))) . '/';
+            $path = \AppH::correctPathTrim($this->getViewsPath(), trim(\App::config()->WEB('css'))) . '/';
 
             $this->showScriptsStyles($path);
 
@@ -152,19 +152,21 @@ abstract class Controller //абстрактный класс нужен тол�
 
     protected function getTemplateImg(){
 
-        if(!empty(\App::getWebConfig('img'))){
+        if(!empty(\App::config()->WEB('img'))){
 
             return \App::getWebPath() .\App::config()->WEB('views') .'/'. trim(\App::config()->WEB('img'), '/') . '/';
 
         }
 
+        return '';
+
     }
 
     protected function getScripts(){
 
-        if(!empty(\App::getWebConfig('js'))){
+        if(!empty(\App::config()->WEB('js'))){
 
-            $path = \AppH::correctPathTrim($this->getViewsPath(), trim(\App::getWebConfig('js'))) . '/';
+            $path = \AppH::correctPathTrim($this->getViewsPath(), trim(\App::config()->WEB('js'))) . '/';
 
             $this->showScriptsStyles($path, 'js');
 
@@ -182,7 +184,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         }
 
-        $property = \App::getWebConfig(Router::getMode(), 'views') ?: \App::getWebConfig('views');
+        $property = \App::config()->WEB(Router::getMode(), 'views') ?: \App::config()->WEB('views');
 
         $property && $viewsPath = preg_replace('/\/{2,}/', '/', \App::FULL_PATH() . '/' . trim($property, '/') . '/');
 

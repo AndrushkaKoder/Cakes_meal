@@ -21,7 +21,7 @@ trait ShowDataHelper
 
         if($template){
 
-            $templatePath = \AppH::correctPath(\App::PATH(), \App::getWebConfig('views'), \App::getWebConfig($type), $innerDirectory);
+            $templatePath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('views'), \App::config()->WEB($type), $innerDirectory);
 
             \AppH::scanDir($path, function ($file) use ($path, $template, $templatePath, $type){
 
@@ -92,7 +92,7 @@ trait ShowDataHelper
 
         $backPageStr = !empty($pages['back']) ? ($pages['back'] == 1 ? $basePageStr : $str . $pages['back']) : '';
 
-        $template = $this->render((\AppH::correctPath($this->getViewsPath(), \App::getWebConfig('common')) . 'pagination'));
+        $template = $this->render((\AppH::correctPath($this->getViewsPath(), \App::config()->WEB('common')) . 'pagination'));
 
         if($template){
 

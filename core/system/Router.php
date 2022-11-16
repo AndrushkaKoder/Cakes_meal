@@ -12,7 +12,7 @@ class Router
 
     protected static ?string $method = null;
 
-    protected static string $mode;
+    protected static string $mode = 'admin';
 
     protected static array $parameters = [];
 
@@ -61,10 +61,9 @@ class Router
 
                 $hrUrl = \App::config()->WEB('admin', 'hrUrls');
 
-                self::$mode = 'admin';
-
-
             }else{
+
+                self::$mode = 'user';
 
                 if(!\AppH::isPost()){
 
@@ -113,8 +112,6 @@ class Router
                 $hrUrl = \App::config()->WEB('user', 'hrUrl');
 
                 self::$controller = \App::config()->WEB('controllersPath', 'user');
-
-                self::$mode = 'user';
 
             }
 
@@ -224,7 +221,7 @@ class Router
 
     public static function getInputMethod(){
 
-        return self::$method ?: \App::getWebConfig('default', self::$mode, 'method');
+        return self::$method ?: \App::config()->WEB('default', self::$mode, 'method');
 
     }
 

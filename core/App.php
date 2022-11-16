@@ -187,38 +187,6 @@ final class App //final - класс от которого нельзя насл
 
     }
 
-    public static function getWebConfig(){
-
-        $mode = \core\system\Router::getMode();
-
-        $args = func_get_args();
-
-        if(($key = array_search($mode, $args)) !== false){
-
-            unset($args[$key]);
-
-            $args = array_values($args);
-
-        }
-
-        $mode = strtoupper($mode);
-
-        if(array_key_exists($mode, self::$properties)){
-
-            $res = self::config()->$mode(...$args);
-
-            if($res){
-
-                return $res;
-
-            }
-
-        }
-
-        return self::config()->WEB(...func_get_args());
-
-    }
-
     public static function config(){
 
         static $config;
@@ -235,7 +203,45 @@ final class App //final - класс от которого нельзя насл
 
                 }
 
+                public function WEB(){
+
+                    $mode = \core\system\Router::getMode();
+
+                    $args = func_get_args();
+
+                    if(($key = array_search($mode, $args)) !== false){
+
+                        unset($args[$key]);
+
+                        $args = array_values($args);
+
+                    }
+
+                    $mode = strtoupper($mode);
+
+                    if(array_key_exists($mode, $this->properties)){
+
+                        $res = $this->$mode(...$args);
+
+                        if($res){
+
+                            return $res;
+
+                        }
+
+                    }
+
+                    return $this->searchProperty('WEB', func_get_args());
+
+                }
+
                 public function __call($name, $arguments){
+
+                    return $this->searchProperty($name, $arguments);
+
+                }
+
+                private function searchProperty($name, $arguments){
 
                     if(!array_key_exists($name, $this->properties)){
 
