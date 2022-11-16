@@ -6,6 +6,7 @@ use core\models\Crypt;
 
 trait CartHelper
 {
+    protected $cart = [];
 
     private $emptyCartValue = 'Купить';
 
@@ -708,6 +709,16 @@ trait CartHelper
             $this->cart['total_sum'] += $this->cart[$this->model->goodsTable][$key]['total_sum'];
 
             $this->cart['total_old_sum'] += $this->cart[$this->model->goodsTable][$key]['total_old_sum'];
+
+            if(in_array('gifts', $this->model->showTables())){
+
+                $this->cart['gifts'] = $this->model->get('gifts', [
+                    'where' => ['<=price' => $this->cart['total_sum']],
+                    'order' => 'price DESC',
+                    'limit' => 1,
+                    'single' => true
+                ]);
+            }
 
 
         }

@@ -35,14 +35,17 @@
     outline: none;
     border-bottom: 2px solid rgba(0,0,0,0.5);
 }
-.order_item_date{
-    text-align: center;
+.order_item_date p{
+    font-size: 13px;
+}
+.order_item{
+    padding: 15px;
 }
 .order_total_sum{
     width: 80%;
     text-align: right;
 }
 .order_item_position{
-    display: flex;
-    justify-content: space-evenly;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr;
 }

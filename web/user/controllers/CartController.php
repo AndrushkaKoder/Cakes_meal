@@ -90,7 +90,12 @@ class CartController extends BaseUser
 
     }
 
-    public function createCartGoods(){
+    public function createCartGoods(&$cart = null){
+        if(empty($this->cart)){
+            $this->cart = $cart;
+        }
+
+        !$this->model && $this->model = Model::instance(); //костыль
 
         if(empty($this->cart[$this->model->goodsTable])){
 
@@ -98,7 +103,6 @@ class CartController extends BaseUser
 
         }
 
-        !$this->model && $this->model = Model::instance();
 
         $data = [];
 

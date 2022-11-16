@@ -45,118 +45,66 @@
                         <p class="lk_wrapper_data_title text-center">Заказы</p>
                         <hr>
 
-                        <div class="order_item">
-                           <div class="order_item_date">
-                               <p>01.01.2001</p>
-                           </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_total_sum">
-                                <p> общая сумма: 228P</p>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="order_item">
-                            <div class="order_item_date">
-                                <p>01.01.2001</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_total_sum">
-                                <p> общая сумма: 228P</p>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="order_item">
-                            <div class="order_item_date">
-                                <p>01.01.2001</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_total_sum">
-                                <p> общая сумма: 228P</p>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="order_item">
-                            <div class="order_item_date">
-                                <p>01.01.2001</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
-                            <div class="order_total_sum">
-                                <p> общая сумма: 228P</p>
-                            </div>
-                            <hr>
-                        </div>
-                        <div class="order_item">
-                            <div class="order_item_date">
-                                <p>01.01.2001</p>
-                            </div>
-                            <div class="order_item_position">
-                                <p>Прага</p>
-                                <p>3</p>
-                                <p>100500Р</p>
-                            </div>
+                        <?php if(!empty($orders)):?>
+                            <?php foreach ($orders as $item):?>
 
-                            <div class="order_total_sum">
-                                <p> общая сумма: 228P</p>
-                            </div>
-                            <hr>
-                        </div>
+                                <div class="order_item">
+                                    <div class="total_sum">
+                                        <strong>Заказ №</strong>: <?=$item['id']?>
+                                    </div>
+                                    <div class="total_sum">
+                                      <strong>общая сумма заказа</strong>: <?=$item['total_sum']?>
+                                    </div>
+                                    <div class="total_sum">
+                                        <strong>всего товаров</strong>: <?=$item['total_qty']?>
+                                    </div>
+                                    <div class="order_item_date">
+                                        <strong>дата заказа</strong>: <?=$item['date']?>
+                                    </div>
+                                    <?php if(!empty($item['comment'])):?>
+                                        <div class="order_item_date">
+                                            <strong>комментарий к заказу</strong>: <?=$item['comment']?>
+                                        </div>
+                                    <?php endif;?>
 
+                                    <?php if(!empty($item['join']['delivery'])):?>
+                                        <div class="order_item_date">
+                                            <strong>Доставка</strong>: <?=$item['join']['delivery']['name']?>
+                                        </div>
+                                    <?php endif;?>
+                                    <?php if(!empty($item['join']['payments'])):?>
+                                        <div class="order_item_date">
+                                            <strong>Оплата</strong>: <?=$item['join']['payments']['name']?>
+                                        </div>
+                                    <?php endif;?>
+
+                                    <div class="order_item_date">
+                                        <strong>Статус заказа</strong>: <?=$item['join']['orders_statuses']['name']?>
+                                    </div>
+
+                                        <h4 class="text-center m-3">Заказанные товары</h4>
+
+                                    <?php foreach ($item['join']['orders_goods'] as $goods):?>
+                                        <div class="order_item_position">
+                                            <p><?=$goods['name']?></p>
+                                            <p><?=$goods['qty']?></p>
+                                            <p><?=$goods['price']?></p>
+                                        </div>
+                                    <?php endforeach;?>
+                                    <?php if(!empty($item['gift'])):?>
+                                        <div class="order_item_position" style="align-items: flex-end">
+                                            <p><strong>подарок:</strong> <br> <?=$item['gift']?></p>
+                                            <p>1</p>
+                                            <p>0</p>
+                                        </div>
+                                    <?php endif;?>
+
+
+
+                                    <hr>
+                                </div>
+                            <?php endforeach;?>
+                        <?php endif;?>
 
 
                     </div>

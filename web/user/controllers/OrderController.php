@@ -17,7 +17,7 @@ class OrderController extends BaseUser
 
             $cart = new CartController();
 
-            $data = $cart->createCartGoods();
+            $data = $cart->createCartGoods($this->cart);
 
             $moreData = null;
 

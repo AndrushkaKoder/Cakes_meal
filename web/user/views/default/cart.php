@@ -49,6 +49,9 @@
 
                              <?php endforeach;?>
 
+
+                             <p><span data-giftsName><?=$this->cart['gifts']['name'] ? $this->cart['gifts']['name'] . ' в подарок' : '' ?></span></p>
+
                             <p class="text-center">общая сумма заказа: <span style="text-decoration: underline" data-totalSum><?=$this->cart['total_sum'] ?? 0?></span>&#8381; </p>
                         </div>
                     </div>

@@ -37,7 +37,7 @@
                           <li>Минимальная сумма заказа на самовывоз - <span class="delivery_info"><?=$item['min_price_export']?></span> &#8381;</li>
                           <li>Заказы принимаются с <span class="delivery_info"><?=$item['work_start']?></span> до <span class="delivery_info"><?=$item['work_end']?></span></li>
                           <li>Заказы доставляются на следующий день после 12:00, либо к указанной дате</li>
-                          <li>При заказе от <span class="delivery_info"><?=$item['gift_price']?></span> &#8381; плитка шоколада - в подарок</li>
+                          <li>При заказе от <span class="delivery_info"><?=$item['gift_price']?></span> &#8381; <span class="delivery_info"><?=$item['gift']?></span> - в подарок</li>
                             <?php endforeach;?>
                       </ul>
 

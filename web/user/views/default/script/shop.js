@@ -350,6 +350,16 @@ let addToCart = (() => {
 
                 }
 
+                if(typeof res.data.gifts !== "undefined" && res.data.gifts){
+                    document.querySelectorAll('[data-giftsName]').forEach(item => {
+                        item.innerHTML = res.data.gifts.name + ' в подарок';
+                    })
+                } else{
+                    document.querySelectorAll('[data-giftsName]').forEach(item => {
+                        item.innerHTML = '';
+                    })
+                }
+
             }
 
         }catch (e){
