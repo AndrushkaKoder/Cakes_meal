@@ -3,12 +3,14 @@
 namespace core\system; // ограничение видимости класса
 
 use core\exceptions\RouteException;
+use core\traites\BaseMethods;
 use core\traites\ShowDataHelper;
 
 abstract class Controller //абстрактный класс нужен только для наследования от него. Нельзя создать экземпляр абстрактного класса
 {
 
     use ShowDataHelper;
+    use BaseMethods;
 
     protected array $parameters = [];
 
@@ -21,6 +23,7 @@ abstract class Controller //абстрактный класс нужен тол�
     // пройти по функции request и понять как формируется переменная $method
     public function request(array $arguments, $returnResult = false){
 
+        $this->getMessages();
         // в $method формируется строка 'actionInput'
         $this->parameters = $arguments; // принимаем
 

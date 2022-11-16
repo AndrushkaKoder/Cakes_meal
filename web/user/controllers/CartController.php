@@ -98,21 +98,19 @@ class CartController extends BaseUser
 
         }
 
-        !$this->model && $this->model = Model::instance();
-
         $data = [];
 
         $replaceFields = ['qty', 'price', 'old_price', 'total_sum', 'total_old_sum'];
 
-        foreach ($this->cart[$this->model->goodsTable] as $item){
+        foreach ($this->cart[\App::model()->goodsTable] as $item){
 
             $offers = [];
 
-            if(!empty($this->model->offersTable) && !empty($item[$this->model->offersTable])){
+            if(!empty(\App::model()->offersTable) && !empty($item[\App::model()->offersTable])){
 
-                $offers = $item[$this->model->offersTable];
+                $offers = $item[\App::model()->offersTable];
 
-                unset($item[$this->model->offersTable]);
+                unset($item[\App::model()->offersTable]);
 
             }
 
@@ -128,7 +126,7 @@ class CartController extends BaseUser
 
                     $element = $item;
 
-                    $element[$this->model->offersTable] = $value;
+                    $element[\App::model()->offersTable] = $value;
 
                     if(!empty($replaceFields)){
 

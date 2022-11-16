@@ -4,12 +4,14 @@ namespace web\user\controllers;
 
 use web\user\helpers\CartHelper;
 use web\user\helpers\CatalogHelper;
+use web\user\helpers\ValidationHelper;
 use web\user\models\Model;
 
 abstract class BaseUser extends \core\system\Controller
 {
     use CatalogHelper;
     use CartHelper;
+    use ValidationHelper;
 
     protected $model;
 
