@@ -18,7 +18,7 @@ class Logger
         else
             $str = $message . "\r\n";
 
-        $dir = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::WEB('log_dir'));
+        $dir = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('log_dir'));
 
         if(!is_dir($dir)){
 

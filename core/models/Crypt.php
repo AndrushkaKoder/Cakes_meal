@@ -92,9 +92,9 @@ class Crypt{
 
         }
 
-        $original_plaintext = openssl_decrypt($crypt_data['str'], $this->crypt_method, \App::CRYPT('KEY'), $options=OPENSSL_RAW_DATA, $crypt_data['iv']);
+        $original_plaintext = openssl_decrypt($crypt_data['str'], $this->crypt_method, \App::config()->CRYPT('KEY'), $options=OPENSSL_RAW_DATA, $crypt_data['iv']);
 
-        $calcmac = hash_hmac($this->hache_algoritm, $crypt_data['str'], \App::CRYPT('KEY'), $as_binary = true);
+        $calcmac = hash_hmac($this->hache_algoritm, $crypt_data['str'], \App::config()->CRYPT('KEY'), $as_binary = true);
 
         if (hash_equals($crypt_data['hmac'], $calcmac))// с PHP 5.6+ сравнение, не подверженное атаке по времени
         {
@@ -217,7 +217,7 @@ class Crypt{
 
         $str = str_replace($crypt_data['hmac'], '', $str);
 
-        $counter = (int)ceil((strlen(\App::CRYPT('KEY')) / (strlen($str) - $ivlen + strlen($crypt_data['hmac']))));
+        $counter = (int)ceil((strlen(\App::config()->CRYPT('KEY')) / (strlen($str) - $ivlen + strlen($crypt_data['hmac']))));
 
         $progress = 2;
 

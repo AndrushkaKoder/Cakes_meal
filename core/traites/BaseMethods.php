@@ -115,14 +115,6 @@ trait BaseMethods
 
     }
 
-    protected function addSessionData(){
-        if(\AppH::isPost()){
-            foreach ($_POST as $key => $value){
-                $_SESSION['res'][$key] = $value;
-            }
-            \AppH::redirect();
-        }
-    }
 
     protected function setFormValues($key, $property = null, $arr = []){
 
