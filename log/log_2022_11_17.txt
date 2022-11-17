@@ -1,0 +1,20 @@
+Fault: 17-11-2022 21:50:20 - Class web\user\controllers\Catalog1Controller does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 72
+
+Fault: 17-11-2022 21:51:46 - Class web\user\controllers\Catalog1Controller does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 17-11-2022 21:52:00 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 17-11-2022 21:52:06 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 17-11-2022 21:52:46 - Class web\user\controllers\Dasfsdg;slkgController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
