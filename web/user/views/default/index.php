@@ -6,7 +6,7 @@
             <div class="swiper-wrapper">
                 <!-- Slides -->
                 <?php foreach ($sales as $item):?>
-                    <div class="swiper-slide" style="background:url('/web/userFiles/<?=$item['img']?>'); background-size: cover; background-position: top">
+                    <div class="swiper-slide" style="background:url('<?=$this->img($item['img'])?>'); background-size: cover; background-position: top">
                         <div class="slide_content" data-wow-duration="1s">
                             <h3><?=$item['name']?></h3>
                             <p><?=$item['short_content']?></p>
@@ -49,7 +49,7 @@
 
                     <?php foreach ($tizzers as $item):?>
                         <div class="col-lg-4 d-flex align-items-center flex-column text-center  wow bounceInLeft" data-wow-duration="1s"  data-wow-delay="1s">
-                            <img src="/web/userFiles/<?=$item['img']?>" alt="" width="85px">
+                            <img src="<?=$this->img($item['img'])?>" alt="" width="85px">
                             <h2><?=$item['name']?></h2>
                             <p><?=$item['short_content']?></p>
                         </div>
@@ -81,7 +81,7 @@
                             <p><a href="<?=$this->alias(['catalog'=>$item['alias']])?>" class="assortment_button" data-wow-duration="1s">подробнее</a></p>
                         </div>
                         <div class="col-xl-5 col-md-6 col-sm-12 d-flex justify-content-center">
-                            <img src="/web/userFiles/<?=$item['img']?>" alt="bisquit" class="assortment_img">
+                            <img src="<?=$this->img($item['img'])?>" alt="bisquit" class="assortment_img">
                         </div>
                     </div>
                     <hr class="featurette-divider">
@@ -95,7 +95,7 @@
     <!-- ССЫЛКА НА КОНСТРУКТОР -->
     <?php if(!empty($backgroundImage)):?>
     <?php foreach ($backgroundImage as $item):?>
-        <section class="r_ constructor" style="background: url('/web/userFiles/<?=$item['name']?>') fixed 50% no-repeat">
+        <section class="r_ constructor" style="background: url('<?=$this->img($item['name'])?>') fixed 50% no-repeat">
     <?php endforeach;?>
             <div class="container">
                 <div class="row">

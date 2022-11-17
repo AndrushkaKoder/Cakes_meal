@@ -5,12 +5,14 @@ namespace web\user\controllers;
 use core\exceptions\RouteException;
 use web\user\helpers\CartHelper;
 use web\user\helpers\CatalogHelper;
+use web\user\helpers\ValidationHelper;
 use web\user\models\Model;
 
 abstract class BaseUser extends \core\system\Controller
 {
     use CatalogHelper;
     use CartHelper;
+    use ValidationHelper;
 
     protected $model;
 
@@ -112,15 +114,15 @@ abstract class BaseUser extends \core\system\Controller
         if(preg_match('/^https?:\/\//', $alias))
             return $alias . $str;
 
-        return preg_replace('/\/{2,}/', '/', \App::PATH() . $alias . \App::WEB('end_slash') . $str);
+        return preg_replace('/\/{2,}/', '/', \App::PATH() . $alias . \App::config()->WEB('end_slash') . $str);
 
     }
 
     protected function img($img = '', $tag = false, $set = []){
 
-        if(!$img && is_dir($_SERVER['DOCUMENT_ROOT'] .\AppH::correctPath(\App::$webDirectory, \App::PATH(), \App::WEB('upload_dir')). 'default_images')){
+        if(!$img && is_dir($_SERVER['DOCUMENT_ROOT'] .\AppH::correctPath(\App::$webDirectory, \App::PATH(), \App::config()->WEB('upload_dir')). 'default_images')){
 
-            $dir = scandir($_SERVER['DOCUMENT_ROOT'] .\AppH::correctPath(\App::$webDirectory, \App::PATH(), \App::WEB('upload_dir')) . 'default_images');
+            $dir = scandir($_SERVER['DOCUMENT_ROOT'] .\AppH::correctPath(\App::$webDirectory, \App::PATH(), \App::config()->WEB('upload_dir')) . 'default_images');
 
             $img = preg_grep('/'.$this->getController().'\./i', $dir) ?: preg_grep('/default\./i', $dir);
 
@@ -130,7 +132,7 @@ abstract class BaseUser extends \core\system\Controller
 
         if($img){
 
-            $path = \AppH::correctPath(\App::$webDirectory, \App::PATH(), \App::WEB('upload_dir')) . $img;
+            $path = \AppH::correctPath(\App::PATH(), \App::config()->WEB('upload_dir')) . $img;
 
             $class = isset($set['class']) && $set['class'] ?
                 ' class="' . (is_array($set['class']) ? implode(' ', $set['class']) : $set['class']) . '" ' : '';

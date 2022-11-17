@@ -7,112 +7,52 @@ use core\models\UserModel;
 trait BaseMethods
 {
 
-    protected function getChildren($category, $table, $idRow = null, $checkVisible = false){
+    protected array $messages = [];
 
-        $columns = $this->model->showColumns($table);
+    protected function addSessionData(){
 
-        !$idRow && $idRow = $columns['id_row'];
+        if(\AppH::isPost()){
 
-        $id = is_array($category) ? $category[$columns['id_row']] : $category;
+            foreach ($_POST as $key => $value){
 
-        if(empty($columns['parent_id']))
-            return $id;
-
-        static $categoriesDb = [];
-
-        if(empty($categoriesDb[$table])){
-
-            $categoriesDb[$table] = $this->model->get($table, [
-                'where' => $checkVisible && !empty($columns['visible']) ? ['visible' => 1] : [],
-                'order' => 'parent_id',
-                'order_direction' => 'DESC'
-            ]);
-
-        }
-
-        $categories = $this->recursiveArr($categoriesDb[$table], 1, $id, $idRow);
-
-        $ids = [];
-
-        $ids[] = $id;
-
-        if($categories){
-
-            foreach($categories as $item){
-
-                if(!array_key_exists('old_parent_id', $item) && $item['parent_id'] === $id){
-
-                    $ids[] = $item[$columns['id_row']];
-
-                    if(!empty($item['sub'])){
-
-                        foreach ($item['sub'] as $subId => $value){
-
-                            $ids[] = $subId;
-
-                        }
-
-                    }
-
-                }
+                $_SESSION['res'][$key] = $value;
 
             }
 
-        }
+            \AppH::redirect();
 
-        return $ids;
+        }
 
     }
 
-    protected function getParents($ids, $table, $parentRow = 'parent_id'){
+    protected function emptyFields($value, $answer){
 
-        if(!$ids) return [];
+        if(empty($value)){
 
-        if(!is_array($ids)) $ids = (array)$ids;
+            $_SESSION['res']['answer'] = '<div class="error">' . $this->messages['empty'] . ' ' .$answer . '</div>';
 
-        $model = !empty($this->model) ? $this->model : $this;
+            $this->addSessionData();
 
-        $columns = $model->showColumns($table);
+        }
+    }
 
-        if(empty($columns[$parentRow]))
-            return $ids;
+    protected function getMessages(){
 
-        $whereIds = $ids;
+        if($this->messages){
 
-        while ($whereIds){
-
-            $data = $model->get($table, [
-                'fields' => [$parentRow],
-                'where' => [$columns['id_row'] => $whereIds],
-                'no_check_credentials' => true,
-                'group' => $parentRow,
-            ]);
-
-            if(!$data){
-
-                $whereIds = null;
-
-                continue;
-
-            }
-
-            $whereIds = array_column($data, $parentRow);
-
-            $ids = array_merge($ids, $whereIds);
-
-            if(($keys = array_keys($ids, null))){
-
-                foreach ($keys as $key => $item){
-
-                    unset($ids[$item]);
-
-                }
-
-            }
+            return $this->messages;
 
         }
 
-        return array_unique($ids);
+        if(is_dir(realpath(__DIR__ . '/../') . '/messages')){
+
+            \AppH::scanDir(realpath(__DIR__ . '/../') . '/messages', function ($file){
+
+                $this->messages = array_merge($this->messages, include realpath(__DIR__ . '/../') . '/messages/' . $file);
+
+            });
+
+        }
 
     }
 

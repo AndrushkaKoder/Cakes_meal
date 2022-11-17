@@ -8,7 +8,6 @@
 
 namespace core\exceptions;
 
-
 class AuthException extends \Exception
 {
 

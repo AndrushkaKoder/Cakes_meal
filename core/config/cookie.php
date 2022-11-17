@@ -1,8 +1,7 @@
 <?php
 
-return[
+return [
     'cookie' => [
-        'version' => '1.0',
-        'time' => 6000
+        'version' => '1.0.0'
     ]
 ];

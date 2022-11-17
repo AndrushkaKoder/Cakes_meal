@@ -83,9 +83,9 @@ class OrderController extends BaseUser
 
         $visitor = [];
 
-        $columnsOrders = $this->model->showColumns('orders');
+        $columnsOrders = \App::model()->showColumns('orders');
 
-        $columnsVisitors = $this->model->showColumns('visitors');
+        $columnsVisitors = \App::model()->showColumns('visitors');
 
         $validationResult = [];
 
@@ -160,7 +160,7 @@ class OrderController extends BaseUser
 
         }
 
-        $res = $this->model->get('visitors', [
+        $res = \App::model()->get('visitors', [
             'where' => $visitorWhere,
             'condition' => $visitorCondition,
             'limit' => 1,
@@ -177,7 +177,7 @@ class OrderController extends BaseUser
 
             $visitor['password'] = md5($defaultVisitorPassword);
 
-            $order['visitors_id'] = $this->model->add('visitors', [
+            $order['visitors_id'] = \App::model()->add('visitors', [
                 'fields' => $visitor,
                 'return_id' => true
             ]);
@@ -198,7 +198,7 @@ class OrderController extends BaseUser
 
         $order['date'] = 'NOW()';
 
-        $baseStatus = $this->model->get('orders_statuses', [
+        $baseStatus = \App::model()->get('orders_statuses', [
             'fields' => 'id',
             'limit' => 1,
             'order' => 'menu_position',
@@ -207,7 +207,7 @@ class OrderController extends BaseUser
 
         $baseStatus && $order['orders_statuses_id'] = $baseStatus['id'];
 
-        $order['id'] = $this->model->add('orders', [
+        $order['id'] = \App::model()->add('orders', [
             'fields' => $order,
             'return_id' => true
         ]);
@@ -218,11 +218,11 @@ class OrderController extends BaseUser
 
         }
 
-        if(in_array('orders_data', $this->model->showTables()) &&
-            !empty($this->model->showColumns('orders_data')['orders_id']) &&
-            !empty($this->model->showColumns('orders_data')['data'])){
+        if(in_array('orders_data', \App::model()->showTables()) &&
+            !empty(\App::model()->showColumns('orders_data')['orders_id']) &&
+            !empty(\App::model()->showColumns('orders_data')['data'])){
 
-            $this->model->add('orders_data', [
+            \App::model()->add('orders_data', [
                 'fields' => [
                     'orders_id' => $order['id'],
                     'data' => [

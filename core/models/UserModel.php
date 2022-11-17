@@ -3,14 +3,13 @@
 namespace core\models;
 
 use core\exceptions\AuthException;
-use core\traites\BaseMethods;
+use core\system\Logger;
 use core\traites\Singleton;
 
 class UserModel extends BaseModel
 {
 
     use Singleton;
-    use BaseMethods;
 
     private $cookieName = 'identifier';
 
@@ -73,7 +72,7 @@ class UserModel extends BaseModel
             }
 
             $this->add($this->userTable, [
-                'fields' => ['name' => 'admin', 'login' => 'admin', 'password' => Crypt::pwd($this->defaultPassword)]
+                'fields' => ['name' => 'admin', 'login' => 'admin', 'password' => md5($this->defaultPassword)]
             ]);
 
         }
@@ -123,7 +122,7 @@ class UserModel extends BaseModel
 
             $this->error = $e->getMessage();
 
-            !empty($e->getCode()) && $this->writeLog($this->error, 'log_user.txt');
+            !empty($e->getCode()) && Logger::instance()->writeLog($this->error, 'log_user.txt');
 
             return false;
 
@@ -139,7 +138,7 @@ class UserModel extends BaseModel
 
         if($cookieString){
 
-            setcookie($this->cookieName, $cookieString, time() + 60*60*24*365*10, \App::PATH());
+            setcookie($this->cookieName, $cookieString, time() + 60*60*24*365*10, PATH);
 
             return true;
 
@@ -155,7 +154,9 @@ class UserModel extends BaseModel
 
             $data['id'] = $this->userData['id'];
 
-            $data['version'] = \App::COOKIE('version');
+            $data['domain'] = $_SERVER['HTTP_HOST'];
+
+            $data['version'] = \App::config()->COOKIE('version');
 
             $data['cookieTime'] = date('Y-m-d H:i:s');
 
@@ -174,7 +175,7 @@ class UserModel extends BaseModel
 
         $data = json_decode(Crypt::instance()->decrypt($_COOKIE[$this->cookieName]), true);
 
-        if(empty($data['id']) || empty($data['version']) || empty($data['cookieTime'])){
+        if(empty($data['id']) || empty($data['version']) || empty($data['cookieTime']) || empty($data['domain'])){
 
             $this->logout();
 
@@ -196,18 +197,15 @@ class UserModel extends BaseModel
 
         }
 
-
-        $this->set();
-
         return true;
 
     }
 
     private function validate($data){
 
-        if(!empty(\App::COOKIE('version'))){
+        if(!empty(\App::config()->COOKIE('version'))){
 
-            if($data['version'] !== \App::COOKIE('version')){
+            if($data['version'] !== \App::config()->COOKIE('version')){
 
                 $this->logout();
                 throw new AuthException('Некорректная версия cookie');
@@ -216,13 +214,19 @@ class UserModel extends BaseModel
 
         }
 
-        if(!empty(\App::COOKIE('time'))){
+        if(!empty(\App::config()->COOKIE('time'))){
 
-            if((new \DateTime()) > (new \DateTime($data['cookieTime']))->modify(\App::COOKIE('time') . ' minutes')){
+            if((new \DateTime()) > (new \DateTime($data['cookieTime']))->modify(\App::config()->COOKIE('time') . ' minutes')){
 
                 throw new AuthException('Превышено время бездействия пользователя');
 
             }
+
+        }
+
+        if(!empty($data['domain']) && $data['domain'] !== $_SERVER['HTTP_HOST']){
+
+            throw new AuthException('Несоответствие домена пользователя');
 
         }
 
