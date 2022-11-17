@@ -11,7 +11,7 @@ class ProductController extends BaseUser
 
     protected function actionInput(){
 
-    if(!empty($this->parameters['alias'])){
+    if(empty($this->parameters['alias'])){
 
         throw new RouteException('Такой страницы не существует');
 

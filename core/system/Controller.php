@@ -159,7 +159,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!empty(\App::config()->WEB('img'))){
 
-            return \App::getWebPath() .\App::config()->WEB('views') .'/'. trim(\App::config()->WEB('img'), '/') . '/';
+            return \App::PATH() . \App::config()->WEB('views') .'/'. trim(\App::config()->WEB('img'), '/') . '/';
 
         }
 

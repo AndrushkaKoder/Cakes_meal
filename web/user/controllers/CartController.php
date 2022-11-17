@@ -16,15 +16,15 @@ class CartController extends BaseUser
     {
 
 
-        if(!empty($this->parameters[0])){
+        if(!empty($this->parameters['alias'])){
 
-            switch ($this->parameters[0]){
+            switch ($this->parameters['alias']){
 
                 case 'remove':
 
-                    if(!empty($this->parameters[2])){
+                    if(!empty($this->parameters['id'])){
 
-                        $this->deleteCartData($this->parameters[2], $this->parameters['offers'] ?? null);
+                        $this->deleteCartData($this->parameters['id'], $this->parameters['offers'] ?? null);
 
                     }else{
 

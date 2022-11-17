@@ -61,13 +61,13 @@ class SendMail
 
         if(!$templatesPath){
 
-            $this->_templatesPath= $_SERVER['DOCUMENT_ROOT'] . PATH . TEMPLATE . 'include/emailTemplates';
+            $this->_templatesPath= \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('views') ,\App::config()->WEB('common')) . 'emailTemplates';
 
         }else{
 
-            $this->_templatesPath = strpos($templatesPath, $_SERVER['DOCUMENT_ROOT'] . PATH)
+            $this->_templatesPath = strpos($templatesPath, \App::FULL_PATH())
                 ? $templatesPath
-                : $_SERVER['DOCUMENT_ROOT'] . PATH . $templatesPath;
+                : \App::FULL_PATH() . $templatesPath;
 
         }
 
@@ -170,7 +170,7 @@ class SendMail
 
     public function send($email = '', $subject = ''){
 
-        require_once $_SERVER['DOCUMENT_ROOT'] . PATH . 'libraries/PHPMailer/PHPMailerAutoload.php';
+        require_once \App::FULL_PATH() . 'libraries/PHPMailer/PHPMailerAutoload.php';
 
         $sender = new \PHPMailer;
 

@@ -3,6 +3,8 @@
 namespace web\user\controllers;
 
 
+use core\models\UserModel;
+use libraries\SendMail;
 use web\user\helpers\ValidationHelper;
 
 class OrderController extends BaseUser
@@ -47,7 +49,6 @@ class OrderController extends BaseUser
             'name' => ['emptyField'],
             'phone' => ['emptyField', 'phoneField', 'numericField'],
             'email' => ['emptyField', 'emailField'],
-            'delivery_id' => ['emptyField', 'numericField'],
             'payments_id' => ['emptyField', 'numericField'],
         ];
 
@@ -238,7 +239,7 @@ class OrderController extends BaseUser
 
         }
 
-        $this->setOrdersGoods($data, $order);
+        $ordersGoods = $this->setOrdersGoods($data, $order);
 
         $_SESSION['res']['answer'] = '<div class="success">' . $this->translateEl('Спасибо за заказ<br>В ближайшее время мы свяжемся с Вами для уточнения деталей');
 
@@ -258,15 +259,16 @@ class OrderController extends BaseUser
 
         $this->checkPaymentsType(['order' => $order, 'visitor' => $visitor, 'goods' => $ordersGoods]);
 
-        $this->redirect();
+        \AppH::redirect();
 
     }
 
     protected function setOrdersGoods($data, $order){
 
-        if(in_array('orders_goods', $this->model->showTables())){
+        $ordersGoods = [];
 
-            $ordersGoods = [];
+        if(in_array('orders_goods', \App::model()->showTables())){
+
 
             foreach ($data as $key => $item){
 
@@ -274,13 +276,13 @@ class OrderController extends BaseUser
 
                 foreach ($item as $field => $value){
 
-                    if(!empty($this->model->showColumns('orders_goods')[$field])){
+                    if(!empty(\App::model()->showColumns('orders_goods')[$field])){
 
-                        if($this->model->showColumns('orders_goods')['id_row'] === $field){
+                        if(\App::model()->showColumns('orders_goods')['id_row'] === $field){
 
-                            if(!empty($this->model->showColumns('orders_goods')[$this->model->goodsTable . '_' . 'id'])){
+                            if(!empty(\App::model()->showColumns('orders_goods')[\App::model()->goodsTable . '_' . 'id'])){
 
-                                $ordersGoods[$key][$this->model->goodsTable . '_' . 'id'] = $value;
+                                $ordersGoods[$key][\App::model()->goodsTable . '_' . 'id'] = $value;
 
                             }
 
@@ -294,13 +296,13 @@ class OrderController extends BaseUser
 
                 }
 
-                if(!empty($item[$this->model->offersTable])){
+                if(!empty($item[\App::model()->offersTable])){
 
-                    foreach ($item[$this->model->offersTable] as $field => $value){
+                    foreach ($item[\App::model()->offersTable] as $field => $value){
 
-                        if(!empty($this->model->showColumns('orders_goods')[$this->model->offersTable . '_' . $field])){
+                        if(!empty(\App::model()->showColumns('orders_goods')[\App::model()->offersTable . '_' . $field])){
 
-                            $ordersGoods[$key][$this->model->offersTable . '_' . $field] = $value;
+                            $ordersGoods[$key][\App::model()->offersTable . '_' . $field] = $value;
 
                         }
 
@@ -310,22 +312,22 @@ class OrderController extends BaseUser
 
             }
 
-            $this->model->add('orders_goods', [
+            \App::model()->add('orders_goods', [
                 'fields' => $ordersGoods
             ]);
 
         }
 
-        if(!empty($this->model->showColumns($this->model->goodsTable)['popular'])){
+        if(!empty(\App::model()->showColumns(\App::model()->goodsTable)['popular'])){
 
-            $this->model->edit($this->model->goodsTable, [
+            \App::model()->edit(\App::model()->goodsTable, [
                 'fields' => ['popular' => 'popular + 1'],
                 'where' => ['id' => array_column($data, 'id')],
                 'no_ecran' => 'popular'
             ]);
 
         }
-
+        return $ordersGoods;
     }
 
     protected function checkPaymentsType($data){
@@ -400,9 +402,9 @@ class OrderController extends BaseUser
 
                 foreach ($item as $v){
 
-                    if(!empty($v[$this->model->offersTable . '_name'])){
+                    if(!empty($v[\App::model()->offersTable . '_name'])){
 
-                        $v['name'] .= '(' . $v[$this->model->offersTable . '_name'] . ')';
+                        $v['name'] .= '(' . $v[\App::model()->offersTable . '_name'] . ')';
 
                     }
 

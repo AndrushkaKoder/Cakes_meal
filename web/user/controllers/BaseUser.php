@@ -17,6 +17,7 @@ abstract class BaseUser extends \core\system\Controller
     protected $model;
 
     protected $menu;
+    protected $set = [];
 
     protected function commonData(){
 
@@ -25,6 +26,11 @@ abstract class BaseUser extends \core\system\Controller
         $this->checkAuth();
 
         $this->getCartData();
+
+        $this->set = $this->model->get('settings', [
+            'limit' => 1,
+            'single' => true
+        ]);
 
         $this->menu = $this->model->get('catalog', [
             'where' => [
