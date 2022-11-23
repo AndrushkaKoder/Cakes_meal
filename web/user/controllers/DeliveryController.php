@@ -7,9 +7,11 @@ class DeliveryController extends BaseUser
 
     protected function actionInput(){
 
+        $contacts = $this->model->get('contacts');
+
         $information = $this->model->get('delivery_terms');
 
-        return compact('information');
+        return compact('information', 'contacts');
     }
 
 }

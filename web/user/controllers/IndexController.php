@@ -18,6 +18,8 @@ class IndexController extends BaseUser //будет наследоваться �
 
         $tizzers = $this->model->get('tizzers');
 
+        $contacts = $this->model->get('contacts');
+
         $assortment = $this->model->get('catalog', [
             'where' => [
                 'visible' => 1
@@ -61,7 +63,7 @@ class IndexController extends BaseUser //будет наследоваться �
 
         Logger::instance()->writeLog('Привет мир', 'index/log.txt');
 
-        return compact('sales', 'tizzers', 'assortment', 'backgroundImage', 'questions', 'login');
+        return compact('sales', 'tizzers', 'assortment', 'backgroundImage', 'questions', 'login', 'contacts');
 
     }
 

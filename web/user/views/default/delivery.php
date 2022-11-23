@@ -21,8 +21,12 @@
           <div class="row">
               <div class="col-12 text-center">
                   <h2 class="mb-4">Доставка и Оплата</h2>
-                  <p class="delivery_subtitle">Оформите <a href="<?=$this->alias('catalog')?>">заказ</a> на нашем сайте или по телефону:
-                      <a href="tel:9623734441">+7-962-373-44-41</a> </p>
+                  <p class="delivery_subtitle">Оформите <a href="<?=$this->alias('catalog')?>" style="font-size: 18px">заказ</a> на нашем сайте или по телефону:
+                      <?php if(!empty($contacts)):?>
+                            <?php foreach ($contacts as $item):?>
+                                <a href="tel:<?=$item['phone']?>" style="font-size: 18px">+7<?=$item['phone']?></a> </p>
+                            <?php endforeach;?>
+                      <?php endif;?>
               </div>
           </div>
 

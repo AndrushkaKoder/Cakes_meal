@@ -8,8 +8,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     cremeBisquit = document.querySelector('[data-creme_bisquit]'),
     cremeMuss = document.querySelector('[data-creme_muss]'),
     weight = document.querySelector('[ data-weight]'),
-    weightBento = document.querySelector('[data-bento_weight]'),
-    rightForm = document.querySelector('[data-right_form]');
+    weightBento = document.querySelector('[data-bento_weight]')
 
 
     // показ и скрытие бисквита

@@ -17,10 +17,13 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
             </div>
 
             <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
-                <span class="footer_span"> наш телефон:</span>
-                <a href="tel:89999999999" class="footer_phone">+7 999 999 99 99</a>
-                <div class="email">
-                </div>
+                <span class="footer_span"> Наш телефон:</span>
+                <?php if(!empty($contacts)):?>
+                    <?php foreach ($contacts as $item):?>
+                        <a href="tel:<?=$item['phone']?>" class="footer_phone">+7<?=$item['phone']?></a>
+                    <?php endforeach;?>
+                <?php endif;?>
+
             </div>
 
         </div>
@@ -42,6 +45,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
 <script src="https://kit.fontawesome.com/bf8cd5452d.js" crossorigin="anonymous"></script>
+<script src="https://api-maps.yandex.ru/2.1/?apikey=30953be2-3a85-4711-b1fd-67ec9ae73bf9&lang=ru_RU"></script>
 <?php $this->getScripts()?>
 <script>
     new WOW().init();
