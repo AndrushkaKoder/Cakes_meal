@@ -56,7 +56,6 @@ class IndexController extends BaseUser //будет наследоваться �
                 ]
             ]);
 
-            $a=1;
         }
 
 
