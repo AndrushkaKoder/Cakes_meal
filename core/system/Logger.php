@@ -13,16 +13,30 @@ class Logger
 
         $dateTime = new \DateTime();
 
-        if($event !== 0)
-            $str = $event . ': ' . $dateTime->format('d-m-Y G:i:s') . ' - ' . $message . "\r\n";
-        else
-            $str = $message . "\r\n";
+        $str = '';
+
+        foreach ((array)$message as $item){
+
+            $str .= ($event ? $event . ': ' . $dateTime->format('d-m-Y G:i:s') . "\r\n" : '') . $message . "\r\n";
+
+        }
+
 
         $dir = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('log_dir'));
 
+        $extraDir = preg_split('/\//', $file);
+
+        if(count($extraDir) > 1){
+
+            $file = array_pop($extraDir);
+
+            $dir = \AppH::correctPathLtrim($dir, implode('/', $extraDir));
+
+        }
+
         if(!is_dir($dir)){
 
-            mkdir($dir, 0777);
+            mkdir($dir, 0777, true);
 
         }
 

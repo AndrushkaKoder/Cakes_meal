@@ -3,6 +3,7 @@
 namespace web\user\controllers;
 
 use core\system\Controller;
+use core\system\Logger;
 use web\user\models\Model;
 
 class IndexController extends BaseUser //будет наследоваться от другого класса. Пока. А тот класс будет extend от Controller
@@ -43,11 +44,24 @@ class IndexController extends BaseUser //будет наследоваться �
             'order'=>'menu_position'
         ]);
 
-            $a=1;
 
 
+        if(!empty($_POST['phoneLogin'] && !empty($_POST['passwordLogin']))){
+            $phoneLogin = $_POST['phoneLogin'];
+            $passwordLogin = md5($_POST['passwordLogin']);
 
-        return compact('sales', 'tizzers', 'assortment', 'backgroundImage', 'questions');
+            $login = $this->model->get('users', [
+                'where'=>[
+                    'phone' => $phoneLogin,
+                    'password' => $passwordLogin
+                ]
+            ]);
+
+        }
+
+        Logger::instance()->writeLog('Привет мир', 'index/log.txt');
+
+        return compact('sales', 'tizzers', 'assortment', 'backgroundImage', 'questions', 'login');
 
     }
 

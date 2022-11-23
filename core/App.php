@@ -59,7 +59,7 @@ final class App //final - класс от которого нельзя насл
 
         $controller = str_replace('/', '\\', $route['controller']); // в $controller залетает "\web\user\controllers\indexController"
 
-        try {
+        try{
 
             try{
 
@@ -71,7 +71,7 @@ final class App //final - класс от которого нельзя насл
 
             }catch (ReflectionException $e){
 
-                throw new \core\exceptions\RouteException($e->getMessage());
+                throw new \core\exceptions\RouteException($e->getMessage() . "\r\n" . $_SERVER['REQUEST_URI']);
 
             }
 

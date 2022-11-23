@@ -27,7 +27,7 @@ class DbException extends \Exception
 
     public function showMessage(){
 
-        return new \core\system\ErrorController($this->message);
+        return (new ErrorController())->outputData($this->message);
 
     }
 

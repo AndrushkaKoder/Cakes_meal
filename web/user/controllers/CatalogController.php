@@ -17,8 +17,8 @@ class CatalogController extends BaseUser
         $single = false;
 
 
-        if(!empty($this->parameters['alias'])){
-            $where['alias'] = \AppH::clearStr($this->parameters['alias']);
+        if(!empty($this->parameters[0])){
+            $where['alias'] = \AppH::clearStr($this->parameters[0]);
             $single = true;
         }
 

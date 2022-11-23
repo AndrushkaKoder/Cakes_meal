@@ -75,8 +75,6 @@ abstract class Controller //абстрактный класс нужен тол�
 
         }
 
-        unset($_SESSION['res']);
-
         exit;
 
     }
@@ -105,8 +103,12 @@ abstract class Controller //абстрактный класс нужен тол�
 
         $common && $common = trim($common, '/') . '/';
 
-        return is_readable($this->getViewsPath() . $common . '/' . $file . '.php') ? $this->getViewsPath() . $common . $file :
-            (is_readable($this->getViewsPath() . $file . '.php') ? $this->getViewsPath() . $file . '.php' : null);
+        return is_readable($this->getViewsPath() . $common . $this->getController() . '/' . $file . '.php') ?
+            $this->getViewsPath() . $common . $this->getController() . '/' . $file . '.php' :
+            (is_readable($this->getViewsPath() . $common . $file . '.php') ?
+            $this->getViewsPath() . $common . $file :
+            (is_readable($this->getViewsPath() . $file . '.php') ? $this->getViewsPath() . $file . '.php' : null));
+
 
     }
 
@@ -116,7 +118,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!$path){
 
-            $path = $this->getViewsPath() . \App::controller();
+            $path = $this->getViewsPath() . $this->getController();
 
         }
 
@@ -159,7 +161,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!empty(\App::config()->WEB('img'))){
 
-            return \App::PATH() . \App::config()->WEB('views') .'/'. trim(\App::config()->WEB('img'), '/') . '/';
+            return \AppH::correctPath(\App::config()->WEB('views'), trim(\App::config()->WEB('img')));
 
         }
 
@@ -189,7 +191,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         }
 
-        $property = \App::config()->WEB(Router::getMode(), 'views') ?: \App::config()->WEB('views');
+        $property = \App::config()->WEB('views');
 
         $property && $viewsPath = preg_replace('/\/{2,}/', '/', \App::FULL_PATH() . '/' . trim($property, '/') . '/');
 
