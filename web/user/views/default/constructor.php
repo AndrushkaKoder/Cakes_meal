@@ -39,7 +39,7 @@
 
         <div class="container">
 
-            <form action="../../../../index.php" method="GET" class="form_constructor" data-constructor>
+            <form action="/web/user/controllers/ConstructorController.php" method="GET" class="form_constructor" data-constructor>
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12">
 
@@ -64,36 +64,36 @@
                                 </div>
                             </div>
 
-                            <!-- ОСНОВА -->
+                            <!-- ОСНОВА БИСКВИТ/БЕНТО -->
                             <div class="constructor_item" data-osnova_bisquit>
                                 <h5 class="item_title">Основа</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_bisquit" id="type__white__bisquit" class="type_cake" value="Бисквит" checked="">
+                                        <input type="radio" name="osnova_bisquit" id="type__white__bisquit" class="type_cake" value="Белый Бисквит" checked>
                                         <label for="type__white__bisquit">Белый бисквит</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_bisquit" id="type__smetana__bisquit" class="type_cake" value="Мусс">
+                                        <input type="radio" name="osnova_bisquit" id="type__smetana__bisquit" class="type_cake" value="Бисквит на сметане">
                                         <label for="type__smetana__bisquit">Бисквит на сметане</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_bisquit" id="type__smetana__choko__bisquit" class="type_cake" value="Мусс">
+                                        <input type="radio" name="osnova_bisquit" id="type__smetana__choko__bisquit" class="type_cake" value="Шоколад на сметане">
                                         <label for="type__smetana__choko__bisquit">Шоколад на сметане</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_bisquit" id="type__honey__bisquit" class="type_cake" value="Бенто">
+                                        <input type="radio" name="osnova_bisquit" id="type__honey__bisquit" class="type_cake" value="медовый">
                                         <label for="type__honey__bisquit">медовый</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_bisquit" id="type__nuts__bisquit" class="type_cake" value="Бенто">
+                                        <input type="radio" name="osnova_bisquit" id="type__nuts__bisquit" class="type_cake" value="Ореховый">
                                         <label for="type__nuts__bisquit">Ореховый</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_bisquit" id="type__choko__bisquit" class="type_cake" value="Бенто">
+                                        <input type="radio" name="osnova_bisquit" id="type__choko__bisquit" class="type_cake" value="Шоколад">
                                         <label for="type__choko__bisquit">Шоколад</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_bisquit" id="type__sand__bisquit" class="type_cake" value="Бенто">
+                                        <input type="radio" name="osnova_bisquit" id="type__sand__bisquit" class="type_cake" value="Песочный">
                                         <label for="type__sand__bisquit">Песочный</label>
                                     </div>
                                 </div>
@@ -106,16 +106,16 @@
                                 <h5 class="item_title">Основа</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_muss" id="osnova__tri_choko__muss" class="type_cake" value="Бисквит" checked="">
+                                        <input type="radio" name="osnova_muss" id="osnova__tri_choko__muss" class="type_cake" value="Три шоколада" checked="">
                                         <label for="osnova__tri_choko__muss">Три шоколада</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_muss"  id="osnova__dva_choko__muss" class="type_cake" value="Мусс">
+                                        <input type="radio" name="osnova_muss"  id="osnova__dva_choko__muss" class="type_cake" value="Два шоколада">
                                         <label for="osnova__dva_choko__muss">Два шоколада</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_muss"  id="osnova__cheese__muss" class="type_cake" value="Мусс">
-                                        <label for="osnova__yogurt__muss">Крем-чиз</label>
+                                        <input type="radio" name="osnova_muss"  id="osnova__cheese__muss" class="type_cake" value="Крем-чиз">
+                                        <label for="osnova__cheese__muss">Крем-чиз</label>
                                     </div>
                                 </div>
                             </div>
@@ -126,23 +126,23 @@
                                 <h5 class="item_title">Крем</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="radio" name = "creme_bisquit" id="krem__maslyanny__bisquit" class="type_cake" value="Бисквит" checked="">
+                                        <input type="radio" name = "creme_bisquit" id="krem__maslyanny__bisquit" class="type_cake" value="Масляный" checked="">
                                         <label for="krem__maslyanny__bisquit">Масляный</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name = "creme_bisquit" id="krem__smetanny__bisquit" class="type_cake" value="Мусс">
+                                        <input type="radio" name = "creme_bisquit" id="krem__smetanny__bisquit" class="type_cake" value="Сметанный">
                                         <label for="krem__smetanny__bisquit">Сметанный</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name = "creme_bisquit" id="krem__shokoladny__bisquit" class="type_cake" value="Мусс">
+                                        <input type="radio" name = "creme_bisquit" id="krem__shokoladny__bisquit" class="type_cake" value="Шоколадный">
                                         <label for="krem__shokoladny__bisquit">Шоколадный</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name = "creme_bisquit" id="krem__zavarnoy__bisquit" class="type_cake" value="Бенто">
+                                        <input type="radio" name = "creme_bisquit" id="krem__zavarnoy__bisquit" class="type_cake" value="Заварной">
                                         <label for="krem__zavarnoy__bisquit">Заварной</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name = "creme_bisquit" id="krem__chizz__bisquit" class="type_cake" value="Бенто">
+                                        <input type="radio" name = "creme_bisquit" id="krem__chizz__bisquit" class="type_cake" value="Крем-чиз">
                                         <label for="krem__chizz__bisquit">Крем-чиз</label>
                                     </div>
                                 </div>
@@ -154,15 +154,15 @@
                                 <h5 class="item_title">Наполнитель для мусса</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="radio" name = "creme_muss" id="napolnitel__caramel__muss" class="type_cake" value="Бисквит" checked="">
+                                        <input type="radio" name = "creme_muss" id="napolnitel__caramel__muss" class="type_cake" value="Карамель" checked="">
                                         <label for="napolnitel__caramel__muss">Карамель</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name = "creme_muss" id="napolnitel__klubnika__muss" class="type_cake" value="Мусс">
+                                        <input type="radio" name = "creme_muss" id="napolnitel__klubnika__muss" class="type_cake" value="Клубника">
                                         <label for="napolnitel__klubnika__muss">Клубника</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="radio" name = "creme_muss" id="napolnitel__abricos__muss" class="type_cake" value="Мусс">
+                                        <input type="radio" name = "creme_muss" id="napolnitel__abricos__muss" class="type_cake" value="Абрикос">
                                         <label for="napolnitel__abricos__muss">Абрикос</label>
                                     </div>
                                 </div>
@@ -174,15 +174,15 @@
                                 <h5 class="item_title">Отделка</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="checkbox" name = "otdelka" id="otdelka__mastika__bisquit" class="type_cake" value="Бисквит">
+                                        <input type="checkbox" name = "otdelka" id="otdelka__mastika__bisquit" class="type_cake" value="Мастика">
                                         <label for="otdelka__mastika__bisquit">Мастика</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name = "otdelka" id="otdelka__krem__bisquit" class="type_cake" value="Мусс">
+                                        <input type="checkbox" name = "otdelka" id="otdelka__krem__bisquit" class="type_cake" value="Крем">
                                         <label for="otdelka__krem__bisquit">Крем</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name = "otdelka" id="otdelka__frukt__bisquit" class="type_cake" value="Мусс">
+                                        <input type="checkbox" name = "otdelka" id="otdelka__frukt__bisquit" class="type_cake" value="Фрукты">
                                         <label for="otdelka__frukt__bisquit">Фрукты</label>
                                     </div>
                                 </div>
@@ -193,19 +193,19 @@
                                 <h5 class="item_title">Декоративные элементы</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__nuts__bisquit" class="type_cake" value="Бисквит">
+                                        <input type="checkbox" name="decor" id="dekor__nuts__bisquit" class="type_cake" value="Орехи">
                                         <label for="dekor__nuts__bisquit">Орехи</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__marshmellow__bisquit" class="type_cake" value="Мусс">
+                                        <input type="checkbox" name="decor" id="dekor__marshmellow__bisquit" class="type_cake" value="Маршмеллоу">
                                         <label for="dekor__marshmellow__bisquit">Маршмеллоу</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__beze__bisquit" class="type_cake" value="Мусс">
+                                        <input type="checkbox" name="decor" id="dekor__beze__bisquit" class="type_cake" value="Безе">
                                         <label for="dekor__beze__bisquit">Безе</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__struzhka__bisquit" class="type_cake" value="Мусс">
+                                        <input type="checkbox" name="decor" id="dekor__struzhka__bisquit" class="type_cake" value="Шоколадная стружка">
                                         <label for="dekor__struzhka__bisquit">Шоколадная стружка</label>
                                     </div>
                                 </div>
@@ -214,13 +214,13 @@
                             <!-- НАДПИСЬ -->
                             <div class="constructor_item" data-text>
                                 <h5 class="item_title">Надпись на торте</h5>
-                                <input type="text" name="userNadpis" class="constructor_input_user" placeholder="Ваша надпись">
+                                <input type="text" name="nadpis" class="constructor_input_user" placeholder="Ваша надпись">
                             </div>
 
                             <!-- ПОЖЕЛАНИЯ -->
                             <div class="constructor_item" data-wish>
                                 <h5 class="item_title">Ваши пожелания</h5>
-                                <textarea name="userZhelanie" class="constructor_input_user" cols="10" rows="3"></textarea>
+                                <textarea name="pozhelanie" class="constructor_input_user" cols="10" rows="3"></textarea>
                             </div>
 
                         </div>
@@ -249,7 +249,7 @@
                                             <!-- ВЕС -->
                                             <div class="constructor_item item_after" data-weight>
                                                 <h5 class="item_title text-center">Вес</h5>
-                                                <p class="modal_descr text-center">Расчет торта идет из простой формулы: 1кг на 5 персон</p>
+                                                <p class="modal_descr text-center">Расчет торта идёт из простой формулы: 1кг на 5 персон</p>
                                                 <div class="item_content d-flex justify-content-center">
                                                     <div class="item_label">
                                                         <input type="radio" name="weight"  id="ves_1" class="type_cake" value="1кг" checked="">
@@ -272,11 +272,12 @@
                                                         <label for="ves_5">5 кг</label>
                                                     </div>
                                                     <div class="item_label">
-                                                        <input type="radio" name="weight" id="ves_6" class="type_cake" value="6">
+                                                        <input type="radio" name="weight" id="ves_6" class="type_cake" value="6кг">
                                                         <label for="ves_6">6 кг</label>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <p class=" text-center">Предварительная сумма составит: <span> 5000 </span> &#8381;</p>
 
                                             <!-- ВЕС ДЛЯ БЕНТО ТОРТА -->
                                             <div class="constructor_item item_after" data-bento_weight>
@@ -300,10 +301,10 @@
                                                 <h5 class="item_title text-center">Для кого</h5>
                                                 <div class="item_content d-flex">
 
+                                                    <p class="basket_modal_descr">Укажите свои данные и мы свяжемся для подтверждения</p>
                                                     <input type="text" name="userName" id="userName" placeholder="имя" required>
 
-
-                                                    <input type="text" name="userPhone"  id="userPhone" placeholder="телфон" required>
+                                                    <input type="text" name="userPhone"  id="userPhone" placeholder="телефон" required>
 
                                                 </div>
                                             </div>
@@ -311,16 +312,18 @@
                                             <div class="constructor_item  item_after">
                                                 <h5 class="item_title text-center">Дата</h5>
                                                 <div class="item_label">
+                                                    <p class="basket_modal_descr">К какому дню все должно быть готово?</p>
                                                     <input type="date" name="userData"  id="userData" placeholder="дата" required>
                                                 </div>
                                             </div>
-                                            <!--
-                                                                            <div class="constructor_item item_after">
-                                                                                <div class="item_label">
-                                                                                   <button type="submit" class="constructor_button_offer m-auto">Отправить заказ</button>
-                                                                                </div>
-                                                                            </div> -->
 
+                                            <div class="constructor_item  item_after">
+                                                <div class="item_label d-flex justify-content-center align-items-center">
+                                                    <input type="checkbox" name="basket_privacy_check" id="basket_privacy_check" required checked>
+                                                    <p class="privacy_descr">Я согласен(согласна) на обработку персональных данных</p>
+                                                </div>
+                                                <p><a href="<?=$this->alias('privacy')?>" class="privacy_basket">Политика конфиденциальности</a></p>
+                                            </div>
 
                                         </div>
                                         <!-- контент модалки -->

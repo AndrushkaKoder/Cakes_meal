@@ -1,0 +1,40 @@
+Fault: 23-11-2022 18:44:28 - Class web\user\controllers\ConstructorController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 18:52:22 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 18:52:22 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 18:57:10 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 18:57:10 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 18:59:01 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 18:59:01 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 19:00:54 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 19:06:25 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 23-11-2022 19:14:48 - Class web\user\controllers\WebController does not exist
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
