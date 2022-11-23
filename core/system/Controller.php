@@ -53,7 +53,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
     }
 
-    protected function renderPage(?array $data){  //в data ложатся комментарии со страницы
+    protected function renderPage(?array $data) : void{  //в data ложатся комментарии со страницы
 
         $layOutPath = \App::config()->WEB('layout', Router::getMode(), 'template') ?: \App::config()->WEB('layout', 'template'); //шаблон, лежащий в web.php
 
@@ -157,7 +157,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
     }
 
-    protected function getTemplateImg(){
+    protected function getTemplateImg() : string{
 
         if(!empty(\App::config()->WEB('img'))){
 
@@ -169,7 +169,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
     }
 
-    protected function getScripts(){
+    protected function getScripts() : void{
 
         if(!empty(\App::config()->WEB('js'))){
 

@@ -45,13 +45,13 @@ final class App //final - класс от которого нельзя насл
 
     }
 
-    public static function run(){ // публичный статичный метод запуска приложения
+    public static function run() : void{ // публичный статичный метод запуска приложения
 
         self::execute(\core\system\Router::setRoute()); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
 
     }
 
-    public static function execute($route, $arguments = []){
+    public static function execute(?array $route, $arguments = []){
 
         $route['controller'] = $route['controller'] ?? \core\system\Router::getController();
 
