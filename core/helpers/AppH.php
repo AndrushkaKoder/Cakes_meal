@@ -79,7 +79,25 @@ class AppH
 
     public static function isHtmlRequest(){
 
-        return empty($_SERVER['HTTP_ACCEPT']) || preg_match('/^((text\/html)|(\W+$))/i', $_SERVER['HTTP_ACCEPT']);
+        $result = false;
+
+        if(empty($_SERVER['HTTP_ACCEPT'])){
+
+            $url = preg_split('/(\/)|(\?.*)/', $_SERVER['REQUEST_URI'], 0, PREG_SPLIT_NO_EMPTY);
+
+            if(!preg_match('/\.[^\.]{2,6}$/', array_pop($url))){
+
+                $result = true;
+
+            }
+
+        }elseif (preg_match('/^((text\/html)|(\W+$))/i', $_SERVER['HTTP_ACCEPT'])){
+
+            $result = true;
+
+        }
+
+        return $result;
 
     }
 

@@ -65,7 +65,7 @@ class Router
 
                 self::$mode = 'user';
 
-                if(!\AppH::isPost()){
+                if(!\AppH::isPost() && \AppH::isHtmlRequest()){
 
                     $pattern = '';
 

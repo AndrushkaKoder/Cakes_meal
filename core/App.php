@@ -61,21 +61,26 @@ final class App //final - класс от которого нельзя насл
 
         try{
 
-            //  здесь ложится отражение метода request у класса $controller
-            $object = new \ReflectionMethod($controller, 'request'); // Проверка есть ли метод request у $controller
+            try{
 
-            //по средствам метода ivoke отражение request вызывается у нового экземпляра класса $controller
-            return $object->invoke(new $controller, $route['parameters'] ?? [], $arguments); //invoke - метод объекта Reflection, который вызвает метод, поданый в конструктор, создавая при этом новый экземпляр класса
+                //  здесь ложится отражение метода request у класса $controller
+                $object = new \ReflectionMethod($controller, 'request'); // Проверка есть ли метод request у $controller
 
-        }catch (ReflectionException $e){
+                //по средствам метода ivoke отражение request вызывается у нового экземпляра класса $controller
+                return $object->invoke(new $controller, $route['parameters'] ?? [], $arguments); //invoke - метод объекта Reflection, который вызвает метод, поданый в конструктор, создавая при этом новый экземпляр класса
 
-            exit($e->getMessage()); //
+            }catch (ReflectionException $e){
+
+                throw new \core\exceptions\RouteException($e->getMessage() . "\r\n" . $_SERVER['REQUEST_URI']);
+
+            }
 
         }catch (\core\exceptions\RouteException $e){
 
             exit($e->showMessage());
 
         }
+
 
     }
 

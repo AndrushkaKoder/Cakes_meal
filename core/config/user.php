@@ -4,6 +4,7 @@ return [
     'user' => [
         'views' => 'web/user/views/default',
         'css' => 'style',
-        'js' => 'script'
+        'js' => 'script',
+        'img' => 'images'
     ]
 ];
