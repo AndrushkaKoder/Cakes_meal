@@ -7,16 +7,18 @@ final class App //final - класс от которого нельзя насл
 {
 
 //    приватные свойства класса App
+
+    private static $model = null;
+
     private static array $properties = []; // приватное свойство 'СВОЙСТВА'
 
     private static string $configPath = 'config'; // путь до core/config
 
     public static string $webDirectory = 'web'; // путь относительно Корня до web.php
 
-
     private function __construct(){} // делаем приватный конструктор для того, чтобы нельзя было сделать new App
 
-    public static function init() : void{ //метод точки входа. В нём вызываем подключение путей и динамическое подключение классов,
+    public static function init($run = true) : void{ //метод точки входа. В нём вызываем подключение путей и динамическое подключение классов,
         //и метод конфигурации приклады и вызываем метод run
 
         self::setPathes(); // подключение путей appH
@@ -37,50 +39,54 @@ final class App //final - класс от которого нельзя насл
 
         }
 
-        self::run(); // запуск приложения
+        session_start();
+
+        $run && self::run(); // запуск приложения
 
     }
 
     public static function run(){ // публичный статичный метод запуска приложения
 
-        session_start();
+        self::execute(\core\system\Router::setRoute()); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
 
-        $route = \core\system\Router::createRoute(); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
+    }
 
-        $controller = self::getWebPath() . trim(self::WEB('controllersPath', 'userControllers'), '/') . '/' . $route['controller'];
+    public static function execute($route, $arguments = []){
 
-        $controller = str_replace('/', '\\', $controller); // в $controller залетает "\web\user\controllers\indexController"
-        
-        
+        $route['controller'] = $route['controller'] ?? \core\system\Router::getController();
 
+        $route['parameters'] = $route['parameters'] ?? \core\system\Router::getParameters();
 
-        try{
-//            $rf = new \ReflectionFunction ('Vasya');
-//            $rFile = $rf->getFileName();
-//            $rLine = $rf->getStartLine();
-//            $a = (new \ReflectionFunction('Vasya'))->getFileName();
+        $controller = str_replace('/', '\\', $route['controller']); // в $controller залетает "\web\user\controllers\indexController"
 
-            //  здесь ложится отражение метода request у класса $controller
-            $object = new \ReflectionMethod($controller, 'request'); // Проверка есть ли метод request у $controller
+        try {
 
-            //по средствам метода ivoke отражение request вызывается у нового экземпляра класса $controller
-            $object->invoke(new $controller, $route['parameters'] ?? []); //invoke - метод объекта Reflection, который вызвает метод, поданый в конструктор, создавая при этом новый экземпляр класса
+            try{
 
-        }catch (ReflectionException $e){
+                //  здесь ложится отражение метода request у класса $controller
+                $object = new \ReflectionMethod($controller, 'request'); // Проверка есть ли метод request у $controller
 
-            exit($e->getMessage()); //
+                //по средствам метода ivoke отражение request вызывается у нового экземпляра класса $controller
+                return $object->invoke(new $controller, $route['parameters'] ?? [], $arguments); //invoke - метод объекта Reflection, который вызвает метод, поданый в конструктор, создавая при этом новый экземпляр класса
+
+            }catch (ReflectionException $e){
+
+                throw new \core\exceptions\RouteException($e->getMessage());
+
+            }
 
         }catch (\core\exceptions\RouteException $e){
 
-            exit($e->getMessage());
+            exit($e->showMessage());
 
         }
+
 
     }
 
     private static function setPathes() : void{ //подключение путей
 
-        self::$properties['FULL_PATH'] = realpath(__DIR__ . '/../') . '/'; //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
+        self::$properties['FULL_PATH'] = str_replace('\\', '/', realpath(__DIR__ . '/../') . '/'); //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
 
         if(!empty($_SERVER['DOCUMENT_ROOT']) && strpos(self::$properties['FULL_PATH'], $_SERVER['DOCUMENT_ROOT']) === 0){
 
@@ -91,8 +97,6 @@ final class App //final - класс от которого нельзя насл
             self::$properties['PATH'] = '/'; //если вызов сделан из консоли
 
         }
-
-        include_once realpath(__DIR__) . '/helpers/AppH.php'; // возвращает реальный путь к дериктории (абсолютный). Относительно папки core подтягиваем класс appH
 
     }
 
@@ -106,13 +110,17 @@ final class App //final - класс от которого нельзя насл
 
                 include_once (self::FULL_PATH() . $fileName . '.php'); //инклюдим файл (класс) по полному пути
 
-            }elseif (is_readable(self::FULL_PATH() . 'vendor/autoload.php')){ //если проект лежит в папке Vendor
-
-                include_once self::FULL_PATH() . 'vendor/autoload.php'; //инклюдим файл (класс) из папки Vendor
-
             }
 
         });
+
+        include_once realpath(__DIR__) . '/helpers/AppH.php'; // возвращает реальный путь к дериктории (абсолютный). Относительно папки core подтягиваем класс appH
+
+        if (is_readable(self::FULL_PATH() . 'vendor/autoload.php')){ //если проект лежит в папке Vendor
+
+            include_once self::FULL_PATH() . 'vendor/autoload.php'; //инклюдим файл (класс) из папки Vendor
+
+        }
 
     }
 
@@ -160,7 +168,7 @@ final class App //final - класс от которого нельзя насл
 
         static $fullPath = ''; //сюда придёт абсолютный путь относительно корня ОС 1 раз
 
-        !$path && $path = (!empty(self::WEB('path')) ? rtrim(self::WEB('path')) : '') . '/' . self::$webDirectory . '/';
+        !$path && $path = (!empty(self::config()->WEB('path')) ? rtrim(self::config()->WEB('path')) : '') . '/' . self::$webDirectory . '/';
 
         !$fullPath && $fullPath = preg_replace('/\/{2,}/', '/', str_replace('\\', '/', self::FULL_PATH() . $path));
 
@@ -172,39 +180,129 @@ final class App //final - класс от которого нельзя насл
         // написать метод
     }
 
-    public static function __callStatic(string $name, array $arguments){ //магический метод получения данных из /core/config
+    public static function PATH(){
 
-        if(!array_key_exists($name, self::$properties)){
+        return self::$properties['PATH'] ?? null;
 
-            return null;
+    }
 
-        }
+    public static function FULL_PATH(){
 
-        $data = self::$properties[$name];
+        return self::$properties['FULL_PATH'] ?? null;
 
-        if(is_array($data)){
+    }
 
-            foreach ($arguments as $value){
+    public static function config(){
 
-                $value = (array)$value;
+        static $config;
 
-                foreach ($value as $item){
+        if(!$config){
 
-                    if(!array_key_exists($item, $data)){
+            $config = new class(self::$properties){
 
-                        return $data;
+                private array $properties;
 
-                    }
+                public function __construct($properties){
 
-                    $data = $data[$item];
+                    $this->properties = &$properties;
 
                 }
 
-            }
+                public function WEB(){
+
+                    $mode = \core\system\Router::getMode();
+
+                    $args = func_get_args();
+
+                    if(($key = array_search($mode, $args)) !== false){
+
+                        unset($args[$key]);
+
+                        $args = array_values($args);
+
+                    }
+
+                    $mode = strtoupper($mode);
+
+                    if(array_key_exists($mode, $this->properties)){
+
+                        $res = $this->$mode(...$args);
+
+                        if($res){
+
+                            return $res;
+
+                        }
+
+                    }
+
+                    return $this->searchProperty('WEB', func_get_args());
+
+                }
+
+                public function __call($name, $arguments){
+
+                    return $this->searchProperty($name, $arguments);
+
+                }
+
+                private function searchProperty($name, $arguments){
+
+                    if(!array_key_exists($name, $this->properties)){
+
+                        return null;
+
+                    }
+
+                    $data = $this->properties[$name];
+
+                    if(is_array($data)){
+
+                        foreach ($arguments as $value){
+
+                            $value = (array)$value;
+
+                            foreach ($value as $item){
+
+                                if(!array_key_exists($item, $data)){
+
+                                    return null;
+
+                                }
+
+                                $data = $data[$item];
+
+                            }
+
+                        }
+
+                    }
+
+                    return $data;
+
+                }
+
+            };
 
         }
 
-        return $data;
+        return $config;
+
+    }
+
+    public static function setModel($model){
+
+        if(!self::$model){
+
+            self::$model = $model;
+
+        }
+
+    }
+
+    public static function model(){
+
+        return self::$model;
 
     }
 

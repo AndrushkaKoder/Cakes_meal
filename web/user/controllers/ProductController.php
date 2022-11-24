@@ -11,16 +11,16 @@ class ProductController extends BaseUser
 
     protected function actionInput(){
 
+    if(empty($this->parameters['alias'])){
 
+        throw new RouteException('Такой страницы не существует');
 
-        if(empty($this->parameters[0])){
-            throw new RouteException('Такой страницы не существует');
-        }
+    }
 
      $product = $this->getGoods([
          'where' => [
              'visible' => 1,
-             'alias' => $this->parameters[0]
+             'alias' => $this->parameters['alias']
          ],
          'single' => true
      ]);

@@ -133,7 +133,7 @@
                                     </div>
                                     <?php endif;?>
 <!--                                    <i class="fa-solid fa-plus"></i>-->
-                                    <div class="bastet_modal_item basket_questions p-4">
+                                    <div class="basket_modal_item basket_questions p-4">
                                         <p>
                                             <button class="basket_button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                                                 Напишите нам свои пожелания

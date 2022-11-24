@@ -1,0 +1,44 @@
+body {
+    background-color: #00796B;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.error {
+    color: #B71C1C;
+    font-weight: bold;
+}
+
+.highlight {
+    color: #212121;
+    font-weight: bold;
+}
+
+.card {
+    color: #727272;
+    background-color: #fff;
+    word-wrap: break-word;
+    padding: 0;
+    margin: 10px;
+    /*margin: -40px 10px 10px 10px;*/
+    /*border: 1px solid #9E9E9E;*/
+    /*border-top: 50px solid #727272;*/
+    /*border-radius: 2px;*/
+    box-shadow: 1px 1px 1px #212121;
+}
+
+h2 {
+    background-color: #727272;
+    margin: 0;
+    padding: 10px;
+    color: #fff;
+}
+
+.article {
+    margin: 10px;
+    padding: 10px;
+}
+
+a {
+    color: #448AFF;
+}

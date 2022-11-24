@@ -1,8 +1,8 @@
 <?php
 
-
 namespace web\user\helpers;
 
+use core\system\Logger;
 
 trait ValidationHelper
 {
@@ -23,7 +23,7 @@ trait ValidationHelper
 
     protected function numericField($value, $answer, $count = null){
 
-        $value = preg_replace('/\D/', '', \AppH::clearStr($value));
+        $value = preg_replace('/\D/', '', $value);
 
         if(!$value){
 
@@ -36,7 +36,7 @@ trait ValidationHelper
             if(strlen($value) !== $count){
 
                 $this->sendError('Длина поля ' . $answer . ' должна содержать ',
-                    $count . ' ' . $this->wordsForCounter($count, ['Символов', 'Символ', 'Символа']));
+                                        $count . ' ' . \AppH::wordsForCounter($count, ['Символов', 'Символ', 'Символа']));
 
             }
 
@@ -48,7 +48,7 @@ trait ValidationHelper
 
     protected function phoneField($value, $answer = null){
 
-        $value = preg_replace('/\D/', '', \AppH::clearStr($value));
+        $value = preg_replace('/\D/', '', $value);
 
         if(strlen($value) === 11){
 
@@ -86,11 +86,11 @@ trait ValidationHelper
 
             }
 
-            $this->writeLog($logMessage, $fileName);
+            Logger::instance()->writeLog($logMessage, $fileName);
 
         }
 
-        if(strpos($class, 'error') !== false){
+        if($class === 'error'){
 
             $this->addSessionData();
 

@@ -1,0 +1,492 @@
+object(Workerman\Connection\TcpConnection)#7 (27) {
+  ["onMessage"]=>
+  object(Closure)#2 (2) {
+    ["static"]=>
+    array(1) {
+      ["webSocket"]=>
+      object(Workerman\Worker)#3 (27) {
+        ["id"]=>
+        int(0)
+        ["name"]=>
+        string(4) "none"
+        ["count"]=>
+        int(1)
+        ["user"]=>
+        string(0) ""
+        ["group"]=>
+        string(0) ""
+        ["reloadable"]=>
+        bool(true)
+        ["reusePort"]=>
+        bool(false)
+        ["onWorkerStart"]=>
+        NULL
+        ["onConnect"]=>
+        object(Closure)#4 (1) {
+          ["parameter"]=>
+          array(1) {
+            ["$connection"]=>
+            string(10) "<required>"
+          }
+        }
+        ["onMessage"]=>
+        *RECURSION*
+        ["onClose"]=>
+        object(Closure)#6 (1) {
+          ["parameter"]=>
+          array(1) {
+            ["$connection"]=>
+            string(10) "<required>"
+          }
+        }
+        ["onError"]=>
+        object(Closure)#5 (1) {
+          ["parameter"]=>
+          array(1) {
+            ["$error"]=>
+            string(10) "<required>"
+          }
+        }
+        ["onBufferFull"]=>
+        NULL
+        ["onBufferDrain"]=>
+        NULL
+        ["onWorkerStop"]=>
+        NULL
+        ["onWorkerReload"]=>
+        NULL
+        ["transport"]=>
+        string(3) "tcp"
+        ["connections"]=>
+        array(1) {
+          [1]=>
+          *RECURSION*
+        }
+        ["protocol"]=>
+        string(29) "Workerman\Protocols\Websocket"
+        ["_autoloadRootPath":protected]=>
+        string(89) "D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable"
+        ["_pauseAccept":protected]=>
+        bool(false)
+        ["stopping"]=>
+        bool(false)
+        ["_mainSocket":protected]=>
+        resource(20) of type (stream)
+        ["_socketName":protected]=>
+        string(24) "websocket://0.0.0.0:2346"
+        ["_localSocket":protected]=>
+        NULL
+        ["_context":protected]=>
+        resource(15) of type (stream-context)
+        ["workerId"]=>
+        string(32) "000000000715126c0000000032d39da8"
+      }
+    }
+    ["parameter"]=>
+    array(2) {
+      ["$connection"]=>
+      string(10) "<required>"
+      ["$data"]=>
+      string(10) "<required>"
+    }
+  }
+  ["onClose"]=>
+  object(Closure)#6 (1) {
+    ["parameter"]=>
+    array(1) {
+      ["$connection"]=>
+      string(10) "<required>"
+    }
+  }
+  ["onError"]=>
+  object(Closure)#5 (1) {
+    ["parameter"]=>
+    array(1) {
+      ["$error"]=>
+      string(10) "<required>"
+    }
+  }
+  ["onBufferFull"]=>
+  NULL
+  ["onBufferDrain"]=>
+  NULL
+  ["protocol"]=>
+  string(29) "Workerman\Protocols\Websocket"
+  ["transport"]=>
+  string(3) "tcp"
+  ["worker"]=>
+  object(Workerman\Worker)#3 (27) {
+    ["id"]=>
+    int(0)
+    ["name"]=>
+    string(4) "none"
+    ["count"]=>
+    int(1)
+    ["user"]=>
+    string(0) ""
+    ["group"]=>
+    string(0) ""
+    ["reloadable"]=>
+    bool(true)
+    ["reusePort"]=>
+    bool(false)
+    ["onWorkerStart"]=>
+    NULL
+    ["onConnect"]=>
+    object(Closure)#4 (1) {
+      ["parameter"]=>
+      array(1) {
+        ["$connection"]=>
+        string(10) "<required>"
+      }
+    }
+    ["onMessage"]=>
+    object(Closure)#2 (2) {
+      ["static"]=>
+      array(1) {
+        ["webSocket"]=>
+        *RECURSION*
+      }
+      ["parameter"]=>
+      array(2) {
+        ["$connection"]=>
+        string(10) "<required>"
+        ["$data"]=>
+        string(10) "<required>"
+      }
+    }
+    ["onClose"]=>
+    object(Closure)#6 (1) {
+      ["parameter"]=>
+      array(1) {
+        ["$connection"]=>
+        string(10) "<required>"
+      }
+    }
+    ["onError"]=>
+    object(Closure)#5 (1) {
+      ["parameter"]=>
+      array(1) {
+        ["$error"]=>
+        string(10) "<required>"
+      }
+    }
+    ["onBufferFull"]=>
+    NULL
+    ["onBufferDrain"]=>
+    NULL
+    ["onWorkerStop"]=>
+    NULL
+    ["onWorkerReload"]=>
+    NULL
+    ["transport"]=>
+    string(3) "tcp"
+    ["connections"]=>
+    array(1) {
+      [1]=>
+      *RECURSION*
+    }
+    ["protocol"]=>
+    string(29) "Workerman\Protocols\Websocket"
+    ["_autoloadRootPath":protected]=>
+    string(89) "D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable"
+    ["_pauseAccept":protected]=>
+    bool(false)
+    ["stopping"]=>
+    bool(false)
+    ["_mainSocket":protected]=>
+    resource(20) of type (stream)
+    ["_socketName":protected]=>
+    string(24) "websocket://0.0.0.0:2346"
+    ["_localSocket":protected]=>
+    NULL
+    ["_context":protected]=>
+    resource(15) of type (stream-context)
+    ["workerId"]=>
+    string(32) "000000000715126c0000000032d39da8"
+  }
+  ["bytesRead"]=>
+  int(906)
+  ["bytesWritten"]=>
+  int(182)
+  ["id"]=>
+  int(1)
+  ["_id":protected]=>
+  int(1)
+  ["maxSendBufferSize"]=>
+  int(1048576)
+  ["maxPackageSize"]=>
+  int(10485760)
+  ["_socket":protected]=>
+  resource(24) of type (stream)
+  ["_sendBuffer":protected]=>
+  string(0) ""
+  ["_recvBuffer":protected]=>
+  string(0) ""
+  ["_currentPackageLength":protected]=>
+  int(0)
+  ["_status":protected]=>
+  int(2)
+  ["_remoteAddress":protected]=>
+  string(15) "127.0.0.1:62363"
+  ["_isPaused":protected]=>
+  bool(false)
+  ["_sslHandshakeCompleted":protected]=>
+  bool(false)
+  ["websocketDataBuffer"]=>
+  string(0) ""
+  ["websocketCurrentFrameLength"]=>
+  int(0)
+  ["websocketCurrentFrameBuffer"]=>
+  string(0) ""
+  ["websocketType"]=>
+  string(1) ""
+  ["websocketHandshake"]=>
+  bool(true)
+}
+object(Workerman\Connection\TcpConnection)#7 (27) {
+  ["onMessage"]=>
+  object(Closure)#2 (2) {
+    ["static"]=>
+    array(1) {
+      ["webSocket"]=>
+      object(Workerman\Worker)#3 (27) {
+        ["id"]=>
+        int(0)
+        ["name"]=>
+        string(4) "none"
+        ["count"]=>
+        int(1)
+        ["user"]=>
+        string(0) ""
+        ["group"]=>
+        string(0) ""
+        ["reloadable"]=>
+        bool(true)
+        ["reusePort"]=>
+        bool(false)
+        ["onWorkerStart"]=>
+        NULL
+        ["onConnect"]=>
+        object(Closure)#4 (1) {
+          ["parameter"]=>
+          array(1) {
+            ["$connection"]=>
+            string(10) "<required>"
+          }
+        }
+        ["onMessage"]=>
+        *RECURSION*
+        ["onClose"]=>
+        object(Closure)#6 (1) {
+          ["parameter"]=>
+          array(1) {
+            ["$connection"]=>
+            string(10) "<required>"
+          }
+        }
+        ["onError"]=>
+        object(Closure)#5 (1) {
+          ["parameter"]=>
+          array(1) {
+            ["$error"]=>
+            string(10) "<required>"
+          }
+        }
+        ["onBufferFull"]=>
+        NULL
+        ["onBufferDrain"]=>
+        NULL
+        ["onWorkerStop"]=>
+        NULL
+        ["onWorkerReload"]=>
+        NULL
+        ["transport"]=>
+        string(3) "tcp"
+        ["connections"]=>
+        array(1) {
+          [1]=>
+          *RECURSION*
+        }
+        ["protocol"]=>
+        string(29) "Workerman\Protocols\Websocket"
+        ["_autoloadRootPath":protected]=>
+        string(89) "D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable"
+        ["_pauseAccept":protected]=>
+        bool(false)
+        ["stopping"]=>
+        bool(false)
+        ["_mainSocket":protected]=>
+        resource(20) of type (stream)
+        ["_socketName":protected]=>
+        string(24) "websocket://0.0.0.0:2346"
+        ["_localSocket":protected]=>
+        NULL
+        ["_context":protected]=>
+        resource(15) of type (stream-context)
+        ["workerId"]=>
+        string(32) "000000000715126c0000000032d39da8"
+      }
+    }
+    ["parameter"]=>
+    array(2) {
+      ["$connection"]=>
+      string(10) "<required>"
+      ["$data"]=>
+      string(10) "<required>"
+    }
+  }
+  ["onClose"]=>
+  object(Closure)#6 (1) {
+    ["parameter"]=>
+    array(1) {
+      ["$connection"]=>
+      string(10) "<required>"
+    }
+  }
+  ["onError"]=>
+  object(Closure)#5 (1) {
+    ["parameter"]=>
+    array(1) {
+      ["$error"]=>
+      string(10) "<required>"
+    }
+  }
+  ["onBufferFull"]=>
+  NULL
+  ["onBufferDrain"]=>
+  NULL
+  ["protocol"]=>
+  string(29) "Workerman\Protocols\Websocket"
+  ["transport"]=>
+  string(3) "tcp"
+  ["worker"]=>
+  object(Workerman\Worker)#3 (27) {
+    ["id"]=>
+    int(0)
+    ["name"]=>
+    string(4) "none"
+    ["count"]=>
+    int(1)
+    ["user"]=>
+    string(0) ""
+    ["group"]=>
+    string(0) ""
+    ["reloadable"]=>
+    bool(true)
+    ["reusePort"]=>
+    bool(false)
+    ["onWorkerStart"]=>
+    NULL
+    ["onConnect"]=>
+    object(Closure)#4 (1) {
+      ["parameter"]=>
+      array(1) {
+        ["$connection"]=>
+        string(10) "<required>"
+      }
+    }
+    ["onMessage"]=>
+    object(Closure)#2 (2) {
+      ["static"]=>
+      array(1) {
+        ["webSocket"]=>
+        *RECURSION*
+      }
+      ["parameter"]=>
+      array(2) {
+        ["$connection"]=>
+        string(10) "<required>"
+        ["$data"]=>
+        string(10) "<required>"
+      }
+    }
+    ["onClose"]=>
+    object(Closure)#6 (1) {
+      ["parameter"]=>
+      array(1) {
+        ["$connection"]=>
+        string(10) "<required>"
+      }
+    }
+    ["onError"]=>
+    object(Closure)#5 (1) {
+      ["parameter"]=>
+      array(1) {
+        ["$error"]=>
+        string(10) "<required>"
+      }
+    }
+    ["onBufferFull"]=>
+    NULL
+    ["onBufferDrain"]=>
+    NULL
+    ["onWorkerStop"]=>
+    NULL
+    ["onWorkerReload"]=>
+    NULL
+    ["transport"]=>
+    string(3) "tcp"
+    ["connections"]=>
+    array(1) {
+      [1]=>
+      *RECURSION*
+    }
+    ["protocol"]=>
+    string(29) "Workerman\Protocols\Websocket"
+    ["_autoloadRootPath":protected]=>
+    string(89) "D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable"
+    ["_pauseAccept":protected]=>
+    bool(false)
+    ["stopping"]=>
+    bool(false)
+    ["_mainSocket":protected]=>
+    resource(20) of type (stream)
+    ["_socketName":protected]=>
+    string(24) "websocket://0.0.0.0:2346"
+    ["_localSocket":protected]=>
+    NULL
+    ["_context":protected]=>
+    resource(15) of type (stream-context)
+    ["workerId"]=>
+    string(32) "000000000715126c0000000032d39da8"
+  }
+  ["bytesRead"]=>
+  int(1123)
+  ["bytesWritten"]=>
+  int(389)
+  ["id"]=>
+  int(1)
+  ["_id":protected]=>
+  int(1)
+  ["maxSendBufferSize"]=>
+  int(1048576)
+  ["maxPackageSize"]=>
+  int(10485760)
+  ["_socket":protected]=>
+  resource(24) of type (stream)
+  ["_sendBuffer":protected]=>
+  string(0) ""
+  ["_recvBuffer":protected]=>
+  string(0) ""
+  ["_currentPackageLength":protected]=>
+  int(0)
+  ["_status":protected]=>
+  int(2)
+  ["_remoteAddress":protected]=>
+  string(15) "127.0.0.1:62363"
+  ["_isPaused":protected]=>
+  bool(false)
+  ["_sslHandshakeCompleted":protected]=>
+  bool(false)
+  ["websocketDataBuffer"]=>
+  string(0) ""
+  ["websocketCurrentFrameLength"]=>
+  int(0)
+  ["websocketCurrentFrameBuffer"]=>
+  string(0) ""
+  ["websocketType"]=>
+  string(1) ""
+  ["websocketHandshake"]=>
+  bool(true)
+}

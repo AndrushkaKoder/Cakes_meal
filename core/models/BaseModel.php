@@ -3,9 +3,12 @@
 namespace core\models;
 
 use core\exceptions\DbException;
+use core\traites\Singleton;
 
 abstract class BaseModel extends BaseModelMethods
 {
+
+    use Singleton;
 
     protected $db;
     protected $bufferingErrors = false;
@@ -43,9 +46,10 @@ abstract class BaseModel extends BaseModelMethods
 
         !$reConnect && $this->setStorage();
 
-       $connectMethod = \App::DB('driver').'Connection';
-       $this->db = DbConnection::$connectMethod();
-        $a=1;
+        $connectMethod = \App::config()->DB('driver').'Connection';
+
+        $this->db = DbConnection::$connectMethod();
+
     }
 
     /**
@@ -65,7 +69,8 @@ abstract class BaseModel extends BaseModelMethods
     public function query($query, $crud = 'r', $return_id = false, ?array $parameters = [])
     {
 
-        $connectMethod = \App::DB('driver').'Query';
+        $connectMethod = \App::config()->DB('driver').'Query';
+
         return  DbConnection::$connectMethod($query, $crud, $return_id, $parameters);
 
 
@@ -208,9 +213,9 @@ abstract class BaseModel extends BaseModelMethods
 
         if(isset($set['pagination']) && $set['pagination']){
 
-            $this->postNumber = isset($set['pagination']['qty']) ? (int)$set['pagination']['qty'] : \App::PAGINATION('user', 'QTY');
+            $this->postNumber = isset($set['pagination']['qty']) ? (int)$set['pagination']['qty'] : \App::config()->PAGINATION('user', 'QTY');
 
-            $this->linkNumber = isset($set['pagination']['qty_links']) ? (int)$set['pagination']['qty_links'] : \App::PAGINATION('user', 'QTY_LINKS');
+            $this->linkNumber = isset($set['pagination']['qty_links']) ? (int)$set['pagination']['qty_links'] : \App::config()->PAGINATION('user', 'QTY_LINKS');
 
             $this->page = !is_array($set['pagination']) ? (int)$set['pagination'] : (int)$set['pagination']['page'];
 
@@ -863,7 +868,7 @@ abstract class BaseModel extends BaseModelMethods
 
     public function showForeignKeys($table = false, $key = false){
 
-        $db = DB_NAME;
+        $db = \App::config()->DB('dbName');
 
         $where = $key ? "AND COLUMN_NAME = '$key' LIMIT 1" : '';
 

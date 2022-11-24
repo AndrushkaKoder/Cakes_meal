@@ -1,0 +1,1544 @@
+Workerman\Connection\TcpConnection Object
+(
+    [onMessage] => Closure Object
+        (
+            [static] => Array
+                (
+                    [webSocket] => Workerman\Worker Object
+                        (
+                            [id] => 0
+                            [name] => none
+                            [count] => 1
+                            [user] => 
+                            [group] => 
+                            [reloadable] => 1
+                            [reusePort] => 
+                            [onWorkerStart] => 
+                            [onConnect] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onMessage] => Closure Object
+ *RECURSION*
+                            [onClose] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onError] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$error] => <required>
+                                        )
+
+                                )
+
+                            [onBufferFull] => 
+                            [onBufferDrain] => 
+                            [onWorkerStop] => 
+                            [onWorkerReload] => 
+                            [transport] => tcp
+                            [connections] => Array
+                                (
+                                    [1] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                                )
+
+                            [protocol] => Workerman\Protocols\Websocket
+                            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+                            [_pauseAccept:protected] => 
+                            [stopping] => 
+                            [_mainSocket:protected] => Resource id #17
+                            [_socketName:protected] => websocket://0.0.0.0:2346
+                            [_localSocket:protected] => 
+                            [_context:protected] => Resource id #12
+                            [workerId] => 0000000019f4b2230000000000cd2974
+                        )
+
+                )
+
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                    [$data] => <required>
+                )
+
+        )
+
+    [onClose] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                )
+
+        )
+
+    [onError] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$error] => <required>
+                )
+
+        )
+
+    [onBufferFull] => 
+    [onBufferDrain] => 
+    [protocol] => Workerman\Protocols\Websocket
+    [transport] => tcp
+    [worker] => Workerman\Worker Object
+        (
+            [id] => 0
+            [name] => none
+            [count] => 1
+            [user] => 
+            [group] => 
+            [reloadable] => 1
+            [reusePort] => 
+            [onWorkerStart] => 
+            [onConnect] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onMessage] => Closure Object
+                (
+                    [static] => Array
+                        (
+                            [webSocket] => Workerman\Worker Object
+ *RECURSION*
+                        )
+
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                            [$data] => <required>
+                        )
+
+                )
+
+            [onClose] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onError] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$error] => <required>
+                        )
+
+                )
+
+            [onBufferFull] => 
+            [onBufferDrain] => 
+            [onWorkerStop] => 
+            [onWorkerReload] => 
+            [transport] => tcp
+            [connections] => Array
+                (
+                    [1] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                )
+
+            [protocol] => Workerman\Protocols\Websocket
+            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+            [_pauseAccept:protected] => 
+            [stopping] => 
+            [_mainSocket:protected] => Resource id #17
+            [_socketName:protected] => websocket://0.0.0.0:2346
+            [_localSocket:protected] => 
+            [_context:protected] => Resource id #12
+            [workerId] => 0000000019f4b2230000000000cd2974
+        )
+
+    [bytesRead] => 0
+    [bytesWritten] => 0
+    [id] => 1
+    [_id:protected] => 1
+    [maxSendBufferSize] => 1048576
+    [maxPackageSize] => 10485760
+    [_socket:protected] => Resource id #21
+    [_sendBuffer:protected] => 
+    [_recvBuffer:protected] => 
+    [_currentPackageLength:protected] => 0
+    [_status:protected] => 2
+    [_remoteAddress:protected] => 127.0.0.1:57197
+    [_isPaused:protected] => 
+    [_sslHandshakeCompleted:protected] => 
+    [VISITOR] => Array
+        (
+        )
+
+)
+Workerman\Connection\TcpConnection Object
+(
+    [onMessage] => Closure Object
+        (
+            [static] => Array
+                (
+                    [webSocket] => Workerman\Worker Object
+                        (
+                            [id] => 0
+                            [name] => none
+                            [count] => 1
+                            [user] => 
+                            [group] => 
+                            [reloadable] => 1
+                            [reusePort] => 
+                            [onWorkerStart] => 
+                            [onConnect] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onMessage] => Closure Object
+ *RECURSION*
+                            [onClose] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onError] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$error] => <required>
+                                        )
+
+                                )
+
+                            [onBufferFull] => 
+                            [onBufferDrain] => 
+                            [onWorkerStop] => 
+                            [onWorkerReload] => 
+                            [transport] => tcp
+                            [connections] => Array
+                                (
+                                    [2] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                                )
+
+                            [protocol] => Workerman\Protocols\Websocket
+                            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+                            [_pauseAccept:protected] => 
+                            [stopping] => 
+                            [_mainSocket:protected] => Resource id #17
+                            [_socketName:protected] => websocket://0.0.0.0:2346
+                            [_localSocket:protected] => 
+                            [_context:protected] => Resource id #12
+                            [workerId] => 0000000019f4b2230000000000cd2974
+                        )
+
+                )
+
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                    [$data] => <required>
+                )
+
+        )
+
+    [onClose] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                )
+
+        )
+
+    [onError] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$error] => <required>
+                )
+
+        )
+
+    [onBufferFull] => 
+    [onBufferDrain] => 
+    [protocol] => Workerman\Protocols\Websocket
+    [transport] => tcp
+    [worker] => Workerman\Worker Object
+        (
+            [id] => 0
+            [name] => none
+            [count] => 1
+            [user] => 
+            [group] => 
+            [reloadable] => 1
+            [reusePort] => 
+            [onWorkerStart] => 
+            [onConnect] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onMessage] => Closure Object
+                (
+                    [static] => Array
+                        (
+                            [webSocket] => Workerman\Worker Object
+ *RECURSION*
+                        )
+
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                            [$data] => <required>
+                        )
+
+                )
+
+            [onClose] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onError] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$error] => <required>
+                        )
+
+                )
+
+            [onBufferFull] => 
+            [onBufferDrain] => 
+            [onWorkerStop] => 
+            [onWorkerReload] => 
+            [transport] => tcp
+            [connections] => Array
+                (
+                    [2] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                )
+
+            [protocol] => Workerman\Protocols\Websocket
+            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+            [_pauseAccept:protected] => 
+            [stopping] => 
+            [_mainSocket:protected] => Resource id #17
+            [_socketName:protected] => websocket://0.0.0.0:2346
+            [_localSocket:protected] => 
+            [_context:protected] => Resource id #12
+            [workerId] => 0000000019f4b2230000000000cd2974
+        )
+
+    [bytesRead] => 0
+    [bytesWritten] => 0
+    [id] => 2
+    [_id:protected] => 2
+    [maxSendBufferSize] => 1048576
+    [maxPackageSize] => 10485760
+    [_socket:protected] => Resource id #26
+    [_sendBuffer:protected] => 
+    [_recvBuffer:protected] => 
+    [_currentPackageLength:protected] => 0
+    [_status:protected] => 2
+    [_remoteAddress:protected] => 127.0.0.1:57546
+    [_isPaused:protected] => 
+    [_sslHandshakeCompleted:protected] => 
+    [VISITOR] => Array
+        (
+        )
+
+)
+Workerman\Connection\TcpConnection Object
+(
+    [onMessage] => Closure Object
+        (
+            [static] => Array
+                (
+                    [webSocket] => Workerman\Worker Object
+                        (
+                            [id] => 0
+                            [name] => none
+                            [count] => 1
+                            [user] => 
+                            [group] => 
+                            [reloadable] => 1
+                            [reusePort] => 
+                            [onWorkerStart] => 
+                            [onConnect] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onMessage] => Closure Object
+ *RECURSION*
+                            [onClose] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onError] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$error] => <required>
+                                        )
+
+                                )
+
+                            [onBufferFull] => 
+                            [onBufferDrain] => 
+                            [onWorkerStop] => 
+                            [onWorkerReload] => 
+                            [transport] => tcp
+                            [connections] => Array
+                                (
+                                    [3] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                                )
+
+                            [protocol] => Workerman\Protocols\Websocket
+                            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+                            [_pauseAccept:protected] => 
+                            [stopping] => 
+                            [_mainSocket:protected] => Resource id #17
+                            [_socketName:protected] => websocket://0.0.0.0:2346
+                            [_localSocket:protected] => 
+                            [_context:protected] => Resource id #12
+                            [workerId] => 0000000019f4b2230000000000cd2974
+                        )
+
+                )
+
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                    [$data] => <required>
+                )
+
+        )
+
+    [onClose] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                )
+
+        )
+
+    [onError] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$error] => <required>
+                )
+
+        )
+
+    [onBufferFull] => 
+    [onBufferDrain] => 
+    [protocol] => Workerman\Protocols\Websocket
+    [transport] => tcp
+    [worker] => Workerman\Worker Object
+        (
+            [id] => 0
+            [name] => none
+            [count] => 1
+            [user] => 
+            [group] => 
+            [reloadable] => 1
+            [reusePort] => 
+            [onWorkerStart] => 
+            [onConnect] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onMessage] => Closure Object
+                (
+                    [static] => Array
+                        (
+                            [webSocket] => Workerman\Worker Object
+ *RECURSION*
+                        )
+
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                            [$data] => <required>
+                        )
+
+                )
+
+            [onClose] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onError] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$error] => <required>
+                        )
+
+                )
+
+            [onBufferFull] => 
+            [onBufferDrain] => 
+            [onWorkerStop] => 
+            [onWorkerReload] => 
+            [transport] => tcp
+            [connections] => Array
+                (
+                    [3] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                )
+
+            [protocol] => Workerman\Protocols\Websocket
+            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+            [_pauseAccept:protected] => 
+            [stopping] => 
+            [_mainSocket:protected] => Resource id #17
+            [_socketName:protected] => websocket://0.0.0.0:2346
+            [_localSocket:protected] => 
+            [_context:protected] => Resource id #12
+            [workerId] => 0000000019f4b2230000000000cd2974
+        )
+
+    [bytesRead] => 0
+    [bytesWritten] => 0
+    [id] => 3
+    [_id:protected] => 3
+    [maxSendBufferSize] => 1048576
+    [maxPackageSize] => 10485760
+    [_socket:protected] => Resource id #28
+    [_sendBuffer:protected] => 
+    [_recvBuffer:protected] => 
+    [_currentPackageLength:protected] => 0
+    [_status:protected] => 2
+    [_remoteAddress:protected] => 127.0.0.1:57726
+    [_isPaused:protected] => 
+    [_sslHandshakeCompleted:protected] => 
+    [VISITOR] => Array
+        (
+        )
+
+)
+Workerman\Connection\TcpConnection Object
+(
+    [onMessage] => Closure Object
+        (
+            [static] => Array
+                (
+                    [webSocket] => Workerman\Worker Object
+                        (
+                            [id] => 0
+                            [name] => none
+                            [count] => 1
+                            [user] => 
+                            [group] => 
+                            [reloadable] => 1
+                            [reusePort] => 
+                            [onWorkerStart] => 
+                            [onConnect] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onMessage] => Closure Object
+ *RECURSION*
+                            [onClose] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onError] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$error] => <required>
+                                        )
+
+                                )
+
+                            [onBufferFull] => 
+                            [onBufferDrain] => 
+                            [onWorkerStop] => 
+                            [onWorkerReload] => 
+                            [transport] => tcp
+                            [connections] => Array
+                                (
+                                    [4] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                                )
+
+                            [protocol] => Workerman\Protocols\Websocket
+                            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+                            [_pauseAccept:protected] => 
+                            [stopping] => 
+                            [_mainSocket:protected] => Resource id #17
+                            [_socketName:protected] => websocket://0.0.0.0:2346
+                            [_localSocket:protected] => 
+                            [_context:protected] => Resource id #12
+                            [workerId] => 0000000019f4b2230000000000cd2974
+                        )
+
+                )
+
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                    [$data] => <required>
+                )
+
+        )
+
+    [onClose] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                )
+
+        )
+
+    [onError] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$error] => <required>
+                )
+
+        )
+
+    [onBufferFull] => 
+    [onBufferDrain] => 
+    [protocol] => Workerman\Protocols\Websocket
+    [transport] => tcp
+    [worker] => Workerman\Worker Object
+        (
+            [id] => 0
+            [name] => none
+            [count] => 1
+            [user] => 
+            [group] => 
+            [reloadable] => 1
+            [reusePort] => 
+            [onWorkerStart] => 
+            [onConnect] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onMessage] => Closure Object
+                (
+                    [static] => Array
+                        (
+                            [webSocket] => Workerman\Worker Object
+ *RECURSION*
+                        )
+
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                            [$data] => <required>
+                        )
+
+                )
+
+            [onClose] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onError] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$error] => <required>
+                        )
+
+                )
+
+            [onBufferFull] => 
+            [onBufferDrain] => 
+            [onWorkerStop] => 
+            [onWorkerReload] => 
+            [transport] => tcp
+            [connections] => Array
+                (
+                    [4] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                )
+
+            [protocol] => Workerman\Protocols\Websocket
+            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+            [_pauseAccept:protected] => 
+            [stopping] => 
+            [_mainSocket:protected] => Resource id #17
+            [_socketName:protected] => websocket://0.0.0.0:2346
+            [_localSocket:protected] => 
+            [_context:protected] => Resource id #12
+            [workerId] => 0000000019f4b2230000000000cd2974
+        )
+
+    [bytesRead] => 0
+    [bytesWritten] => 0
+    [id] => 4
+    [_id:protected] => 4
+    [maxSendBufferSize] => 1048576
+    [maxPackageSize] => 10485760
+    [_socket:protected] => Resource id #30
+    [_sendBuffer:protected] => 
+    [_recvBuffer:protected] => 
+    [_currentPackageLength:protected] => 0
+    [_status:protected] => 2
+    [_remoteAddress:protected] => 127.0.0.1:57788
+    [_isPaused:protected] => 
+    [_sslHandshakeCompleted:protected] => 
+    [VISITOR] => Array
+        (
+        )
+
+)
+Workerman\Connection\TcpConnection Object
+(
+    [onMessage] => Closure Object
+        (
+            [static] => Array
+                (
+                    [webSocket] => Workerman\Worker Object
+                        (
+                            [id] => 0
+                            [name] => none
+                            [count] => 1
+                            [user] => 
+                            [group] => 
+                            [reloadable] => 1
+                            [reusePort] => 
+                            [onWorkerStart] => 
+                            [onConnect] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onMessage] => Closure Object
+ *RECURSION*
+                            [onClose] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onError] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$error] => <required>
+                                        )
+
+                                )
+
+                            [onBufferFull] => 
+                            [onBufferDrain] => 
+                            [onWorkerStop] => 
+                            [onWorkerReload] => 
+                            [transport] => tcp
+                            [connections] => Array
+                                (
+                                    [5] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                                )
+
+                            [protocol] => Workerman\Protocols\Websocket
+                            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+                            [_pauseAccept:protected] => 
+                            [stopping] => 
+                            [_mainSocket:protected] => Resource id #17
+                            [_socketName:protected] => websocket://0.0.0.0:2346
+                            [_localSocket:protected] => 
+                            [_context:protected] => Resource id #12
+                            [workerId] => 0000000019f4b2230000000000cd2974
+                        )
+
+                )
+
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                    [$data] => <required>
+                )
+
+        )
+
+    [onClose] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                )
+
+        )
+
+    [onError] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$error] => <required>
+                )
+
+        )
+
+    [onBufferFull] => 
+    [onBufferDrain] => 
+    [protocol] => Workerman\Protocols\Websocket
+    [transport] => tcp
+    [worker] => Workerman\Worker Object
+        (
+            [id] => 0
+            [name] => none
+            [count] => 1
+            [user] => 
+            [group] => 
+            [reloadable] => 1
+            [reusePort] => 
+            [onWorkerStart] => 
+            [onConnect] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onMessage] => Closure Object
+                (
+                    [static] => Array
+                        (
+                            [webSocket] => Workerman\Worker Object
+ *RECURSION*
+                        )
+
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                            [$data] => <required>
+                        )
+
+                )
+
+            [onClose] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onError] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$error] => <required>
+                        )
+
+                )
+
+            [onBufferFull] => 
+            [onBufferDrain] => 
+            [onWorkerStop] => 
+            [onWorkerReload] => 
+            [transport] => tcp
+            [connections] => Array
+                (
+                    [5] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                )
+
+            [protocol] => Workerman\Protocols\Websocket
+            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+            [_pauseAccept:protected] => 
+            [stopping] => 
+            [_mainSocket:protected] => Resource id #17
+            [_socketName:protected] => websocket://0.0.0.0:2346
+            [_localSocket:protected] => 
+            [_context:protected] => Resource id #12
+            [workerId] => 0000000019f4b2230000000000cd2974
+        )
+
+    [bytesRead] => 0
+    [bytesWritten] => 0
+    [id] => 5
+    [_id:protected] => 5
+    [maxSendBufferSize] => 1048576
+    [maxPackageSize] => 10485760
+    [_socket:protected] => Resource id #32
+    [_sendBuffer:protected] => 
+    [_recvBuffer:protected] => 
+    [_currentPackageLength:protected] => 0
+    [_status:protected] => 2
+    [_remoteAddress:protected] => 127.0.0.1:57829
+    [_isPaused:protected] => 
+    [_sslHandshakeCompleted:protected] => 
+    [VISITOR] => Array
+        (
+        )
+
+)
+Workerman\Connection\TcpConnection Object
+(
+    [onMessage] => Closure Object
+        (
+            [static] => Array
+                (
+                    [webSocket] => Workerman\Worker Object
+                        (
+                            [id] => 0
+                            [name] => none
+                            [count] => 1
+                            [user] => 
+                            [group] => 
+                            [reloadable] => 1
+                            [reusePort] => 
+                            [onWorkerStart] => 
+                            [onConnect] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onMessage] => Closure Object
+ *RECURSION*
+                            [onClose] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onError] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$error] => <required>
+                                        )
+
+                                )
+
+                            [onBufferFull] => 
+                            [onBufferDrain] => 
+                            [onWorkerStop] => 
+                            [onWorkerReload] => 
+                            [transport] => tcp
+                            [connections] => Array
+                                (
+                                    [1] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                                )
+
+                            [protocol] => Workerman\Protocols\Websocket
+                            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+                            [_pauseAccept:protected] => 
+                            [stopping] => 
+                            [_mainSocket:protected] => Resource id #17
+                            [_socketName:protected] => websocket://0.0.0.0:2346
+                            [_localSocket:protected] => 
+                            [_context:protected] => Resource id #12
+                            [workerId] => 000000001b3407b10000000061c210e4
+                        )
+
+                )
+
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                    [$data] => <required>
+                )
+
+        )
+
+    [onClose] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                )
+
+        )
+
+    [onError] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$error] => <required>
+                )
+
+        )
+
+    [onBufferFull] => 
+    [onBufferDrain] => 
+    [protocol] => Workerman\Protocols\Websocket
+    [transport] => tcp
+    [worker] => Workerman\Worker Object
+        (
+            [id] => 0
+            [name] => none
+            [count] => 1
+            [user] => 
+            [group] => 
+            [reloadable] => 1
+            [reusePort] => 
+            [onWorkerStart] => 
+            [onConnect] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onMessage] => Closure Object
+                (
+                    [static] => Array
+                        (
+                            [webSocket] => Workerman\Worker Object
+ *RECURSION*
+                        )
+
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                            [$data] => <required>
+                        )
+
+                )
+
+            [onClose] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onError] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$error] => <required>
+                        )
+
+                )
+
+            [onBufferFull] => 
+            [onBufferDrain] => 
+            [onWorkerStop] => 
+            [onWorkerReload] => 
+            [transport] => tcp
+            [connections] => Array
+                (
+                    [1] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                )
+
+            [protocol] => Workerman\Protocols\Websocket
+            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+            [_pauseAccept:protected] => 
+            [stopping] => 
+            [_mainSocket:protected] => Resource id #17
+            [_socketName:protected] => websocket://0.0.0.0:2346
+            [_localSocket:protected] => 
+            [_context:protected] => Resource id #12
+            [workerId] => 000000001b3407b10000000061c210e4
+        )
+
+    [bytesRead] => 0
+    [bytesWritten] => 0
+    [id] => 1
+    [_id:protected] => 1
+    [maxSendBufferSize] => 1048576
+    [maxPackageSize] => 10485760
+    [_socket:protected] => Resource id #21
+    [_sendBuffer:protected] => 
+    [_recvBuffer:protected] => 
+    [_currentPackageLength:protected] => 0
+    [_status:protected] => 2
+    [_remoteAddress:protected] => 127.0.0.1:57865
+    [_isPaused:protected] => 
+    [_sslHandshakeCompleted:protected] => 
+    [VISITOR] => Array
+        (
+        )
+
+)
+Workerman\Connection\TcpConnection Object
+(
+    [onMessage] => Closure Object
+        (
+            [static] => Array
+                (
+                    [webSocket] => Workerman\Worker Object
+                        (
+                            [id] => 0
+                            [name] => none
+                            [count] => 1
+                            [user] => 
+                            [group] => 
+                            [reloadable] => 1
+                            [reusePort] => 
+                            [onWorkerStart] => 
+                            [onConnect] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onMessage] => Closure Object
+ *RECURSION*
+                            [onClose] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onError] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$error] => <required>
+                                        )
+
+                                )
+
+                            [onBufferFull] => 
+                            [onBufferDrain] => 
+                            [onWorkerStop] => 
+                            [onWorkerReload] => 
+                            [transport] => tcp
+                            [connections] => Array
+                                (
+                                    [1] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                                )
+
+                            [protocol] => Workerman\Protocols\Websocket
+                            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+                            [_pauseAccept:protected] => 
+                            [stopping] => 
+                            [_mainSocket:protected] => Resource id #17
+                            [_socketName:protected] => websocket://0.0.0.0:2346
+                            [_localSocket:protected] => 
+                            [_context:protected] => Resource id #12
+                            [workerId] => 000000006f956445000000003462de75
+                        )
+
+                )
+
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                    [$data] => <required>
+                )
+
+        )
+
+    [onClose] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                )
+
+        )
+
+    [onError] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$error] => <required>
+                )
+
+        )
+
+    [onBufferFull] => 
+    [onBufferDrain] => 
+    [protocol] => Workerman\Protocols\Websocket
+    [transport] => tcp
+    [worker] => Workerman\Worker Object
+        (
+            [id] => 0
+            [name] => none
+            [count] => 1
+            [user] => 
+            [group] => 
+            [reloadable] => 1
+            [reusePort] => 
+            [onWorkerStart] => 
+            [onConnect] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onMessage] => Closure Object
+                (
+                    [static] => Array
+                        (
+                            [webSocket] => Workerman\Worker Object
+ *RECURSION*
+                        )
+
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                            [$data] => <required>
+                        )
+
+                )
+
+            [onClose] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onError] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$error] => <required>
+                        )
+
+                )
+
+            [onBufferFull] => 
+            [onBufferDrain] => 
+            [onWorkerStop] => 
+            [onWorkerReload] => 
+            [transport] => tcp
+            [connections] => Array
+                (
+                    [1] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                )
+
+            [protocol] => Workerman\Protocols\Websocket
+            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+            [_pauseAccept:protected] => 
+            [stopping] => 
+            [_mainSocket:protected] => Resource id #17
+            [_socketName:protected] => websocket://0.0.0.0:2346
+            [_localSocket:protected] => 
+            [_context:protected] => Resource id #12
+            [workerId] => 000000006f956445000000003462de75
+        )
+
+    [bytesRead] => 0
+    [bytesWritten] => 0
+    [id] => 1
+    [_id:protected] => 1
+    [maxSendBufferSize] => 1048576
+    [maxPackageSize] => 10485760
+    [_socket:protected] => Resource id #21
+    [_sendBuffer:protected] => 
+    [_recvBuffer:protected] => 
+    [_currentPackageLength:protected] => 0
+    [_status:protected] => 2
+    [_remoteAddress:protected] => 127.0.0.1:58716
+    [_isPaused:protected] => 
+    [_sslHandshakeCompleted:protected] => 
+    [VISITOR] => Array
+        (
+        )
+
+)
+Workerman\Connection\TcpConnection Object
+(
+    [onMessage] => Closure Object
+        (
+            [static] => Array
+                (
+                    [webSocket] => Workerman\Worker Object
+                        (
+                            [id] => 0
+                            [name] => none
+                            [count] => 1
+                            [user] => 
+                            [group] => 
+                            [reloadable] => 1
+                            [reusePort] => 
+                            [onWorkerStart] => 
+                            [onConnect] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onMessage] => Closure Object
+ *RECURSION*
+                            [onClose] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$connection] => <required>
+                                        )
+
+                                )
+
+                            [onError] => Closure Object
+                                (
+                                    [parameter] => Array
+                                        (
+                                            [$error] => <required>
+                                        )
+
+                                )
+
+                            [onBufferFull] => 
+                            [onBufferDrain] => 
+                            [onWorkerStop] => 
+                            [onWorkerReload] => 
+                            [transport] => tcp
+                            [connections] => Array
+                                (
+                                    [1] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                                )
+
+                            [protocol] => Workerman\Protocols\Websocket
+                            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+                            [_pauseAccept:protected] => 
+                            [stopping] => 
+                            [_mainSocket:protected] => Resource id #20
+                            [_socketName:protected] => websocket://0.0.0.0:2346
+                            [_localSocket:protected] => 
+                            [_context:protected] => Resource id #15
+                            [workerId] => 0000000003467d5700000000326cded1
+                        )
+
+                )
+
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                    [$data] => <required>
+                )
+
+        )
+
+    [onClose] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$connection] => <required>
+                )
+
+        )
+
+    [onError] => Closure Object
+        (
+            [parameter] => Array
+                (
+                    [$error] => <required>
+                )
+
+        )
+
+    [onBufferFull] => 
+    [onBufferDrain] => 
+    [protocol] => Workerman\Protocols\Websocket
+    [transport] => tcp
+    [worker] => Workerman\Worker Object
+        (
+            [id] => 0
+            [name] => none
+            [count] => 1
+            [user] => 
+            [group] => 
+            [reloadable] => 1
+            [reusePort] => 
+            [onWorkerStart] => 
+            [onConnect] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onMessage] => Closure Object
+                (
+                    [static] => Array
+                        (
+                            [webSocket] => Workerman\Worker Object
+ *RECURSION*
+                        )
+
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                            [$data] => <required>
+                        )
+
+                )
+
+            [onClose] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$connection] => <required>
+                        )
+
+                )
+
+            [onError] => Closure Object
+                (
+                    [parameter] => Array
+                        (
+                            [$error] => <required>
+                        )
+
+                )
+
+            [onBufferFull] => 
+            [onBufferDrain] => 
+            [onWorkerStop] => 
+            [onWorkerReload] => 
+            [transport] => tcp
+            [connections] => Array
+                (
+                    [1] => Workerman\Connection\TcpConnection Object
+ *RECURSION*
+                )
+
+            [protocol] => Workerman\Protocols\Websocket
+            [_autoloadRootPath:protected] => D:\HTTPServer\domains\collector.my\public_html\libraries\commandExecutor\shell_executable
+            [_pauseAccept:protected] => 
+            [stopping] => 
+            [_mainSocket:protected] => Resource id #20
+            [_socketName:protected] => websocket://0.0.0.0:2346
+            [_localSocket:protected] => 
+            [_context:protected] => Resource id #15
+            [workerId] => 0000000003467d5700000000326cded1
+        )
+
+    [bytesRead] => 0
+    [bytesWritten] => 0
+    [id] => 1
+    [_id:protected] => 1
+    [maxSendBufferSize] => 1048576
+    [maxPackageSize] => 10485760
+    [_socket:protected] => Resource id #24
+    [_sendBuffer:protected] => 
+    [_recvBuffer:protected] => 
+    [_currentPackageLength:protected] => 0
+    [_status:protected] => 2
+    [_remoteAddress:protected] => 127.0.0.1:59511
+    [_isPaused:protected] => 
+    [_sslHandshakeCompleted:protected] => 
+    [VISITOR] => Array
+        (
+        )
+
+)
