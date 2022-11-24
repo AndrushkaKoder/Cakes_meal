@@ -13,8 +13,8 @@ class LoginController extends BaseUser
     protected function actionInput(){
 
 
-        if(!empty($this->parameters[0])){
-            switch ($this->parameters[0]){
+        if(!empty($this->parameters['alias'])){
+            switch ($this->parameters['alias']){
 
                 case 'registration':
 

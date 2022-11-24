@@ -104,6 +104,12 @@
                                     <hr>
                                 </div>
                             <?php endforeach;?>
+                        <?php else:?>
+                        <div class="goToCatalog">
+                            <p>Скорее оформите заказ &#128525;</p>
+                            <a href="<?=$this->alias('catalog')?>" class="cart_back_alias"><i class="fa-solid fa-arrow-left"></i> в меню</a>
+                        </div>
+
                         <?php endif;?>
 
 

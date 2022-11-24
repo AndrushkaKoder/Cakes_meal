@@ -117,6 +117,7 @@ body {
             box-shadow: 0 0 2px #000000; }
 
 .b_grd {
+
   background: #e52d27;
   /* fallback for old browsers */
   background: -webkit-linear-gradient(to top, #b31217, #e52d27);

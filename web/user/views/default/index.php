@@ -127,11 +127,11 @@
                         <div class="accordion accordion-flush" id="accordionFlushExample">
                             <?php foreach ($questions as $item):?>
                                 <div class="accordion-item">
-                                    <h2 class="accordion-header" id="flush-heading<?=$item['num']?>">
+                                    <p class="accordion-header" id="flush-heading<?=$item['num']?>">
                                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapse<?=$item['num']?>" aria-expanded="false" aria-controls="flush-collapse<?=$item['num']?>">
                                             <?=$item['name']?>
                                         </button>
-                                    </h2>
+                                    </p>
                                     <div id="flush-collapse<?=$item['num']?>" class="accordion-collapse collapse" aria-labelledby="flush-heading<?=$item['num']?>" data-bs-parent="#accordionFlushExample">
                                         <div class="accordion-body"><?=$item['answer']?></div>
                                     </div>
