@@ -108,6 +108,7 @@ class CartController extends BaseUser
 
         $replaceFields = ['qty', 'price', 'old_price', 'total_sum', 'total_old_sum'];
 
+        $m = \App::model();
         foreach ($this->cart[\App::model()->goodsTable] as $item){
 
             $offers = [];

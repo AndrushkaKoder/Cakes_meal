@@ -110,7 +110,7 @@ class AppH
         }
 
         if($http) $redirect = $http;
-        else $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : PATH;
+        else $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : \App::PATH();
 
         header("Location: $redirect");
 

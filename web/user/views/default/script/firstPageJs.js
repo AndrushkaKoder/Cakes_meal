@@ -36,6 +36,8 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
                         burgerMenu.classList.remove("showBurgerMenu");
 
+                        document.body.style.overflow = 'visible'
+
                         document.removeEventListener('click', arguments.callee)
 
                     }
@@ -51,16 +53,4 @@ window.addEventListener("DOMContentLoaded", ()=>{
     showOrHideBurgerButton()
     hideOrShowMobileMenu()
 
-})
-
-const slideContent = document.querySelectorAll(".slide_content");
-const slides = document.querySelectorAll('.swiper-slide');
-document.addEventListener("scroll", ()=>{
-    for(el of slides){
-        if(el.classList.add('swiper-slide-active')){
-           for(item of slideContent){
-            item.classList.add('bounceInRight')
-           }
-        }
-    }
 })

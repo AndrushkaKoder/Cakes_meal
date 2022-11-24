@@ -65,26 +65,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
     hideMussMenu()
     hideBentoWeight()
 
-//    type.addEventListener("change", (e)=>{
-//     if(e.target.closest('[data-bisquit_cake]')){
-//         showBisquitMenu()
-//         hideMussMenu()
-//         showWeight()
-//         hideBentoWeight()
-//         // console.log(e.target.value)
-//     } else if(e.target.closest('[data-muss_cake]')){
-//         hideBisquitMenu()
-//         showMussMenu()
-//         showWeight()
-//         hideBentoWeight()
-//         // console.log(e.target.value)
-//     } else if(e.target.closest('[data-bento_cake]')){
-//         hideWeight()
-//         showBentoWeight()
-//         hideMussMenu()
-//         showBisquitMenu()
-//     }
-//    })
 
 
 

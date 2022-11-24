@@ -46,7 +46,11 @@ abstract class BaseUser extends \core\system\Controller
             'group' => 'catalog.id'
 
         ]);
-        $a = 1;
+
+         $this->set = $this->model->get('settings', [
+             'limit' => 1,
+             'single' => true
+         ]);
     }
 
 }

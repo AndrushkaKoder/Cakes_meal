@@ -23,6 +23,8 @@ abstract class Controller //абстрактный класс нужен тол�
     // пройти по функции request и понять как формируется переменная $method
     public function request(array $arguments, $returnResult = false){
 
+        $this->checkAuth(!(Router::getMode() === 'user'));
+
         $this->getMessages();
         // в $method формируется строка 'actionInput'
         $this->parameters = $arguments; // принимаем

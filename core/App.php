@@ -292,11 +292,7 @@ final class App //final - класс от которого нельзя насл
 
     public static function setModel($model){
 
-        if(!self::$model){
-
-            self::$model = $model;
-
-        }
+        self::$model = $model;
 
     }
 

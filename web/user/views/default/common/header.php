@@ -53,7 +53,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12 d-flex justify-content-center align-items-center" data-nav_wrapper style="position: relative">
 
-                <a href="tel:89308478453" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
+                <a href="tel:9623734441" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
                 <a href="<?=$this->alias('cart')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i> <span class="cart_counter" data-totalQTY><?=$this->cart['total_qty'] ?? 0?></span></a>
                 <a href="#" class="nav_item" style="display: none" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
 

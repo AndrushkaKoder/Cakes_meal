@@ -138,7 +138,7 @@ class UserModel extends BaseModel
 
         if($cookieString){
 
-            setcookie($this->cookieName, $cookieString, time() + 60*60*24*365*10, PATH);
+            setcookie($this->cookieName, $cookieString, time() + 60*60*24*365*10, \App::PATH());
 
             return true;
 

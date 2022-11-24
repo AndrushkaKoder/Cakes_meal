@@ -81,9 +81,9 @@
                             <p><a href="<?=$this->alias(['catalog'=>$item['alias']])?>" class="assortment_button" data-wow-duration="1s">подробнее</a></p>
                         </div>
                         <div class="col-xl-5 col-md-6 col-sm-12 d-flex justify-content-center">
-                            <div class="assortment_img_container">
+                            <a href="<?=$this->alias(['catalog' => $item['alias']])?>" class="assortment_img_container">
                                 <img src="<?=$this->img($item['img'])?>" alt="bisquit" class="assortment_img">
-                            </div>
+                            </a>
 
                         </div>
                     </div>

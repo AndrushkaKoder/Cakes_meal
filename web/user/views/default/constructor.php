@@ -39,7 +39,7 @@
 
         <div class="container">
 
-            <form action="<?=$this->alias('constructor')?>" method="GET" class="form_constructor" data-constructor>
+            <form action="<?=$this->alias('constructor')?>" method="POST" class="form_constructor" data-constructor>
                 <div class="row">
                     <div class="col-xl-12 col-md-12 col-sm-12">
 
@@ -106,7 +106,7 @@
                                 <h5 class="item_title">Основа</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="radio" name="osnova_muss" id="osnova__tri_choko__muss" class="type_cake" value="Три шоколада" checked="">
+                                        <input type="radio" name="osnova_muss" id="osnova__tri_choko__muss" class="type_cake" value="Три шоколада" checked>
                                         <label for="osnova__tri_choko__muss">Три шоколада</label>
                                     </div>
                                     <div class="item_label">
@@ -174,15 +174,15 @@
                                 <h5 class="item_title">Отделка</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="checkbox" name = "otdelka" id="otdelka__mastika__bisquit" class="type_cake" value="Мастика">
+                                        <input type="checkbox" name = "otdelkaMastika" id="otdelka__mastika__bisquit" class="type_cake" value="Мастика" checked>
                                         <label for="otdelka__mastika__bisquit">Мастика</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name = "otdelka" id="otdelka__krem__bisquit" class="type_cake" value="Крем">
+                                        <input type="checkbox" name = "otdelkaCreme" id="otdelka__krem__bisquit" class="type_cake" value="Крем">
                                         <label for="otdelka__krem__bisquit">Крем</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name = "otdelka" id="otdelka__frukt__bisquit" class="type_cake" value="Фрукты">
+                                        <input type="checkbox" name = "otdelkaFruits" id="otdelka__frukt__bisquit" class="type_cake" value="Фрукты">
                                         <label for="otdelka__frukt__bisquit">Фрукты</label>
                                     </div>
                                 </div>
@@ -193,19 +193,19 @@
                                 <h5 class="item_title">Декоративные элементы</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__struzhka__bisquit" class="type_cake" value="Шоколадная стружка">
+                                        <input type="checkbox" name="decorStruzhka" id="dekor__struzhka__bisquit" class="type_cake" value="Шоколадная стружка" checked>
                                         <label for="dekor__struzhka__bisquit">Шоколадная стружка</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__nuts__bisquit" class="type_cake" value="Орехи">
+                                        <input type="checkbox" name="decorNuts" id="dekor__nuts__bisquit" class="type_cake" value="Орехи">
                                         <label for="dekor__nuts__bisquit">Орехи</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__marshmellow__bisquit" class="type_cake" value="Маршмеллоу">
+                                        <input type="checkbox" name="decorMarshmellow" id="dekor__marshmellow__bisquit" class="type_cake" value="Маршмеллоу">
                                         <label for="dekor__marshmellow__bisquit">Маршмеллоу</label>
                                     </div>
                                     <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__beze__bisquit" class="type_cake" value="Безе">
+                                        <input type="checkbox" name="decorBeze" id="dekor__beze__bisquit" class="type_cake" value="Безе">
                                         <label for="dekor__beze__bisquit">Безе</label>
                                     </div>
                                 </div>
@@ -285,7 +285,7 @@
                                                 <p class="modal_descr text-center">Бенто тортик рассчитан на одного-двух человек</p>
                                                 <div class="item_content d-flex justify-content-center">
                                                     <div class="item_label">
-                                                        <input type="radio" name="weight_bento"  id="ves_bento_1" class="type_cake" value="300г">
+                                                        <input type="radio" name="weight_bento"  id="ves_bento_1" class="type_cake" value="300г" checked>
                                                         <label for="ves_bento_1">300г</label>
                                                     </div>
                                                     <div class="item_label">
