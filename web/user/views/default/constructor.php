@@ -193,6 +193,10 @@
                                 <h5 class="item_title">Декоративные элементы</h5>
                                 <div class="item_content d-flex">
                                     <div class="item_label">
+                                        <input type="checkbox" name="decor" id="dekor__struzhka__bisquit" class="type_cake" value="Шоколадная стружка">
+                                        <label for="dekor__struzhka__bisquit">Шоколадная стружка</label>
+                                    </div>
+                                    <div class="item_label">
                                         <input type="checkbox" name="decor" id="dekor__nuts__bisquit" class="type_cake" value="Орехи">
                                         <label for="dekor__nuts__bisquit">Орехи</label>
                                     </div>
@@ -203,10 +207,6 @@
                                     <div class="item_label">
                                         <input type="checkbox" name="decor" id="dekor__beze__bisquit" class="type_cake" value="Безе">
                                         <label for="dekor__beze__bisquit">Безе</label>
-                                    </div>
-                                    <div class="item_label">
-                                        <input type="checkbox" name="decor" id="dekor__struzhka__bisquit" class="type_cake" value="Шоколадная стружка">
-                                        <label for="dekor__struzhka__bisquit">Шоколадная стружка</label>
                                     </div>
                                 </div>
                             </div>

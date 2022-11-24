@@ -26,9 +26,9 @@ class Crypt{
         $iv = openssl_random_pseudo_bytes($ivlen);
 
         /*Шифруем строку*/
-        $crypt_text = openssl_encrypt($str, $this->crypt_method, \App::CRYPT('KEY'), $options=OPENSSL_RAW_DATA, $iv);
+        $crypt_text = openssl_encrypt($str, $this->crypt_method, \App::config()->CRYPT('KEY'), $options=OPENSSL_RAW_DATA, $iv);
 
-        $hmac = hash_hmac($this->hache_algoritm, $crypt_text, \App::CRYPT('KEY'), $as_binary = true);
+        $hmac = hash_hmac($this->hache_algoritm, $crypt_text, \App::config()->CRYPT('KEY'), $as_binary = true);
 
         if(!empty(ini_get('mbstring.func_overload'))){
 
@@ -256,7 +256,7 @@ class Crypt{
 
         $new_str = '';
 
-        $counter = (int)ceil((strlen(\App::CRYPT('KEY')) / (strlen($str) + strlen($hmac))));
+        $counter = (int)ceil((strlen(\App::config()->CRYPT('KEY')) / (strlen($str) + strlen($hmac))));
 
         $progress = 1;
 

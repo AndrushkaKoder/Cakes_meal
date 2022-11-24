@@ -1,3 +1,5 @@
 /.idea
 /core/config/db.php
 /log
+/backup
+

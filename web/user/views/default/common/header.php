@@ -55,7 +55,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
 
                 <a href="tel:89308478453" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
                 <a href="<?=$this->alias('cart')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i> <span class="cart_counter" data-totalQTY><?=$this->cart['total_qty'] ?? 0?></span></a>
-                <a href="#" class="nav_item" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
+                <a href="#" class="nav_item" style="display: none" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
 
                 <a href="" class="nav_item search_button"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
 
@@ -168,7 +168,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
     <div class="burger_section_content">
         <ul class="burger_section_content_list">
             <li class="header_nav_list_item"><a href="<?=$this->alias()?>">Главная</a></li>
-            <li class="header_nav_list_item"> <a class="dropdown-toggle" href="<?=$this->alias('catalog')?>" role="button" data-bs-toggle="dropdown" aria-expanded="false">Ассортимент</a>
+            <li class="header_nav_list_item"> <a class="dropdown-toggle" href="<?=$this->alias('catalog')?>" data-bs-toggle="dropdown" aria-expanded="false">Ассортимент</a>
                 <ul class="dropdown-menu">
                     <?php foreach ($this->menu as $item):?>
                         <li><a class="dropdown-item" href="<?=$this->alias(['catalog'=>$item['alias']])?>"><?=$item['name']?></a></li>
@@ -177,7 +177,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
             </li>
             <li class="header_nav_list_item"><a href="<?=$this->alias('constructor')?>">Конструктор</a></li>
             <li class="header_nav_list_item"><a href="<?=$this->alias('about')?>">О нас</a></li>
-            <li class="header_nav_list_item"><a href="#footer">Контакты</a></li>
+            <li class="header_nav_list_item"><a href="<?=$this->alias('delivery')?>">Доставка</a></li>
         </ul>
     </div>
 

@@ -59,7 +59,7 @@ main{
 
 
 .showBurger{
-    display: block;
+    display: block !important;
 }
 .hideBurger{
     display: none;
@@ -338,6 +338,7 @@ color: var(--color1);
 .burger_section{
     min-width: 30%;
     height: 100vh;
+    padding: 15px;
     position: absolute;
     top: 0;
     right: 0;
@@ -370,7 +371,7 @@ color: var(--color1);
     flex-direction: column;
 }
 .burger_section_content_list li{
-    margin: 10px 0;
+    margin: 25px 0;
 }
 
 /* скрыть-показать бургер меню */
@@ -731,7 +732,7 @@ color: var(--color1);
         height: 330px;
     }
     .fa-brands{
-        font-size: 14px;
+        font-size: 25px;
         padding: 20px 0;
     }
     .choco_img{
@@ -760,7 +761,7 @@ color: var(--color1);
         flex-direction: column;
     }
     .header_nav_list_item {
-        padding: 10px 0;
+        /*padding: 10px 0;*/
     }
 
     .cakes_logo{
@@ -802,6 +803,7 @@ color: var(--color1);
     }
 
     .fa-brands{
+        font-size: 30px;
         padding: 20px 0;
     }
     .cakes_logo_footer{

@@ -233,7 +233,7 @@ input[type="checkbox"]:checked + label{
     color:#663300;
 }
 .constructor_descr{
-    font-size: 20px;
+    font-size: 16px;
     text-align: center;
 }
 .constructor_img{
@@ -431,6 +431,9 @@ input[type="checkbox"]:checked + label{
     }
     .constructor_button_offer{
     font-size: 14px;
+    }
+    .constructor_descr{
+        font-size: 18px !important;
     }
 }
 
