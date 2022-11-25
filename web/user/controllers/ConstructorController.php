@@ -9,55 +9,7 @@ class ConstructorController extends BaseUser
 
      if(\AppH::isPost()){
 
-         if($_POST['type_cake'] === 'Бисквит' || $_POST['type_cake'] === 'Бенто'){
-             $_POST['osnova'] = $_POST['osnova_bisquit'];
-             $_POST['creme'] = $_POST['creme_bisquit'];
-             unset($_POST['osnova_muss']);
-             unset($_POST['creme_muss']);
-             unset($_POST['osnova_bisquit']);
-             unset($_POST['creme_bisquit']);
 
-
-
-         } else{
-             $_POST['osnova'] = $_POST['osnova_muss'];
-             $_POST['creme'] = $_POST['creme_muss'];
-             unset($_POST['osnova_muss']);
-             unset($_POST['osnova_bisquit']);
-             unset($_POST['creme_bisquit']);
-             unset($_POST['creme_muss']);
-         }
-
-         if($_POST['type_cake'] === 'Бенто'){
-             $_POST['ves'] = $_POST['weight_bento'];
-             unset($_POST['weight']);
-
-         } else{
-             $_POST['ves'] = $_POST['weight'];
-             unset($_POST['weight_bento']);
-         }
-
-
-
-         $otdelka = [
-             $_POST['otdelkaMastika'],
-             $_POST['otdelkaCreme'],
-             $_POST['otdelkaFruits']
-         ];
-
-         $decor = [
-             $_POST['decorStruzhka'],
-            $_POST['decorNuts'],
-            $_POST['decorMarshmellow'],
-            $_POST['decorBeze']
-         ];
-
-         $_POST['otdelka'] = array_diff($otdelka, array(null)) ;
-         $_POST['decor'] = array_diff($decor, array(null));
-
-
-
-         $a=1;
 
 
 
@@ -76,25 +28,41 @@ class ConstructorController extends BaseUser
          ];
 
 
-         //пройти циклом по массиву $translate и создать письмо
-
-
-       $result = [];
 
 
 
-       $result['Тип изделия'] = $_POST['type_cake'];
-       $result['Основа'] = $_POST['osnova'];
-       $result['Крем'] = $_POST['creme'];
-       $result['отделка'] = $_POST['otdelka'];
-       $result['декор'] = $_POST['decor'];
-       $result['вес'] = $_POST['ves'];
-       $result['надпись'] = $_POST['nadpis'];
-       $result['пожелание'] = $_POST['pozhelanie'];
-       $result['имя'] = $_POST['userName'];
-       $result['телефон'] = $_POST['userPhone'];
-       $result['дата'] = $_POST['userData'];
+//       $result = [];
+//       $result['type_cake'] = $_POST['type_cake'];
+//       $result['osnova'] = $_POST['osnova'];
+//       $result['creme'] = $_POST['creme'];
+//       $result['otdelka'] = $_POST['otdelka'];
+//       $result['decor'] = $_POST['decor'];
+//       $result['ves'] = $_POST['ves'];
+//       $result['nadpis'] = $_POST['nadpis'];
+//       $result['pozhelanie'] = $_POST['pozhelanie'];
+//       $result['visitor_name'] = $_POST['userName'];
+//       $result['visitor_phone'] = $_POST['userPhone'];
+//       $result['date'] = $_POST['userData'];
 
+
+
+//       foreach ($_POST as $item){
+//           if(is_array($_POST[$item])){
+//               json_encode($_POST[$item]);
+//           }
+//       }
+//       if(is_array($_POST['otdelka']) && is_array($_POST['decor'])){
+//          json_encode($_POST['otdelka']);
+//          json_encode($_POST['decor']);
+//       }
+
+       $createOrder = \App::model()->add('custom_orders', [
+           'return_query' => true
+       ]);
+
+       if(is_numeric($createOrder)){
+           header("Location:".$this->alias(''));
+       }
 
     $b=2;
 

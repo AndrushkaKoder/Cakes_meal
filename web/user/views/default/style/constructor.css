@@ -316,7 +316,10 @@ input[type="checkbox"]:checked + label{
     outline: unset;
 }
 
-
+.constructor_subtitile{
+    font-size: 15px;
+    color: var(--color2);
+}
 
 
 /* кнопка отправить */

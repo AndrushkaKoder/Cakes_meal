@@ -8,8 +8,16 @@ window.addEventListener("DOMContentLoaded", ()=>{
     cremeBisquit = document.querySelector('[data-creme_bisquit]'),
     cremeMuss = document.querySelector('[data-creme_muss]'),
     weight = document.querySelector('[ data-weight]'),
-    weightBento = document.querySelector('[data-bento_weight]')
+    weightBento = document.querySelector('[data-bento_weight]'),
+        subtitle = document.querySelector('.constructor_subtitile');
 
+
+     let description = {
+        bisquit: 'Классический бисквитный торт',
+        muss: 'Муссовый торт для ценителей',
+        bento: 'Такой же, как и бисквитный, только маленький'
+    }
+    subtitle.innerText = description.bisquit;
 
     // показ и скрытие бисквита
     function showBisquitMenu(){
@@ -17,12 +25,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
         cremeBisquit.classList.add('show');
         osnovaBisquit.classList.remove('hide')
         cremeBisquit.classList.remove('hide');
+
+
     }
     function hideBisquitMenu(){
         osnovaBisquit.classList.remove('show')
         cremeBisquit.classList.remove('show')
         osnovaBisquit.classList.add("hide")
         cremeBisquit.classList.add('hide')
+
     }
 
     // показ и скрытие мусса
@@ -31,12 +42,15 @@ window.addEventListener("DOMContentLoaded", ()=>{
         cremeMuss.classList.add('show');
         osnovaMuss.classList.remove('hide')
         cremeMuss.classList.remove('hide');
+
     }
     function hideMussMenu(){
         osnovaMuss.classList.remove('show')
         cremeMuss.classList.remove('show')
         osnovaMuss.classList.add("hide")
         cremeMuss.classList.add('hide')
+
+
     }
 
     // показ и скрытие веса торта для большого и бенто
@@ -67,8 +81,14 @@ window.addEventListener("DOMContentLoaded", ()=>{
 
 
 
+    let bisqChecked = document.querySelector('#type__white__bisquit');
+    let mussChecked = document.querySelector('#osnova__tri_choko__muss');
+    let mussCremeChecked = document.querySelector('#napolnitel__caramel__muss');
+    let bisqCremeChecked = document.querySelector('#krem__maslyanny__bisquit');
 
-//    ВАРИАНТ 2
+
+    bisqChecked.setAttribute('checked', '');
+    bisqCremeChecked.setAttribute('checked', '');
 
 const labels = document.querySelectorAll('input');
 constructor.addEventListener("change", (event)=>{
@@ -78,38 +98,41 @@ constructor.addEventListener("change", (event)=>{
         hideMussMenu()
         showWeight()
         hideBentoWeight()
+            mussChecked.removeAttribute('checked');
+            mussCremeChecked.removeAttribute('checked');
+            bisqChecked.setAttribute('checked', '');
+            bisqCremeChecked.setAttribute('checked', '');
+
+            subtitle.innerText = description.bisquit;
+
+
+
     } else if(event.target.closest('[data-muss_cake]')){
         hideBisquitMenu()
         showMussMenu()
         showWeight()
         hideBentoWeight()
+        bisqChecked.removeAttribute('checked');
+        bisqCremeChecked.removeAttribute('checked');
+        mussChecked.setAttribute('checked', '');
+        mussCremeChecked.setAttribute('checked', '');
+
+        subtitle.innerText = description.muss;
+
     } else if(event.target.closest('[data-bento_cake]')){
         hideWeight()
         showBentoWeight()
         hideMussMenu()
         showBisquitMenu()
+        mussChecked.removeAttribute('checked');
+        mussCremeChecked.removeAttribute('checked');
+        bisqChecked.setAttribute('checked', '');
+        bisqCremeChecked.setAttribute('checked', '');
+
+        subtitle.innerText = description.bento;
     }
   }
 })
 
 
- 
-  
-
-
-
-
 }); // слушатель DOMContentLoaded
-
-
-
- // document.querySelectorAll('form input')
-    // .forEach((el) => {
-    //     let typeTort = {
-    //         biscvit: el.id === 'type__bisquit' ? el.value : '',
-    //         muss: el.id === 'type__muss' ? el.value : '',
-    //         bento: el.id === 'type__bento' ? el.value : '',
-    //     }
-
-    //     console.log(typeTort.bento);
-    // })
