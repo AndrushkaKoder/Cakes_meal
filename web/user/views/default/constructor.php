@@ -48,7 +48,9 @@
                             <!-- ТИП ТОРТА -->
                             <div class="constructor_item" data-type_cake>
                                 <h2 class="item_title">Тип торта</h2>
-                                <p class="constructor_subtitile"></p>
+
+                                <p class="constructor_subtitle"></p>
+
                                 <div class="item_content d-flex">
                                     <div class="item_label">
                                         <input type="radio" id="type__bisquit" name="type_cake" class="type_cake bisquit" value="Бисквит" data-bisquit_cake checked>
@@ -303,9 +305,9 @@
                                                 <div class="item_content d-flex">
 
                                                     <p class="basket_modal_descr">Укажите свои данные и мы свяжемся для подтверждения</p>
-                                                    <input type="text" name="userName" id="userName" placeholder="имя" required>
+                                                    <input type="text" name="visitor_name" id="userName" placeholder="имя" required>
 
-                                                    <input type="text" name="userPhone"  id="userPhone" placeholder="телефон" required>
+                                                    <input type="text" name="visitor_phone"  id="userPhone" placeholder="телефон" required>
 
                                                 </div>
                                             </div>
@@ -314,7 +316,7 @@
                                                 <h5 class="item_title text-center">Дата</h5>
                                                 <div class="item_label">
                                                     <p class="basket_modal_descr">К какому дню все должно быть готово?</p>
-                                                    <input type="date" name="userData"  id="userData" placeholder="дата" required>
+                                                    <input type="date" name="delivery_date"  id="userData" placeholder="дата" required>
                                                 </div>
                                             </div>
 

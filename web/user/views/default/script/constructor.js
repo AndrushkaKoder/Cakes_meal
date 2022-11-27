@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
     cremeMuss = document.querySelector('[data-creme_muss]'),
     weight = document.querySelector('[ data-weight]'),
     weightBento = document.querySelector('[data-bento_weight]'),
-        subtitle = document.querySelector('.constructor_subtitile');
+        subtitle = document.querySelector('.constructor_subtitle');
 
 
      let description = {
