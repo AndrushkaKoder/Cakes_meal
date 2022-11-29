@@ -95,8 +95,6 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!empty($_SESSION['res']['answer'])){
 
-            //
-
             $fullTemplate = preg_replace('/<\/body>/', '<div class="wq-message__wrap">'.$_SESSION['res']['answer'] .'</div></body>', $fullTemplate);
 
         }

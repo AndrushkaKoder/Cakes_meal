@@ -231,7 +231,7 @@ class Router
 
     public static function getOutputMethod(){
 
-        return self::$outputMethod ?: \App::config()->WEB('default', self::$mode, 'method');
+        return self::$outputMethod ?: \App::config()->WEB('default', self::$mode, 'outputMethod');
 
     }
 

@@ -33,7 +33,8 @@ class ConstructorController extends BaseUser
        ]);
 
        if(is_numeric($createOrder)){
-           header("Location:".$this->alias(''));
+           $_SESSION['res']['answer'] = '<div class="success">Спасибо за заявку. Наш менеджер скоро свяжется с Вами</div>';
+          \AppH::redirect($this->alias());
        }
 
     $b=2;
