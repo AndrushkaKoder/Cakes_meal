@@ -7,6 +7,8 @@ use core\exceptions\DbException;
 class DbConnection
 {
 
+    //Подключения к базе данных через PDO и mysqli и их методы запроса к бд
+
     protected static $db;
 
     public static function PDOConnection()

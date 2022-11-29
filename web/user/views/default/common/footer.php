@@ -18,12 +18,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
 
             <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
                 <span class="footer_span"> Наш телефон:</span>
-                <?php if(!empty($contacts)):?>
-                    <?php foreach ($contacts as $item):?>
-                        <a href="tel:<?=$item['phone']?>" class="footer_phone">+7<?=$item['phone']?></a>
-                    <?php endforeach;?>
-                <?php endif;?>
-
+                        <a href="tel:<?=$this->set['phone']?>" class="footer_phone">+7<?=$this->set['phone']?></a>
             </div>
 
         </div>

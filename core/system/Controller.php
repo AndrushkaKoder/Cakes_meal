@@ -81,17 +81,29 @@ abstract class Controller //абстрактный класс нужен тол�
 
             $layOutPathArr = preg_split('/[>\s*<]+/', $layOutPath, 0, PREG_SPLIT_NO_EMPTY); //сюда залетает массив ['header', 'template', 'sidebar', 'footer']
 
+            $fullTemplate = '';
+
             foreach ($layOutPathArr as $item){ //перебираем массив шаблонов
 
                 $template = $this->createTemplate($item, $data); //формируем шаблон
 
-                echo $template ?: ''; // выводим шаблон или ''
+                $fullTemplate .= $template ?: ''; // выводим шаблон или ''
 
             }
 
         }
 
-        exit;
+        if(!empty($_SESSION['res']['answer'])){
+
+            //
+
+            $fullTemplate = preg_replace('/<\/body>/', '<div class="wq-message__wrap">'.$_SESSION['res']['answer'] .'</div></body>', $fullTemplate);
+
+        }
+
+        unset($_SESSION['res']);
+
+        exit($fullTemplate);
 
     }
 

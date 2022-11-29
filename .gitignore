@@ -2,4 +2,6 @@
 /core/config/db.php
 /log
 /backup
+/web/user/views/default/script/showMessage.js
+
 
