@@ -49,7 +49,21 @@ abstract class Controller //абстрактный класс нужен тол�
 
         }
 
-        $this->renderPage($this->$method()); //передаем в renderPage собравшийся метод
+        $outputMethod = Router::getOutputMethod();
+
+        if($outputMethod && method_exists($this, $outputMethod)){
+
+            $res = $this->$outputMethod($data);
+
+            if($res){
+
+                $data = $res;
+
+            }
+
+        }
+
+        $this->renderPage($data); //передаем в renderPage собравшийся метод
 
     }
 
