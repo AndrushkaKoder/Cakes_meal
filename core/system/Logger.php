@@ -9,7 +9,7 @@ class Logger
 
     use Singleton;
 
-    public function writeLog($message, $file = 'log.txt', $event = 'Fault', $rotateLogs = true){
+    public function writeLog($message, string $file = 'log.txt', ?string $event = 'Fault', bool $rotateLogs = true) : void{
 
         $dateTime = new \DateTime();
 
@@ -17,7 +17,7 @@ class Logger
 
         foreach ((array)$message as $item){
 
-            $str .= ($event ? $event . ': ' . $dateTime->format('d-m-Y G:i:s') . "\r\n" : '') . $message . "\r\n";
+            $str .= ($event ? $event . ': ' . $dateTime->format('d-m-Y G:i:s') . "\r\n" : '') . $item . "\r\n";
 
         }
 
@@ -60,7 +60,7 @@ class Logger
 
     }
 
-    protected function rotateLogs($dir, $day = 30){
+    protected function rotateLogs(string $dir, int $day = 30) : void{
 
         \AppH::scanDir($dir, function($file, $dir) use($day){
 

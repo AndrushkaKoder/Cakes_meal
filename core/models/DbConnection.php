@@ -87,10 +87,25 @@ class DbConnection
     public static function mysqliQuery($query, $crud = 'c', $return_id = false, ?array $parameters = [])
     {
 
+        static $reConnect = false;
+
         $result = self::$db->query($query);
 
         if (self::$db->affected_rows === -1) {
 
+            if(self::$db->errno === 2006 && !$reConnect){
+
+                self::$db->kill(self::$db->thread_id);
+
+                $reConnect = true;
+
+                self::$db->close();
+
+                \App::model()->connect(true);
+
+                return self::$db->query($query, $crud, $return_id);
+
+            }
 
             throw new DbException('Ошибка в SQL запросе: '
                 . $query . "\r\n" . self::$db->errno . ' ' . self::$db->error

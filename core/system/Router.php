@@ -12,6 +12,8 @@ class Router
 
     protected static ?string $method = null;
 
+    protected static ?string $outputMethod = null;
+
     protected static string $mode = 'admin';
 
     protected static array $parameters = [];
@@ -204,6 +206,8 @@ class Router
 
                     self::$method = !empty($route[1]) ? $route[1] : null;
 
+                    self::$outputMethod = !empty($route[2]) ? $route[2] : null;
+
                 }else{
 
                     $controllerName = $arr[0];
@@ -222,6 +226,12 @@ class Router
     public static function getInputMethod(){
 
         return self::$method ?: \App::config()->WEB('default', self::$mode, 'method');
+
+    }
+
+    public static function getOutputMethod(){
+
+        return self::$outputMethod ?: \App::config()->WEB('default', self::$mode, 'method');
 
     }
 
