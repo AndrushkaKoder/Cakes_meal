@@ -48,7 +48,6 @@ class OrderController extends BaseUser
         $validation = [
             'name' => ['emptyField'],
             'phone' => ['emptyField', 'phoneField', 'numericField'],
-            'email' => ['emptyField', 'emailField'],
             'payments_id' => ['emptyField', 'numericField'],
         ];
 
@@ -367,7 +366,7 @@ class OrderController extends BaseUser
 
         $sendMail = new SendMail([
             'address' => [$this->set['email'], $arr['visitor']['email']],
-            'Subject' => 'Заказ с интернет магазина №' . $arr['order']['id']
+            'Subject' => 'Заказ из интернет магазина №' . $arr['order']['id']
         ]);
 
         foreach ($arr as $key => $item){

@@ -80,6 +80,8 @@ class CartController extends BaseUser
 
         }
 
+
+
         if(\AppH::isPost() && !empty($this->parameters[0]) && $this->parameters[0] === 'order'){
 
             (new OrderController())->order($data);
@@ -156,6 +158,24 @@ class CartController extends BaseUser
             }
 
         }
+
+        if(isset($this->userData) && !empty($this->userData)){
+            $address = $this->model->get('orders', [
+                'where' => ['visitors_id' => $this->userData['id']],
+                'order' => 'date DESC',
+                'limit' => 1
+            ]);
+
+
+            foreach ($address as $item){
+                $this->userData['address'] = $item['address'];
+            }
+        }
+
+
+
+        $a=1;
+
 
         return $data;
 

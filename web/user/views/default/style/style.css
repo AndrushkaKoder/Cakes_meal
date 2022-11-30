@@ -820,6 +820,9 @@ color: var(--color1);
         margin: 0 15px;
     }
 
+    .wq-message__wrap{
+        width: 95% !important;
+    }
 
 }
 
