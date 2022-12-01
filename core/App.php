@@ -84,6 +84,8 @@ final class App //final - класс от которого нельзя насл
 
     }
 
+
+
     private static function setPathes() : void{ //подключение путей
 
         self::$properties['FULL_PATH'] = str_replace('\\', '/', realpath(__DIR__ . '/../') . '/'); //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
