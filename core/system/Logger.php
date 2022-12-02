@@ -17,7 +17,7 @@ class Logger
 
         foreach ((array)$message as $item){
 
-            $str .= ($event ? $event . ': ' . $dateTime->format('d-m-Y G:i:s') . "\r\n" : '') . $item . "\r\n";
+            $str .= ($event ? $event . ': ' . $dateTime->format('d-m-Y G:i:s.v') . "\r\n" : '') . $item . "\r\n";
 
         }
 

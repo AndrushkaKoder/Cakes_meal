@@ -11,28 +11,33 @@ class RouteException extends \Exception
 
     public function __construct($message = "", $code = 0)
     {
-        parent::__construct($message, $code);
 
-        $this->messages = include __DIR__ . '/messages/messages.php';
+        if(\AppH::isHtmlRequest()){
 
-        $error = $this->getMessage() ?: $this->messages[$this->getCode()];
+            parent::__construct($message, $code);
 
-        $error .= "\r\n" . 'file ' . $this->getFile() . "\r\n" . 'In line ' . $this->getLine() . "\r\n";
+            $this->messages = include __DIR__ . '/messages/messages.php';
 
-        if($this->messages[$this->getCode()]){
+            $error = $this->getMessage() ?: $this->messages[$this->getCode()];
 
-            $this->message = $this->messages[$this->getCode()];
+            $error .= "\r\n" . 'file ' . $this->getFile() . "\r\n" . 'In line ' . $this->getLine() . "\r\n";
+
+            if($this->messages[$this->getCode()]){
+
+                $this->message = $this->messages[$this->getCode()];
+
+            }
+
+            Logger::instance()->writeLog($error);
 
         }
 
-        Logger::instance()->writeLog($error);
 
     }
 
     public function showMessage(){
 
-        header("HTTP/1.1 404 Not Found", true, 404);
-        header ('Status: 404 Not Found');
+        \AppH::set404();
 
         return new \core\system\ErrorController($this->message);
 

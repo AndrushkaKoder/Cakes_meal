@@ -28,7 +28,9 @@ class CatalogController extends BaseUser
         ]);
 
         if(!$data){
+
             throw new RouteException('Отсутствуют разделы в каталоге');
+
         }
 
         $catalogFilters = $catalogPrices = null;

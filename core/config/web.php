@@ -15,6 +15,10 @@ return [
         ],
         'admin' => [
             'alias' => 'admin',
+            'unblocked_access' => ['login'],
+            'logging_errors_count' => 3,
+            'block_time' => 3,
+            'views' => 'core/admin/view'
         ],
         'user' => [
             'hrUrl' => true
@@ -27,12 +31,13 @@ return [
             ],
             'admin' => [
                 'controller' => 'index',
-                'method' => 'inputData'
+                'method' => 'inputData',
+                'outputMethod' => 'outputData',
             ]
         ],
         'controllersPath' => [
             'user' => 'web/user/controllers',
-            'admin' => 'core/admin/controllers'
+            'admin' => 'core/admin/controller'
         ],
         'layout' => [
             'template' => '<header><template><footer>'

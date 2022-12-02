@@ -219,7 +219,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         $property = \App::config()->WEB('views');
 
-        $property && $viewsPath = preg_replace('/\/{2,}/', '/', \App::FULL_PATH() . '/' . trim($property, '/') . '/');
+        $property && $viewsPath = \AppH::correctPathLtrim(\App::FULL_PATH(), $property);
 
         return $viewsPath;
 

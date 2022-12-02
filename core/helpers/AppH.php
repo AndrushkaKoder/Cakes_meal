@@ -58,12 +58,6 @@ class AppH
 
     }
 
-    public static function getRelativePath($directory){
-
-        return  '/' . str_replace(\App::FULL_PATH(), '', str_replace('\\', '/', $directory));
-
-    }
-
 
     public static function isPost(){
 
@@ -115,6 +109,13 @@ class AppH
         header("Location: $redirect");
 
         exit;
+
+    }
+
+    public static function set404(){
+
+        header("HTTP/1.1 404 Not Found", true, 404);
+        header ('Status: 404 Not Found');
 
     }
 

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>404 Страница не найдена</title>
     <meta name="description" content="">
-    <link rel="stylesheet" href="<?=\AppH::getRelativePath(__DIR__)?>/css/main.css">
+    <link rel="stylesheet" href="<?=\App::getRelativePath(__DIR__)?>css/main.css">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 </head>

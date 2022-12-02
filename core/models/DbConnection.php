@@ -15,23 +15,51 @@ class DbConnection
     {
         try {
 
-            return self::$db = new \PDO('mysql:host=' . \App::config()->DB('host') . ';dbname=' . \App::config()->DB('dbName'), \App::config()->DB('user'), \App::config()->DB('password'));
+            return self::$db = new \PDO('mysql:host=' . \App::config()->DB('host') . ';dbname=' . \App::config()->DB('dbName'),
+                            \App::config()->DB('user'), \App::config()->DB('password'),
+                            [
+                                \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
+                                \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
+                            ]);
 
         } catch (\PDOException $e) {
 
-            exit($e->getMessage());
+            throw new DbException($e->getMessage());
 
         }
     }
 
     public static function mysqliConnection()
     {
-        return self::$db = new \mysqli(\App::config()->DB('host'), \App::config()->DB('user'), \App::config()->DB('password'), \App::config()->DB('dbName'));
+        try{
+
+            self::$db = new \mysqli(\App::config()->DB('host'), \App::config()->DB('user'), \App::config()->DB('password'), \App::config()->DB('dbName'));
+
+            if(self::$db->connect_error){
+
+                throw new \Exception('Ошибка подключения к базе данных: '
+                    . self::$db->connect_errno . ' '. self::$db->connect_error);
+
+            }
+
+            self::$db->query("SET NAMES 'UTF8'");
+
+        }catch (\Exception $e){
+
+            throw new DbException($e->getMessage());
+
+        }
+
+        return self::$db;
+
 
     }
 
     public static function PDOQuery(string $query, $crud = 'c', $return_id = false, ?array $parameters = [])
     {
+
+        static $reConnect = false;
+
         try {
 
             if (!$parameters) {
@@ -48,6 +76,14 @@ class DbConnection
 
             if (!$res) {
 
+                if(!$reConnect && self::checkPDOTimeoutError()){
+
+                    $reConnect = true;
+
+                    return self::PDOQuery($query, $crud, $return_id, $parameters);
+
+                }
+
                 return $res;
 
             } elseif (!empty($res->errorInfo()[1])) {
@@ -55,6 +91,8 @@ class DbConnection
                 throw new \PDOException(implode("\n", $res->errorInfo()) . "\n" . $query);
 
             }
+
+            $reConnect = false;
 
             if ($res->rowCount()) {
 
@@ -72,18 +110,46 @@ class DbConnection
 
                 return $res->rowCount();
 
-
             }
 
-            return false;
+            return !preg_match('/^\s*select\s/i', $query);
 
         } catch (\PDOException $e) {
 
-            throw new DbException('Ошибка в SQL запросе: '
-                . $e->getMessage()
-            );
+            if(!$reConnect && self::checkPDOTimeoutError()){
+
+                $reConnect = true;
+
+                return self::PDOQuery($query, $crud, $return_id, $parameters);
+
+            }
+
+            throw new DbException($e->getMessage());
 
         }
+
+    }
+
+    protected static function checkPDOTimeoutError() : bool{
+
+        $statusInfo = self::$db->errorInfo();
+
+        if(!empty($statusInfo[1])){
+
+            if($statusInfo[1] === 2006){
+
+                self::$db = null;
+
+                \App::model()->connect(true);
+
+                return true;
+
+            }
+
+        }
+
+        return false;
+
     }
 
     public static function mysqliQuery($query, $crud = 'c', $return_id = false, ?array $parameters = [])

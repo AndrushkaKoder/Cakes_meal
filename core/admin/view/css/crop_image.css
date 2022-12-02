@@ -1,0 +1,123 @@
+[data-crop]{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0,0,0,0.2);
+    display: none;
+    padding: 10px;
+    z-index: 9999;
+    overflow: auto;
+}
+
+[data-crop]._active-crop{
+    display: flex;
+}
+
+[data-crop] > .image-block{
+    padding: 10px 15px;
+    background-color: white;
+    width: 90vw;
+    height: 90vh;
+}
+
+[data-crop] .change-controls{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+[data-crop] > .image-block .img-preview{
+    max-width: 100%;
+    max-height: calc(90vh - 50px);
+    text-align: center;
+    background: lightgrey;
+    position: relative;
+}
+
+[data-crop] > .image-block .img-preview img{
+    max-width: 100%;
+    max-height: calc(90vh - 50px);
+    object-fit: contain;
+    object-position: center;
+}
+
+[data-crop-border]{
+    width: 50%;
+    height: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    cursor: move;
+    outline: 2px dashed rgba(0,0,0,.7);
+    background: rgba(0,0,0,0.2);
+}
+
+.resize-handle{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background: black;
+    border: 1px solid white;
+}
+
+.resize-handle-nw {
+    top: -5px;
+    left: -5px;
+    cursor: nw-resize;
+}
+
+.resize-handle-sw {
+    bottom: -5px;
+    left: -5px;
+    cursor: sw-resize;
+}
+
+.resize-handle-ne {
+    top: -5px;
+    right: -5px;
+    cursor: ne-resize;
+}
+
+.resize-handle-se {
+    bottom: -5px;
+    right: -5px;
+    cursor: se-resize;
+}
+
+.crop-save{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateY(-100%) translateX(-50%);
+    background: rgba(0,0,0,0.6);
+    color: white;
+    padding: 5px 5px 0 5px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.crop-save:hover{
+    color: black;
+    background: rgba(255,255,255,0.8);
+}
+
+[data-change], [data-save], [data-close]{
+    padding: 3px 5px;
+    margin-right: 10px;
+    border-radius: 3px;
+    transition: .3s;
+}
+
+[data-close]{
+    margin-right: 0;
+}
+
+[data-change]:hover, [data-save]:hover, [data-close]:hover{
+    background: black;
+    color: white;
+}

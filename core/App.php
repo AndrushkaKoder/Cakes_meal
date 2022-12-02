@@ -79,6 +79,10 @@ final class App //final - класс от которого нельзя насл
 
             exit($e->showMessage());
 
+        }catch (\core\exceptions\DbException $e){
+
+            exit($e->showMessage());
+
         }
 
 
@@ -86,17 +90,9 @@ final class App //final - класс от которого нельзя насл
 
     private static function setPathes() : void{ //подключение путей
 
-        self::$properties['FULL_PATH'] = str_replace('\\', '/', realpath(__DIR__ . '/../') . '/'); //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
+        self::$properties['FULL_PATH'] = './'; //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
 
-        if(!empty($_SERVER['DOCUMENT_ROOT']) && strpos(self::$properties['FULL_PATH'], $_SERVER['DOCUMENT_ROOT']) === 0){
-
-            self::$properties['PATH'] = str_ireplace($_SERVER['DOCUMENT_ROOT'], '', self::$properties['FULL_PATH']); // если вызов сделан по средствам веб-сервера
-
-        }else{
-
-            self::$properties['PATH'] = '/'; //если вызов сделан из консоли
-
-        }
+        self::$properties['PATH'] = self::getRelativePath(realpath(__DIR__ . '/../'));
 
     }
 
@@ -176,8 +172,36 @@ final class App //final - класс от которого нельзя насл
 
     }
 
-    public function getTargetWebPath(){
-        // написать метод
+    public static function getRelativePath($directory){
+
+        $currentPath = '';
+
+        if(!empty($_SERVER['DOCUMENT_ROOT']) && preg_match('/^[^\/]*\//', $_SERVER['DOCUMENT_ROOT'])){
+
+            $documentRootArr = preg_split('/\/+/', $_SERVER['DOCUMENT_ROOT'], 0, PREG_SPLIT_NO_EMPTY);
+
+            $currentPath = preg_replace('/\\\+/', '/', $directory);
+
+            foreach ($documentRootArr as $key => $item){
+
+                $mold = implode('/', $documentRootArr);
+
+                if(stripos($currentPath, $mold) !== false){
+
+                    $currentPath = str_ireplace($mold, '' , $currentPath);
+
+                    break;
+
+                }
+
+                unset($documentRootArr[$key]);
+
+            }
+
+        }
+
+        return preg_replace('/\/{2,}/', '/', '/' . $currentPath . '/');
+
     }
 
     public static function PATH(){
