@@ -25,6 +25,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         if(!e.target.closest('.search_area')){
             searchWrapper.classList.remove('showSearch');
             searchWrapper.classList.add('hideSearch');
+            document.body.style.overflow = 'auto';
             document.removeEventListener('click', hideSearch)
         }
     }
@@ -35,6 +36,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
         if(searchWrapper.classList.contains('hideSearch')){
             searchWrapper.classList.remove('hideSearch');
             searchWrapper.classList.add('showSearch');
+            document.body.style.overflow = 'hidden';
             document.addEventListener('click', hideSearch)
         }
 

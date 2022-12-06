@@ -167,9 +167,12 @@ class CartController extends BaseUser
             ]);
 
 
-            foreach ($address as $item){
-                $this->userData['address'] = $item['address'];
+            if(!empty($address)){
+                foreach ($address as $item){
+                    $this->userData['address'] = $item['address'];
+                }
             }
+
         }
 
 

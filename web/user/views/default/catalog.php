@@ -18,7 +18,7 @@
     <!-- ОТКРЫВАШКА ФИЛЬТРА -->
     <?php if(!empty($catalogFilters) || !empty($catalogPrices)):?>
         <button type="button" class=" filter_button_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="fa-sharp fa-solid fa-sort"></i>
+            <i class="fa-solid fa-filter"></i>
         </button>
 
         <!-- ФИЛЬТР -->

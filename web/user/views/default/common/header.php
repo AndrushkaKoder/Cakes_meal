@@ -16,6 +16,11 @@
 $headerClass = $this->getController() === 'index' ? 'index' : '';
 
 $display = $this->getController() === 'login' ? 'none' : 'block';
+
+$currentClass = '';
+
+
+
 ?>
 <!---->
 <body style="background:url(<?=$this->getTemplateImg()?>bg/bg1.jpg)">
@@ -32,7 +37,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
             </div>
             <div class="col-lg-7 col-md-10 col-sm-12 mobile_none">
                 <ul class="header_nav_list">
-                    <li class="header_nav_list_item"><a href="<?=$this->alias()?>">Главная</a></li>
+                    <li class="header_nav_list_item"><a class="" href="<?=$this->alias()?>">Главная</a></li>
                     <?php if(!empty($this->menu)):?>
                         <li class="header_nav_list_item dropdownWrapper">
                             <a class="dropdown-toggle" id="no_border" href="<?=$this->alias('catalog')?>" role="button"  aria-expanded="false">Ассортимент</a>
@@ -46,9 +51,9 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
                         </li>
                     <?php endif;?>
 
-                    <li class="header_nav_list_item"><a href="<?=$this->alias('constructor')?>">Конструктор</a></li>
-                    <li class="header_nav_list_item"><a href="<?=$this->alias('about')?>">О нас</a></li>
-                    <li class="header_nav_list_item"><a href="<?=$this->alias('delivery')?>">Доставка</a></li>
+                    <li class="header_nav_list_item"><a class="" href="<?=$this->alias('constructor')?>">Конструктор</a></li>
+                    <li class="header_nav_list_item"><a class="" href="<?=$this->alias('about')?>">О нас</a></li>
+                    <li class="header_nav_list_item"><a class="" href="<?=$this->alias('delivery')?>">Доставка</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12 d-flex justify-content-center align-items-center" data-nav_wrapper style="position: relative">
@@ -57,7 +62,7 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
                 <a href="<?=$this->alias('cart')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i> <span class="cart_counter" data-totalQTY><?=$this->cart['total_qty'] ?? 0?></span></a>
                 <a href="#" class="nav_item" style="display: none" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
 
-                <a href="" class="nav_item search_button"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
+                <a href="" class="nav_item search_button" ><i class="fa-solid fa-magnifying-glass search_button"></i></a>
 
 
                 <!--попап регистрации-->
@@ -142,14 +147,18 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
                 <!--попап регистрации-->
 
             </div>
+        </div>
+        <div class="row position-absolute">
             <div class="col-12 position-relative">
-                <form action="" method="GET" class="search_wrapper hideSearch d-flex">
+                <form action="<?=$this->alias('search')?>" method="GET" class="search_wrapper hideSearch d-flex flex-column" data-form-search>
                     <div class="search_area">
-                        <input type="text" id="search_area" class="">
+                        <input type="text" id="search_area" class="" name="search">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass search_button"></i></button>
                     </div>
                 </form>
             </div>
+        </div>
+
 
         </div>
     </div>

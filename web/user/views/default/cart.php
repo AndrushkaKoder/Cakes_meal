@@ -108,7 +108,7 @@
                                         <h5>Дата</h5>
                                         <p class="basket_modal_descr">В какой день привезти Ваш заказ</p>
                                         <div class="item_content item_content_name">
-                                            <input type="date" name="date_delivery" id="userDataTotal" style="width: 100%">
+                                            <input type="date" name="date_delivery" id="userDataTotal" style="width: 100%" required>
                                         </div>
                                     </div>
 
@@ -154,7 +154,7 @@
 
                                     <div class="backet_modal_item text-center">
                                        <div class="item_content d-flex justify-content-center align-items-center">
-                                           <input type="checkbox" name="basket_privacy_check" id="basket_privacy_check" required checked>
+                                           <input type="checkbox" id="basket_privacy_check" required checked>
                                            <p class="privacy_descr">Я согласен(согласна) на обработку персональных данных</p>
                                        </div>
                                         <p><a href="<?=$this->alias('privacy')?>" class="privacy_basket">Политика конфиденциальности</a></p>
