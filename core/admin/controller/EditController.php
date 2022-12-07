@@ -8,8 +8,8 @@
 
 namespace core\admin\controller;
 
-use core\base\exceptions\RouteException;
-use core\base\settings\Settings;
+use core\exceptions\RouteException;
+use settings\Settings;
 
 class EditController extends BaseAdmin
 {
@@ -36,7 +36,7 @@ class EditController extends BaseAdmin
 
         $this->createManyToMany();
 
-        $this->template = ADMIN_TEMPLATE . 'add';
+        $this->template = $this->getViewsPath() . 'add';
 
         return $this->expansion();
 
@@ -47,7 +47,7 @@ class EditController extends BaseAdmin
      */
     protected function createData(){
 
-        $id = $this->clearStr($this->parameters[$this->table]);
+        $id = \AppH::clearStr($this->parameters[$this->table]);
 
         if(!$id) throw new RouteException('Не корректный идентификатор - ' . $id .
                                                     'при редактировании - ' . $this->table);

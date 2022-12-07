@@ -524,9 +524,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         }
 
-        searchRes.addEventListener('mouseleave', setDefaultValue)
+        if(searchRes){
 
-        window.addEventListener('keydown', searchKeydown)
+            searchRes.addEventListener('mouseleave', setDefaultValue)
+
+            window.addEventListener('keydown', searchKeydown)
+
+        }
 
         return () => {
 

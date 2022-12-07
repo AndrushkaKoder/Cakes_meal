@@ -19,7 +19,7 @@ class MainSettings
 
     private $expansion = 'core/admin/expansion/';
 
-    private $messages = 'core/base/messages/';
+    private $messages = 'core/messages/';
 
     private $defaultTable = 'users';
 

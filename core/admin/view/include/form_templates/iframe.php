@@ -2,7 +2,7 @@
     <!-- Блок "iframe" -->
     <div class="wq-block">
 
-        <?=$this->render(ADMIN_TEMPLATE . 'include/sorting_block')?>
+        <?=$this->render($this->getViewsPath() . 'include/sorting_block')?>
 
         <div class="wq-block__wrap">
             <h3 class="wq-block__title <?=!empty($this->userData['ROOT']) ? 'sorting-title' : ''?>"><?=$this->translate[$row][0] ?? $row?></h3>
@@ -10,7 +10,7 @@
             <span class="wq-controls__button wq-button wq-button_havelock _btn" style="cursor: pointer" data-show-iframe="iframe-<?=$row?>-<?=$this->data[$this->columns['id_row']]?>">Посмотреть</span>
         </div>
         <div class="wq-iframe-container" style="display:none; z-index:9999; background: rgba(0,0,0,0.4); position: fixed; top:0; left: 0; width: 100vw; height: 100vh; padding: 60px 40px">
-            <iframe id="iframe-<?=$row?>-<?=$this->data[$this->columns['id_row']]?>" style="width: 100%; height: 100%" src="<?=$this->adminPath?>show/<?=$row?>?filter[parent_id]=<?=$this->data[$this->columns['id_row']]?>&iframeMode=true" frameborder="0" allow="fullscreen"></iframe>
+            <iframe id="iframe-<?=$row?>-<?=$this->data[$this->columns['id_row']]?>" style="width: 100%; height: 100%" src="<?=$this->alias(['show' => $row], ['filter[parent_id]' => $this->data[$this->columns['id_row']], 'iframeMode' => 'true'])?>" frameborder="0" allow="fullscreen"></iframe>
         </div>
         <script>
 

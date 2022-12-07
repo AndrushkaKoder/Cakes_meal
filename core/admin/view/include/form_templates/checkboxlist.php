@@ -2,7 +2,7 @@
     <!-- Блок "Фильтры" -->
     <div class="wq-block" data-filter-block>
 
-        <?=$this->render(ADMIN_TEMPLATE . 'include/sorting_block')?>
+        <?=$this->render($this->getViewsPath() . 'include/sorting_block')?>
 
         <div class="wq-block__wrap">
 
@@ -52,8 +52,8 @@
                                 <button class="wq-spoilers__button wq-spoilers__button_icon _btn">
                                     <div class="wq-spoilers__icon _ibg">
                                         <picture>
-                                            <source srcset="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-arrow.webp" type="image/webp">
-                                            <img src="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-arrow.png" alt="icon">
+                                            <source srcset="<?=$this->getTemplateImg()?>icons/icon-arrow.webp" type="image/webp">
+                                            <img src="<?=$this->getTemplateImg()?>img/icons/icon-arrow.png" alt="icon">
                                         </picture>
                                     </div>
                                 </button>

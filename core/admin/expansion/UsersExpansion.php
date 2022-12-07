@@ -8,18 +8,12 @@
 
 namespace core\admin\expansion;
 
-
-use core\base\controller\BaseMethods;
-use core\base\controller\Singleton;
-use core\base\exceptions\DbException;
-use core\base\model\UserModel;
-use core\base\settings\Settings;
+use core\exceptions\DbException;
+use core\models\UserModel;
+use settings\Settings;
 
 class UsersExpansion extends Expansion
 {
-
-    use Singleton;
-    use BaseMethods;
 
     public function expansion($args = [], $obj = false){
 
@@ -34,11 +28,15 @@ class UsersExpansion extends Expansion
 
         }
 
-        if($this->isPost()){
+        if(\AppH::isPost()){
+
             if($_POST['id'] == $this->userData['id'] && $_POST['password']){
+
                 UserModel::instance()->logout();
-                $this->redirect(PATH.Settings::get('routes')['admin']['alias'] . '/login');
+
+                \AppH::redirect($this->alias([\App::PATH() => \App::config()->WEB('alias'), 'login']));
             }
+
         }
 
         if(!empty($this->columns['manual_menu_position'])){

@@ -3,13 +3,12 @@
 namespace core\admin\controller;
 
 
-use core\base\controller\BaseController;
 use core\admin\model\Model;
 use core\base\settings\Settings;
 
 use libraries\FileEdit;
 
-class IndexController extends BaseController
+class IndexController extends BaseAdmin
 {
 
     protected function inputData(){
@@ -35,8 +34,9 @@ class IndexController extends BaseController
 //            }
 //        }
 
-        $redirect = PATH. Settings::get('routes')['admin']['alias'] . '/show';
-        $this->redirect($redirect);
+        $redirect = $this->alias([\App::config()->WEB('alias'), 'show']);
+
+        \AppH::redirect($redirect);
 
     }
 

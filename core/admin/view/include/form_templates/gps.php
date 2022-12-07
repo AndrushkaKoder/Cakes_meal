@@ -2,7 +2,7 @@
     <!-- Блок "GPS координаты" -->
     <div class="wq-block">
 
-        <?=$this->render(ADMIN_TEMPLATE . 'include/sorting_block')?>
+        <?=$this->render($this->getViewsPath() . 'include/sorting_block')?>
 
         <div class="wq-block__wrap">
             <div>

@@ -1,48 +1,52 @@
-let forms = document.querySelectorAll('form');
+(function(){
 
-if(forms.length){
+    let forms = document.querySelectorAll('form');
 
-    forms.forEach(form => {
+    if(forms.length){
 
-        form.addEventListener('submit', e => {
+        forms.forEach(form => {
 
-            if(e.isTrusted){
+            form.addEventListener('submit', e => {
 
-                e.preventDefault();
+                if(e.isTrusted){
 
-                Ajax({
+                    e.preventDefault();
 
-                    data: {ajax: 'token'}
+                    Ajax({
 
-                }).then(res => {
+                        data: {ajax: 'token'}
 
-                    if(res){
+                    }).then(res => {
 
-                        let input = document.createElement('input')
+                        if(res){
 
-                        input.type = 'hidden'
+                            let input = document.createElement('input')
 
-                        input.name = 'token'
+                            input.type = 'hidden'
 
-                        input.value = res
+                            input.name = 'token'
 
-                        form.append(input)
+                            input.value = res
 
-                        if(typeof e.submitter !== 'undefined' && e.submitter.name){
+                            form.append(input)
 
-                            form.insertAdjacentHTML('beforeend', `<input type="hidden" name="${e.submitter.name}" value="${(e.submitter.value || e.submitter.innerHTML)}">`)
+                            if(typeof e.submitter !== 'undefined' && e.submitter.name){
+
+                                form.insertAdjacentHTML('beforeend', `<input type="hidden" name="${e.submitter.name}" value="${(e.submitter.value || e.submitter.innerHTML)}">`)
+
+                            }
 
                         }
 
-                    }
+                        form.submit();
 
-                    form.submit();
+                    })
 
-                })
+                }
+            })
 
-            }
         })
 
-    })
+    }
 
-}
+})()

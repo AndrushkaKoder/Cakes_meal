@@ -3,14 +3,13 @@
 
 namespace core\admin\expansion;
 
+use core\system\Controller;
+use core\traites\Singleton;
 
-use core\base\controller\BaseMethods;
-use core\base\controller\Singleton;
-
-class Expansion
+class Expansion extends Controller
 {
 
-    use BaseMethods;
+    use Singleton;
 
     protected $className;
 

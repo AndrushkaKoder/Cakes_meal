@@ -2,8 +2,8 @@
 
 namespace core\admin\helpers;
 
-use core\base\model\Crypt;
-use core\base\settings\Settings;
+use core\models\Crypt;
+use settings\Settings;
 
 trait PrepareEditHelper
 {
@@ -70,7 +70,7 @@ trait PrepareEditHelper
 
             }else{
 
-                $link_str = $arr['alias'] = $this->clearStr($arr['alias']);
+                $link_str = $arr['alias'] = \AppH::clearStr($arr['alias']);
 
             }
 
@@ -82,7 +82,7 @@ trait PrepareEditHelper
 
             if(!empty($this->columns['alias']['Type']) && preg_match('/\(\d+\)/', $this->columns['alias']['Type'], $matches)){
 
-                $maxLength = $this->clearNum($matches[0]);
+                $maxLength = \AppH::clearNum($matches[0]);
 
             }
 
@@ -136,7 +136,7 @@ trait PrepareEditHelper
 
                         if(!empty($arr[$row]) && trim(strtolower((string)$arr[$row])) !== 'null' && !empty($foreignArr)){
 
-                            $targetElement = $this->recursiveSearch($foreignArr,$arr[$row]);
+                            $targetElement = \AppH::recursiveSearch($foreignArr,$arr[$row]);
 
                             $fullName = $targetElement['recursive_name'] ?? ($targetElement['recursive_name'] ?? '');
 
@@ -284,7 +284,7 @@ trait PrepareEditHelper
     }
 
     protected function checkPost($settings = false, $returnId = false){
-        if($this->isPost()){
+        if(\AppH::isPost()){
             $this->clearPostFields();
             $this->table = $_POST['table'];
             unset($_POST['table']);
@@ -325,7 +325,7 @@ trait PrepareEditHelper
             }else{
 
                 if(is_numeric($value)){
-                    $arr[$key] = $this->clearNum($value);
+                    $arr[$key] = \AppH::clearNum($value);
                 }
 
                 if(isset($columns[$key]['Type']) && preg_match('/(int(\(\d*\))|($))|(float)/i', $columns[$key]['Type']) && $value === ''){
@@ -406,7 +406,7 @@ trait PrepareEditHelper
                         if(!empty($validate[$key]['int'])){
                             if(preg_match('/(int\(\d*\))|(float)/i', $columns[$key]['Type'])){
 
-                                $arr[$key] = $this->clearNum($value);
+                                $arr[$key] = \AppH::clearNum($value);
 
                             }else{
 

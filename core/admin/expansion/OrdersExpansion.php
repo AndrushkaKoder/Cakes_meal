@@ -3,16 +3,10 @@
 
 namespace core\admin\expansion;
 
-
-use core\base\controller\BaseMethods;
-use core\base\controller\Singleton;
-use core\base\settings\Settings;
+use settings\Settings;
 
 class OrdersExpansion extends Expansion
 {
-
-    use Singleton;
-    use BaseMethods;
 
     protected $tables = [
         'visitors' => [
@@ -42,7 +36,7 @@ class OrdersExpansion extends Expansion
 
             $this->translate['address'] = ['Адрес доставки'];
 
-            if($this->isPost()){
+            if(\AppH::isPost()){
 
                 $this->editOrderData($args);
 

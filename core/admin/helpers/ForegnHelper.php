@@ -2,7 +2,7 @@
 
 namespace core\admin\helpers;
 
-use core\base\settings\Settings;
+use settings\Settings;
 
 trait ForegnHelper
 {
@@ -91,9 +91,10 @@ trait ForegnHelper
 
             $onlyRootParents = $settings::get('deepLevel');
 
-            if(isset($onlyRootParents[$this->table][$arr['COLUMN_NAME']]) && $onlyRootParents[$this->table][$arr['COLUMN_NAME']] === 0){
+            if(isset($onlyRootParents[$this->table][$arr['COLUMN_NAME']]) &&
+                $onlyRootParents[$this->table][$arr['COLUMN_NAME']] === 0){
 
-                $this->onlyRootParents($foreign);
+                \AppH::onlyRootParents($foreign);
 
             }
 
@@ -117,11 +118,11 @@ trait ForegnHelper
 
                 }
 
-                $this->foreignData[$arr['COLUMN_NAME']] = $this->recursiveArr($this->foreignData[$arr['COLUMN_NAME']]);
+                $this->foreignData[$arr['COLUMN_NAME']] = \AppH::recursiveArr($this->foreignData[$arr['COLUMN_NAME']]);
 
             }else{
 
-                $this->foreignData[$arr['COLUMN_NAME']] = $this->recursiveArr($foreign);
+                $this->foreignData[$arr['COLUMN_NAME']] = \AppH::recursiveArr($foreign);
 
             }
 
@@ -374,7 +375,7 @@ trait ForegnHelper
 
                                 }
 
-                                $resData = $this->recursiveArr($data, 1);
+                                $resData = \AppH::recursiveArr($data, 1);
 
                                 if($resData){
 
@@ -479,7 +480,7 @@ trait ForegnHelper
 
                                 if($data){
 
-                                    $this->foreignData[$tables[$otherKey]] = $this->recursiveArr($data, 1);
+                                    $this->foreignData[$tables[$otherKey]] = \AppH::recursiveArr($data, 1);
 
                                     foreach ($this->foreignData[$tables[$otherKey]] as $key => $item){
 

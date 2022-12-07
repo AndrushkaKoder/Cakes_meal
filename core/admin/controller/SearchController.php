@@ -1,7 +1,7 @@
 <?php
 namespace core\admin\controller;
 
-use core\base\settings\Settings;
+use settings\Settings;
 
 class SearchController extends BaseAdmin{
 
@@ -9,11 +9,12 @@ class SearchController extends BaseAdmin{
 
         if(!$this->userData) $this->execBase();
 
-        $text = $this->clearStr($_GET['search']);
+        $text = \AppH::clearStr($_GET['search']);
 
-        if(!$text) $this->redirect();
+        if(!$text) 
+            \AppH::redirect();
 
-        $table = $this->clearStr($_GET['search_table']);
+        $table = \AppH::clearStr($_GET['search_table']);
 
         $pages = [];
 
@@ -21,7 +22,7 @@ class SearchController extends BaseAdmin{
 
         $pages['qty_links'] = $this->linksCounter;
 
-        $pages['page'] = !empty($_GET['page']) ? $this->clearNum($_GET['page']) : 1;
+        $pages['page'] = !empty($_GET['page']) ? \AppH::clearNum($_GET['page']) : 1;
 
         !$pages['page'] && $pages['pagination']['page'] = 1;
 

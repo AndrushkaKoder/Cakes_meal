@@ -3,7 +3,10 @@
 return [
     'web' => [
         'path' => '',
-        'common' => 'common',
+        'common' => [
+           'directory' => 'common',
+            'js' => 'core/commonFrontEnd/js'
+        ],
         'css' => 'css',
         'img'=>'img',
         'js' => 'js',
@@ -18,7 +21,8 @@ return [
             'unblocked_access' => ['login'],
             'logging_errors_count' => 3,
             'block_time' => 3,
-            'views' => 'core/admin/view'
+            'views' => 'core/admin/view',
+            'img' => 'img'
         ],
         'user' => [
             'hrUrl' => true
@@ -33,6 +37,7 @@ return [
                 'controller' => 'index',
                 'method' => 'inputData',
                 'outputMethod' => 'outputData',
+                'commonMethod' => 'commonData',
             ]
         ],
         'controllersPath' => [

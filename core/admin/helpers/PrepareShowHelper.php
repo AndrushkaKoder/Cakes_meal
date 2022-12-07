@@ -2,8 +2,8 @@
 
 namespace core\admin\helpers;
 
-use core\base\exceptions\RouteException;
-use core\base\settings\Settings;
+use core\exceptions\RouteException;
+use settings\Settings;
 
 trait PrepareShowHelper
 {

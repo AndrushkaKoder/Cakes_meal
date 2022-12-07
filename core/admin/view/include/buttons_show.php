@@ -3,7 +3,7 @@
             !is_array($this->userData['credentials']) ||
             isset($this->userData['credentials'][$this->table]['add']))) && empty($no_add) && $this->getController() === 'show'):?>
 
-        <a href="<?=$this->adminPath?>add/<?=$this->table?>" class="wq-controls__button wq-button wq-button_fern _btn">
+        <a href="<?=$this->alias(['add' => $this->table])?>" class="wq-controls__button wq-button wq-button_fern _btn">
             добавить
         </a>
 
@@ -14,7 +14,7 @@
     </a>
 
     <?php if(!empty($this->userData['ROOT']) && !empty($this->columns['menu_position']) && $this->getController() === 'show'):?>
-        <a href="<?=$this->adminPath?>show/<?=$this->table?>?revision-menu_position=true" class="wq-controls__button wq-button wq-button_valencia _btn revision-menu_position" title="Проводится пересчет позиций вывода во всем разделе, в случае возникновения ошибки. ПРОСТО ТАК НЕ БАЛОВАТЬСЯ!!!">
+        <a href="<?=$this->alias(['show' => $this->table], ['revision-menu_position' => 'true'])?>?" class="wq-controls__button wq-button wq-button_valencia _btn revision-menu_position" title="Проводится пересчет позиций вывода во всем разделе, в случае возникновения ошибки. ПРОСТО ТАК НЕ БАЛОВАТЬСЯ!!!">
             Ревизия позиций вывода
         </a>
     <?php endif;?>

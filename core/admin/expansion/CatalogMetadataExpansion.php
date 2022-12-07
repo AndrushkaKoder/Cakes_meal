@@ -3,21 +3,16 @@
 
 namespace core\admin\expansion;
 
-
-use core\base\controller\BaseMethods;
-use core\base\controller\Singleton;
+use core\traites\Singleton;
 
 class CatalogMetadataExpansion extends Expansion
 {
-
-    use Singleton;
-    use BaseMethods;
 
     public function expansion($args = [], $obj = false)
     {
         parent::expansion($args, $obj);
 
-        if($this->isPost() && $_POST['id']){
+        if(\AppH::isPost() && $_POST['id']){
 
             $name = preg_replace('/^.*?\/?([^\/]+)\/?$/', '$1', $_POST['name']);
 

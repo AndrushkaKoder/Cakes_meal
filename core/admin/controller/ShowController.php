@@ -2,7 +2,7 @@
 
 namespace core\admin\controller;
 
-use core\base\settings\Settings;
+use settings\Settings;
 
 class ShowController extends BaseAdmin
 {
@@ -12,7 +12,8 @@ class ShowController extends BaseAdmin
 
     protected function inputData(){
 
-        if(!$this->userData) $this->execBase();
+        if(!$this->userData) 
+            $this->execBase();
 
         $this->createTableData();
 
@@ -26,7 +27,7 @@ class ShowController extends BaseAdmin
 
             $this->model->revisionMenuPosition($this->table);
 
-            $this->redirect($this->adminPath . $this->getController() . '/' . $this->table);
+            \AppH::redirect($this->alias([$this->adminPath, $this->getController(), $this->table]));
 
         }
 
@@ -165,9 +166,9 @@ class ShowController extends BaseAdmin
 
             foreach ($_GET['filter'] as $row => $value){
 
-                $row = $this->clearStr($row);
+                $row = \AppH::clearStr($row);
 
-                $searchValue = $value = $this->clearStr($value);
+                $searchValue = $value = \AppH::clearStr($value);
 
                 if(!empty($keys)){
 
@@ -181,7 +182,7 @@ class ShowController extends BaseAdmin
 
                             }
 
-                            $searchValue = $this->getChildren($value, $item['REFERENCED_TABLE_NAME'], $item['REFERENCED_COLUMN_NAME']);
+                            $searchValue = \AppH::getChildren($value, $item['REFERENCED_TABLE_NAME'], $item['REFERENCED_COLUMN_NAME']);
 
                         }
 
@@ -227,7 +228,7 @@ class ShowController extends BaseAdmin
             if(!$multiLevelId){
                 $this->data = $result;
             }else{
-                $this->data = $this->recursiveArr($result, 0, $parentId, $multiLevelId,'parent_id');
+                $this->data = \AppH::recursiveArr($result, 0, $parentId, $multiLevelId,'parent_id');
             }
 
         }
@@ -243,7 +244,7 @@ class ShowController extends BaseAdmin
     protected function createPagination(){
 
         if(!isset($_GET['page'])) $page = 1;
-            else $page = $this->clearNum($_GET['page']);
+            else $page = \AppH::clearNum($_GET['page']);
 
         if($page){
 

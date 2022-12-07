@@ -30,14 +30,14 @@
                                 <option value="">Пункт меню...</option>
                                 <?php foreach ($this->menu as $table => $item):?>
 
-                                    <option value="<?=$this->adminPath?>show/<?=$table?>"><?=$item['name'] ?? $table?></option>
+                                    <option value="<?=$this->alias([$this->adminPath => 'show', $table])?>"><?=$item['name'] ?? $table?></option>
 
                                 <?php endforeach;?>
                             </select>
                             <button class="wq-search-aside__button _ibg _btn" type="button">
                                 <picture>
-                                    <source srcset="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-search.webp" type="image/webp">
-                                    <img src="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-search.png" alt="icon">
+                                    <source srcset="<?=$this->getTemplateImg()?>icons/icon-search.webp" type="image/webp">
+                                    <img src="<?=$this->getTemplateImg()?>icons/icon-search.png" alt="icon">
                                 </picture>
                             </button>
                         </form>
@@ -69,8 +69,6 @@
                                     <div class="wq-aside-menu__icon _ibg">
                                         <?php
 
-                                            $dir = $_SERVER['DOCUMENT_ROOT'] . PATH . ADMIN_TEMPLATE . 'img/';
-
                                             if(!empty($item['img'])){
 
                                                 $img = $item['img'];
@@ -79,7 +77,7 @@
 
                                                 if(empty($listImages)){
 
-                                                    $listImages = scandir($dir);
+                                                    $listImages = scandir(\AppH::correctPathLtrim($this->getViewsPath(), \App::config()->WEB('img')));
 
                                                 }
 
@@ -97,8 +95,8 @@
 
                                         ?>
                                         <picture>
-                                            <source srcset="<?=PATH . ADMIN_TEMPLATE . 'img/' . $img?>">
-                                            <img src="<?=PATH . ADMIN_TEMPLATE  . 'img/' . $img?>" alt="icon" style="filter: brightness(0) invert(1)">
+                                            <source srcset="<?=$this->getTemplateImg() . $img?>">
+                                            <img src="<?=$this->getTemplateImg() . $img?>" alt="icon" style="filter: brightness(0) invert(1)">
                                         </picture>
                                     </div>
                                     <span class="wq-aside-menu__text"><?=$item['name'] ?? $table?></span>
@@ -117,7 +115,7 @@
             <header class="wq-header">
 
                 <div style="display: none; width: 100vw; height: 100vh; top: 0; left: 0; position: fixed; background: rgba(0,0,0,0.8); z-index: 999; justify-content: center; align-items: center; padding: 20px" class="import-form">
-                    <form action="<?=$this->adminPath?>import" method="post" enctype="multipart/form-data" class="file-import" style="flex-basis: 600px; background: white; padding: 20px">
+                    <form action="<?=$this->alias([$this->adminPath => 'import'])?>" method="post" enctype="multipart/form-data" class="file-import" style="flex-basis: 600px; background: white; padding: 20px">
                         <label for="">
                             <span>Файл импорта</span>
                             <input type="file" name="import" style="display: block; margin: 10px 0">
@@ -147,23 +145,23 @@
                     <nav class="wq-menu__body">
                         <ul class="wq-menu__list">
                             <li class="wq-menu__item">
-                                <a href="<?=$this->adminPath?>" class="wq-menu__link _active">Главная</a>
+                                <a href="<?=$this->alias($this->adminPath)?>" class="wq-menu__link _active">Главная</a>
                             </li>
                             <li class="wq-menu__item">
-                                <a href="<?=PATH?>" target="_blank" class="wq-menu__link">На сайт</a>
+                                <a href="<?=$this->alias()?>" target="_blank" class="wq-menu__link">На сайт</a>
                             </li>
 
                         </ul>
                         <ul class="wq-menu__list" data-da=".wq-move-header__menu, 768, 0">
                             <?php
-                                $nameSpace = str_replace('/', '\\', core\base\settings\Settings::get('routes')['admin']['path']);
+                                $nameSpace = str_replace('/', '\\', (new \ReflectionClass($this))->getNamespaceName());
                             ?>
-                            <?php if(class_exists($nameSpace . 'ImportController')):?>
+                            <?php if(class_exists($nameSpace . '\ImportController')):?>
                                 <li class="wq-menu__item" style="cursor: pointer">
                                     <span class="wq-menu__link" onclick="showImportForm()">Import</span>
                                 </li>
                             <?php endif;?>
-                            <?php if(class_exists($nameSpace . 'CreatesitemapController')):?>
+                            <?php if(class_exists($nameSpace . '\CreatesitemapController')):?>
                                 <li class="wq-menu__item">
                                     <a href="<?=$this->adminPath?>createsitemap" class="wq-menu__link">Create sitemap</a>
                                 </li>
@@ -177,16 +175,16 @@
                         <div class="wq-header__theme wq-theme-header">
                             <a href="<?=$this->adminPath?>change-theme" class="wq-theme-header__link _ibg">
                                 <picture>
-                                    <source srcset="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-theme.webp">
-                                    <img src="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-theme.png" alt="icon">
+                                    <source srcset="<?=$this->getTemplateImg()?>icons/icon-theme.webp">
+                                    <img src="<?=$this->getTemplateImg()?>icons/icon-theme.png" alt="icon">
                                 </picture>
                             </a>
                         </div>
                         <div class="wq-header__logout wq-logout-header">
-                            <a href="<?=$this->adminPath?>login/logout/<?=$this->userData['id']?>" class="wq-logout-header__link _ibg">
+                            <a href="<?=$this->alias(['login' => 'logout'])?>" class="wq-logout-header__link _ibg">
                                 <picture>
-                                    <source srcset="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-logout.webp" type="image/webp">
-                                    <img src="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-logout.png" alt="icon">
+                                    <source srcset="<?=$this->getTemplateImg()?>icons/icon-logout.webp" type="image/webp">
+                                    <img src="<?=$this->getTemplateImg()?>icons/icon-logout.png" alt="icon">
                                 </picture>
                             </a>
                         </div>
@@ -198,13 +196,13 @@
                 </div>
                 <div class="wq-header__inner">
                     <div class="wq-header__search wq-search-form">
-                        <form class="wq-search-form__form" autocomplete="off" action="<?=$this->adminPath?>search">
+                        <form class="wq-search-form__form" autocomplete="off" action="<?=$this->alias('search')?>">
                             <input type="text" name="search" class="wq-search-form__input" placeholder="Поиск...">
                             <input type="hidden" name="search_table" value="<?=$this->table?>">
                             <button class="wq-search-form__button _ibg _btn">
                                 <picture>
-                                    <source srcset="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-search.webp" type="image/webp">
-                                    <img src="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-search.png" alt="icon">
+                                    <source srcset="<?=$this->getTemplateImg()?>icons/icon-search.webp" type="image/webp">
+                                    <img src="<?=$this->getTemplateImg()?>icons/icon-search.png" alt="icon">
                                 </picture>
                             </button>
                         </form>

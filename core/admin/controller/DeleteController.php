@@ -3,8 +3,7 @@
 
 namespace core\admin\controller;
 
-
-use core\base\settings\Settings;
+use settings\Settings;
 
 class DeleteController extends BaseAdmin
 {
@@ -19,8 +18,8 @@ class DeleteController extends BaseAdmin
         if(!empty($this->parameters[$this->table])){
 
             $id = is_numeric($this->parameters[$this->table]) ?
-                $this->clearNum($this->parameters[$this->table]) :
-                $this->clearStr($this->parameters[$this->table]);
+                \AppH::clearNum($this->parameters[$this->table]) :
+                \AppH::clearStr($this->parameters[$this->table]);
 
             if($id){
 
@@ -56,11 +55,11 @@ class DeleteController extends BaseAdmin
                                         if(is_array($fileData)){
 
                                             foreach ($fileData as $f)
-                                                @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR. $f);
+                                                @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $f);
 
                                         }else{
 
-                                            @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR. $fileData);
+                                            @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $fileData);
 
                                         }
 
@@ -140,7 +139,7 @@ class DeleteController extends BaseAdmin
 
                         $_SESSION['res']['answer'] = $_SESSION['res']['answer'] = '<div class="success">' . $this->messages['deleteSuccess'] . '</div>';
 
-                        $this->redirect($this->adminPath . 'show/' . $this->table);
+                        \AppH::redirect($this->adminPath . 'show/' . $this->table);
 
                     }
 
@@ -152,7 +151,7 @@ class DeleteController extends BaseAdmin
 
         $_SESSION['res']['answer'] = '<div class="error">' . $this->messages['deleteFail'] . '</div>';
 
-        $this->redirect();
+        \AppH::redirect();
 
     }
 
@@ -182,7 +181,7 @@ class DeleteController extends BaseAdmin
 
                                     $updateFlag = true;
 
-                                    @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $item);
+                                    @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
 
                                     $data[$key][$k] = null;
 
@@ -199,7 +198,7 @@ class DeleteController extends BaseAdmin
 
                             $updateFlag = true;
 
-                            @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $item);
+                            @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
 
                             unset($data[$key]);
 
@@ -215,7 +214,7 @@ class DeleteController extends BaseAdmin
 
                     $updateFlag = true;
 
-                    @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $item);
+                    @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
 
                     $this->data[$row] = 'NULL';
 
@@ -239,7 +238,7 @@ class DeleteController extends BaseAdmin
 
         }
 
-        $this->redirect();
+        \AppH::redirect();
 
     }
 

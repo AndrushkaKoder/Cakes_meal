@@ -5,7 +5,21 @@ namespace core\traites;
 trait ShowDataHelper
 {
 
-    private function showScriptsStyles($path, $type = 'css', $innerDirectory = ''){
+    protected function showCommonScriptsStyles($type = 'js'){
+
+        if(!empty(\App::config()->WEB('common', $type))){
+
+            $path = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('common', $type));
+
+            $templatePath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('common', $type));
+
+            $this->showScriptsStyles($path, 'js', $templatePath);
+
+        }
+
+    }
+
+    private function showScriptsStyles(string $path, string $type = 'css', ?string $templatePath = '', ?string $innerDirectory = ''){
 
         $template = null;
 
@@ -21,7 +35,7 @@ trait ShowDataHelper
 
         if($template){
 
-            $templatePath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('views'), \App::config()->WEB($type), $innerDirectory);
+            !$templatePath && $templatePath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('views'), \App::config()->WEB($type), $innerDirectory);
 
             \AppH::scanDir($path, function ($file) use ($path, $template, $templatePath, $type){
 
@@ -29,7 +43,7 @@ trait ShowDataHelper
 
                     if(strtolower($file) === $this->getController()){
 
-                        $this->showScriptsStyles($path . $file, $type, $file);
+                        $this->showScriptsStyles($path . $file, $type, $templatePath, $file);
 
                     }
 

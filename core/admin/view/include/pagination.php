@@ -2,8 +2,8 @@
 <li class="wq-pagination__item wq-pagination__arrow">
     <a href="#" class="wq-pagination__icon _ibg">
         <picture>
-            <source srcset="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-arrow-prev.webp" type="image/webp">
-            <img src="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-arrow-prev.png" alt="icon">
+            <source srcset="<?=$this->getTemplateImg()?>icons/icon-arrow-prev.webp" type="image/webp">
+            <img src="<?=$this->getTemplateImg()?>icons/icon-arrow-prev.png" alt="icon">
         </picture>
     </a>
 </li>
@@ -27,8 +27,8 @@
 <li class="wq-pagination__item wq-pagination__arrow">
     <a href="#" class="wq-pagination__icon _ibg">
         <picture>
-            <source srcset="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-arrow-next.webp" type="image/webp">
-            <img src="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-arrow-next.png" alt="icon">
+            <source srcset="<?=$this->getTemplateImg()?>icons/icon-arrow-next.webp" type="image/webp">
+            <img src="<?=$this->getTemplateImg()?>icons/icon-arrow-next.png" alt="icon">
         </picture>
     </a>
 </li>

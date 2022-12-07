@@ -45,7 +45,7 @@ trait PrepareFilesHelper
 
                         foreach ($item as $k => $v){
 
-                            @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $v);
+                            @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $v);
 
                         }
 
@@ -84,7 +84,7 @@ trait PrepareFilesHelper
 
         if(!empty($_SESSION['crop_image'])){
             foreach ($_SESSION['crop_image'] as $key => $item) {
-                $item['img'] = $_SERVER['DOCUMENT_ROOT'].PATH.UPLOAD_DIR.$this->fileArray[$key];
+                $item['img'] = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $this->fileArray[$key];
                 $this->fileArray['thumbnails'][] = $fileEdit->createJsThumbnail($item, $item['thumb_name']);
             }
         }
@@ -143,7 +143,7 @@ trait PrepareFilesHelper
 
                         }elseif(!empty($this->fileArray[$key])){
 
-                            @unlink($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $item);
+                            @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
 
                         }
 
@@ -165,7 +165,7 @@ trait PrepareFilesHelper
 
             if(!is_numeric($file)){
 
-                $file = substr($file, strlen(PATH . UPLOAD_DIR));
+                $file = substr($file, strlen(\AppH::correctPath(\App::PATH(), \App::config()->WEB('upload_dir'))));
 
             }else{
 
@@ -222,7 +222,7 @@ trait PrepareFilesHelper
 
                                             if($rowKey !== false && !empty($rowData[$rowKey]) && is_string($rowData[$rowKey]))
 
-                                            $fullFileName = $fullFileName = $_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $rowData[$rowKey];
+                                            $fullFileName = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $rowData[$rowKey];
 
                                         }
 
@@ -232,11 +232,11 @@ trait PrepareFilesHelper
 
                                         if(is_array($rowData[$key]) && !empty($rowData[$key]['file'])){
 
-                                            $fullFileName = $_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $rowData[$key]['file'];
+                                            $fullFileName = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $rowData[$key]['file'];
 
                                         }elseif(!is_string($rowData[$key])){
 
-                                            $fullFileName = $_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $rowData[$key];
+                                            $fullFileName = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $rowData[$key];
 
                                         }
 
@@ -274,7 +274,7 @@ trait PrepareFilesHelper
 
                             $fileData = base64_decode($fileData);
 
-                            $fullFileName = $_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $data[$rowName];
+                            $fullFileName = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $data[$rowName];
 
                             if(file_exists($fullFileName)){
 

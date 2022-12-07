@@ -14,7 +14,7 @@ class FiledownloadController extends BaseAdmin {
 
         parent::inputData();
 
-        include_once ($_SERVER['DOCUMENT_ROOT'] . PATH .'libraries/PHPExcel.php');
+        include_once (\App::FULL_PATH() .'libraries/PHPExcel.php');
         $this->phpExel = new \PHPExcel();
 
         /*Установка активного листа*/

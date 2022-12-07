@@ -18,8 +18,8 @@ class Settings
     private $executeShellScripts = false;
 
     private $projectTables = [
-        'projects' => ['name' => 'Проекты'],
-        'places' => ['name' => 'Площадки'],
+        'catalog' => ['name' => 'Каталог'],
+        'goods' => ['name' => 'Товары'],
         'test' => ['name' => 'TEST'],
         'categories' => ['name' => 'CATEGORIES'],
         'test_position' => ['name' => 'ПОЗИЦИИ'],

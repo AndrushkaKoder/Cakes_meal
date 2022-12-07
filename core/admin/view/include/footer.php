@@ -5,15 +5,6 @@
             </div>
         </footer>
 
-        <div class="wq-message__wrap">
-            <?php
-            if(isset($_SESSION['res']['answer'])){
-                echo $_SESSION['res']['answer'];
-                unset($_SESSION['res']);
-            }
-            ?>
-        </div>
-
     </div>
 
 </div>

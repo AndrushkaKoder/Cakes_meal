@@ -1,7 +1,7 @@
 <main class="wq-main">
 
     <div class="wq-content">
-        <form id="main-form" action="<?=$this->adminPath . $this->action?>" enctype="multipart/form-data" method="post" class="wq-content__form wq-main-form">
+        <form id="main-form" action="<?=$this->alias($this->action)?>" enctype="multipart/form-data" method="post" class="wq-content__form wq-main-form">
 
             <?=$this->buttons?>
 
@@ -39,9 +39,9 @@
 
                                     $path = $this->defaultTemplatePath;
 
-                                    if (!@include $_SERVER['DOCUMENT_ROOT']. $path . $type . '.php') {
+                                    if (!@include \AppH::correctPathTrim(\App::FULL_PATH(), $path, $type) . '.php') {
 
-                                        throw new \core\base\exceptions\RouteException('Не найден шаблон ' . $_SERVER['DOCUMENT_ROOT']. $path . $type . '.php');
+                                        throw new \core\exceptions\RouteException('Не найден шаблон ' . \AppH::correctPathTrim(\App::FULL_PATH(), $path, $type) . '.php');
 
                                     }
 

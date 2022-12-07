@@ -2,7 +2,7 @@
 
 namespace core\admin\helpers;
 
-use core\base\settings\Settings;
+use settings\Settings;
 
 trait GroupEditHelper
 {

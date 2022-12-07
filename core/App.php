@@ -260,6 +260,20 @@ final class App //final - класс от которого нельзя насл
 
                     }
 
+                    if(isset($this->properties['WEB'][strtolower($mode)])){
+
+                        array_unshift($args, strtolower($mode));
+
+                        $res = $this->searchProperty('WEB', $args);
+
+                        if($res){
+
+                            return $res;
+
+                        }
+
+                    }
+
                     return $this->searchProperty('WEB', func_get_args());
 
                 }

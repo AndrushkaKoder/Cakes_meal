@@ -2,7 +2,7 @@
     <!-- Блок "Изображение" -->
     <div class="wq-block img_container">
 
-        <?=$this->render(ADMIN_TEMPLATE . 'include/sorting_block')?>
+        <?=$this->render($this->getViewsPath() . 'include/sorting_block')?>
 
         <div class="wq-block__wrap img_wrapper">
             <h3 class="wq-block__title <?=!empty($this->userData['ROOT']) ? 'sorting-title' : ''?>"><?=$this->translate[$row][0] ?? $row?></h3>
@@ -33,9 +33,9 @@
 
                 $fileName = array_pop($fileArr);
 
-                $fileName = '<a href="' . PATH . UPLOAD_DIR . $this->data[$row] . '">' . $fileName . '</a>';
+                $fileName = '<a href="' . $this->img($this->data[$row]) . '">' . $fileName . '</a>';
 
-                $info = mime_content_type($_SERVER['DOCUMENT_ROOT'] . PATH.UPLOAD_DIR . $this->data[$row]);
+                $info = mime_content_type(\AppH::correctPathTrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir'), $this->data[$row]));
 
                 if($info){
 
@@ -43,13 +43,13 @@
 
                         $wrapClass = 'wq-block__img-view';
 
-                        $fileName = '<img src="' . PATH . UPLOAD_DIR . $this->data[$row] . '?v1.' . (str_replace(' ', '_', microtime())) . '" alt="service" ' . '" alt="service" ' . (preg_match('/\.svg$/', $this->data[$row]) ? 'style="min-width: 320px"' : '') . '>';
+                        $fileName = '<img src="' . $this->img($this->data[$row]) . '?v1.' . (str_replace(' ', '_', microtime())) . '" alt="service" ' . (preg_match('/\.svg$/', $this->data[$row]) ? 'style="min-width: 320px"' : '') . '>';
 
                     }elseif (preg_match('/video/i', $info)){
 
                         $wrapClass = 'wq-block__img-view';
 
-                        $fileName = '<video src="' . PATH.UPLOAD_DIR.$this->data[$row] .'" controls="controls"></video>';
+                        $fileName = '<video src="' . $this->img($this->data[$row]) .'" controls="controls"></video>';
 
                     }
 

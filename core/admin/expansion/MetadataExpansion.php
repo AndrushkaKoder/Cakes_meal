@@ -8,16 +8,10 @@
 
 namespace core\admin\expansion;
 
-
-use core\base\controller\BaseMethods;
-use core\base\controller\Singleton;
-use core\base\settings\Settings;
+use settings\Settings;
 
 class MetadataExpansion extends Expansion
 {
-
-    use Singleton;
-    use BaseMethods;
 
     public function expansion($args = [], $obj = false){
 
@@ -91,9 +85,9 @@ class MetadataExpansion extends Expansion
                     ]);
 
                     $redirect = preg_match('/\/metadata(\/|$)/', $_SERVER['HTTP_REFERER']) ? null :
-                        PATH . Settings::get('routes')['admin']['alias'] . '/show/metadata';
+                        \App::PATH() . Settings::get('routes')['admin']['alias'] . '/show/metadata';
 
-                    $this->redirect($redirect);
+                    \AppH::redirect($redirect);
 
                 }
 

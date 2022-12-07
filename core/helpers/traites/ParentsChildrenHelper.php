@@ -112,4 +112,22 @@ trait ParentsChildrenHelper
 
     }
 
+    public static function onlyRootParents(&$arr){
+
+        if($arr){
+
+            foreach ($arr as $key => $item){
+
+                if(isset($item['parent_id']) && $item['parent_id']){
+
+                    unset($arr[$key]);
+
+                }
+
+            }
+
+        }
+
+    }
+
 }

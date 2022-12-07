@@ -8,13 +8,8 @@
 
 namespace core\admin\expansion;
 
-
-use core\base\controller\Singleton;
-
 class SettingsExpansion
 {
-
-    use Singleton;
 
     public function expansion(){
         $no_add = true;

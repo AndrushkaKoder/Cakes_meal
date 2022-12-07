@@ -15,13 +15,13 @@ use core\admin\helpers\PrepareFilesHelper;
 use core\admin\helpers\PrepareShowHelper;
 use core\admin\helpers\StartProjectHelper;
 use core\admin\model\Model;
-use core\base\controller\BaseController;
-use core\base\exceptions\DbException;
-use core\base\exceptions\RouteException;
-use core\base\settings\Settings;
+use core\exceptions\DbException;
+use core\exceptions\RouteException;
+use settings\Settings;
+use core\system\Controller;
 
 
-abstract class BaseAdmin extends BaseController
+abstract class BaseAdmin extends Controller
 {
 
     use ForegnHelper;
@@ -50,7 +50,6 @@ abstract class BaseAdmin extends BaseController
     protected $menu;
 
     protected $title;
-    protected $messages;
 
     protected $settings;
     protected $translate;
@@ -63,28 +62,33 @@ abstract class BaseAdmin extends BaseController
     protected $countElements = 50;
     protected $linksCounter = 4;
 
+    protected string $template = '';
+
+    protected function commonData(){
+
+        self::inputData();
+
+    }
+
     protected function inputData(){
 
         if(!$this->model)
             $this->model = Model::instance();
 
-        $this->checkAuth(true);
-
-        !$this->userData && $this->redirect(PATH);
-
-        $this->init(true);
+        !$this->userData && \AppH::redirect(\App::PATH());
 
         $this->title = 'VG engine';
 
-        define('QTY', _QTY);
+        if(!$this->menu){
 
-        if(!$this->menu)
             $this->menu = Settings::get('projectTables');
+
+        }
 
         if(!$this->table){
             if($this->parameters)
                 $this->table = array_keys($this->parameters)[0];
-            elseif ($this->isPost() && $_POST['table'])
+            elseif (\AppH::isPost() && $_POST['table'])
                 $this->table = $_POST['table'];
             else
                 $this->table = Settings::get('defaultTable');
@@ -114,14 +118,26 @@ abstract class BaseAdmin extends BaseController
 
         }
 
-        if(!$this->adminPath) $this->adminPath = PATH . Settings::get('routes')['admin']['alias'] . '/';
-        if(!$this->templateArr) $this->templateArr = Settings::get('templateArr');
-        if(!$this->translate) $this->translate = Settings::get('translate');
-        if(!$this->defaultTemplatePath) $this->defaultTemplatePath = Settings::get('defaultTemplatePath');
-        if(!$this->multiLanguage) $this->multiLanguage = Settings::get('multiLanguage');
-        if($this->multiLanguage) $this->blockNeedle = Settings::get('blockNeedle');
+        if(!$this->adminPath)
+            $this->adminPath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('alias'));
 
-        if(!$this->messages) $this->messages = include $_SERVER['DOCUMENT_ROOT'] . PATH . Settings::get('messages') . 'informationMessages.php';
+        if(!$this->templateArr)
+            $this->templateArr = Settings::get('templateArr');
+
+        if(!$this->translate)
+            $this->translate = Settings::get('translate');
+
+        if(!$this->defaultTemplatePath)
+            $this->defaultTemplatePath = Settings::get('defaultTemplatePath');
+
+        if(!$this->multiLanguage)
+            $this->multiLanguage = Settings::get('multiLanguage');
+
+        if($this->multiLanguage)
+            $this->blockNeedle = Settings::get('blockNeedle');
+
+        if(!$this->messages)
+            $this->messages = include \App::FULL_PATH() . '/core/messages/informationMessages.php';
 
         $this->sendNoCacheHeaders();
 
@@ -131,7 +147,7 @@ abstract class BaseAdmin extends BaseController
 
         $args = func_get_arg(0);
 
-        $vars = $args ?? [];
+        $vars = $args ?: [];
 
         if(method_exists($this, 'createCustomSortingTable')){
 
@@ -139,18 +155,19 @@ abstract class BaseAdmin extends BaseController
 
         }
 
-        $this->buttons = $this->render(ADMIN_TEMPLATE . 'include/buttons_' .
+        $this->buttons = $this->render($this->getViewsPath() . 'include/buttons_' .
             ($this->getController() === 'add' || $this->getController() === 'edit' ? 'add' : 'show'), $vars);
 
         if(!$this->content){
 
             $this->content = $this->render($this->template, $vars);
+
         }
 
-        $this->header = $this->render(ADMIN_TEMPLATE . 'include/header');
-        $this->footer = $this->render(ADMIN_TEMPLATE . 'include/footer');
+        $this->header = $this->render($this->getViewsPath() . 'include/header');
+        $this->footer = $this->render($this->getViewsPath() . 'include/footer');
 
-        return $this->render(ADMIN_TEMPLATE . 'layout/default');
+        return $this->render($this->getViewsPath() . 'layout/default');
     }
 
     protected function checkUserCredentials(){
@@ -367,7 +384,7 @@ abstract class BaseAdmin extends BaseController
 
         $class = $path . $className . 'Expansion';
 
-        if(is_readable($_SERVER['DOCUMENT_ROOT'] . PATH. $class . '.php')){
+        if(is_readable(\App::FULL_PATH() . $class . '.php')){
 
             $class = str_replace('/', '\\', $class);
 
@@ -381,7 +398,7 @@ abstract class BaseAdmin extends BaseController
 
         }else{
 
-            $file = $_SERVER['DOCUMENT_ROOT'] . PATH . $path . $this->table . '.php';
+            $file = \App::FULL_PATH() . $path . $this->table . '.php';
 
             extract($args);
 
@@ -397,7 +414,8 @@ abstract class BaseAdmin extends BaseController
         $id = false;
         $method = 'add';
 
-        $redirectPath = isset($_POST['add_new_element']) ? PATH . \core\base\settings\Settings::get('routes')['admin']['alias'] . '/add/' . $this->table : '';
+        $redirectPath = isset($_POST['add_new_element']) ?
+            \AppH::correctPath(\App::PATH(), \App::config()->WEB('alias'), 'add', $this->table) : '';
 
         unset($_POST['add_new_element']);
 
@@ -407,8 +425,8 @@ abstract class BaseAdmin extends BaseController
 
         if(isset($_POST[$this->columns['id_row']]) && $_POST[$this->columns['id_row']]){
             $id = is_numeric($_POST[$this->columns['id_row']]) ?
-                $this->clearNum($_POST[$this->columns['id_row']]) :
-                $this->clearStr($_POST[$this->columns['id_row']]);
+                \AppH::clearNum($_POST[$this->columns['id_row']]) :
+                \AppH::clearStr($_POST[$this->columns['id_row']]);
 
             if($id){
 
@@ -531,7 +549,7 @@ abstract class BaseAdmin extends BaseController
         if(!$res_id){
 
             $_SESSION['res']['answer'] = '<div class="error">'. $answerFail . '</div>';
-            $this->redirect();
+            \AppH::redirect();
 
         }
 
@@ -547,9 +565,9 @@ abstract class BaseAdmin extends BaseController
 
         }
 
-        !$redirectPath && $redirectPath = PATH . \core\base\settings\Settings::get('routes')['admin']['alias'] . '/edit/' . $this->table . '/' . $_POST[$this->columns['id_row']];
+        !$redirectPath && $redirectPath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('alias'), 'edit', $this->table, $_POST[$this->columns['id_row']]);
 
-        $this->redirect($redirectPath);
+        \AppH::redirect($redirectPath);
 
         return null;
 
@@ -587,8 +605,8 @@ abstract class BaseAdmin extends BaseController
                                         </a>
                                         <div class="wq-goods__item-arrow">
                                             <div class="wq-goods__arrow _ibg">
-                                                <picture><source srcset="' . PATH . ADMIN_TEMPLATE . 'img/icons/icon-arrow-goods.webp" type="image/webp">
-                                                <img src="' . PATH . ADMIN_TEMPLATE . 'img/icons/icon-arrow-goods.png" alt="icon">
+                                                <picture><source srcset="' . $this->getViewsPath() . 'img/icons/icon-arrow-goods.webp" type="image/webp">
+                                                <img src="' . $this->getViewsPath() . 'img/icons/icon-arrow-goods.png" alt="icon">
                                                 </picture>
                                             </div>
                                         </div>

@@ -12,13 +12,15 @@ class ImportController extends BaseAdmin
     protected function inputData()
     {
 
+
+
         $this->checkApiImport();
 
         $this->checkManualImport();
 
         if($this->redirect){
 
-            $this->redirect();
+            \AppH::redirect();
 
         }
 
@@ -28,9 +30,9 @@ class ImportController extends BaseAdmin
 
     protected function checkManualImport(){
 
-        parent::inputData();
+        parent::commonData();
 
-        if($this->isPost()){
+        if(\AppH::isPost()){
 
             $import1C = new Import1C();
 
@@ -51,7 +53,7 @@ class ImportController extends BaseAdmin
 
                         $_SESSION['res']['answer'] = '<div class="error">Ошибка распаковки архива</div>';
 
-                        $this->redirect();
+                        \AppH::redirect();
 
                     }
 
@@ -59,7 +61,7 @@ class ImportController extends BaseAdmin
 
                     $_SESSION['res']['answer'] = '<div class="error">Некорректный формат файла выгрузки</div>';
 
-                    $this->redirect();
+                    \AppH::redirect();
 
                 }
 

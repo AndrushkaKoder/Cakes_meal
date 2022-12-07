@@ -8,13 +8,8 @@
 
 namespace core\admin\expansion;
 
-
-use core\base\controller\Singleton;
-
 class TranslateElementsExpansion
 {
-
-    use Singleton;
 
     public function expansion(){
 

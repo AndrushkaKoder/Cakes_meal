@@ -9,15 +9,12 @@
 namespace core\admin\model;
 
 use core\admin\helpers\DataCreatorsModelHelper;
-use core\base\controller\Singleton;
-use core\base\exceptions\DbException;
-use core\base\model\BaseModel;
-use core\base\settings\Settings;
+use core\exceptions\DbException;
+use settings\Settings;
+use core\models\BaseModel;
 
 class Model extends BaseModel
 {
-
-    use Singleton;
 
     use DataCreatorsModelHelper;
 

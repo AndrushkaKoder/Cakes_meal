@@ -8,8 +8,8 @@
 
 namespace core\admin\controller;
 
-use core\base\exceptions\RouteException;
-use core\base\settings\Settings;
+use core\exceptions\RouteException;
+use settings\Settings;
 use libraries\FileEdit;
 
 class AjaxController extends BaseAdmin
@@ -62,7 +62,7 @@ class AjaxController extends BaseAdmin
 
                     if(!empty($this->ajaxData['table']) && isset($this->ajaxData['id'])){
 
-                        $_SESSION['checked_parents'][$this->clearStr($this->ajaxData['table'])] = $this->clearStr($this->ajaxData['id']);
+                        $_SESSION['checked_parents'][\AppH::clearStr($this->ajaxData['table'])] = \AppH::clearStr($this->ajaxData['id']);
 
                     }
 
@@ -79,12 +79,12 @@ class AjaxController extends BaseAdmin
 
                     $_POST['return_id'] = true;
 
-                    $redirectPath = !empty($_POST['add_new_element']) ? PATH . \core\base\settings\Settings::get('routes')['admin']['alias'] . '/add/' . $this->table : '';
+                    $redirectPath = !empty($_POST['add_new_element']) ? $this->alias([\App::config()->WEB('alias') => 'add', $this->table]) : '';
 
                     $result = $this->checkPost();
 
                     !$redirectPath && $result &&
-                    $redirectPath = PATH . \core\base\settings\Settings::get('routes')['admin']['alias'] . '/edit/' . $this->table . '/' . $result;
+                    $redirectPath = $this->alias([\App::config()->WEB('alias') => 'add', $this->table => $result]);
 
                     return ['success' => $redirectPath];
 
@@ -127,7 +127,7 @@ class AjaxController extends BaseAdmin
 
                     }
 
-                    $dir = $this->clearStr($this->ajaxData['table'] . '/content_files');
+                    $dir = \AppH::clearStr($this->ajaxData['table'] . '/content_files');
 
                     $fileEdit = new FileEdit();
 
@@ -135,7 +135,7 @@ class AjaxController extends BaseAdmin
 
                     $file = $fileEdit->addFile($dir);
 
-                    return ['location' => PATH . UPLOAD_DIR . $file[key($file)]];
+                    return ['location' => \AppH::correctPath(\App::PATH(), \App::config()->WEB('upload_dir')) . $file[key($file)]];
 
                     break;
 
@@ -173,7 +173,7 @@ class AjaxController extends BaseAdmin
 
             if($row !== 'data'){
 
-                $this->ajaxData[$row] = $this->clearStr($this->ajaxData[$row]);
+                $this->ajaxData[$row] = \AppH::clearStr($this->ajaxData[$row]);
 
             }
 
@@ -213,7 +213,7 @@ class AjaxController extends BaseAdmin
 
                 $fileData = base64_decode($fileData);
 
-                $fullFileName = $_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $fileName;
+                $fullFileName = $_SERVER['DOCUMENT_ROOT'] . \AppH::correctPath(\App::PATH(), \App::config()->WEB('upload_dir')) . $fileName;
 
                 if(file_exists($fullFileName)){
 
@@ -263,8 +263,8 @@ class AjaxController extends BaseAdmin
 
     protected function ajaxSearch(){
 
-        $data = $this->clearStr($this->ajaxData['data']);
-        $table = $this->clearStr($this->ajaxData['table']);
+        $data = \AppH::clearStr($this->ajaxData['data']);
+        $table = \AppH::clearStr($this->ajaxData['table']);
 
         return $this->model->adminSearch($data, $table, 1, 20);
 

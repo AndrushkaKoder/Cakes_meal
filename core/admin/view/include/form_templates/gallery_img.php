@@ -2,7 +2,7 @@
     <!-- Блок "Галлерея изображений" -->
     <div class="wq-block">
 
-        <?=$this->render(ADMIN_TEMPLATE . 'include/sorting_block')?>
+        <?=$this->render($this->getViewsPath() . 'include/sorting_block')?>
 
         <div class="wq-block__wrap">
             <h3 class="wq-block__title <?=!empty($this->userData['ROOT']) ? 'sorting-title' : ''?>"><?=$this->translate[$row][0] ?? $row?></h3>
@@ -13,8 +13,8 @@
                         <div class="wq-controls__button wq-button wq-button__gallery wq-button_file _btn">
                             <div class="wq-button__gallery-wrap _ibg">
                                 <picture>
-                                    <source srcset="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-plus.webp" type="image/webp">
-                                    <img src="<?=PATH . ADMIN_TEMPLATE?>img/icons/icon-plus.png" alt="icon">
+                                    <source srcset="<?=$this->getTemplateImg()?>icons/icon-plus.webp" type="image/webp">
+                                    <img src="<?=$this->getTemplateImg()?>icons/icon-plus.png" alt="icon">
                                 </picture>
                             </div>
                             <input type="file" name="<?=$row?>[]" multiple class="wq-block__input-file" accept="image/*,image/jpeg,image/png,image/gif,image/svg">
@@ -25,12 +25,12 @@
                 <?php if(!empty($this->data[$row])):?>
                     <?php foreach (json_decode($this->data[$row], true) as $img):?>
                         <?php if($this->showButtons()):?>
-                            <a href="<?=$this->adminPath . 'delete/' . $this->table . '/' . $this->data[$this->columns['id_row']] . '/' . $row . '/' . base64_encode($img)?>" class="wq-block__img-gallery _ibg wq-delete">
-                                <img src="<?=PATH . UPLOAD_DIR . $img?>?v1.<?=(str_replace(' ', '_', microtime()))?>" alt="image">
+                            <a href="<?=$this->alias(['delete', $this->table => $this->data[$this->columns['id_row']], $row => base64_encode($img)])?>" class="wq-block__img-gallery _ibg wq-delete">
+                                <img src="<?=$this->img($img)?>?v1.<?=(str_replace(' ', '_', microtime()))?>" alt="image">
                             </a>
                         <?php else:?>
                             <span class="wq-block__img-gallery _ibg">
-                                <img src="<?=PATH . UPLOAD_DIR . $img?>?v1.<?=(str_replace(' ', '_', microtime()))?>" alt="_image">
+                                <img src="<?=$this->img($img)?>?v1.<?=(str_replace(' ', '_', microtime()))?>" alt="_image">
                             </span>
                         <?php endif;?>
                     <?php endforeach;?>

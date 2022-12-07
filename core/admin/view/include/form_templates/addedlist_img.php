@@ -2,7 +2,7 @@
     <!-- Блок "Изображение + Текст" -->
     <div class="wq-block">
 
-        <?=$this->render(ADMIN_TEMPLATE . 'include/sorting_block')?>
+        <?=$this->render($this->getViewsPath() . 'include/sorting_block')?>
 
         <div class="wq-block__wrap addedlist-container">
             <h3 class="wq-block__title <?=!empty($this->userData['ROOT']) ? 'sorting-title' : ''?>"><?=$this->translate[$row][0] ?? $row?></h3>
@@ -69,7 +69,7 @@
                                         </div>
                                     <?php endif;?>
                                     <?php if($value['file'] && $this->showButtons()):?>
-                                        <a style="color:black" href="<?=$this->adminPath . 'delete/' . $this->table . '/' . $this->data[$this->columns['id_row']] . '/' . $row . '/' . base64_encode($value['file'])?>"
+                                        <a style="color:black" href="<?=$this->alias(['delete', $this->table => $this->data[$this->columns['id_row']], $row => base64_encode($value['file'])])?>"
                                            class="wq-controls__button wq-button wq-button_valencia _btn wq-delete">
                                             <span>Удалить</span>
                                         </a>
@@ -84,9 +84,9 @@
 
                                                 $fileName = array_pop($fileArr);
 
-                                                $fileName = '<a href="' . PATH . UPLOAD_DIR . $value['file'] . '">' . $fileName . '</a>';
+                                                $fileName = '<a href="' . $this->img($value['file']) . '">' . $fileName . '</a>';
 
-                                                $info = mime_content_type($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $value['file']);
+                                                $info = mime_content_type(\AppH::correctPathTrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir'), $value['file']));
 
                                             if($info){
 
@@ -94,7 +94,7 @@
 
                                                     $wrapClass = 'wq-block__img-view';
 
-                                                    $fileName = '<img src="' . PATH . UPLOAD_DIR . $value['file'] .
+                                                    $fileName = '<img src="' . $this->img($value['file']) .
                                                         '?v1.' . (str_replace(' ', '_', microtime())) .
                                                         '" alt="service" ' . (preg_match('/\.svg$/', $value['file']) ? 'style="min-width: 320px"' : '') . '>';
 
@@ -102,7 +102,7 @@
 
                                                     $wrapClass = 'wq-block__img-view';
 
-                                                    $fileName = '<video src="' . PATH . UPLOAD_DIR . $value['file'] .'" controls="controls"></video>';
+                                                    $fileName = '<video src="' . $this->img($value['file']) .'" controls="controls"></video>';
 
                                                 }
 

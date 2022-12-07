@@ -30,7 +30,7 @@
 
                                             if(empty($item[0]['id']) || strtolower($item[0]['id']) !== 'null'){
 
-                                                $emptyName = \core\base\settings\Settings::get('rootItems');
+                                                $emptyName = settings\Settings::get('rootItems');
 
                                                 $emptyName = !empty($emptyName['name']) ? $emptyName['name'] : 'Нет';
 
@@ -42,8 +42,8 @@
 
                                             $h3 = true;
 
-                                            if (!@include $_SERVER['DOCUMENT_ROOT']. $path . 'select.php') {
-                                                throw new \core\base\exceptions\RouteException('Не найден шаблон ' . $_SERVER['DOCUMENT_ROOT']. $path . 'select.php');
+                                            if (!@include \AppH::correctPathLtrim(\App::FULL_PATH(), $path) . 'select.php') {
+                                                throw new \core\exceptions\RouteException('Не найден шаблон ' . \AppH::correctPathLtrim(\App::FULL_PATH(), $path) . 'select.php');
                                             }
 
                                             echo '</li>';
@@ -62,7 +62,7 @@
                             <?php if(!empty($this->pagination)):?>
                                 <div class="wq-main-form__pagination wq-pagination">
                                     <ul class="wq-pagination__list">
-                                <?php $this->pagination($this->pagination, ADMIN_TEMPLATE . 'include/pagination')?>
+                                <?php $this->pagination($this->pagination, $this->getViewsPath() . 'include/pagination')?>
                                     </ul>
                                 </div>
                             <?php endif;?>
@@ -76,7 +76,7 @@
                             <?php if(!empty($this->pagination)):?>
                                 <div class="wq-main-form__pagination wq-pagination">
                                     <ul class="wq-pagination__list">
-                                        <?php $this->pagination($this->pagination, ADMIN_TEMPLATE . 'include/pagination')?>
+                                        <?php $this->pagination($this->pagination, $this->getViewsPath() . 'include/pagination')?>
                                     </ul>
                                 </div>
                             <?php endif;?>

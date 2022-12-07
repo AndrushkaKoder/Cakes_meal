@@ -2,8 +2,8 @@
 
 namespace core\admin\helpers;
 
-use core\base\exceptions\DbException;
-use core\base\settings\Settings;
+use core\exceptions\DbException;
+use settings\Settings;
 
 trait StartProjectHelper
 {
@@ -231,7 +231,7 @@ trait StartProjectHelper
 
             if($createNewTable){
 
-                $this->redirect(PATH . Settings::get('routes')['admin']['alias']);
+                \AppH::redirect($this->alias([\App::PATH() => \App::config()->WEB('alias')]));
 
             }
 

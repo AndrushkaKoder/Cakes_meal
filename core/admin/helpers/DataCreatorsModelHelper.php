@@ -2,14 +2,11 @@
 
 namespace core\admin\helpers;
 
-use core\base\controller\BaseMethods;
-use core\base\exceptions\RouteException;
-use core\base\settings\Settings;
+use core\exceptions\RouteException;
+use settings\Settings;
 
 trait DataCreatorsModelHelper
 {
-
-    use BaseMethods;
 
     protected function checkDataCreators(){
 
@@ -184,7 +181,7 @@ trait DataCreatorsModelHelper
 
                         if($resIds){
 
-                            $ids = $this->getParents($resIds, $foreignTable);
+                            $ids = \AppH::getParents($resIds, $foreignTable);
 
                         }
 
@@ -415,7 +412,7 @@ trait DataCreatorsModelHelper
 
                     if(!empty($columns['parent_id']) && (empty($foreign) || $foreign[0]['REFERENCED_TABLE_NAME'] === $table)){
 
-                        $ids = $this->getParents($ids, $table);
+                        $ids = \AppH::getParents($ids, $table);
 
                         if(isset($tablesUserRootLevel[$table]) && ($rootIds = $this->getRootLevelIds($table, $tablesUserRootLevel[$table]))){
 
@@ -518,7 +515,7 @@ trait DataCreatorsModelHelper
 
             }
 
-            $data = $this->recursiveArr($data, 1);
+            $data = \AppH::recursiveArr($data, 1);
 
             foreach ($data as $item){
 

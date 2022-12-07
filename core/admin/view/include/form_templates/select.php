@@ -1,7 +1,7 @@
 <?php if(!empty($row)):?>
     <div class="wq-block">
 
-        <?=$this->render(ADMIN_TEMPLATE . 'include/sorting_block', ['notShowSortingBlock' => $h3 ?? null])?>
+        <?=$this->render($this->getViewsPath() . 'include/sorting_block', ['notShowSortingBlock' => $h3 ?? null])?>
 
         <div class="wq-block__wrap">
             <h3 class="wq-block__title<?=!empty($h3) ? '-h3' : ''?> <?=!empty($this->userData['ROOT']) ? 'sorting-title' : ''?>"><?= $this->translate[$row][0] ?? $row?></h3>
