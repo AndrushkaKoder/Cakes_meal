@@ -148,9 +148,9 @@ $currentClass = '';
 
             </div>
         </div>
-        <div class="row position-absolute">
+        <div class="row">
             <div class="col-12 position-relative">
-                <form action="<?=$this->alias('search')?>" method="GET" class="search_wrapper hideSearch d-flex flex-column" data-form-search>
+                <form action="<?=$this->alias('search')?>" method="GET" class="search_wrapper hideSearch d-flex flex-column position-absolute" data-form-search>
                     <div class="search_area">
                         <input type="text" id="search_area" class="" name="search">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass search_button"></i></button>

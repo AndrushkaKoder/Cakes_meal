@@ -689,6 +689,9 @@ color: var(--color1);
     .search_res{
         width: 50%;
     }
+    .search_container{
+
+    }
     .cakes_logo{
         font-size: 55px !important;
     }
