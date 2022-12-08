@@ -164,13 +164,13 @@
             <div class="row">
                 <div class="col-12">
 
-                    <form action="#" method="post" class="callback_form">
+                    <form action="<?=$this->alias('')?>" method="post" class="callback_form">
                         <div class="mb-3">
-                            <input type="text" name="name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Ваше имя" required>
+                            <input type="text" name="callback_name" class="form-control" id="name" aria-describedby="nameHelp" placeholder="Ваше имя" required>
 
                         </div>
                         <div class="mb-3">
-                            <input type="text" name="phone" class="form-control" id="phone" placeholder="Телефон" required>
+                            <input type="text" name="callback_phone" class="form-control" id="phone" placeholder="Телефон" required>
                         </div>
                         <p class="personal_data_p text-center">Вы соглашаетесь на с нашими условиями по <a href="<?=$this->alias('privacy')?>" class="personal_data">обработке персональных данных</a></p>
 

@@ -59,6 +59,22 @@ class IndexController extends BaseUser //будет наследоваться �
 
         }
 
+
+
+        if(\AppH::isPost()){
+
+            if(!empty($_POST['callback_name']) && !empty($_POST['callback_phone'])){
+
+                \AppH::clearStr($_POST['callback_name']);
+
+                \AppH::clearStr($_POST['callback_phone']);
+
+            }
+
+        }
+
+
+
         Logger::instance()->writeLog('Привет мир', 'index/log.txt');
 
         return compact('sales', 'tizzers', 'assortment', 'backgroundImage', 'questions', 'login');

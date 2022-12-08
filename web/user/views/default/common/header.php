@@ -149,7 +149,7 @@ $currentClass = '';
             </div>
         </div>
         <div class="row">
-            <div class="col-12 position-relative">
+            <div class="col-12 position-relative" style="top: 20px; right: 10px" >
                 <form action="<?=$this->alias('search')?>" method="GET" class="search_wrapper hideSearch d-flex flex-column position-absolute" data-form-search>
                     <div class="search_area">
                         <input type="text" id="search_area" class="" name="search">
