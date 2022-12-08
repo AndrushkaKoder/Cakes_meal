@@ -10,12 +10,14 @@ namespace core\admin\model;
 
 use core\admin\helpers\DataCreatorsModelHelper;
 use core\exceptions\DbException;
+use core\traites\AliasImgPathesGeneratorHelper;
 use settings\Settings;
 use core\models\BaseModel;
 
 class Model extends BaseModel
 {
 
+    use AliasImgPathesGeneratorHelper;
     use DataCreatorsModelHelper;
 
     public $userData = [];
@@ -63,13 +65,13 @@ class Model extends BaseModel
 
                 }
 
-                $start_pos = $this->clearNum($DbOldData[$row]);
+                $start_pos = \AppH::clearNum($DbOldData[$row]);
 
                 if(is_numeric($DbOldData[$parentRow]) && is_numeric($FIELDS[$parentRow])){
 
-                    $FIELDS[$parentRow] = $this->clearNum($FIELDS[$parentRow]);
+                    $FIELDS[$parentRow] = \AppH::clearNum($FIELDS[$parentRow]);
 
-                    $DbOldData[$parentRow] = $this->clearNum($DbOldData[$parentRow]);
+                    $DbOldData[$parentRow] = \AppH::clearNum($DbOldData[$parentRow]);
 
                 }else{
 
@@ -90,7 +92,7 @@ class Model extends BaseModel
                 /*Если перенесли в другую родительскую категорию*/
                 if($DbOldData[$parentRow] !== $FIELDS[$parentRow]) {
 
-                    $pos = $this->clearNum($this->get($table, [
+                    $pos = \AppH::clearNum($this->get($table, [
                         'fields' => ['COUNT(*) as count'],
                         'where' => [$parentRow => $DbOldData[$parentRow]],
                         'single' => true
@@ -136,7 +138,7 @@ class Model extends BaseModel
 
             if($where){
 
-                $start_pos = $this->clearNum((!empty($oldData[$row]) ? $oldData[$row] : $this->clearNum($this->get($table, [
+                $start_pos = \AppH::clearNum((!empty($oldData[$row]) ? $oldData[$row] : \AppH::clearNum($this->get($table, [
                     'fields' => [$row],
                     'where' => $where,
                     'limit' => 1,
@@ -266,11 +268,13 @@ class Model extends BaseModel
 
     }
 
-    public function adminSearch($data, $currentTable = false, $page = 1, $qty = QTY){
+    public function adminSearch($data, $currentTable = false, $page = 1, $qty = null){
 
         $result = [];
 
-        $qty_links = QTY_LINKS;
+        !$qty && $qty = \App::config()->PAGINATION('admin', 'qty') ?? 50;
+
+        $qty_links = \App::config()->PAGINATION('admin', 'qty_links') ?? 5;
 
         $dbTables = $this->showTables();
 
@@ -414,39 +418,15 @@ class Model extends BaseModel
 
         if($result){
 
-            if(is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . Settings::get('routes')['admin']['alias'] . '/plugins')){
-                $plugins = scandir($_SERVER['DOCUMENT_ROOT'] . PATH . Settings::get('routes')['admin']['alias'] . '/plugins');
-                unset($plugins[0], $plugins[1]);
-            }
-
-            if(!empty($plugins)){
-                foreach ($plugins as $i => $plugin){
-                    if(!is_dir($_SERVER['DOCUMENT_ROOT'] . PATH . Settings::get('routes')['admin']['alias'] . '/plugins/'.$plugin)){
-                        unset($plugins[$i]);
-                    }
-                }
-            }
-
             foreach ($result as $index => $item) {
                 if(!$item){
                     unset($result[$index]);
                     continue;
                 }
 
-                $path = '/';
-
-                if(!empty($plugins)){
-                    foreach ($plugins as $plugin){
-                        if(strpos($index, $plugin.'_') === 0){
-                            $path .= $plugin . '/';
-                            break;
-                        }
-                    }
-                }
-
                 $result[$index]['name'] .= ' (' . (isset($temp_tables[$item['table_name']]['name']) ? $temp_tables[$item['table_name']]['name'] : $item['table_name']) . ')';
 
-                $result[$index]['alias'] = PATH.Settings::get('routes')['admin']['alias'] . $path . 'edit/' . $item['table_name'] . '/'.$item['id'];
+                $result[$index]['alias'] = $this->alias(['edit' => $item['table_name'], $item['id']]);
             }
 
         }

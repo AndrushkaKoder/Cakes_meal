@@ -49,85 +49,75 @@ class Router
 
         $adress_str = $_SERVER['REQUEST_URI'];
 
-        $path = substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], 'index.php'));
+        $url = preg_split('/(\/)|(\?.*)/', $adress_str, 0, PREG_SPLIT_NO_EMPTY);
 
-        if($path === \App::PATH()){
+        if(!empty($url[0]) && $url[0] === \App::config()->WEB('admin', 'alias')){
 
-            $url = preg_split('/(\/)|(\?.*)/', $adress_str, 0, PREG_SPLIT_NO_EMPTY);
+            array_shift($url);
 
-            if(!empty($url[0]) && $url[0] === \App::config()->WEB('admin', 'alias')){
+            self::$controller = \App::config()->WEB('controllersPath', 'admin');
 
-                array_shift($url);
+            $hrUrl = \App::config()->WEB('admin', 'hrUrls');
 
-                self::$controller = \App::config()->WEB('controllersPath', 'admin');
+        }else{
 
-                $hrUrl = \App::config()->WEB('admin', 'hrUrls');
+            self::$mode = 'user';
 
-            }else{
+            if(!\AppH::isPost() && \AppH::isHtmlRequest()){
 
-                self::$mode = 'user';
+                $pattern = '';
 
-                if(!\AppH::isPost() && \AppH::isHtmlRequest()){
+                $replacement = '';
 
-                    $pattern = '';
+                if(\App::config()->WEB('end_slash')){
 
-                    $replacement = '';
+                    if(!preg_match('/\/(\?|$)/', $adress_str)){
 
-                    if(\App::config()->WEB('end_slash')){
+                        $pattern = '/(^.*?)(\?.*)?$/';
 
-                        if(!preg_match('/\/(\?|$)/', $adress_str)){
-
-                            $pattern = '/(^.*?)(\?.*)?$/';
-
-                            $replacement = '$1/';
-
-                        }
-
-                    }else{
-
-                        if(preg_match('/\/(\?|$)/', $adress_str)){
-
-                            $pattern = '/(^.*?)\/(\?.*)?$/';
-
-                            $replacement = '$1';
-
-                        }
+                        $replacement = '$1/';
 
                     }
 
-                    if($pattern){
+                }else{
 
-                        $adress_str = preg_replace($pattern, $replacement, $adress_str);
+                    if(preg_match('/\/(\?|$)/', $adress_str)){
 
-                        if(!empty($_SERVER['QUERY_STRING'])){
+                        $pattern = '/(^.*?)\/(\?.*)?$/';
 
-                            $adress_str .= '?' . $_SERVER['QUERY_STRING'];
-
-                        }
-
-                        \AppH::redirect($adress_str, 301);
+                        $replacement = '$1';
 
                     }
 
                 }
 
-                $hrUrl = \App::config()->WEB('user', 'hrUrl');
+                if($pattern){
 
-                self::$controller = \App::config()->WEB('controllersPath', 'user');
+                    $adress_str = preg_replace($pattern, $replacement, $adress_str);
+
+                    if(!empty($_SERVER['QUERY_STRING'])){
+
+                        $adress_str .= '?' . $_SERVER['QUERY_STRING'];
+
+                    }
+
+                    \AppH::redirect($adress_str, 301);
+
+                }
 
             }
 
-            self::setData($url);
+            $hrUrl = \App::config()->WEB('user', 'hrUrl');
 
-            self::setParameters($url, $hrUrl);
-
-            return ['controller' => self::$controller, 'parameters' => self::$parameters];
-
-        }else{
-
-            throw new RouteException('Не корректная директория сайта', 1);
+            self::$controller = \App::config()->WEB('controllersPath', 'user');
 
         }
+
+        self::setData($url);
+
+        self::setParameters($url, $hrUrl);
+
+        return ['controller' => self::$controller, 'parameters' => self::$parameters];
 
     }
 

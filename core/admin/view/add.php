@@ -39,9 +39,9 @@
 
                                     $path = $this->defaultTemplatePath;
 
-                                    if (!@include \AppH::correctPathTrim(\App::FULL_PATH(), $path, $type) . '.php') {
+                                    if (!@include \AppH::correctPathRtrim(\App::FULL_PATH(), $path, $type) . '.php') {
 
-                                        throw new \core\exceptions\RouteException('Не найден шаблон ' . \AppH::correctPathTrim(\App::FULL_PATH(), $path, $type) . '.php');
+                                        throw new \core\exceptions\RouteException('Не найден шаблон ' . \AppH::correctPathRtrim(\App::FULL_PATH(), $path, $type) . '.php');
 
                                     }
 

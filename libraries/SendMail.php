@@ -61,7 +61,7 @@ class SendMail
 
         if(!$templatesPath){
 
-            $this->_templatesPath= \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('views') ,\App::config()->WEB('common')) . 'emailTemplates';
+            $this->_templatesPath= \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('views') ,\App::config()->WEB('common')) . 'emailTemplates';
 
         }else{
 

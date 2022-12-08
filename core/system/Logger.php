@@ -22,7 +22,7 @@ class Logger
         }
 
 
-        $dir = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('log_dir'));
+        $dir = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('log_dir'));
 
         $extraDir = preg_split('/\//', $file);
 
@@ -30,7 +30,7 @@ class Logger
 
             $file = array_pop($extraDir);
 
-            $dir = \AppH::correctPathLtrim($dir, implode('/', $extraDir));
+            $dir = \AppH::correctPath($dir, implode('/', $extraDir));
 
         }
 

@@ -55,11 +55,11 @@ class DeleteController extends BaseAdmin
                                         if(is_array($fileData)){
 
                                             foreach ($fileData as $f)
-                                                @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $f);
+                                                @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $f);
 
                                         }else{
 
-                                            @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $fileData);
+                                            @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $fileData);
 
                                         }
 
@@ -181,7 +181,7 @@ class DeleteController extends BaseAdmin
 
                                     $updateFlag = true;
 
-                                    @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
+                                    @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
 
                                     $data[$key][$k] = null;
 
@@ -198,7 +198,7 @@ class DeleteController extends BaseAdmin
 
                             $updateFlag = true;
 
-                            @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
+                            @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
 
                             unset($data[$key]);
 
@@ -214,7 +214,7 @@ class DeleteController extends BaseAdmin
 
                     $updateFlag = true;
 
-                    @unlink(\AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
+                    @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
 
                     $this->data[$row] = 'NULL';
 

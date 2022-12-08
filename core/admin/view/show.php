@@ -42,8 +42,8 @@
 
                                             $h3 = true;
 
-                                            if (!@include \AppH::correctPathLtrim(\App::FULL_PATH(), $path) . 'select.php') {
-                                                throw new \core\exceptions\RouteException('Не найден шаблон ' . \AppH::correctPathLtrim(\App::FULL_PATH(), $path) . 'select.php');
+                                            if (!@include \AppH::correctPath(\App::FULL_PATH(), $path) . 'select.php') {
+                                                throw new \core\exceptions\RouteException('Не найден шаблон ' . \AppH::correctPath(\App::FULL_PATH(), $path) . 'select.php');
                                             }
 
                                             echo '</li>';

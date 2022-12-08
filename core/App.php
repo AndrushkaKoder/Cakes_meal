@@ -14,11 +14,9 @@ final class App //final - класс от которого нельзя насл
 
     private static string $configPath = 'config'; // путь до core/config
 
-    public static string $webDirectory = 'web'; // путь относительно Корня до web.php
-
     private function __construct(){} // делаем приватный конструктор для того, чтобы нельзя было сделать new App
 
-    public static function init($run = true) : void{ //метод точки входа. В нём вызываем подключение путей и динамическое подключение классов,
+    public static function init(?bool $run = true) : void{ //метод точки входа. В нём вызываем подключение путей и динамическое подключение классов,
         //и метод конфигурации приклады и вызываем метод run
 
         self::setPathes(); // подключение путей appH
@@ -90,9 +88,9 @@ final class App //final - класс от которого нельзя насл
 
     private static function setPathes() : void{ //подключение путей
 
-        self::$properties['FULL_PATH'] = './'; //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
+        self::$properties['FULL_PATH'] = preg_replace('/\/{2,}/', '/', preg_replace('/\\\+/', '/', realpath(__DIR__ . '/../'))) . '/'; //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
 
-        self::$properties['PATH'] = self::getRelativePath(realpath(__DIR__ . '/../'));
+        self::$properties['PATH'] = self::getRelativePath(self::$properties['FULL_PATH']);
 
     }
 
@@ -158,27 +156,15 @@ final class App //final - класс от которого нельзя насл
 
     }
 
-    public static function getWebPath($includeFullPath = false){ // возвращает пути. App::PATH() || App::FULL_PATH()
-
-        static $path = ''; //сюда придет путь относительно домена 1 раз
-
-        static $fullPath = ''; //сюда придёт абсолютный путь относительно корня ОС 1 раз
-
-        !$path && $path = (!empty(self::config()->WEB('path')) ? rtrim(self::config()->WEB('path')) : '') . '/' . self::$webDirectory . '/';
-
-        !$fullPath && $fullPath = preg_replace('/\/{2,}/', '/', str_replace('\\', '/', self::FULL_PATH() . $path));
-
-        return !$includeFullPath ? $path : $fullPath;
-
-    }
-
-    public static function getRelativePath($directory){
+    public static function getRelativePath(string $directory, ?string $documentRoot = null){
 
         $currentPath = '';
 
-        if(!empty($_SERVER['DOCUMENT_ROOT']) && preg_match('/^[^\/]*\//', $_SERVER['DOCUMENT_ROOT'])){
+        !$documentRoot && $documentRoot = $_SERVER['DOCUMENT_ROOT'] ?? null;
 
-            $documentRootArr = preg_split('/\/+/', $_SERVER['DOCUMENT_ROOT'], 0, PREG_SPLIT_NO_EMPTY);
+        if(!empty($documentRoot) && preg_match('/^[^\/]*\//', $documentRoot)){
+
+            $documentRootArr = preg_split('/\/+/', $documentRoot, 0, PREG_SPLIT_NO_EMPTY);
 
             $currentPath = preg_replace('/\\\+/', '/', $directory);
 

@@ -9,15 +9,20 @@
 namespace core\admin\controller;
 
 use core\exceptions\RouteException;
+use core\system\Ajax;
 use settings\Settings;
 use libraries\FileEdit;
 
 class AjaxController extends BaseAdmin
 {
 
-    public function ajax(){
+    protected ?array $ajaxData = [];
+
+    protected function inputData(){
 
         $this->execBase();
+
+        $this->ajajData = Ajax::$data;
 
         if($this->ajaxData){
 

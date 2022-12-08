@@ -59,8 +59,6 @@ class IndexController extends BaseUser //будет наследоваться �
 
         }
 
-        Logger::instance()->writeLog('Привет мир', 'index/log.txt');
-
         return compact('sales', 'tizzers', 'assortment', 'backgroundImage', 'questions', 'login');
 
     }

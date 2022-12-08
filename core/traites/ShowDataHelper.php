@@ -9,7 +9,7 @@ trait ShowDataHelper
 
         if(!empty(\App::config()->WEB('common', $type))){
 
-            $path = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('common', $type));
+            $path = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('common', $type));
 
             $templatePath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('common', $type));
 

@@ -605,8 +605,8 @@ abstract class BaseAdmin extends Controller
                                         </a>
                                         <div class="wq-goods__item-arrow">
                                             <div class="wq-goods__arrow _ibg">
-                                                <picture><source srcset="' . $this->getViewsPath() . 'img/icons/icon-arrow-goods.webp" type="image/webp">
-                                                <img src="' . $this->getViewsPath() . 'img/icons/icon-arrow-goods.png" alt="icon">
+                                                <picture><source srcset="' . $this->getTemplateImg() . 'icons/icon-arrow-goods.webp" type="image/webp">
+                                                <img src="' . $this->getTemplateImg() . 'icons/icon-arrow-goods.png" alt="icon">
                                                 </picture>
                                             </div>
                                         </div>

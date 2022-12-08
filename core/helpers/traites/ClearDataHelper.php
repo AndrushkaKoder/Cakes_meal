@@ -24,7 +24,7 @@ trait ClearDataHelper
 
         foreach (func_get_args() as $item){
 
-            $path .= '/' . $item . '/';
+            $path .= (!$path ? '' : '/') . $item . '/';
 
         }
 

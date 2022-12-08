@@ -11,7 +11,7 @@ class ErrorController extends Controller
 
         $path = str_replace('\\', '/', $trace[0]['file']);
 
-        $path = preg_split('/\//', $path, 0, PREG_SPLIT_NO_EMPTY);
+        $path = preg_split('/\//', $path);
 
         array_pop($path);
 

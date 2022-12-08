@@ -3,6 +3,7 @@
 namespace core\system; // ограничение видимости класса
 
 use core\exceptions\RouteException;
+use core\traites\AliasImgPathesGeneratorHelper;
 use core\traites\BaseMethods;
 use core\traites\ShowDataHelper;
 
@@ -10,6 +11,7 @@ abstract class Controller //абстрактный класс нужен тол�
 {
 
     use ShowDataHelper;
+    use AliasImgPathesGeneratorHelper;
     use BaseMethods;
 
     protected array $parameters = [];
@@ -180,7 +182,7 @@ abstract class Controller //абстрактный класс нужен тол�
     protected function getController() : string{
 
         return $this->controller ?:
-            $this->controller = preg_split('/_?controller/', strtolower(preg_replace('/([^A-Z])([A-Z])/', '$1_$2', pathinfo(Router::getController())['filename'])), 0, PREG_SPLIT_NO_EMPTY)[0];
+            $this->controller = preg_split('/_?controller/', strtolower(preg_replace('/([^A-Z])([A-Z])/', '$1_$2', preg_replace('/^.*?([^\\\]+$)/', '$1', Router::getController()))), 0, PREG_SPLIT_NO_EMPTY)[0];
 
     }
 
@@ -202,7 +204,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!empty(\App::config()->WEB('css'))){
 
-            $path = \AppH::correctPathTrim($this->getViewsPath(), trim(\App::config()->WEB('css'))) . '/';
+            $path = \AppH::correctPath($this->getViewsPath(), trim(\App::config()->WEB('css')));
 
             $this->showScriptsStyles($path);
 
@@ -216,7 +218,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
         if(!empty(\App::config()->WEB('js'))){
 
-            $path = \AppH::correctPathTrim($this->getViewsPath(), trim(\App::config()->WEB('js'))) . '/';
+            $path = \AppH::correctPath($this->getViewsPath(), trim(\App::config()->WEB('js')));
 
             $this->showScriptsStyles($path, 'js');
 
@@ -236,143 +238,9 @@ abstract class Controller //абстрактный класс нужен тол�
 
         $property = \App::config()->WEB('views');
 
-        $property && $viewsPath = \AppH::correctPathLtrim(\App::FULL_PATH(), $property);
+        $property && $viewsPath = \AppH::correctPath(\App::FULL_PATH(), $property);
 
         return $viewsPath;
-
-    }
-
-    protected function alias($alias = '', $queryString = ''){
-
-        $str = '';
-
-        if($queryString){
-
-            if(is_array($queryString)){
-
-                foreach ($queryString as $key => $item){
-
-                    if(is_array($item)){
-
-                        $key .= '[]';
-
-                        foreach ($item as $v) $str .= (!$str ? '?' : '&') . $key . '=' . $v;
-
-                    }else{
-
-                        $str .= (!$str ? '?' : '&') . $key . '=' . $item;
-
-                    }
-
-
-                }
-
-            }else{
-
-                if(strpos($queryString, '?') === false) $str .= '?' . $queryString;
-                else $str .= $queryString;
-
-            }
-
-        }
-
-        if(is_array($alias)) {
-
-            $aliasStr = '';
-
-            foreach ($alias as $key => $item) {
-
-                if (!is_numeric($key)) {
-
-                    $aliasStr .= $key . '/' . $item . '/';
-
-                } elseif (is_numeric($key) && $item) {
-
-                    $aliasStr .= $item . '/';
-
-                }
-
-            }
-
-            $alias = trim($aliasStr, '/');
-
-        }
-
-        if(!$alias || $alias === '/') return \App::PATH() . $str;
-
-        if(preg_match('/^https?:\/\//', $alias))
-            return $alias . $str;
-
-        if(Router::getMode() === 'admin' && !empty(\App::config()->WEB('alias')) &&
-            stripos($alias, \App::config()->WEB('alias')) !== 0){
-
-            $alias = \App::config()->WEB('alias') . '/' . $alias;
-
-        }
-
-        return preg_replace('/\/{2,}/', '/', \App::PATH() . $alias . \App::config()->WEB('end_slash') . $str);
-
-    }
-
-    protected function img($img = '', $tag = false, $set = []){
-
-        if(!$img && is_dir($_SERVER['DOCUMENT_ROOT'] .\AppH::correctPath(\App::$webDirectory, \App::PATH(), \App::config()->WEB('upload_dir')). 'default_images')){
-
-            $dir = scandir($_SERVER['DOCUMENT_ROOT'] .\AppH::correctPath(\App::$webDirectory, \App::PATH(), \App::config()->WEB('upload_dir')) . 'default_images');
-
-            $img = preg_grep('/'.$this->getController().'\./i', $dir) ?: preg_grep('/default\./i', $dir);
-
-            $img && $img = array_shift($img);
-
-        }
-
-        if($img){
-
-            $path = \AppH::correctPath(\App::PATH(), \App::config()->WEB('upload_dir')) . $img;
-
-            $class = isset($set['class']) && $set['class'] ?
-                ' class="' . (is_array($set['class']) ? implode(' ', $set['class']) : $set['class']) . '" ' : '';
-
-            $alt = isset($set['alt']) && $set['alt'] ? ' alt="' . $set['alt'] . '" ' : '';
-
-            $title = isset($set['title']) && $set['title'] ? ' title="' . $set['title'] . '" ' : '';
-
-            $style = isset($set['style']) && $set['style'] ?
-                ' style="' . (is_array($set['style']) ? implode(';', $set['style']) : $set['style']) . '" ' : '';
-
-            $data = '';
-
-            if(isset($set['data']) && $set['data']){
-
-                if(is_array($set['data'])){
-
-                    foreach($set['data'] as $key => $item){
-
-                        if(stripos($key, 'data-') === false)
-                            $data .= 'data-';
-
-                        $data .= $key . '="' . $item . '"';
-
-                    }
-
-                }else{
-
-                    if(!preg_match('/^\s*data[^=]+=/i', $set['data']))
-                        $data = 'data-attribute="' . $set['data'] . '"';
-                    else $data = $set['data'];
-
-                }
-
-            }
-
-            if(!$tag)
-                return $path;
-
-            echo '<img src="' . $path . '"' . $alt . $title . $class . $style . ' ' . $data . ' >';
-
-        }
-
-        return '';
 
     }
 
