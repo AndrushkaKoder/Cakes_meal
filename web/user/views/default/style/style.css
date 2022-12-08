@@ -182,10 +182,13 @@ header.index{
     text-align: center;
     border: 3px solid black;
     transition: 200ms ease all;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
 }
 
 .search_area:hover{
+    opacity: 1;
+}
+.search_area:active{
     opacity: 1;
 }
 .search_area input{
@@ -203,6 +206,7 @@ header.index{
     width: 20%;
     margin: auto;
     text-align: center;
+    background: white;
 }
 .search_res:hover{
     opacity: 1;
@@ -210,18 +214,13 @@ header.index{
 .search_res a{
     display: block;
     color: black;
-    background: white;
-    border: 2px solid black;
-    padding: 10px;
-    border-radius: 10px;
-    margin: 5px 0;
-    text-decoration: none;
-    transition: .3s ease all;
+    padding: 5px;
+    border-bottom: 2px solid lightgray;
+
 }
 .search_res a:hover{
-    background: var(--color2);
-    color: white;
-    transform: scale(1.1);
+
+
 }
 
 
