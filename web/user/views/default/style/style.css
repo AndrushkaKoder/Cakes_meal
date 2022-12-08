@@ -180,7 +180,7 @@ header.index{
     outline: unset;
     font-size: 16px;
     text-align: center;
-    border: 3px solid black;
+    border: 3px solid white;
     transition: 200ms ease all;
     /*opacity: 0.6;*/
 }
@@ -203,10 +203,15 @@ header.index{
 }
 
 .search_res{
-    width: 20%;
+    width: 50%;
     margin: auto;
-    text-align: center;
     background: white;
+    position: relative;
+    top: -18px;
+    border: 3px solid white;
+    border-top: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
 }
 .search_res:hover{
     opacity: 1;
@@ -214,13 +219,16 @@ header.index{
 .search_res a{
     display: block;
     color: black;
-    padding: 5px;
-    border-bottom: 2px solid lightgray;
+    padding: 10px;
+    border-radius: 20px;
+}
 
+.search_res a:last-child{
+    border-bottom: unset;
+    border-radius: 20px;
 }
 .search_res a:hover{
-
-
+    background: var(--color1);
 }
 
 
@@ -686,8 +694,9 @@ color: var(--color1);
         padding: 20px;
     }
     .search_res{
-        width: 50%;
+        width: 100%;
     }
+
     .search_container{
 
     }
