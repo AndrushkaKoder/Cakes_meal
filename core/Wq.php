@@ -194,11 +194,11 @@ final class Wq //final - класс от которого нельзя насл�
 
                 private array $properties = [];
 
-                private bool $skipWebChecks = false;
+                private bool $force = false;
 
                 public function set(string $name, $value) : bool{
 
-                    if(array_key_exists($name, $this->properties)){
+                    if(array_key_exists($name, $this->properties) && !$this->force){
 
                         return false;
 
@@ -206,15 +206,25 @@ final class Wq //final - класс от которого нельзя насл�
 
                     $this->properties[mb_strtoupper($name)] = $value;
 
+                    $this->force = false;
+
                     return true;
+
+                }
+
+                public function force(){
+
+                    $this->force = true;
+
+                    return $this;
 
                 }
 
                 public function WEB(){
 
-                    if($this->skipWebChecks){
+                    if($this->force){
 
-                        $this->skipWebChecks = false;
+                        $this->force = false;
 
                         return $this->searchProperty('WEB', func_get_args());
 
@@ -267,14 +277,6 @@ final class Wq //final - класс от которого нельзя насл�
                 public function __call($name, $arguments){
 
                     return $this->searchProperty($name, $arguments);
-
-                }
-
-                public function skipWEBChecks(){
-
-                    $this->skipWebChecks = true;
-
-                    return $this;
 
                 }
 
@@ -372,7 +374,7 @@ final class Wq //final - класс от которого нельзя насл�
 
         if(!$nameSpaces){
 
-            $nameSpaces = self::config()->skipWEBChecks()->WEB('namespaces');
+            $nameSpaces = self::config()->force()->WEB('namespaces');
 
             uksort($nameSpaces, function ($a, $b){
 
