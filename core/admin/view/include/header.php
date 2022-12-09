@@ -77,7 +77,7 @@
 
                                                 if(empty($listImages)){
 
-                                                    $listImages = scandir(\AppH::correctPath($this->getViewsPath(), \App::config()->WEB('img')));
+                                                    $listImages = scandir(\WqH::correctPath($this->getViewsPath(), \Wq::config()->WEB('img')));
 
                                                 }
 

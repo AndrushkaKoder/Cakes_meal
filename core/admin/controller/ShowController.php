@@ -1,8 +1,8 @@
 <?php
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
-use settings\Settings;
+use webQAdminSettings\Settings;
 
 class ShowController extends BaseAdmin
 {
@@ -27,7 +27,7 @@ class ShowController extends BaseAdmin
 
             $this->model->revisionMenuPosition($this->table);
 
-            \AppH::redirect($this->alias([$this->adminPath, $this->getController(), $this->table]));
+            \WqH::redirect($this->alias([$this->adminPath, $this->getController(), $this->table]));
 
         }
 
@@ -166,9 +166,9 @@ class ShowController extends BaseAdmin
 
             foreach ($_GET['filter'] as $row => $value){
 
-                $row = \AppH::clearStr($row);
+                $row = \WqH::clearStr($row);
 
-                $searchValue = $value = \AppH::clearStr($value);
+                $searchValue = $value = \WqH::clearStr($value);
 
                 if(!empty($keys)){
 
@@ -182,7 +182,7 @@ class ShowController extends BaseAdmin
 
                             }
 
-                            $searchValue = \AppH::getChildren($value, $item['REFERENCED_TABLE_NAME'], $item['REFERENCED_COLUMN_NAME']);
+                            $searchValue = \WqH::getChildren($value, $item['REFERENCED_TABLE_NAME'], $item['REFERENCED_COLUMN_NAME']);
 
                         }
 
@@ -228,7 +228,7 @@ class ShowController extends BaseAdmin
             if(!$multiLevelId){
                 $this->data = $result;
             }else{
-                $this->data = \AppH::recursiveArr($result, 0, $parentId, $multiLevelId,'parent_id');
+                $this->data = \WqH::recursiveArr($result, 0, $parentId, $multiLevelId,'parent_id');
             }
 
         }
@@ -244,7 +244,7 @@ class ShowController extends BaseAdmin
     protected function createPagination(){
 
         if(!isset($_GET['page'])) $page = 1;
-            else $page = \AppH::clearNum($_GET['page']);
+            else $page = \WqH::clearNum($_GET['page']);
 
         if($page){
 

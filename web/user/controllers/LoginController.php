@@ -1,9 +1,9 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
-use core\models\UserModel;
-use web\user\helpers\ValidationHelper;
+use webQModels\UserModel;
+use webQApplication\helpers\ValidationHelper;
 
 class LoginController extends BaseUser
 {
@@ -34,15 +34,15 @@ class LoginController extends BaseUser
             }
         }
         
-        \AppH::redirect();
+        \WqH::redirect();
 
     }
 
     protected function login(){
 
-        $login = \AppH::clearStr($_POST['login'] ?? '');
+        $login = \WqH::clearStr($_POST['login'] ?? '');
 
-        $password = \AppH::clearStr($_POST['password'] ?? '');
+        $password = \WqH::clearStr($_POST['password'] ?? '');
 
         if(!$login || !$password){
 

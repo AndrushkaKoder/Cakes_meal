@@ -6,13 +6,13 @@
  * Time: 16:45
  */
 
-namespace core\admin\model;
+namespace webQAdmin\model;
 
-use core\admin\helpers\DataCreatorsModelHelper;
-use core\exceptions\DbException;
-use core\traites\AliasImgPathesGeneratorHelper;
-use settings\Settings;
-use core\models\BaseModel;
+use webQAdmin\helpers\DataCreatorsModelHelper;
+use webQExceptions\DbException;
+use webQTraits\AliasImgPathesGeneratorHelper;
+use webQAdminSettings\Settings;
+use webQModels\BaseModel;
 
 class Model extends BaseModel
 {
@@ -65,13 +65,13 @@ class Model extends BaseModel
 
                 }
 
-                $start_pos = \AppH::clearNum($DbOldData[$row]);
+                $start_pos = \WqH::clearNum($DbOldData[$row]);
 
                 if(is_numeric($DbOldData[$parentRow]) && is_numeric($FIELDS[$parentRow])){
 
-                    $FIELDS[$parentRow] = \AppH::clearNum($FIELDS[$parentRow]);
+                    $FIELDS[$parentRow] = \WqH::clearNum($FIELDS[$parentRow]);
 
-                    $DbOldData[$parentRow] = \AppH::clearNum($DbOldData[$parentRow]);
+                    $DbOldData[$parentRow] = \WqH::clearNum($DbOldData[$parentRow]);
 
                 }else{
 
@@ -92,7 +92,7 @@ class Model extends BaseModel
                 /*Если перенесли в другую родительскую категорию*/
                 if($DbOldData[$parentRow] !== $FIELDS[$parentRow]) {
 
-                    $pos = \AppH::clearNum($this->get($table, [
+                    $pos = \WqH::clearNum($this->get($table, [
                         'fields' => ['COUNT(*) as count'],
                         'where' => [$parentRow => $DbOldData[$parentRow]],
                         'single' => true
@@ -138,7 +138,7 @@ class Model extends BaseModel
 
             if($where){
 
-                $start_pos = \AppH::clearNum((!empty($oldData[$row]) ? $oldData[$row] : \AppH::clearNum($this->get($table, [
+                $start_pos = \WqH::clearNum((!empty($oldData[$row]) ? $oldData[$row] : \WqH::clearNum($this->get($table, [
                     'fields' => [$row],
                     'where' => $where,
                     'limit' => 1,
@@ -272,9 +272,9 @@ class Model extends BaseModel
 
         $result = [];
 
-        !$qty && $qty = \App::config()->PAGINATION('admin', 'qty') ?? 50;
+        !$qty && $qty = \Wq::config()->PAGINATION('admin', 'qty') ?? 50;
 
-        $qty_links = \App::config()->PAGINATION('admin', 'qty_links') ?? 5;
+        $qty_links = \Wq::config()->PAGINATION('admin', 'qty_links') ?? 5;
 
         $dbTables = $this->showTables();
 

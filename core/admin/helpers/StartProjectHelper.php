@@ -1,9 +1,9 @@
 <?php
 
-namespace core\admin\helpers;
+namespace webQAdmin\helpers;
 
-use core\exceptions\DbException;
-use settings\Settings;
+use webQExceptions\DbException;
+use webQAdminSettings\Settings;
 
 trait StartProjectHelper
 {
@@ -129,7 +129,7 @@ trait StartProjectHelper
                         ]
                     ]
                 ],
-                'settings' => [
+                'webQSettings' => [
                     'columns' => [
                         'phone' => [
                             'type' => 'varchar',
@@ -231,7 +231,7 @@ trait StartProjectHelper
 
             if($createNewTable){
 
-                \AppH::redirect($this->alias([\App::PATH() => \App::config()->WEB('alias')]));
+                \WqH::redirect($this->alias([\Wq::PATH() => \Wq::config()->WEB('alias')]));
 
             }
 

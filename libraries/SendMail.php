@@ -61,13 +61,13 @@ class SendMail
 
         if(!$templatesPath){
 
-            $this->_templatesPath= \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('views') ,\App::config()->WEB('common')) . 'emailTemplates';
+            $this->_templatesPath= \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('views') ,\Wq::config()->WEB('common')) . 'emailTemplates';
 
         }else{
 
-            $this->_templatesPath = strpos($templatesPath, \App::FULL_PATH())
+            $this->_templatesPath = strpos($templatesPath, \Wq::FULL_PATH())
                 ? $templatesPath
-                : \App::FULL_PATH() . $templatesPath;
+                : \Wq::FULL_PATH() . $templatesPath;
 
         }
 
@@ -170,7 +170,7 @@ class SendMail
 
     public function send($email = '', $subject = ''){
 
-        require_once \App::FULL_PATH() . 'libraries/PHPMailer/PHPMailerAutoload.php';
+        require_once \Wq::FULL_PATH() . 'libraries/PHPMailer/PHPMailerAutoload.php';
 
         $sender = new \PHPMailer;
 

@@ -1,10 +1,10 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
-use core\exceptions\RouteException;
-use core\system\Controller;
-use web\user\models\Model;
+use webQExceptions\RouteException;
+use webQSystem\Controller;
+use webQApplication\models\Model;
 
 class ProductController extends BaseUser
 {

@@ -17,6 +17,7 @@ return [
             'path' => 'settings'
         ],
         'admin' => [
+            'namespace' => 'webQAdmin\\controller',
             'alias' => 'admin',
             'unblocked_access' => ['login'],
             'logging_errors_count' => 3,
@@ -25,6 +26,7 @@ return [
             'img' => 'img'
         ],
         'user' => [
+            'namespace' => 'webQApplication\\controllers',
             'hrUrl' => true
         ],
         'default' => [
@@ -40,12 +42,13 @@ return [
                 'commonMethod' => 'commonData',
             ]
         ],
-        'controllersPath' => [
-            'user' => 'web/user/controllers',
-            'admin' => 'core/admin/controller'
-        ],
         'layout' => [
             'template' => '<header><template><footer>'
+        ],
+        'namespaces' => [
+            'webQ' => 'core',
+            'webQAdminSettings' => 'settings',
+            'webQApplication' => 'web/user'
         ]
 
     ],

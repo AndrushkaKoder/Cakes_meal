@@ -6,7 +6,7 @@
  * Time: 12:12
  */
 
-namespace core\helpers\traites;
+namespace webQHelpers\traits;
 
 
 trait TextModify

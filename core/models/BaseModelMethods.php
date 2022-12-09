@@ -1,6 +1,6 @@
 <?php
 
-namespace core\models;
+namespace webQModels;
 
 
 abstract class BaseModelMethods

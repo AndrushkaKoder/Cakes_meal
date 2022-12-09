@@ -2,8 +2,8 @@
 
 namespace libraries\Import1C;
 
-use core\admin\controller\BaseAdmin;
-use core\admin\model\Model;
+use webQAdmin\controller\BaseAdmin;
+use webQAdmin\model\Model;
 use libraries\FileEdit;
 use libraries\TextModify;
 

@@ -1,15 +1,15 @@
 <?php
 
-namespace web\user\helpers;
+namespace webQApplication\helpers;
 
-use core\system\Logger;
+use webQSystem\Logger;
 
 trait ValidationHelper
 {
 
     protected function emptyField($value, $answer){
 
-        $value = \AppH::clearStr($value);
+        $value = \WqH::clearStr($value);
 
         if(empty($value)){
 
@@ -36,7 +36,7 @@ trait ValidationHelper
             if(strlen($value) !== $count){
 
                 $this->sendError('Длина поля ' . $answer . ' должна содержать ',
-                                        $count . ' ' . \AppH::wordsForCounter($count, ['Символов', 'Символ', 'Символа']));
+                                        $count . ' ' . \WqH::wordsForCounter($count, ['Символов', 'Символ', 'Символа']));
 
             }
 
@@ -62,7 +62,7 @@ trait ValidationHelper
 
     protected function emailField($value, $answer){
 
-        $value = \AppH::clearStr($value);
+        $value = \WqH::clearStr($value);
 
         if(!preg_match('/^[\w\-\.]+@[\w\-]+\.[\w\-]+/i', $value)){
 

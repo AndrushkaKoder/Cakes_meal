@@ -6,7 +6,7 @@
  * Time: 15:23
  */
 
-namespace core\traites;
+namespace webQTraits;
 
 
 trait Singleton
@@ -34,7 +34,7 @@ trait Singleton
 
             static::$_instance->connect();
 
-            \App::setModel(static::$_instance);
+            \Wq::setModel(static::$_instance);
 
         }
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
 
 

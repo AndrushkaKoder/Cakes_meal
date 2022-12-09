@@ -6,9 +6,9 @@
  * Time: 16:01
  */
 
-namespace settings;
+namespace webQAdminSettings;
 
-use core\traites\BaseSettings;
+use webQTraits\BaseSettings;
 
 class Settings
 {

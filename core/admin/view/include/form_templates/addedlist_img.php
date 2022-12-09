@@ -86,7 +86,7 @@
 
                                                 $fileName = '<a href="' . $this->img($value['file']) . '">' . $fileName . '</a>';
 
-                                                $info = mime_content_type(\AppH::correctPathRtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir'), $value['file']));
+                                                $info = mime_content_type(\WqH::correctPathRtrim(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir'), $value['file']));
 
                                             if($info){
 

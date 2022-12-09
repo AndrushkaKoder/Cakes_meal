@@ -6,9 +6,7 @@
  * Time: 15:03
  */
 
-namespace core\admin\controller;
-
-use core\base\settings\Settings;
+namespace webQAdmin\controller;
 
 class AddController extends BaseAdmin
 {

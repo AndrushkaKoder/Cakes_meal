@@ -6,9 +6,9 @@
  * Time: 16:34
  */
 
-namespace settings;
+namespace webQAdminSettings;
 
-use core\traites\BaseSettings;
+use webQTraits\BaseSettings;
 
 class MainSettings
 {
@@ -17,7 +17,7 @@ class MainSettings
 
     private $defaultTemplatePath = '/core/admin/view/include/form_templates/';
 
-    private $expansion = 'core/admin/expansion/';
+    private $expansion = 'webQAdmin/expansion/';
 
     private $messages = 'core/messages/';
 

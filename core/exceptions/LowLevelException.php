@@ -6,7 +6,7 @@
  * Time: 14:51
  */
 
-namespace core\exceptions;
+namespace webQExceptions;
 
 
 class LowLevelException extends \Exception

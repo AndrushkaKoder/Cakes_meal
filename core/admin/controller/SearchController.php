@@ -1,7 +1,7 @@
 <?php
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
-use settings\Settings;
+use webQAdminSettings\Settings;
 
 class SearchController extends BaseAdmin{
 
@@ -9,12 +9,12 @@ class SearchController extends BaseAdmin{
 
         if(!$this->userData) $this->execBase();
 
-        $text = \AppH::clearStr($_GET['search']);
+        $text = \WqH::clearStr($_GET['search']);
 
         if(!$text) 
-            \AppH::redirect();
+            \WqH::redirect();
 
-        $table = \AppH::clearStr($_GET['search_table']);
+        $table = \WqH::clearStr($_GET['search_table']);
 
         $pages = [];
 
@@ -22,7 +22,7 @@ class SearchController extends BaseAdmin{
 
         $pages['qty_links'] = $this->linksCounter;
 
-        $pages['page'] = !empty($_GET['page']) ? \AppH::clearNum($_GET['page']) : 1;
+        $pages['page'] = !empty($_GET['page']) ? \WqH::clearNum($_GET['page']) : 1;
 
         !$pages['page'] && $pages['pagination']['page'] = 1;
 

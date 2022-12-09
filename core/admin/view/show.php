@@ -30,7 +30,7 @@
 
                                             if(empty($item[0]['id']) || strtolower($item[0]['id']) !== 'null'){
 
-                                                $emptyName = settings\Settings::get('rootItems');
+                                                $emptyName = webQAdminSettings\Settings::get('rootItems');
 
                                                 $emptyName = !empty($emptyName['name']) ? $emptyName['name'] : 'Нет';
 
@@ -42,8 +42,8 @@
 
                                             $h3 = true;
 
-                                            if (!@include \AppH::correctPath(\App::FULL_PATH(), $path) . 'select.php') {
-                                                throw new \core\exceptions\RouteException('Не найден шаблон ' . \AppH::correctPath(\App::FULL_PATH(), $path) . 'select.php');
+                                            if (!@include \WqH::correctPath(\Wq::FULL_PATH(), $path) . 'select.php') {
+                                                throw new \webQExceptions\RouteException('Не найден шаблон ' . \WqH::correctPath(\Wq::FULL_PATH(), $path) . 'select.php');
                                             }
 
                                             echo '</li>';

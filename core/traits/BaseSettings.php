@@ -6,7 +6,7 @@
  * Time: 15:10
  */
 
-namespace core\traites;
+namespace webQTraits;
 
 trait BaseSettings
 {

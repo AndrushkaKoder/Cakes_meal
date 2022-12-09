@@ -1,9 +1,9 @@
 <?php
 
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
-use core\traites\Singleton;
+use webQTraits\Singleton;
 
 class CatalogMetadataExpansion extends Expansion
 {
@@ -12,7 +12,7 @@ class CatalogMetadataExpansion extends Expansion
     {
         parent::expansion($args, $obj);
 
-        if(\AppH::isPost() && $_POST['id']){
+        if(\WqH::isPost() && $_POST['id']){
 
             $name = preg_replace('/^.*?\/?([^\/]+)\/?$/', '$1', $_POST['name']);
 

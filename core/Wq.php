@@ -1,20 +1,16 @@
 <?php
 // глобальный объект. Он же - точка входа де факто
-use core\exceptions\DuplicateConfigurationParametersException; //используем простанство имен
-use core\exceptions\NotConfiguredException;
 
-final class App //final - класс от которого нельзя наследоваться
+final class Wq //final - класс от которого нельзя наследоваться
 {
 
-//    приватные свойства класса App
+//    приватные свойства класса Wq
 
     private static $model = null;
 
-    private static array $properties = []; // приватное свойство 'СВОЙСТВА'
-
     private static string $configPath = 'config'; // путь до core/config
 
-    private function __construct(){} // делаем приватный конструктор для того, чтобы нельзя было сделать new App
+    private function __construct(){} // делаем приватный конструктор для того, чтобы нельзя было сделать new Wq
 
     public static function init(?bool $run = true) : void{ //метод точки входа. В нём вызываем подключение путей и динамическое подключение классов,
         //и метод конфигурации приклады и вызываем метод run
@@ -23,19 +19,7 @@ final class App //final - класс от которого нельзя насл
 
         self::registerAutoload(); // динамическое подключение классов, всех классов
 
-        try {   //по блоку try/catch конфигурируем приложение. Если try, то вызываем конфигурацию, если нет, идём по блоку catch
-
-            self::configApp(); // метод конфигурации приложения
-
-        }catch (DuplicateConfigurationParametersException $e){ // вызываем метод, который наследуется из страшного класса Exeption
-
-            exit($e->getMessage()); // конец скрипта с генерацией сообщения об ошибке
-
-        }catch (NotConfiguredException $e){ // вызываем метод, который наследуется из страшного класса Exeption
-
-            exit($e->getMessage()); // конец скрипта с генерацией сообщения об ошибке
-
-        }
+        self::configApp(); // метод конфигурации приложения
 
         session_start();
 
@@ -45,17 +29,17 @@ final class App //final - класс от которого нельзя насл
 
     public static function run() : void{ // публичный статичный метод запуска приложения
 
-        self::execute(\core\system\Router::setRoute()); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
+        self::execute(\webQSystem\Router::setRoute()); //пришел массив с именем контоллера и аргументов строки запроса, если они есть
 
     }
 
     public static function execute(?array $route, $arguments = []){
 
-        $route['controller'] = $route['controller'] ?? \core\system\Router::getController();
+        $route['controller'] = $route['controller'] ?? \webQSystem\Router::getController();
 
-        $route['parameters'] = $route['parameters'] ?? \core\system\Router::getParameters();
+        $route['parameters'] = $route['parameters'] ?? \webQSystem\Router::getParameters();
 
-        $controller = str_replace('/', '\\', $route['controller']); // в $controller залетает "\web\user\controllers\indexController"
+        $controller = str_replace('/', '\\', $route['controller']); // в $controller залетает "\webQApplication\controllers\indexController"
 
         try{
 
@@ -69,15 +53,15 @@ final class App //final - класс от которого нельзя насл
 
             }catch (ReflectionException $e){
 
-                throw new \core\exceptions\RouteException($e->getMessage() . "\r\n" . $_SERVER['REQUEST_URI']);
+                throw new \webQExceptions\RouteException($e->getMessage() . "\r\n" . $_SERVER['REQUEST_URI']);
 
             }
 
-        }catch (\core\exceptions\RouteException $e){
+        }catch (\webQExceptions\RouteException $e){
 
             exit($e->showMessage());
 
-        }catch (\core\exceptions\DbException $e){
+        }catch (\webQExceptions\DbException $e){
 
             exit($e->showMessage());
 
@@ -88,9 +72,9 @@ final class App //final - класс от которого нельзя насл
 
     private static function setPathes() : void{ //подключение путей
 
-        self::$properties['FULL_PATH'] = preg_replace('/\/{2,}/', '/', preg_replace('/\\\+/', '/', realpath(__DIR__ . '/../'))) . '/'; //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
+        self::config()->set('FULL_PATH', preg_replace('/\/{2,}/', '/', preg_replace('/\\\+/', '/', realpath(__DIR__ . '/../'))) . '/'); //формируем абсолютный путь и кладем его в $properties['FULL_PATH']
 
-        self::$properties['PATH'] = self::getRelativePath(self::$properties['FULL_PATH']);
+        self::config()->set('PATH', self::getRelativePath(self::config()->FULL_PATH()));
 
     }
 
@@ -98,7 +82,7 @@ final class App //final - класс от которого нельзя насл
 
         spl_autoload_register(function($className){  // передаем колбэк
 
-            $fileName = str_replace('\\', '/', $className); // меняем слеш с обратного на прямой
+            $fileName = self::convertNamespace($className); // меняем слеш с обратного на прямой
 
             if(is_readable(self::FULL_PATH() . $fileName . '.php')){ //если существует файл и он доступен для чтения
 
@@ -107,8 +91,6 @@ final class App //final - класс от которого нельзя насл
             }
 
         });
-
-        include_once realpath(__DIR__) . '/helpers/AppH.php'; // возвращает реальный путь к дериктории (абсолютный). Относительно папки core подтягиваем класс appH
 
         if (is_readable(self::FULL_PATH() . 'vendor/autoload.php')){ //если проект лежит в папке Vendor
 
@@ -124,7 +106,7 @@ final class App //final - класс от которого нельзя насл
 
         $fileProperties = [];
 
-        AppH::scanDir($path, function ($file, $path) use (&$fileProperties){
+        self::scanDir($path, function ($file, $path) use (&$fileProperties){
 
             $configArr = require $path . '/' . $file;
 
@@ -132,15 +114,13 @@ final class App //final - класс от которого нельзя насл
 
                 foreach ($configArr as $key => $item){
 
-                    if(array_key_exists(strtoupper($key), self::$properties)){
-
-                        throw new DuplicateConfigurationParametersException('Parameter ' . $key . ' was already declared ' . ($fileProperties[$key]) ?? null);
-
-                    }
-
                     $fileProperties[$key] = $file;
 
-                    self::$properties[strtoupper($key)] = $item;
+                    if(!self::config()->set($key, $item)){
+
+                        exit('Parameter ' . $key . ' was already declared ' . ($fileProperties[$key]) ?? null);
+
+                    }
 
                 }
 
@@ -150,9 +130,11 @@ final class App //final - класс от которого нельзя насл
 
         if(empty($fileProperties)){
 
-            throw new NotConfiguredException('Application hasn`t configuration data');
+            exit('Application hasn`t configuration data');
 
         }
+
+        include_once realpath(__DIR__) . '/helpers/WqH.php'; // возвращает реальный путь к дериктории (абсолютный). Относительно папки core подтягиваем класс appH
 
     }
 
@@ -192,13 +174,13 @@ final class App //final - класс от которого нельзя насл
 
     public static function PATH(){
 
-        return self::$properties['PATH'] ?? null;
+        return self::config()->PATH() ?? null;
 
     }
 
     public static function FULL_PATH(){
 
-        return self::$properties['FULL_PATH'] ?? null;
+        return self::config()->FULL_PATH() ?? null;
 
     }
 
@@ -208,19 +190,37 @@ final class App //final - класс от которого нельзя насл
 
         if(!$config){
 
-            $config = new class(self::$properties){
+            $config = new class(){
 
-                private array $properties;
+                private array $properties = [];
 
-                public function __construct($properties){
+                private bool $skipWebChecks = false;
 
-                    $this->properties = &$properties;
+                public function set(string $name, $value) : bool{
+
+                    if(array_key_exists($name, $this->properties)){
+
+                        return false;
+
+                    }
+
+                    $this->properties[mb_strtoupper($name)] = $value;
+
+                    return true;
 
                 }
 
                 public function WEB(){
 
-                    $mode = \core\system\Router::getMode();
+                    if($this->skipWebChecks){
+
+                        $this->skipWebChecks = false;
+
+                        return $this->searchProperty('WEB', func_get_args());
+
+                    }
+
+                    $mode = \webQSystem\Router::getMode();
 
                     $args = func_get_args();
 
@@ -267,6 +267,14 @@ final class App //final - класс от которого нельзя насл
                 public function __call($name, $arguments){
 
                     return $this->searchProperty($name, $arguments);
+
+                }
+
+                public function skipWEBChecks(){
+
+                    $this->skipWebChecks = true;
+
+                    return $this;
 
                 }
 
@@ -323,6 +331,100 @@ final class App //final - класс от которого нельзя насл
     public static function model(){
 
         return self::$model;
+
+    }
+
+    public static function scanDir(string $path, callable $callback, $sort = false){
+
+        if(file_exists($path)){
+
+            $list = scandir($path); //сюда возвращается список директорий и файлов
+
+            if($sort){
+
+                sort($list);
+
+            }
+
+            foreach ($list as $file){
+
+                if($file !== '.' && $file !== '..'){
+
+                    if(($res = $callback($file, $path)) !== null){
+
+                        return $res;
+
+                    }  // если у файла нет . .. то вызывваем колбэк
+
+                }
+
+            }
+
+        }
+
+    }
+
+    private static function convertNamespace($className){
+
+        static $nameSpaces = null;
+
+        $className = trim(preg_replace('/\\\+/', '/', $className));
+
+        if(!$nameSpaces){
+
+            $nameSpaces = self::config()->skipWEBChecks()->WEB('namespaces');
+
+            uksort($nameSpaces, function ($a, $b){
+
+                $lenthA = strlen($a);
+
+                $lenthB = strlen($b);
+
+                return $lenthA === $lenthB ? 0 : ($lenthA < $lenthB ? 1 : -1);
+
+            });
+
+            foreach ($nameSpaces as $key => $item){
+
+                unset($nameSpaces[$key]);
+
+                $nameSpaces[preg_replace('/\\\+/', '/', $key)] = $item;
+
+            }
+
+        }
+
+        if(strpos('webQModels', $className) !== false){
+
+            $a = 1;
+
+        }
+
+        if(!empty($nameSpaces)){
+
+            foreach ($nameSpaces as $key => $item){
+
+                if(preg_match('/^' . str_replace('/', '\/', preg_quote($key)) . '(\/|([A-Z][^\/]*))/', $className, $matches)){
+
+                    if(!empty($matches[2])){
+
+                        $item .= '/' . strtolower(preg_replace('/([^A-Z])([A-Z])/', '$1/$2', $matches[2]));
+
+                        $key .= $matches[2];
+
+                    }
+
+                    $className = preg_replace('/^' . str_replace('/', '\/', preg_quote($key)) . '/', $item, $className);
+
+                    break;
+
+                }
+
+            }
+
+        }
+
+        return $className;
 
     }
 

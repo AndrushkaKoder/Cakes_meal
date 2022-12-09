@@ -1,9 +1,9 @@
 <?php
 
-namespace core\admin\helpers;
+namespace webQAdmin\helpers;
 
-use core\exceptions\RouteException;
-use settings\Settings;
+use webQExceptions\RouteException;
+use webQAdminSettings\Settings;
 
 trait PrepareShowHelper
 {
@@ -125,7 +125,7 @@ trait PrepareShowHelper
         if(!$settings) $settings = Settings::instance();
 
         $blocks = $this->blockNeedle ?: $settings::get('blockNeedle');
-        //$this->translate = $settings::get('translate');
+        //$this->translate = $webQSettings::get('translate');
 
         if(!$blocks || !is_array($blocks)){
 

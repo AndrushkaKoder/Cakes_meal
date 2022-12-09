@@ -1,8 +1,8 @@
 <?php
 
-namespace web\user\helpers;
+namespace webQApplication\helpers;
 
-use core\models\Crypt;
+use webQModels\Crypt;
 
 trait CartHelper
 {
@@ -34,11 +34,11 @@ trait CartHelper
 
                 if(is_numeric($data)){
 
-                    $resultId = \AppH::clearNum($data);
+                    $resultId = \WqH::clearNum($data);
 
                 }else{
 
-                    $resultId = \AppH::clearStr($data);
+                    $resultId = \WqH::clearStr($data);
 
                 }
 
@@ -102,9 +102,9 @@ trait CartHelper
 
     protected function addToWishList($id, $action){
 
-        !$id && $id = \AppH::clearNum($this->ajaxData['id'] ?? 0);
+        !$id && $id = \WqH::clearNum($this->ajaxData['id'] ?? 0);
 
-        !$action && $action = \AppH::clearStr($this->ajaxData['ajax'] ?? '') ?: 'delayed';
+        !$action && $action = \WqH::clearStr($this->ajaxData['ajax'] ?? '') ?: 'delayed';
 
         if(!$id){
 
@@ -316,7 +316,7 @@ trait CartHelper
 
             $id = $this->getElementId($data);
 
-            $price = \AppH::clearNum($data[$column]);
+            $price = \WqH::clearNum($data[$column]);
 
             return !empty($this->cart[$this->model->goodsTable][$id]['corrector']) ?
                 round($price * $this->cart[$this->model->goodsTable][$id]['corrector']) : $price;
@@ -335,11 +335,11 @@ trait CartHelper
 
     protected function addToCart($id = null, $qty = 0, $offersId = null, $cartData = []){
 
-        !$id && $id = \AppH::clearNum($this->ajaxData['id'] ?? null);
+        !$id && $id = \WqH::clearNum($this->ajaxData['id'] ?? null);
 
-        !$qty && $qty = \AppH::clearNum($this->ajaxData['qty'] ?? 1) ?: 1;
+        !$qty && $qty = \WqH::clearNum($this->ajaxData['qty'] ?? 1) ?: 1;
 
-        !$offersId && $offersId = \AppH::clearNum($this->ajaxData['offersId'] ?? null);
+        !$offersId && $offersId = \WqH::clearNum($this->ajaxData['offersId'] ?? null);
 
         !$cartData && !empty($this->ajaxData['cartData']) && $cartData = $this->ajaxData['cartData'];
 
@@ -349,7 +349,7 @@ trait CartHelper
 
             foreach ($cartData as $name => $item){
 
-                $item = is_numeric($item) ? \AppH::clearNum($item) : \AppH::clearStr($item);
+                $item = is_numeric($item) ? \WqH::clearNum($item) : \WqH::clearStr($item);
 
                 if(empty($item)){
 
@@ -494,11 +494,11 @@ trait CartHelper
 
     protected function deleteCartData($id, $offersId = null){
 
-        $id = \AppH::clearNum($id);
+        $id = \WqH::clearNum($id);
 
         if($offersId){
 
-            $offersId = \AppH::clearNum($offersId);
+            $offersId = \WqH::clearNum($offersId);
 
         }
 

@@ -1,7 +1,7 @@
 <?php
 
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
 
 class VisitorsExpansion extends Expansion

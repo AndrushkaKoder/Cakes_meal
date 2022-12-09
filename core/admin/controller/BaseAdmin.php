@@ -6,19 +6,19 @@
  * Time: 17:37
  */
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
-use core\admin\helpers\ForegnHelper;
-use core\admin\helpers\GroupEditHelper;
-use core\admin\helpers\PrepareEditHelper;
-use core\admin\helpers\PrepareFilesHelper;
-use core\admin\helpers\PrepareShowHelper;
-use core\admin\helpers\StartProjectHelper;
-use core\admin\model\Model;
-use core\exceptions\DbException;
-use core\exceptions\RouteException;
-use settings\Settings;
-use core\system\Controller;
+use webQAdmin\helpers\ForegnHelper;
+use webQAdmin\helpers\GroupEditHelper;
+use webQAdmin\helpers\PrepareEditHelper;
+use webQAdmin\helpers\PrepareFilesHelper;
+use webQAdmin\helpers\PrepareShowHelper;
+use webQAdmin\helpers\StartProjectHelper;
+use webQAdmin\model\Model;
+use webQExceptions\DbException;
+use webQExceptions\RouteException;
+use webQAdminSettings\Settings;
+use webQSystem\Controller;
 
 
 abstract class BaseAdmin extends Controller
@@ -75,7 +75,7 @@ abstract class BaseAdmin extends Controller
         if(!$this->model)
             $this->model = Model::instance();
 
-        !$this->userData && \AppH::redirect(\App::PATH());
+        !$this->userData && \WqH::redirect(\Wq::PATH());
 
         $this->title = 'VG engine';
 
@@ -88,7 +88,7 @@ abstract class BaseAdmin extends Controller
         if(!$this->table){
             if($this->parameters)
                 $this->table = array_keys($this->parameters)[0];
-            elseif (\AppH::isPost() && $_POST['table'])
+            elseif (\WqH::isPost() && $_POST['table'])
                 $this->table = $_POST['table'];
             else
                 $this->table = Settings::get('defaultTable');
@@ -119,7 +119,7 @@ abstract class BaseAdmin extends Controller
         }
 
         if(!$this->adminPath)
-            $this->adminPath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('alias'));
+            $this->adminPath = \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('alias'));
 
         if(!$this->templateArr)
             $this->templateArr = Settings::get('templateArr');
@@ -137,7 +137,7 @@ abstract class BaseAdmin extends Controller
             $this->blockNeedle = Settings::get('blockNeedle');
 
         if(!$this->messages)
-            $this->messages = include \App::FULL_PATH() . '/core/messages/informationMessages.php';
+            $this->messages = include \Wq::FULL_PATH() . '/core/messages/informationMessages.php';
 
         $this->sendNoCacheHeaders();
 
@@ -375,16 +375,22 @@ abstract class BaseAdmin extends Controller
         foreach($filename as $item) $className .= ucfirst($item);
 
         if(!$settings){
+
             $path = Settings::get('expansion');
+
         }elseif (is_object($settings)){
+
             $path = $settings::get('expansion');
+
         }else{
+
             $path = $settings;
+
         }
 
         $class = $path . $className . 'Expansion';
 
-        if(is_readable(\App::FULL_PATH() . $class . '.php')){
+        if(is_readable(\Wq::FULL_PATH() . $class . '.php')){
 
             $class = str_replace('/', '\\', $class);
 
@@ -398,7 +404,7 @@ abstract class BaseAdmin extends Controller
 
         }else{
 
-            $file = \App::FULL_PATH() . $path . $this->table . '.php';
+            $file = \Wq::FULL_PATH() . $path . $this->table . '.php';
 
             extract($args);
 
@@ -415,7 +421,7 @@ abstract class BaseAdmin extends Controller
         $method = 'add';
 
         $redirectPath = isset($_POST['add_new_element']) ?
-            \AppH::correctPath(\App::PATH(), \App::config()->WEB('alias'), 'add', $this->table) : '';
+            \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('alias'), 'add', $this->table) : '';
 
         unset($_POST['add_new_element']);
 
@@ -425,8 +431,8 @@ abstract class BaseAdmin extends Controller
 
         if(isset($_POST[$this->columns['id_row']]) && $_POST[$this->columns['id_row']]){
             $id = is_numeric($_POST[$this->columns['id_row']]) ?
-                \AppH::clearNum($_POST[$this->columns['id_row']]) :
-                \AppH::clearStr($_POST[$this->columns['id_row']]);
+                \WqH::clearNum($_POST[$this->columns['id_row']]) :
+                \WqH::clearStr($_POST[$this->columns['id_row']]);
 
             if($id){
 
@@ -549,7 +555,7 @@ abstract class BaseAdmin extends Controller
         if(!$res_id){
 
             $_SESSION['res']['answer'] = '<div class="error">'. $answerFail . '</div>';
-            \AppH::redirect();
+            \WqH::redirect();
 
         }
 
@@ -565,9 +571,9 @@ abstract class BaseAdmin extends Controller
 
         }
 
-        !$redirectPath && $redirectPath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('alias'), 'edit', $this->table, $_POST[$this->columns['id_row']]);
+        !$redirectPath && $redirectPath = \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('alias'), 'edit', $this->table, $_POST[$this->columns['id_row']]);
 
-        \AppH::redirect($redirectPath);
+        \WqH::redirect($redirectPath);
 
         return null;
 

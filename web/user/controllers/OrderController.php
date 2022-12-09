@@ -1,11 +1,11 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
 
-use core\models\UserModel;
+use webQModels\UserModel;
 use libraries\SendMail;
-use web\user\helpers\ValidationHelper;
+use webQApplication\helpers\ValidationHelper;
 
 class OrderController extends BaseUser
 {
@@ -15,7 +15,7 @@ class OrderController extends BaseUser
     protected function actionInput(){
 
 
-        if(\AppH::isPost()){
+        if(\WqH::isPost()){
 
             $cart = new CartController();
 
@@ -68,7 +68,7 @@ class OrderController extends BaseUser
 
             foreach ($addressArr as $item){
 
-                $item = \AppH::clearStr($item);
+                $item = \WqH::clearStr($item);
 
                 if($item){
 
@@ -84,9 +84,9 @@ class OrderController extends BaseUser
 
         $visitor = [];
 
-        $columnsOrders = \App::model()->showColumns('orders');
+        $columnsOrders = \Wq::model()->showColumns('orders');
 
-        $columnsVisitors = \App::model()->showColumns('visitors');
+        $columnsVisitors = \Wq::model()->showColumns('visitors');
 
         $validationResult = [];
 
@@ -161,7 +161,7 @@ class OrderController extends BaseUser
 
         }
 
-        $res = \App::model()->get('visitors', [
+        $res = \Wq::model()->get('visitors', [
             'where' => $visitorWhere,
             'condition' => $visitorCondition,
             'limit' => 1,
@@ -178,7 +178,7 @@ class OrderController extends BaseUser
 
             $visitor['password'] = md5($defaultVisitorPassword);
 
-            $order['visitors_id'] = \App::model()->add('visitors', [
+            $order['visitors_id'] = \Wq::model()->add('visitors', [
                 'fields' => $visitor,
                 'return_id' => true
             ]);
@@ -199,7 +199,7 @@ class OrderController extends BaseUser
 
         $order['date'] = 'NOW()';
 
-        $baseStatus = \App::model()->get('orders_statuses', [
+        $baseStatus = \Wq::model()->get('orders_statuses', [
             'fields' => 'id',
             'limit' => 1,
             'order' => 'menu_position',
@@ -208,7 +208,7 @@ class OrderController extends BaseUser
 
         $baseStatus && $order['orders_statuses_id'] = $baseStatus['id'];
 
-        $order['id'] = \App::model()->add('orders', [
+        $order['id'] = \Wq::model()->add('orders', [
             'fields' => $order,
             'return_id' => true
         ]);
@@ -219,11 +219,11 @@ class OrderController extends BaseUser
 
         }
 
-        if(in_array('orders_data', \App::model()->showTables()) &&
-            !empty(\App::model()->showColumns('orders_data')['orders_id']) &&
-            !empty(\App::model()->showColumns('orders_data')['data'])){
+        if(in_array('orders_data', \Wq::model()->showTables()) &&
+            !empty(\Wq::model()->showColumns('orders_data')['orders_id']) &&
+            !empty(\Wq::model()->showColumns('orders_data')['data'])){
 
-            \App::model()->add('orders_data', [
+            \Wq::model()->add('orders_data', [
                 'fields' => [
                     'orders_id' => $order['id'],
                     'data' => [
@@ -259,7 +259,7 @@ class OrderController extends BaseUser
 
         $this->checkPaymentsType(['order' => $order, 'visitor' => $visitor, 'goods' => $ordersGoods]);
 
-        \AppH::redirect();
+        \WqH::redirect();
 
     }
 
@@ -267,7 +267,7 @@ class OrderController extends BaseUser
 
         $ordersGoods = [];
 
-        if(in_array('orders_goods', \App::model()->showTables())){
+        if(in_array('orders_goods', \Wq::model()->showTables())){
 
 
             foreach ($data as $key => $item){
@@ -276,13 +276,13 @@ class OrderController extends BaseUser
 
                 foreach ($item as $field => $value){
 
-                    if(!empty(\App::model()->showColumns('orders_goods')[$field])){
+                    if(!empty(\Wq::model()->showColumns('orders_goods')[$field])){
 
-                        if(\App::model()->showColumns('orders_goods')['id_row'] === $field){
+                        if(\Wq::model()->showColumns('orders_goods')['id_row'] === $field){
 
-                            if(!empty(\App::model()->showColumns('orders_goods')[\App::model()->goodsTable . '_' . 'id'])){
+                            if(!empty(\Wq::model()->showColumns('orders_goods')[\Wq::model()->goodsTable . '_' . 'id'])){
 
-                                $ordersGoods[$key][\App::model()->goodsTable . '_' . 'id'] = $value;
+                                $ordersGoods[$key][\Wq::model()->goodsTable . '_' . 'id'] = $value;
 
                             }
 
@@ -296,13 +296,13 @@ class OrderController extends BaseUser
 
                 }
 
-                if(!empty($item[\App::model()->offersTable])){
+                if(!empty($item[\Wq::model()->offersTable])){
 
-                    foreach ($item[\App::model()->offersTable] as $field => $value){
+                    foreach ($item[\Wq::model()->offersTable] as $field => $value){
 
-                        if(!empty(\App::model()->showColumns('orders_goods')[\App::model()->offersTable . '_' . $field])){
+                        if(!empty(\Wq::model()->showColumns('orders_goods')[\Wq::model()->offersTable . '_' . $field])){
 
-                            $ordersGoods[$key][\App::model()->offersTable . '_' . $field] = $value;
+                            $ordersGoods[$key][\Wq::model()->offersTable . '_' . $field] = $value;
 
                         }
 
@@ -312,15 +312,15 @@ class OrderController extends BaseUser
 
             }
 
-            \App::model()->add('orders_goods', [
+            \Wq::model()->add('orders_goods', [
                 'fields' => $ordersGoods
             ]);
 
         }
 
-        if(!empty(\App::model()->showColumns(\App::model()->goodsTable)['popular'])){
+        if(!empty(\Wq::model()->showColumns(\Wq::model()->goodsTable)['popular'])){
 
-            \App::model()->edit(\App::model()->goodsTable, [
+            \Wq::model()->edit(\Wq::model()->goodsTable, [
                 'fields' => ['popular' => 'popular + 1'],
                 'where' => ['id' => array_column($data, 'id')],
                 'no_ecran' => 'popular'
@@ -402,9 +402,9 @@ class OrderController extends BaseUser
 
                 foreach ($item as $v){
 
-                    if(!empty($v[\App::model()->offersTable . '_name'])){
+                    if(!empty($v[\Wq::model()->offersTable . '_name'])){
 
-                        $v['name'] .= '(' . $v[\App::model()->offersTable . '_name'] . ')';
+                        $v['name'] .= '(' . $v[\Wq::model()->offersTable . '_name'] . ')';
 
                     }
 

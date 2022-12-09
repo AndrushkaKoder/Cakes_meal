@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WQ-Engine Enter</title>
 
-    <link rel="stylesheet" href="<?=\App::getRelativePath(__DIR__) . 'css/decoration.css'?>">
-    <link rel="stylesheet" href="<?=\App::getRelativePath(__DIR__) . 'css/login_page_styles.css'?>">
+    <link rel="stylesheet" href="<?=\Wq::getRelativePath(__DIR__) . 'css/decoration.css'?>">
+    <link rel="stylesheet" href="<?=\Wq::getRelativePath(__DIR__) . 'css/login_page_styles.css'?>">
 
 </head>
 <body>
@@ -35,7 +35,7 @@
     $this->getScripts();
 ?>
 
-<script src="<?=\App::getRelativePath(__DIR__) . 'js/login_page_scripts.js'?>"></script>
+<script src="<?=\Wq::getRelativePath(__DIR__) . 'js/login_page_scripts.js'?>"></script>
 
 
 </body>

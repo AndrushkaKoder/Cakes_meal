@@ -6,10 +6,10 @@
  * Time: 17:45
  */
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
-use core\exceptions\RouteException;
-use settings\Settings;
+use webQExceptions\RouteException;
+use webQAdminSettings\Settings;
 use libraries\TextModify;
 
 class GoodsExpansion extends Expansion

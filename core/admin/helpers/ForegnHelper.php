@@ -1,8 +1,8 @@
 <?php
 
-namespace core\admin\helpers;
+namespace webQAdmin\helpers;
 
-use settings\Settings;
+use webQAdminSettings\Settings;
 
 trait ForegnHelper
 {
@@ -94,7 +94,7 @@ trait ForegnHelper
             if(isset($onlyRootParents[$this->table][$arr['COLUMN_NAME']]) &&
                 $onlyRootParents[$this->table][$arr['COLUMN_NAME']] === 0){
 
-                \AppH::onlyRootParents($foreign);
+                \WqH::onlyRootParents($foreign);
 
             }
 
@@ -118,11 +118,11 @@ trait ForegnHelper
 
                 }
 
-                $this->foreignData[$arr['COLUMN_NAME']] = \AppH::recursiveArr($this->foreignData[$arr['COLUMN_NAME']]);
+                $this->foreignData[$arr['COLUMN_NAME']] = \WqH::recursiveArr($this->foreignData[$arr['COLUMN_NAME']]);
 
             }else{
 
-                $this->foreignData[$arr['COLUMN_NAME']] = \AppH::recursiveArr($foreign);
+                $this->foreignData[$arr['COLUMN_NAME']] = \WqH::recursiveArr($foreign);
 
             }
 
@@ -375,7 +375,7 @@ trait ForegnHelper
 
                                 }
 
-                                $resData = \AppH::recursiveArr($data, 1);
+                                $resData = \WqH::recursiveArr($data, 1);
 
                                 if($resData){
 
@@ -480,7 +480,7 @@ trait ForegnHelper
 
                                 if($data){
 
-                                    $this->foreignData[$tables[$otherKey]] = \AppH::recursiveArr($data, 1);
+                                    $this->foreignData[$tables[$otherKey]] = \WqH::recursiveArr($data, 1);
 
                                     foreach ($this->foreignData[$tables[$otherKey]] as $key => $item){
 

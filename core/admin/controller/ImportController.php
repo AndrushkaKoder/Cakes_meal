@@ -1,6 +1,6 @@
 <?php
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
 use libraries\Import1C\Import1C;
 
@@ -20,7 +20,7 @@ class ImportController extends BaseAdmin
 
         if($this->redirect){
 
-            \AppH::redirect();
+            \WqH::redirect();
 
         }
 
@@ -32,7 +32,7 @@ class ImportController extends BaseAdmin
 
         parent::commonData();
 
-        if(\AppH::isPost()){
+        if(\WqH::isPost()){
 
             $import1C = new Import1C();
 
@@ -53,7 +53,7 @@ class ImportController extends BaseAdmin
 
                         $_SESSION['res']['answer'] = '<div class="error">Ошибка распаковки архива</div>';
 
-                        \AppH::redirect();
+                        \WqH::redirect();
 
                     }
 
@@ -61,7 +61,7 @@ class ImportController extends BaseAdmin
 
                     $_SESSION['res']['answer'] = '<div class="error">Некорректный формат файла выгрузки</div>';
 
-                    \AppH::redirect();
+                    \WqH::redirect();
 
                 }
 

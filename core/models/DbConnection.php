@@ -1,8 +1,8 @@
 <?php
 
-namespace core\models;
+namespace webQModels;
 
-use core\exceptions\DbException;
+use webQExceptions\DbException;
 
 class DbConnection
 {
@@ -15,8 +15,8 @@ class DbConnection
     {
         try {
 
-            return self::$db = new \PDO('mysql:host=' . \App::config()->DB('host') . ';dbname=' . \App::config()->DB('dbName'),
-                            \App::config()->DB('user'), \App::config()->DB('password'),
+            return self::$db = new \PDO('mysql:host=' . \Wq::config()->DB('host') . ';dbname=' . \Wq::config()->DB('dbName'),
+                            \Wq::config()->DB('user'), \Wq::config()->DB('password'),
                             [
                                 \PDO::ATTR_ERRMODE => \PDO::ERRMODE_EXCEPTION,
                                 \PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'UTF8'"
@@ -33,7 +33,7 @@ class DbConnection
     {
         try{
 
-            self::$db = new \mysqli(\App::config()->DB('host'), \App::config()->DB('user'), \App::config()->DB('password'), \App::config()->DB('dbName'));
+            self::$db = new \mysqli(\Wq::config()->DB('host'), \Wq::config()->DB('user'), \Wq::config()->DB('password'), \Wq::config()->DB('dbName'));
 
             if(self::$db->connect_error){
 
@@ -140,7 +140,7 @@ class DbConnection
 
                 self::$db = null;
 
-                \App::model()->connect(true);
+                \Wq::model()->connect(true);
 
                 return true;
 
@@ -169,7 +169,7 @@ class DbConnection
 
                 self::$db->close();
 
-                \App::model()->connect(true);
+                \Wq::model()->connect(true);
 
                 return self::$db->query($query, $crud, $return_id);
 

@@ -2,7 +2,7 @@
 
 //вспомогательный класс
 
-namespace core\helpers\traites;
+namespace webQHelpers\traits;
 
 trait ClearDataHelper
 {

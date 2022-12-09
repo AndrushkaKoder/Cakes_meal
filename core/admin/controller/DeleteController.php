@@ -1,9 +1,9 @@
 <?php
 
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
-use settings\Settings;
+use webQAdminSettings\Settings;
 
 class DeleteController extends BaseAdmin
 {
@@ -18,8 +18,8 @@ class DeleteController extends BaseAdmin
         if(!empty($this->parameters[$this->table])){
 
             $id = is_numeric($this->parameters[$this->table]) ?
-                \AppH::clearNum($this->parameters[$this->table]) :
-                \AppH::clearStr($this->parameters[$this->table]);
+                \WqH::clearNum($this->parameters[$this->table]) :
+                \WqH::clearStr($this->parameters[$this->table]);
 
             if($id){
 
@@ -55,11 +55,11 @@ class DeleteController extends BaseAdmin
                                         if(is_array($fileData)){
 
                                             foreach ($fileData as $f)
-                                                @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $f);
+                                                @unlink(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $f);
 
                                         }else{
 
-                                            @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $fileData);
+                                            @unlink(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $fileData);
 
                                         }
 
@@ -139,7 +139,7 @@ class DeleteController extends BaseAdmin
 
                         $_SESSION['res']['answer'] = $_SESSION['res']['answer'] = '<div class="success">' . $this->messages['deleteSuccess'] . '</div>';
 
-                        \AppH::redirect($this->adminPath . 'show/' . $this->table);
+                        \WqH::redirect($this->adminPath . 'show/' . $this->table);
 
                     }
 
@@ -151,7 +151,7 @@ class DeleteController extends BaseAdmin
 
         $_SESSION['res']['answer'] = '<div class="error">' . $this->messages['deleteFail'] . '</div>';
 
-        \AppH::redirect();
+        \WqH::redirect();
 
     }
 
@@ -181,7 +181,7 @@ class DeleteController extends BaseAdmin
 
                                     $updateFlag = true;
 
-                                    @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
+                                    @unlink(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $item);
 
                                     $data[$key][$k] = null;
 
@@ -198,7 +198,7 @@ class DeleteController extends BaseAdmin
 
                             $updateFlag = true;
 
-                            @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
+                            @unlink(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $item);
 
                             unset($data[$key]);
 
@@ -214,7 +214,7 @@ class DeleteController extends BaseAdmin
 
                     $updateFlag = true;
 
-                    @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
+                    @unlink(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $item);
 
                     $this->data[$row] = 'NULL';
 
@@ -238,7 +238,7 @@ class DeleteController extends BaseAdmin
 
         }
 
-        \AppH::redirect();
+        \WqH::redirect();
 
     }
 

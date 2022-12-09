@@ -1,6 +1,6 @@
 <?php
 
-namespace core\system;
+namespace webQSystem;
 
 class ErrorController extends Controller
 {

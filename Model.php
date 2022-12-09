@@ -1,6 +1,6 @@
 <?php
 
-namespace core\models;
+namespace webQModels;
 
 abstract class Model
 {
@@ -16,11 +16,11 @@ abstract class Model
 
         if(!$this->connected){
 
-            $this->pref = \App::DB('prefix') ?: '';
+            $this->pref = \Wq::DB('prefix') ?: '';
 
             try{
 
-                $this->db = new \PDO('mysql:host=' . \App::DB('host') . ';dbname=' . \App::DB('dbName'), \App::DB('user'), \App::DB('password'));
+                $this->db = new \PDO('mysql:host=' . \Wq::DB('host') . ';dbname=' . \Wq::DB('dbName'), \Wq::DB('user'), \Wq::DB('password'));
 
             }catch (\PDOException $e){
 

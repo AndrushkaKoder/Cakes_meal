@@ -1,10 +1,10 @@
 <?php
 
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
-use core\system\Controller;
-use core\traites\Singleton;
+use webQSystem\Controller;
+use webQTraits\Singleton;
 
 class Expansion extends Controller
 {

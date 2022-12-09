@@ -1,44 +1,18 @@
 <?php
 
-use core\exceptions\RouteException;
-
-class AppH
+class WqH
 {
 
-    use \core\helpers\traites\ClearDataHelper;
-    use \core\helpers\traites\RecursiveHelper;
-    use \core\helpers\traites\ParentsChildrenHelper;
-    use \core\helpers\traites\DateFormatHelper;
-    use \core\helpers\traites\TextModify;
+    use webQHelpers\traits\ClearDataHelper;
+    use webQHelpers\traits\RecursiveHelper;
+    use webQHelpers\traits\ParentsChildrenHelper;
+    use webQHelpers\traits\DateFormatHelper;
+    use webQHelpers\traits\TextModify;
 
 
     public static function scanDir(string $path, callable $callback, $sort = false){
 
-        if(file_exists($path)){
-
-            $list = scandir($path); //сюда возвращается список директорий и файлов
-
-            if($sort){
-
-                sort($list);
-
-            }
-
-            foreach ($list as $file){
-
-                if($file !== '.' && $file !== '..'){
-
-                   if(($res = $callback($file, $path)) !== null){
-
-                       return $res;
-
-                   }  // если у файла нет . .. то вызывваем колбэк
-
-                }
-
-            }
-
-        }
+        return \Wq::scanDir($path, $callback, $sort);
 
     }
 
@@ -104,7 +78,7 @@ class AppH
         }
 
         if($http) $redirect = $http;
-        else $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : \App::PATH();
+        else $redirect = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : \Wq::PATH();
 
         header("Location: $redirect");
 

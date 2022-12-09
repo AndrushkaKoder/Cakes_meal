@@ -6,10 +6,10 @@
  * Time: 15:03
  */
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
-use core\exceptions\RouteException;
-use settings\Settings;
+use webQExceptions\RouteException;
+use webQAdminSettings\Settings;
 
 class EditController extends BaseAdmin
 {
@@ -47,7 +47,7 @@ class EditController extends BaseAdmin
      */
     protected function createData(){
 
-        $id = \AppH::clearStr($this->parameters[$this->table]);
+        $id = \WqH::clearStr($this->parameters[$this->table]);
 
         if(!$id) throw new RouteException('Не корректный идентификатор - ' . $id .
                                                     'при редактировании - ' . $this->table);

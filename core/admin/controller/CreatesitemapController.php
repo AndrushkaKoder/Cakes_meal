@@ -1,5 +1,5 @@
 <?php
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
 use core\base\exceptions\RouteException;
 

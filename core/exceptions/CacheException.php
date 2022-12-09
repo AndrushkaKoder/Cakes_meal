@@ -1,6 +1,6 @@
 <?php
 
-namespace core\exceptions;
+namespace webQExceptions;
 
 class CacheException extends \Exception
 {

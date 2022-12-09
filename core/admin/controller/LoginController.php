@@ -1,11 +1,11 @@
 <?php
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
-use core\models\Crypt;
-use core\models\UserModel;
-use core\system\Controller;
-use core\system\Logger;
+use webQModels\Crypt;
+use webQModels\UserModel;
+use webQSystem\Controller;
+use webQSystem\Logger;
 
 class LoginController extends Controller {
 
@@ -27,7 +27,7 @@ class LoginController extends Controller {
 
             UserModel::instance()->logout();
 
-            \AppH::redirect(\App::PATH());
+            \WqH::redirect(\Wq::PATH());
 
         }
 
@@ -35,7 +35,7 @@ class LoginController extends Controller {
 
         $this->model->setAdmin();
 
-        if(\AppH::isPost()){
+        if(\WqH::isPost()){
 
             if($this->checkToken){
 
@@ -52,7 +52,7 @@ class LoginController extends Controller {
 
             $time_clean = new \DateTime();
 
-            $time_clean->modify("-" . \App::config()->WEB('admin', 'block_time') . " hour");
+            $time_clean->modify("-" . \Wq::config()->WEB('admin', 'block_time') . " hour");
 
             $this->model->delete($this->model->getBlockedTable(), [
                 'where' => ['<time' => $time_clean->format("Y-m-d H:i:s")],
@@ -65,16 +65,16 @@ class LoginController extends Controller {
                 'single' => true
             ]);
 
-            $trying = !empty($trying) ? \AppH::clearNum($trying['trying']) : 0;
+            $trying = !empty($trying) ? \WqH::clearNum($trying['trying']) : 0;
 
             $success = 0;
 
             if($_POST['login'] && $_POST['password']
-                && $trying < \AppH::clearNum(\App::config()->WEB('admin', 'logging_errors_count'))){
+                && $trying < \WqH::clearNum(\Wq::config()->WEB('admin', 'logging_errors_count'))){
 
-                $login = \AppH::clearStr($_POST['login']);
+                $login = \WqH::clearStr($_POST['login']);
 
-                $password = Crypt::pwd(\AppH::clearStr($_POST['password']));
+                $password = Crypt::pwd(\WqH::clearStr($_POST['password']));
 
                 $userData = $this->model->get($this->model->getAdminTable(), [
                     'fields' => ['id', 'name'],
@@ -124,7 +124,7 @@ class LoginController extends Controller {
 
                 }
 
-            }elseif($trying >= \AppH::clearNum(\App::config()->WEB('admin', 'logging_errors_count'))){
+            }elseif($trying >= \WqH::clearNum(\Wq::config()->WEB('admin', 'logging_errors_count'))){
 
                 $this->model->logout();
 
@@ -143,11 +143,11 @@ class LoginController extends Controller {
 
             $path = null;
 
-            $success && $path = \AppH::correctPath(\App::PATH(), \App::config()->WEB('admin', 'alias'));
+            $success && $path = \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('admin', 'alias'));
 
             if($this->redirect){
 
-                \AppH::redirect($path);
+                \WqH::redirect($path);
 
             }
 
@@ -160,7 +160,7 @@ class LoginController extends Controller {
     protected function outputData(){
 
         return $this->render('', [
-            'adminPath' => \App::config()->WEB('admin', 'alias')
+            'adminPath' => \Wq::config()->WEB('admin', 'alias')
         ]);
 
     }

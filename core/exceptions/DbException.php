@@ -1,8 +1,8 @@
 <?php
 
-namespace core\exceptions;
+namespace webQExceptions;
 
-use core\system\Logger;
+use webQSystem\Logger;
 
 class DbException extends BaseAppException
 {
@@ -17,9 +17,9 @@ class DbException extends BaseAppException
 
     public function showMessage(){
 
-        \AppH::set404();
+        \WqH::set404();
 
-        return new \core\system\ErrorController($this->message);
+        return new \webQSystem\ErrorController($this->message);
 
     }
 

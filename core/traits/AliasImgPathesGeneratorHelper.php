@@ -1,8 +1,8 @@
 <?php
 
-namespace core\traites;
+namespace webQTraits;
 
-use core\system\Router;
+use webQSystem\Router;
 
 trait AliasImgPathesGeneratorHelper
 {
@@ -63,27 +63,27 @@ trait AliasImgPathesGeneratorHelper
 
         }
 
-        if(!$alias || $alias === '/') return \App::PATH() . $str;
+        if(!$alias || $alias === '/') return \Wq::PATH() . $str;
 
         if(preg_match('/^https?:\/\//', $alias))
             return $alias . $str;
 
-        if(Router::getMode() === 'admin' && !empty(\App::config()->WEB('alias')) &&
-            stripos($alias, \App::config()->WEB('alias')) !== 0){
+        if(Router::getMode() === 'admin' && !empty(\Wq::config()->WEB('alias')) &&
+            stripos($alias, \Wq::config()->WEB('alias')) !== 0){
 
-            $alias = \App::config()->WEB('alias') . '/' . $alias;
+            $alias = \Wq::config()->WEB('alias') . '/' . $alias;
 
         }
 
-        return preg_replace('/\/{2,}/', '/', \App::PATH() . $alias . \App::config()->WEB('end_slash') . $str);
+        return preg_replace('/\/{2,}/', '/', \Wq::PATH() . $alias . \Wq::config()->WEB('end_slash') . $str);
 
     }
 
     protected function img($img = '', $tag = false, $set = []){
 
-        if(!$img && is_dir(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')). 'default_images')){
+        if(!$img && is_dir(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')). 'default_images')){
 
-            $dir = scandir(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')). 'default_images');
+            $dir = scandir(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')). 'default_images');
 
             $img = preg_grep('/'.$this->getController().'\./i', $dir) ?: preg_grep('/default\./i', $dir);
 
@@ -93,7 +93,7 @@ trait AliasImgPathesGeneratorHelper
 
         if($img){
 
-            $path = \AppH::correctPath(\App::PATH(), \App::config()->WEB('upload_dir')) . $img;
+            $path = \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('upload_dir')) . $img;
 
             $class = isset($set['class']) && $set['class'] ?
                 ' class="' . (is_array($set['class']) ? implode(' ', $set['class']) : $set['class']) . '" ' : '';

@@ -1,9 +1,9 @@
 <?php
 
-namespace core\traites;
+namespace webQTraits;
 
-use core\models\UserModel;
-use core\system\Router;
+use webQModels\UserModel;
+use webQSystem\Router;
 
 trait BaseMethods
 {
@@ -12,7 +12,7 @@ trait BaseMethods
 
     protected function addSessionData(){
 
-        if(\AppH::isPost()){
+        if(\WqH::isPost()){
 
             foreach ($_POST as $key => $value){
 
@@ -20,7 +20,7 @@ trait BaseMethods
 
             }
 
-            \AppH::redirect();
+            \WqH::redirect();
 
         }
 
@@ -47,7 +47,7 @@ trait BaseMethods
 
         if(is_dir(realpath(__DIR__ . '/../') . '/messages')){
 
-            \AppH::scanDir(realpath(__DIR__ . '/../') . '/messages', function ($file){
+            \WqH::scanDir(realpath(__DIR__ . '/../') . '/messages', function ($file){
 
                 $this->messages = array_merge($this->messages, include realpath(__DIR__ . '/../') . '/messages/' . $file);
 
@@ -85,10 +85,10 @@ trait BaseMethods
         if(!($this->userData = UserModel::instance()->checkUser(false, $type))){
 
             if($type &&
-                (empty(\App::config()->WEB('admin', 'unblocked_access')) ||
-                    !in_array($this->getController(), (array)\App::config()->WEB('admin', 'unblocked_access')))){
+                (empty(\Wq::config()->WEB('admin', 'unblocked_access')) ||
+                    !in_array($this->getController(), (array)\Wq::config()->WEB('admin', 'unblocked_access')))){
 
-                $type && \AppH::redirect(\App::PATH());
+                $type && \WqH::redirect(\Wq::PATH());
 
             }
 

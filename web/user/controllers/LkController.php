@@ -1,6 +1,6 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
 class LkController extends BaseUser
 {
@@ -8,7 +8,7 @@ class LkController extends BaseUser
     {
 
         if (!$this->userData) {
-            \AppH::redirect(\App::PATH());
+            \WqH::redirect(\Wq::PATH());
         }
 
 
@@ -18,7 +18,7 @@ class LkController extends BaseUser
 
             if (!$freeAccess || empty($this->parameters['alias']) || !in_array($this->parameters['alias'], $freeAccess)) {
 
-                \AppH::redirect($this->alias());
+                \WqH::redirect($this->alias());
 
             }
 
@@ -66,7 +66,7 @@ class LkController extends BaseUser
 
                 if (!empty($this->parameters['current-order'])) {
 
-                    $id = \AppH::clearNum($this->parameters['current-order']);
+                    $id = \WqH::clearNum($this->parameters['current-order']);
 
                     $currentOrder = $orders[$id] ?? null;
 

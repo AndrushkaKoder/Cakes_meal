@@ -1,10 +1,10 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
-use core\system\Controller;
-use core\system\Logger;
-use web\user\models\Model;
+use webQSystem\Controller;
+use webQSystem\Logger;
+use webQApplication\models\Model;
 
 class IndexController extends BaseUser //будет наследоваться от другого класса. Пока. А тот класс будет extend от Controller
 {

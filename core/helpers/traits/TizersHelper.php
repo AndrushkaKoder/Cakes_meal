@@ -1,6 +1,6 @@
 <?php
 
-namespace core\helpers\traites;
+namespace webQHelpers\traits;
 
 trait TizersHelper
 {

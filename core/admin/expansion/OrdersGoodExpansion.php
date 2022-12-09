@@ -1,7 +1,7 @@
 <?php
 
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
 
 class OrdersGoodExpansion extends Expansion
@@ -12,7 +12,7 @@ class OrdersGoodExpansion extends Expansion
     {
         parent::expansion($args, $obj);
 
-        if(\AppH::isPost()){
+        if(\WqH::isPost()){
 
             $orders_id = $this->model->get('orders', [
                 'fields' => ['id'],
@@ -20,7 +20,7 @@ class OrdersGoodExpansion extends Expansion
             ])[0]['id'];
 
             if($orders_id)
-                \AppH::redirect($this->alias([$this->adminPath => 'edit', 'orders' => $orders_id]));
+                \WqH::redirect($this->alias([$this->adminPath => 'edit', 'orders' => $orders_id]));
 
         }
 

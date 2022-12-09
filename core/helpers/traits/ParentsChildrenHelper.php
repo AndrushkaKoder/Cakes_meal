@@ -1,13 +1,13 @@
 <?php
 
-namespace core\helpers\traites;
+namespace webQHelpers\traits;
 
 trait ParentsChildrenHelper
 {
 
     public static function getChildren($category, $table, $idRow = null, $checkVisible = false){
 
-        $columns = \App::model()->showColumns($table);
+        $columns = \Wq::model()->showColumns($table);
 
         !$idRow && $idRow = $columns['id_row'];
 
@@ -20,7 +20,7 @@ trait ParentsChildrenHelper
 
         if(empty($categoriesDb[$table])){
 
-            $categoriesDb[$table] = \App::model()->get($table, [
+            $categoriesDb[$table] = \Wq::model()->get($table, [
                 'where' => $checkVisible && !empty($columns['visible']) ? ['visible' => 1] : [],
                 'order' => 'parent_id',
                 'order_direction' => 'DESC'
@@ -68,7 +68,7 @@ trait ParentsChildrenHelper
 
         if(!is_array($ids)) $ids = (array)$ids;
 
-        $columns = \App::model()->showColumns($table);
+        $columns = \Wq::model()->showColumns($table);
 
         if(empty($columns[$parentRow]))
             return $ids;
@@ -77,7 +77,7 @@ trait ParentsChildrenHelper
 
         while ($whereIds){
 
-            $data =  \App::model()->get($table, [
+            $data =  \Wq::model()->get($table, [
                 'fields' => [$parentRow],
                 'where' => [$columns['id_row'] => $whereIds],
                 'no_check_credentials' => true,

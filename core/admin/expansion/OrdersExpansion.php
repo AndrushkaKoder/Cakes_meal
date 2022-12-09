@@ -1,9 +1,9 @@
 <?php
 
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
-use settings\Settings;
+use webQAdminSettings\Settings;
 
 class OrdersExpansion extends Expansion
 {
@@ -36,7 +36,7 @@ class OrdersExpansion extends Expansion
 
             $this->translate['address'] = ['Адрес доставки'];
 
-            if(\AppH::isPost()){
+            if(\WqH::isPost()){
 
                 $this->editOrderData($args);
 

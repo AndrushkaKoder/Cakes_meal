@@ -1,6 +1,6 @@
 <?php
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
 class FiledownloadController extends BaseAdmin {
 
@@ -14,7 +14,7 @@ class FiledownloadController extends BaseAdmin {
 
         parent::inputData();
 
-        include_once (\App::FULL_PATH() .'libraries/PHPExcel.php');
+        include_once (\Wq::FULL_PATH() .'libraries/PHPExcel.php');
         $this->phpExel = new \PHPExcel();
 
         /*Установка активного листа*/

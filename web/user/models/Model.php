@@ -1,12 +1,10 @@
 <?php
 
-namespace web\user\models;
+namespace webQApplication\models;
 
-use core\exceptions\DbException;
-use core\traites\Singleton;
-use web\user\helpers\CatalogModelHelper;
+use webQApplication\helpers\CatalogModelHelper;
 
-class Model extends \core\models\BaseModel
+class Model extends \webQModels\BaseModel
 {
     use CatalogModelHelper;
 

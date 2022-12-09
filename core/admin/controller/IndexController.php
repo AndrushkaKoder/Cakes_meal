@@ -1,9 +1,9 @@
 <?php
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
 
-use core\admin\model\Model;
+use webQAdmin\model\Model;
 use core\base\settings\Settings;
 
 use libraries\FileEdit;
@@ -34,9 +34,9 @@ class IndexController extends BaseAdmin
 //            }
 //        }
 
-        $redirect = $this->alias([\App::config()->WEB('alias'), 'show']);
+        $redirect = $this->alias([\Wq::config()->WEB('alias'), 'show']);
 
-        \AppH::redirect($redirect);
+        \WqH::redirect($redirect);
 
     }
 

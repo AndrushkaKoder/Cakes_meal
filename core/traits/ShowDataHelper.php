@@ -1,17 +1,17 @@
 <?php
 
-namespace core\traites;
+namespace webQTraits;
 
 trait ShowDataHelper
 {
 
     protected function showCommonScriptsStyles($type = 'js'){
 
-        if(!empty(\App::config()->WEB('common', $type))){
+        if(!empty(\Wq::config()->WEB('common', $type))){
 
-            $path = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('common', $type));
+            $path = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('common', $type));
 
-            $templatePath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('common', $type));
+            $templatePath = \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('common', $type));
 
             $this->showScriptsStyles($path, 'js', $templatePath);
 
@@ -35,9 +35,9 @@ trait ShowDataHelper
 
         if($template){
 
-            !$templatePath && $templatePath = \AppH::correctPath(\App::PATH(), \App::config()->WEB('views'), \App::config()->WEB($type), $innerDirectory);
+            !$templatePath && $templatePath = \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('views'), \Wq::config()->WEB($type), $innerDirectory);
 
-            \AppH::scanDir($path, function ($file) use ($path, $template, $templatePath, $type){
+            \WqH::scanDir($path, function ($file) use ($path, $template, $templatePath, $type){
 
                 if(is_dir($path . $file)){
 
@@ -106,7 +106,7 @@ trait ShowDataHelper
 
         $backPageStr = !empty($pages['back']) ? ($pages['back'] == 1 ? $basePageStr : $str . $pages['back']) : '';
 
-        $template = $this->render((\AppH::correctPath($this->getViewsPath(), \App::config()->WEB('common')) . 'pagination'));
+        $template = $this->render((\WqH::correctPath($this->getViewsPath(), \Wq::config()->WEB('common')) . 'pagination'));
 
         if($template){
 

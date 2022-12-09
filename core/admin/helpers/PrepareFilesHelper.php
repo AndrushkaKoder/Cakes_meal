@@ -1,6 +1,6 @@
 <?php
 
-namespace core\admin\helpers;
+namespace webQAdmin\helpers;
 
 use libraries\FileEdit;
 
@@ -45,7 +45,7 @@ trait PrepareFilesHelper
 
                         foreach ($item as $k => $v){
 
-                            @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $v);
+                            @unlink(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $v);
 
                         }
 
@@ -84,7 +84,7 @@ trait PrepareFilesHelper
 
         if(!empty($_SESSION['crop_image'])){
             foreach ($_SESSION['crop_image'] as $key => $item) {
-                $item['img'] = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $this->fileArray[$key];
+                $item['img'] = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $this->fileArray[$key];
                 $this->fileArray['thumbnails'][] = $fileEdit->createJsThumbnail($item, $item['thumb_name']);
             }
         }
@@ -143,7 +143,7 @@ trait PrepareFilesHelper
 
                         }elseif(!empty($this->fileArray[$key])){
 
-                            @unlink(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $item);
+                            @unlink(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $item);
 
                         }
 
@@ -165,7 +165,7 @@ trait PrepareFilesHelper
 
             if(!is_numeric($file)){
 
-                $file = substr($file, strlen(\AppH::correctPath(\App::PATH(), \App::config()->WEB('upload_dir'))));
+                $file = substr($file, strlen(\WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('upload_dir'))));
 
             }else{
 
@@ -222,7 +222,7 @@ trait PrepareFilesHelper
 
                                             if($rowKey !== false && !empty($rowData[$rowKey]) && is_string($rowData[$rowKey]))
 
-                                            $fullFileName = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $rowData[$rowKey];
+                                            $fullFileName = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $rowData[$rowKey];
 
                                         }
 
@@ -232,11 +232,11 @@ trait PrepareFilesHelper
 
                                         if(is_array($rowData[$key]) && !empty($rowData[$key]['file'])){
 
-                                            $fullFileName = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $rowData[$key]['file'];
+                                            $fullFileName = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $rowData[$key]['file'];
 
                                         }elseif(!is_string($rowData[$key])){
 
-                                            $fullFileName = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $rowData[$key];
+                                            $fullFileName = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $rowData[$key];
 
                                         }
 
@@ -274,7 +274,7 @@ trait PrepareFilesHelper
 
                             $fileData = base64_decode($fileData);
 
-                            $fullFileName = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')) . $data[$rowName];
+                            $fullFileName = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $data[$rowName];
 
                             if(file_exists($fullFileName)){
 

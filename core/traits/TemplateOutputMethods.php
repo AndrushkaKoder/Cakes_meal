@@ -1,6 +1,6 @@
 <?php
 
-namespace core\traites;
+namespace webQTraits;
 
 trait TemplateOutputMethods
 {
@@ -15,7 +15,7 @@ trait TemplateOutputMethods
 
             $translateData = $alias;
 
-            $alias = \AppH::translit($alias);
+            $alias = \WqH::translit($alias);
 
         }else{
 

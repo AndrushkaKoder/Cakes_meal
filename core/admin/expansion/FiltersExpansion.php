@@ -1,10 +1,10 @@
 <?php
 
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
 
-use core\traites\Singleton;
+use webQTraits\Singleton;
 
 class FiltersExpansion extends Expansion
 {

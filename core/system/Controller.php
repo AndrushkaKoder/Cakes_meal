@@ -1,11 +1,11 @@
 <?php
 
-namespace core\system; // ограничение видимости класса
+namespace webQSystem; // ограничение видимости класса
 
-use core\exceptions\RouteException;
-use core\traites\AliasImgPathesGeneratorHelper;
-use core\traites\BaseMethods;
-use core\traites\ShowDataHelper;
+use webQExceptions\RouteException;
+use webQTraits\AliasImgPathesGeneratorHelper;
+use webQTraits\BaseMethods;
+use webQTraits\ShowDataHelper;
 
 abstract class Controller //абстрактный класс нужен только для наследования от него. Нельзя создать экземпляр абстрактного класса
 {
@@ -31,8 +31,8 @@ abstract class Controller //абстрактный класс нужен тол�
         // в $method формируется строка 'actionInput'
         $this->parameters = $arguments; // принимаем
 
-        if(!empty(\App::config()->WEB('default', Router::getMode(), 'commonMethod')) &&
-            method_exists($this, \App::config()->WEB('default', Router::getMode(), 'commonMethod')) && empty($this->skipCommonData)){
+        if(!empty(\Wq::config()->WEB('default', Router::getMode(), 'commonMethod')) &&
+            method_exists($this, \Wq::config()->WEB('default', Router::getMode(), 'commonMethod')) && empty($this->skipCommonData)){
 
             $this->commonData();
 
@@ -80,7 +80,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
     protected function renderPage(?array $data) : void{  //в data ложатся комментарии со страницы
 
-        $layOutPath = \App::config()->WEB('layout', Router::getMode(), 'template') ?: \App::config()->WEB('layout', 'template'); //шаблон, лежащий в web.php
+        $layOutPath = \Wq::config()->WEB('layout', Router::getMode(), 'template') ?: \Wq::config()->WEB('layout', 'template'); //шаблон, лежащий в web.php
 
         if((!$layOutPath || $this->skipRenderingTemplates)){
 
@@ -134,7 +134,7 @@ abstract class Controller //абстрактный класс нужен тол�
 
     private function searchTemplateFile(string $file) : ?string{ //Ожидаем аргумент string, а возвращаем string || null
 
-        $common = \App::config()->WEB('common');
+        $common = \Wq::config()->WEB('common');
 
         if(is_array($common)){
 
@@ -188,9 +188,9 @@ abstract class Controller //абстрактный класс нужен тол�
 
     protected function getTemplateImg() : string{
 
-        if(!empty(\App::config()->WEB('img'))){
+        if(!empty(\Wq::config()->WEB('img'))){
 
-            return \AppH::correctPath(\App::PATH(), \App::config()->WEB('views'), trim(\App::config()->WEB('img')));
+            return \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('views'), trim(\Wq::config()->WEB('img')));
 
         }
 
@@ -202,9 +202,9 @@ abstract class Controller //абстрактный класс нужен тол�
 
         $this->showCommonScriptsStyles('css');
 
-        if(!empty(\App::config()->WEB('css'))){
+        if(!empty(\Wq::config()->WEB('css'))){
 
-            $path = \AppH::correctPath($this->getViewsPath(), trim(\App::config()->WEB('css')));
+            $path = \WqH::correctPath($this->getViewsPath(), trim(\Wq::config()->WEB('css')));
 
             $this->showScriptsStyles($path);
 
@@ -216,9 +216,9 @@ abstract class Controller //абстрактный класс нужен тол�
 
         $this->showCommonScriptsStyles('js');
 
-        if(!empty(\App::config()->WEB('js'))){
+        if(!empty(\Wq::config()->WEB('js'))){
 
-            $path = \AppH::correctPath($this->getViewsPath(), trim(\App::config()->WEB('js')));
+            $path = \WqH::correctPath($this->getViewsPath(), trim(\Wq::config()->WEB('js')));
 
             $this->showScriptsStyles($path, 'js');
 
@@ -236,9 +236,9 @@ abstract class Controller //абстрактный класс нужен тол�
 
         }
 
-        $property = \App::config()->WEB('views');
+        $property = \Wq::config()->WEB('views');
 
-        $property && $viewsPath = \AppH::correctPath(\App::FULL_PATH(), $property);
+        $property && $viewsPath = \WqH::correctPath(\Wq::FULL_PATH(), $property);
 
         return $viewsPath;
 

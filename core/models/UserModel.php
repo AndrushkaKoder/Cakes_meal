@@ -1,10 +1,10 @@
 <?php
 
-namespace core\models;
+namespace webQModels;
 
-use core\exceptions\AuthException;
-use core\system\Logger;
-use core\traites\Singleton;
+use webQExceptions\AuthException;
+use webQSystem\Logger;
+use webQTraits\Singleton;
 
 class UserModel extends BaseModel
 {
@@ -138,7 +138,7 @@ class UserModel extends BaseModel
 
         if($cookieString){
 
-            setcookie($this->cookieName, $cookieString, time() + 60*60*24*365*10, \App::PATH());
+            setcookie($this->cookieName, $cookieString, time() + 60*60*24*365*10, \Wq::PATH());
 
             return true;
 
@@ -156,7 +156,7 @@ class UserModel extends BaseModel
 
             $data['domain'] = $_SERVER['HTTP_HOST'];
 
-            $data['version'] = \App::config()->COOKIE('version');
+            $data['version'] = \Wq::config()->COOKIE('version');
 
             $data['cookieTime'] = date('Y-m-d H:i:s');
 
@@ -203,9 +203,9 @@ class UserModel extends BaseModel
 
     private function validate($data){
 
-        if(!empty(\App::config()->COOKIE('version'))){
+        if(!empty(\Wq::config()->COOKIE('version'))){
 
-            if($data['version'] !== \App::config()->COOKIE('version')){
+            if($data['version'] !== \Wq::config()->COOKIE('version')){
 
                 $this->logout();
                 throw new AuthException('Некорректная версия cookie');
@@ -214,9 +214,9 @@ class UserModel extends BaseModel
 
         }
 
-        if(!empty(\App::config()->COOKIE('time'))){
+        if(!empty(\Wq::config()->COOKIE('time'))){
 
-            if((new \DateTime()) > (new \DateTime($data['cookieTime']))->modify(\App::config()->COOKIE('time') . ' minutes')){
+            if((new \DateTime()) > (new \DateTime($data['cookieTime']))->modify(\Wq::config()->COOKIE('time') . ' minutes')){
 
                 throw new AuthException('Превышено время бездействия пользователя');
 
@@ -234,7 +234,7 @@ class UserModel extends BaseModel
 
     public function logout(){
 
-        setcookie($this->cookieName, '', 1, \App::PATH());
+        setcookie($this->cookieName, '', 1, \Wq::PATH());
 
     }
 

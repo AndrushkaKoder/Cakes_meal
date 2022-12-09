@@ -6,7 +6,7 @@
  * Time: 13:13
  */
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
 class SettingsExpansion
 {

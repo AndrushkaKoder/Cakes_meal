@@ -35,7 +35,7 @@
 
                 $fileName = '<a href="' . $this->img($this->data[$row]) . '">' . $fileName . '</a>';
 
-                $info = mime_content_type(\AppH::correctPathRtrim(\App::FULL_PATH(), \App::config()->WEB('upload_dir'), $this->data[$row]));
+                $info = mime_content_type(\WqH::correctPathRtrim(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir'), $this->data[$row]));
 
                 if($info){
 

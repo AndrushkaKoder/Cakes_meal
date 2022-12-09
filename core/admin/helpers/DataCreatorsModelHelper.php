@@ -1,9 +1,9 @@
 <?php
 
-namespace core\admin\helpers;
+namespace webQAdmin\helpers;
 
-use core\exceptions\RouteException;
-use settings\Settings;
+use webQExceptions\RouteException;
+use webQAdminSettings\Settings;
 
 trait DataCreatorsModelHelper
 {
@@ -181,7 +181,7 @@ trait DataCreatorsModelHelper
 
                         if($resIds){
 
-                            $ids = \AppH::getParents($resIds, $foreignTable);
+                            $ids = \WqH::getParents($resIds, $foreignTable);
 
                         }
 
@@ -412,7 +412,7 @@ trait DataCreatorsModelHelper
 
                     if(!empty($columns['parent_id']) && (empty($foreign) || $foreign[0]['REFERENCED_TABLE_NAME'] === $table)){
 
-                        $ids = \AppH::getParents($ids, $table);
+                        $ids = \WqH::getParents($ids, $table);
 
                         if(isset($tablesUserRootLevel[$table]) && ($rootIds = $this->getRootLevelIds($table, $tablesUserRootLevel[$table]))){
 
@@ -515,7 +515,7 @@ trait DataCreatorsModelHelper
 
             }
 
-            $data = \AppH::recursiveArr($data, 1);
+            $data = \WqH::recursiveArr($data, 1);
 
             foreach ($data as $item){
 

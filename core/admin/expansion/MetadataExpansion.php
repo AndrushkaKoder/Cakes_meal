@@ -6,9 +6,9 @@
  * Time: 13:13
  */
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
-use settings\Settings;
+use webQAdminSettings\Settings;
 
 class MetadataExpansion extends Expansion
 {
@@ -85,9 +85,9 @@ class MetadataExpansion extends Expansion
                     ]);
 
                     $redirect = preg_match('/\/metadata(\/|$)/', $_SERVER['HTTP_REFERER']) ? null :
-                        \App::PATH() . Settings::get('routes')['admin']['alias'] . '/show/metadata';
+                        \Wq::PATH() . Settings::get('routes')['admin']['alias'] . '/show/metadata';
 
-                    \AppH::redirect($redirect);
+                    \WqH::redirect($redirect);
 
                 }
 

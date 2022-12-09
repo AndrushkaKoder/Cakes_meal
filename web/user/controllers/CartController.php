@@ -1,9 +1,9 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
 
-use web\user\models\Model;
+use webQApplication\models\Model;
 
 class CartController extends BaseUser
 {
@@ -30,7 +30,7 @@ class CartController extends BaseUser
 
                         $this->clearCart();
 
-                        \AppH::redirect($this->alias('cart'));
+                        \WqH::redirect($this->alias('cart'));
 
                     }
 
@@ -80,7 +80,7 @@ class CartController extends BaseUser
 
         }
 
-        if(\AppH::isPost() && !empty($this->parameters[0]) && $this->parameters[0] === 'order'){
+        if(\WqH::isPost() && !empty($this->parameters[0]) && $this->parameters[0] === 'order'){
 
             (new OrderController())->order($data);
 
@@ -108,16 +108,16 @@ class CartController extends BaseUser
 
         $replaceFields = ['qty', 'price', 'old_price', 'total_sum', 'total_old_sum'];
 
-        $m = \App::model();
-        foreach ($this->cart[\App::model()->goodsTable] as $item){
+        $m = \Wq::model();
+        foreach ($this->cart[\Wq::model()->goodsTable] as $item){
 
             $offers = [];
 
-            if(!empty(\App::model()->offersTable) && !empty($item[\App::model()->offersTable])){
+            if(!empty(\Wq::model()->offersTable) && !empty($item[\Wq::model()->offersTable])){
 
-                $offers = $item[\App::model()->offersTable];
+                $offers = $item[\Wq::model()->offersTable];
 
-                unset($item[\App::model()->offersTable]);
+                unset($item[\Wq::model()->offersTable]);
 
             }
 
@@ -133,7 +133,7 @@ class CartController extends BaseUser
 
                     $element = $item;
 
-                    $element[\App::model()->offersTable] = $value;
+                    $element[\Wq::model()->offersTable] = $value;
 
                     if(!empty($replaceFields)){
 

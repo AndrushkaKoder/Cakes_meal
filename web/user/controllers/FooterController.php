@@ -1,10 +1,10 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
-use web\user\models\Model;
+use webQApplication\models\Model;
 
-class FooterController extends \core\system\Controller
+class FooterController extends \webQSystem\Controller
 {
 
     protected function actionInput(){

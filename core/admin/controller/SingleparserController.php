@@ -6,7 +6,7 @@
  * Time: 15:03
  */
 
-namespace core\admin\controller;
+namespace webQAdmin\controller;
 
 
 use core\base\settings\Settings;

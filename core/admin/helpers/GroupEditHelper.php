@@ -1,8 +1,8 @@
 <?php
 
-namespace core\admin\helpers;
+namespace webQAdmin\helpers;
 
-use settings\Settings;
+use webQAdminSettings\Settings;
 
 trait GroupEditHelper
 {

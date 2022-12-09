@@ -6,11 +6,11 @@
  * Time: 13:13
  */
 
-namespace core\admin\expansion;
+namespace webQAdmin\expansion;
 
-use core\exceptions\DbException;
-use core\models\UserModel;
-use settings\Settings;
+use webQExceptions\DbException;
+use webQModels\UserModel;
+use webQAdminSettings\Settings;
 
 class UsersExpansion extends Expansion
 {
@@ -28,13 +28,13 @@ class UsersExpansion extends Expansion
 
         }
 
-        if(\AppH::isPost()){
+        if(\WqH::isPost()){
 
             if($_POST['id'] == $this->userData['id'] && $_POST['password']){
 
                 UserModel::instance()->logout();
 
-                \AppH::redirect($this->alias([\App::PATH() => \App::config()->WEB('alias'), 'login']));
+                \WqH::redirect($this->alias([\Wq::PATH() => \Wq::config()->WEB('alias'), 'login']));
             }
 
         }

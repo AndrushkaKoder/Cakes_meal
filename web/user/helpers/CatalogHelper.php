@@ -1,6 +1,6 @@
 <?php
 
-namespace web\user\helpers;
+namespace webQApplication\helpers;
 
 trait CatalogHelper
 {
@@ -27,13 +27,13 @@ trait CatalogHelper
 
                     $itemArr = preg_split('/_value_/', $item, 2, PREG_SPLIT_NO_EMPTY);
 
-                    $_GET[$this->model->filtersTable][$key] = \AppH::clearNum($itemArr[0]);
+                    $_GET[$this->model->filtersTable][$key] = \WqH::clearNum($itemArr[0]);
 
                     $customValues[$_GET[$this->model->filtersTable][$key]][$itemArr[1]] = true;
 
                 }else{
 
-                    $_GET[$this->model->filtersTable][$key] = is_numeric($item) ? \AppH::clearNum($item) : \AppH::clearStr($item);
+                    $_GET[$this->model->filtersTable][$key] = is_numeric($item) ? \WqH::clearNum($item) : \WqH::clearStr($item);
 
                 }
 
@@ -149,7 +149,7 @@ trait CatalogHelper
 
         if(isset($_GET['min_price']) && isset($_GET['max_price'])){
 
-            $where['where']['><price'] = [\AppH::clearNum($_GET['min_price']), \AppH::clearNum($_GET['max_price'])];
+            $where['where']['><price'] = [\WqH::clearNum($_GET['min_price']), \WqH::clearNum($_GET['max_price'])];
 
         }
 
@@ -163,7 +163,7 @@ trait CatalogHelper
 
         if(empty($where['pagination'])){
 
-            $where['pagination'] = \AppH::clearNum($_GET['page'] ?? 1) ?? 1;
+            $where['pagination'] = \WqH::clearNum($_GET['page'] ?? 1) ?? 1;
 
         }
 

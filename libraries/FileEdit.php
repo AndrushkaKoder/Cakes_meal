@@ -3,7 +3,7 @@ namespace libraries;
 
 
 
-use settings\Settings;
+use webQAdminSettings\Settings;
 
 class FileEdit{
 
@@ -85,7 +85,7 @@ class FileEdit{
 
             }
 
-            return str_replace(\AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir')), '', $fileFullName);
+            return str_replace(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')), '', $fileFullName);
 
         }
 
@@ -241,11 +241,11 @@ class FileEdit{
     public function setDirectory($directory = ''){
 
         if(!$directory)
-            $this->directory = \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir'));
+            $this->directory = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir'));
         else
-            $this->directory = strpos($directory, \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir'))) !== false
+            $this->directory = strpos($directory, \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir'))) !== false
                 ? $directory
-                : \AppH::correctPath(\App::FULL_PATH(), \App::config()->WEB('upload_dir'), $directory);
+                : \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir'), $directory);
 
         if(!file_exists($this->directory))
             mkdir($this->directory, 0777, true);

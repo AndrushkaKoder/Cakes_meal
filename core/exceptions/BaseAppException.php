@@ -1,8 +1,8 @@
 <?php
 
-namespace core\exceptions;
+namespace webQExceptions;
 
-use core\system\Logger;
+use webQSystem\Logger;
 
 abstract class BaseAppException extends \Exception
 {

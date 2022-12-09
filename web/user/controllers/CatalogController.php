@@ -1,8 +1,8 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
-use core\exceptions\RouteException;
+use webQExceptions\RouteException;
 
 class CatalogController extends BaseUser
 {
@@ -18,7 +18,7 @@ class CatalogController extends BaseUser
 
 
         if(!empty($this->parameters['alias'])){
-            $where['alias'] = \AppH::clearStr($this->parameters['alias']);
+            $where['alias'] = \WqH::clearStr($this->parameters['alias']);
             $single = true;
         }
 

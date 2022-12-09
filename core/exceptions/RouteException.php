@@ -1,8 +1,8 @@
 <?php
 
-namespace core\exceptions;
+namespace webQExceptions;
 
-use core\system\Logger;
+use webQSystem\Logger;
 
 class RouteException extends BaseAppException
 {
@@ -10,7 +10,7 @@ class RouteException extends BaseAppException
     public function __construct($message = "", $code = 0)
     {
 
-        if(\AppH::isHtmlRequest()){
+        if(\WqH::isHtmlRequest()){
 
             parent::__construct($message, $code);
 
@@ -29,9 +29,9 @@ class RouteException extends BaseAppException
 
     public function showMessage(){
 
-        \AppH::set404();
+        \WqH::set404();
 
-        return new \core\system\ErrorController($this->message);
+        return new \webQSystem\ErrorController($this->message);
 
     }
 
