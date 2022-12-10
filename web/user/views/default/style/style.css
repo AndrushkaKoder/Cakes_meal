@@ -37,7 +37,13 @@ body{
     background-size: cover;
 }
 h1,h2,h3,h4,h5,h6{
-    font-family: 'Playfair Display', serif;
+    font-family: 'PlayfairDisplay', serif;
+    font-style: italic;
+    font-weight:600;
+}
+
+h2{
+    font-size: 35px;
 }
 a{
     text-decoration: none;
@@ -108,7 +114,7 @@ header.index{
 
 /*логотип*/
 .cakes_logo{
-    font-family: 'Ms Madi', cursive;
+    font-family: 'MsMadi', serif;
     font-size: 45px;
     font-weight: bold;
     color: var(--color1);
@@ -457,7 +463,7 @@ color: var(--color1);
 }
 .title_adv{
     padding: 40px 0;
-    font-size: 25px;
+    font-size: 30px;
     color: var(--color2);
 }
 

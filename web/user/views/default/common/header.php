@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Playfair+Display:ital,wght@1,500&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <?php $this->getStyles()?>
     <link rel="shortcut icon" href="/web/user/views/default/images/fav.png" type="image/x-icon">
