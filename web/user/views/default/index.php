@@ -45,7 +45,7 @@
                 </div>
 
 
-                <div class="row justify-content-evenly">
+                <div class="row justify-content-evenly overflow-hidden">
 
                     <?php foreach ($tizzers as $item):?>
                         <div class="col-lg-4 d-flex align-items-center flex-column text-center  wow bounceInLeft" data-wow-duration="1s"  data-wow-delay="1s">
