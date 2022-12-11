@@ -1,6 +1,6 @@
 <?php
 
-namespace web\user\helpers;
+namespace webQApplication\helpers;
 
 trait CatalogModelHelper
 {
@@ -341,9 +341,9 @@ trait CatalogModelHelper
 
                                 uasort($catalogFilters[$key]['values'], function($a, $b){
 
-                                    $a['name'] = \AppH::clearNum($a['name']);
+                                    $a['name'] = \WqH::clearNum($a['name']);
 
-                                    $b['name'] = \AppH::clearNum($b['name']);
+                                    $b['name'] = \WqH::clearNum($b['name']);
 
                                     return $a['name'] === $b['name'] ? 0 : ($a['name'] < $b['name'] ? -1 : 1);
 
@@ -443,9 +443,9 @@ trait CatalogModelHelper
 
                         uasort($goods[$key][$this->offersTable], function ($a, $b){
 
-                            $a['price'] = \AppH::clearNum($a['price']);
+                            $a['price'] = \WqH::clearNum($a['price']);
 
-                            $b['price'] = \AppH::clearNum($b['price']);
+                            $b['price'] = \WqH::clearNum($b['price']);
 
                             return $a['price'] === $b['price'] ? 0 : ($a['price'] < $b['price'] ? -1 : 1);
 

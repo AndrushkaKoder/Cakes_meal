@@ -1,40 +1,37 @@
 <?php
 
-namespace core\exceptions;
+namespace webQExceptions;
 
-use core\system\Logger;
+use webQSystem\Logger;
 
-class RouteException extends \Exception
+class RouteException extends BaseAppException
 {
-
-    protected $messages;
 
     public function __construct($message = "", $code = 0)
     {
-        parent::__construct($message, $code);
 
-        $this->messages = include __DIR__ . '/messages/messages.php';
+        if(\WqH::isHtmlRequest()){
 
-        $error = $this->getMessage() ?: $this->messages[$this->getCode()];
+            parent::__construct($message, $code);
 
-        $error .= "\r\n" . 'file ' . $this->getFile() . "\r\n" . 'In line ' . $this->getLine() . "\r\n";
+            $this->writeLog();
 
-        if($this->messages[$this->getCode()]){
+            if($this->messages[$this->getCode()]){
 
-            $this->message = $this->messages[$this->getCode()];
+                $this->message = $this->messages[$this->getCode()];
+
+            }
 
         }
 
-        Logger::instance()->writeLog($error);
 
     }
 
     public function showMessage(){
 
-        header("HTTP/1.1 404 Not Found", true, 404);
-        header ('Status: 404 Not Found');
+        \WqH::set404();
 
-        return new \core\system\ErrorController($this->message);
+        return new \webQSystem\ErrorController($this->message);
 
     }
 

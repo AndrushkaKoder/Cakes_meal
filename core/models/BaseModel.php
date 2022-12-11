@@ -1,9 +1,9 @@
 <?php
 
-namespace core\models;
+namespace webQModels;
 
-use core\exceptions\DbException;
-use core\traites\Singleton;
+use webQExceptions\DbException;
+use webQTraits\Singleton;
 
 abstract class BaseModel extends BaseModelMethods
 {
@@ -46,7 +46,7 @@ abstract class BaseModel extends BaseModelMethods
 
         !$reConnect && $this->setStorage();
 
-        $connectMethod = \App::config()->DB('driver').'Connection';
+        $connectMethod = \Wq::config()->DB('driver').'Connection';
 
         $this->db = DbConnection::$connectMethod();
 
@@ -69,7 +69,7 @@ abstract class BaseModel extends BaseModelMethods
     public function query($query, $crud = 'r', $return_id = false, ?array $parameters = [])
     {
 
-        $connectMethod = \App::config()->DB('driver').'Query';
+        $connectMethod = \Wq::config()->DB('driver').'Query';
 
         return  DbConnection::$connectMethod($query, $crud, $return_id, $parameters);
 
@@ -213,9 +213,9 @@ abstract class BaseModel extends BaseModelMethods
 
         if(isset($set['pagination']) && $set['pagination']){
 
-            $this->postNumber = isset($set['pagination']['qty']) ? (int)$set['pagination']['qty'] : \App::config()->PAGINATION('user', 'QTY');
+            $this->postNumber = isset($set['pagination']['qty']) ? (int)$set['pagination']['qty'] : \Wq::config()->PAGINATION('user', 'QTY');
 
-            $this->linkNumber = isset($set['pagination']['qty_links']) ? (int)$set['pagination']['qty_links'] : \App::config()->PAGINATION('user', 'QTY_LINKS');
+            $this->linkNumber = isset($set['pagination']['qty_links']) ? (int)$set['pagination']['qty_links'] : \Wq::config()->PAGINATION('user', 'QTY_LINKS');
 
             $this->page = !is_array($set['pagination']) ? (int)$set['pagination'] : (int)$set['pagination']['page'];
 
@@ -294,7 +294,7 @@ abstract class BaseModel extends BaseModelMethods
 
         if(!$this->union) return false;
 
-        $unionType = ' UNION ' . (isset($set['type']) ? strtoupper($set['type']) . ' ' : '');
+        $unionType = ' UNION ' . (isset($set['type']) ? strtoupper($set['type']) . ' BaseModel.php' : '');
 
         $maxCount = 0;
 
@@ -823,7 +823,7 @@ abstract class BaseModel extends BaseModelMethods
 
             foreach ($res as $item){
 
-                if(stripos($item, 'settings') !== false){
+                if(stripos($item, 'webQSettings') !== false){
 
                     $fields = $this->showColumns($item);
 
@@ -833,7 +833,7 @@ abstract class BaseModel extends BaseModelMethods
 
                     $fields_alias = false;
 
-                    if($item !== 'settings'){
+                    if($item !== 'webQSettings'){
 
                         $item .= ' ' . $item;
                         $fields_alias = true;
@@ -868,7 +868,7 @@ abstract class BaseModel extends BaseModelMethods
 
     public function showForeignKeys($table = false, $key = false){
 
-        $db = \App::config()->DB('dbName');
+        $db = \Wq::config()->DB('dbName');
 
         $where = $key ? "AND COLUMN_NAME = '$key' LIMIT 1" : '';
 

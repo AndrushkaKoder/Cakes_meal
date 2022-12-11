@@ -3,7 +3,10 @@
 return [
     'web' => [
         'path' => '',
-        'common' => 'common',
+        'common' => [
+           'directory' => 'common',
+            'js' => 'core/commonFrontEnd/js'
+        ],
         'css' => 'css',
         'img'=>'img',
         'js' => 'js',
@@ -14,9 +17,16 @@ return [
             'path' => 'settings'
         ],
         'admin' => [
+            'namespace' => 'webQAdmin\\controller',
             'alias' => 'admin',
+            'unblocked_access' => ['login'],
+            'logging_errors_count' => 3,
+            'block_time' => 3,
+            'views' => 'core/admin/view',
+            'img' => 'img'
         ],
         'user' => [
+            'namespace' => 'webQApplication\\controllers',
             'hrUrl' => true
         ],
         'default' => [
@@ -27,15 +37,18 @@ return [
             ],
             'admin' => [
                 'controller' => 'index',
-                'method' => 'inputData'
+                'method' => 'inputData',
+                'outputMethod' => 'outputData',
+                'commonMethod' => 'commonData',
             ]
-        ],
-        'controllersPath' => [
-            'user' => 'web/user/controllers',
-            'admin' => 'core/admin/controllers'
         ],
         'layout' => [
             'template' => '<header><template><footer>'
+        ],
+        'namespaces' => [
+            'webQ' => 'core',
+            'webQAdminSettings' => 'settings',
+            'webQApplication' => 'web/user'
         ]
 
     ],

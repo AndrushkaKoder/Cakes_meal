@@ -3,7 +3,7 @@
 define('VG_ACCESS', true);
 
 require_once realpath(__DIR__ . '/../../../') . '/config.php';
-require_once realpath(__DIR__ . '/../../../') . '/core/base/settings/internal_settings.php';
+require_once realpath(__DIR__ . '/../../../') . '/core/base/webQSettings/internal_settings.php';
 require_once realpath(__DIR__ . '/../../../') . '/libraries/functions.php';
 
 require_once realpath(__DIR__ . '/../../../') . '/vendor/autoload.php';

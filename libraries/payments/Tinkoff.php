@@ -17,7 +17,7 @@ class Tinkoff
 
         if(!empty($_GET['orderId'])){
 
-            $set = Model::instance()->get('settings', [
+            $set = Model::instance()->get('webQSettings', [
                 'order' => 'id',
                 'limit' => 1,
                 'single' => true
@@ -107,7 +107,7 @@ class Tinkoff
 
         if(!empty($order['orderId']) && !empty($order['Amount'])){
 
-            $settings = Model::instance()->get('settings', [
+            $settings = Model::instance()->get('webQSettings', [
                 'order' => 'id',
                 'limit' => 1,
                 'single' => true

@@ -1,14 +1,14 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
-use core\traites\TemplateOutputMethods;
-use web\user\helpers\CartHelper;
-use web\user\helpers\CatalogHelper;
-use web\user\helpers\ValidationHelper;
-use web\user\models\Model;
+use webQTraits\TemplateOutputMethods;
+use webQApplication\helpers\CartHelper;
+use webQApplication\helpers\CatalogHelper;
+use webQApplication\helpers\ValidationHelper;
+use webQApplication\models\Model;
 
-abstract class BaseUser extends \core\system\Controller
+abstract class BaseUser extends \webQSystem\Controller
 {
     use TemplateOutputMethods;
     use CatalogHelper;

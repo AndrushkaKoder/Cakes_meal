@@ -1,9 +1,9 @@
 <?php
 
-namespace core\system;
+namespace webQSystem;
 
-use core\exceptions\RouteException;
-use settings\Settings;
+use webQExceptions\RouteException;
+use webQAdminSettings\Settings;
 
 class Router
 {
@@ -35,7 +35,7 @@ class Router
 
         $route = self::createRoute();
 
-        if(\AppH::isAjax()){
+        if(\WqH::isAjax()){
 
             exit(Ajax::route());
 
@@ -49,85 +49,71 @@ class Router
 
         $adress_str = $_SERVER['REQUEST_URI'];
 
-        $path = substr($_SERVER['PHP_SELF'], 0, strpos($_SERVER['PHP_SELF'], 'index.php'));
+        $url = preg_split('/(\/)|(\?.*)/', $adress_str, 0, PREG_SPLIT_NO_EMPTY);
 
-        if($path === \App::PATH()){
+        if(!empty($url[0]) && $url[0] === \Wq::config()->WEB('admin', 'alias')){
 
-            $url = preg_split('/(\/)|(\?.*)/', $adress_str, 0, PREG_SPLIT_NO_EMPTY);
+            array_shift($url);
 
-            if(!empty($url[0]) && $url[0] === \App::config()->WEB('admin', 'alias')){
+        }else{
 
-                array_shift($url);
+            self::$mode = 'user';
 
-                self::$controller = \App::config()->WEB('controllersPath', 'admin');
+            if(!\WqH::isPost() && \WqH::isHtmlRequest()){
 
-                $hrUrl = \App::config()->WEB('admin', 'hrUrls');
+                $pattern = '';
 
-            }else{
+                $replacement = '';
 
-                self::$mode = 'user';
+                if(\Wq::config()->WEB('end_slash')){
 
-                if(!\AppH::isPost() && \AppH::isHtmlRequest()){
+                    if(!preg_match('/\/(\?|$)/', $adress_str)){
 
-                    $pattern = '';
+                        $pattern = '/(^.*?)(\?.*)?$/';
 
-                    $replacement = '';
-
-                    if(\App::config()->WEB('end_slash')){
-
-                        if(!preg_match('/\/(\?|$)/', $adress_str)){
-
-                            $pattern = '/(^.*?)(\?.*)?$/';
-
-                            $replacement = '$1/';
-
-                        }
-
-                    }else{
-
-                        if(preg_match('/\/(\?|$)/', $adress_str)){
-
-                            $pattern = '/(^.*?)\/(\?.*)?$/';
-
-                            $replacement = '$1';
-
-                        }
+                        $replacement = '$1/';
 
                     }
 
-                    if($pattern){
+                }else{
 
-                        $adress_str = preg_replace($pattern, $replacement, $adress_str);
+                    if(preg_match('/\/(\?|$)/', $adress_str)){
 
-                        if(!empty($_SERVER['QUERY_STRING'])){
+                        $pattern = '/(^.*?)\/(\?.*)?$/';
 
-                            $adress_str .= '?' . $_SERVER['QUERY_STRING'];
-
-                        }
-
-                        \AppH::redirect($adress_str, 301);
+                        $replacement = '$1';
 
                     }
 
                 }
 
-                $hrUrl = \App::config()->WEB('user', 'hrUrl');
+                if($pattern){
 
-                self::$controller = \App::config()->WEB('controllersPath', 'user');
+                    $adress_str = preg_replace($pattern, $replacement, $adress_str);
+
+                    if(!empty($_SERVER['QUERY_STRING'])){
+
+                        $adress_str .= '?' . $_SERVER['QUERY_STRING'];
+
+                    }
+
+                    \WqH::redirect($adress_str, 301);
+
+                }
 
             }
 
-            self::setData($url);
-
-            self::setParameters($url, $hrUrl);
-
-            return ['controller' => self::$controller, 'parameters' => self::$parameters];
-
-        }else{
-
-            throw new RouteException('Не корректная директория сайта', 1);
-
         }
+
+        $hrUrl = \Wq::config()->WEB('hrUrl');
+
+        self::$controller = preg_replace('/\/+/', '\\', \Wq::config()->WEB('namespace'));
+
+        self::setData($url);
+
+        self::setParameters($url, $hrUrl);
+
+        return ['controller' => self::$controller, 'parameters' => self::$parameters];
 
     }
 
@@ -145,7 +131,7 @@ class Router
 
             }else{
 
-                self::$parameters['alias'] = \AppH::clearStr($urlArr[1]);
+                self::$parameters['alias'] = \WqH::clearStr($urlArr[1]);
 
                 $i = 2;
 
@@ -174,13 +160,13 @@ class Router
 
     protected static function setData(&$arr){
 
-        $controllerName = \App::config()->WEB('default', self::$mode, 'controller');
+        $controllerName = \Wq::config()->WEB('default', self::$mode, 'controller');
 
         if(!empty($arr[0])){
 
-            if(\App::config()->WEB('user', 'landingMode') && self::$mode !== 'admin'){
+            if(\Wq::config()->WEB('user', 'landingMode') && self::$mode !== 'admin'){
 
-                self::$controller .= \App::config()->WEB('default', 'user', 'controller');
+                self::$controller .= \Wq::config()->WEB('default', 'user', 'controller');
 
                 $newArr = [];
 
@@ -196,9 +182,9 @@ class Router
 
             }else{
 
-                if(!empty(\App::config()->ROUTES(self::$mode)[$arr[0]]) || !empty(\App::config()->ROUTES($arr[0]))){
+                if(!empty(\Wq::config()->ROUTES(self::$mode)[$arr[0]]) || !empty(\Wq::config()->ROUTES($arr[0]))){
 
-                    $targetPath = \App::config()->ROUTES(self::$mode)[$arr[0]] || \App::config()->ROUTES($arr[0]);
+                    $targetPath = \Wq::config()->ROUTES(self::$mode)[$arr[0]] || \Wq::config()->ROUTES($arr[0]);
 
                     $route = explode('/', $targetPath);
 
@@ -219,19 +205,19 @@ class Router
 
         }
 
-        self::$controller = \AppH::setClassPath(self::$controller, preg_replace('/[-_]+/', '', ucwords($controllerName, '-_')) . 'Controller');
+        self::$controller = \WqH::setClassPath(self::$controller, preg_replace('/[-_]+/', '', ucwords($controllerName, '-_')) . 'Controller');
 
     }
 
     public static function getInputMethod(){
 
-        return self::$method ?: \App::config()->WEB('default', self::$mode, 'method');
+        return self::$method ?: \Wq::config()->WEB('default', self::$mode, 'method');
 
     }
 
     public static function getOutputMethod(){
 
-        return self::$outputMethod ?: \App::config()->WEB('default', self::$mode, 'outputMethod');
+        return self::$outputMethod ?: \Wq::config()->WEB('default', self::$mode, 'outputMethod');
 
     }
 

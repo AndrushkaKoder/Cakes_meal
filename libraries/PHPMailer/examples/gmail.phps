@@ -1,6 +1,6 @@
 <?php
 /**
- * This example shows settings to use when sending via Google's Gmail servers.
+ * This example shows webQSettings to use when sending via Google's Gmail servers.
  */
 
 //SMTP needs accurate times, and the PHP time zone MUST be set

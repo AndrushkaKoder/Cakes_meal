@@ -3,7 +3,7 @@ namespace libraries;
 
 
 
-use core\base\settings\Settings;
+use webQAdminSettings\Settings;
 
 class FileEdit{
 
@@ -85,7 +85,7 @@ class FileEdit{
 
             }
 
-            return str_replace($_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR, '', $fileFullName);
+            return str_replace(\WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')), '', $fileFullName);
 
         }
 
@@ -240,13 +240,15 @@ class FileEdit{
 
     public function setDirectory($directory = ''){
 
-        if(!$directory) $this->directory = $_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR;
+        if(!$directory)
+            $this->directory = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir'));
         else
-            $this->directory = strpos($directory, $_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR) !== false
+            $this->directory = strpos($directory, \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir'))) !== false
                 ? $directory
-                : $_SERVER['DOCUMENT_ROOT'] . PATH . UPLOAD_DIR . $directory;
+                : \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir'), $directory);
 
-        if(!file_exists($this->directory)) mkdir($this->directory, 0777, true);
+        if(!file_exists($this->directory))
+            mkdir($this->directory, 0777, true);
 
         !preg_match('/\/$/', $this->directory) && $this->directory .= '/';
 

@@ -1,8 +1,8 @@
 <?php
 
-namespace core\models;
+namespace webQModels;
 
-use core\traites\Singleton;
+use webQTraits\Singleton;
 
 class DBStorage
 {

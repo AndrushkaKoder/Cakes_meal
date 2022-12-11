@@ -1,8 +1,8 @@
 <?php
 
-namespace core\system;
+namespace webQSystem;
 
-use core\traites\Singleton;
+use webQTraits\Singleton;
 
 class Logger
 {
@@ -17,12 +17,12 @@ class Logger
 
         foreach ((array)$message as $item){
 
-            $str .= ($event ? $event . ': ' . $dateTime->format('d-m-Y G:i:s') . "\r\n" : '') . $item . "\r\n";
+            $str .= ($event ? $event . ': ' . $dateTime->format('d-m-Y G:i:s.v') . "\r\n" : '') . $item . "\r\n";
 
         }
 
 
-        $dir = \AppH::correctPathLtrim(\App::FULL_PATH(), \App::config()->WEB('log_dir'));
+        $dir = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('log_dir'));
 
         $extraDir = preg_split('/\//', $file);
 
@@ -30,7 +30,7 @@ class Logger
 
             $file = array_pop($extraDir);
 
-            $dir = \AppH::correctPathLtrim($dir, implode('/', $extraDir));
+            $dir = \WqH::correctPath($dir, implode('/', $extraDir));
 
         }
 
@@ -62,7 +62,7 @@ class Logger
 
     protected function rotateLogs(string $dir, int $day = 30) : void{
 
-        \AppH::scanDir($dir, function($file, $dir) use($day){
+        \WqH::scanDir($dir, function($file, $dir) use($day){
 
             if((new \DateTime(date('Y-m-d', filemtime($dir . '/' . $file)))) < (new \DateTime())->modify('-' . $day . ' day')){
 

@@ -6,7 +6,7 @@
  * Time: 18:07
  */
 
-namespace core\exceptions;
+namespace webQExceptions;
 
 class AuthException extends \Exception
 {

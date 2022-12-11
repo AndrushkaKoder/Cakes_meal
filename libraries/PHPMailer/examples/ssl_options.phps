@@ -1,6 +1,6 @@
 <?php
 /**
- * This example shows settings to use when sending over SMTP with TLS and custom connection options.
+ * This example shows webQSettings to use when sending over SMTP with TLS and custom connection options.
  */
 
 //SMTP needs accurate times, and the PHP time zone MUST be set

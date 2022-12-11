@@ -6,9 +6,9 @@
  * Time: 15:23
  */
 
-namespace core\system;
+namespace webQSystem;
 
-use core\models\Crypt;
+use webQModels\Crypt;
 
 class Ajax
 {
@@ -17,9 +17,9 @@ class Ajax
 
     public static function route(){
 
-        $controller = \AppH::setClassPath(\App::config()->WEB('controllersPath', 'user'), 'AjaxController');
+        $controller = \WqH::setClassPath(\Wq::config()->WEB('controllersPath', 'user'), 'AjaxController');
 
-        self::$data = \AppH::isPost() ? $_POST : $_GET;
+        self::$data = \WqH::isPost() ? $_POST : $_GET;
 
         if(!empty(self::$data['ajax']) && self::$data['ajax'] === 'token'){
 
@@ -43,17 +43,17 @@ class Ajax
 
         }
 
-        $httpReferer = str_replace('/', '\/', $requestScheme . 's?://' . (preg_quote($_SERVER['SERVER_NAME'] . \App::PATH() . \App::config()->WEB('admin', 'alias'))));
+        $httpReferer = str_replace('/', '\/', $requestScheme . 's?://' . (preg_quote($_SERVER['SERVER_NAME'] . \Wq::PATH() . \Wq::config()->WEB('admin', 'alias'))));
 
         if(isset(self::$data['ADMIN_MODE']) || preg_match('/^' . $httpReferer . '(\/?|$)/', $_SERVER['HTTP_REFERER'])){
 
             unset(self::$data['ADMIN_MODE']);
 
-            $controller = \AppH::setClassPath(\App::config()->WEB('controllersPath', 'admin'), 'AjaxController');
+            $controller = \WqH::setClassPath(\Wq::config()->WEB('controllersPath', 'admin'), 'AjaxController');
 
         }
 
-        $res = \App::execute(['controller' => $controller], true);
+        $res = \Wq::execute(['controller' => $controller], true);
 
         if(is_array($res) || is_object($res)) $res = json_encode($res, JSON_UNESCAPED_UNICODE);
         elseif (is_int($res)) $res = (float)$res;

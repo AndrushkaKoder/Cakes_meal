@@ -1,0 +1,33 @@
+:root {
+    --color-black: #000;
+    --color-white: #fff;
+    --color-eminence: #642a87;
+    --color-eminence-hover: #7b2aad;
+    --color-lavender: #bf5fd7;
+    --color-lavender-hover: #aa54c0;
+    --color-athens: #eae8ee;
+    --color-silver: #a6a6a6;
+    --color-mine: #373737;
+    --color-scorpion: #5b5b5b;
+    --color-perfume: #e9b9f9;
+    --color-anzac: #e0a141;
+    --color-anzac-hover: #d19438;
+    --color-cream: #f4ce6a;
+    --color-valencia: #d34343;
+    --color-valencia-hover: #b93939;
+    --color-mona: #ff9999;
+    --color-havelock: #437dd3;
+    --color-havelock-hover: #3d6eb8;
+    --color-malibu: #6aafff;
+    --color-buddha: #a6a904;
+    --color-buddha-hover: #989b06;
+    --color-starship: #e1ef4f;
+    --color-wisteria: #aa73b7;
+    --color-snuff: #e6d6ea;
+    --color-fern: #4c8a3c;
+    --color-fern-hover: #3d6e30;
+    --color-olivine: #8ac07b;
+    --color-box-shadow: rgba(0, 0, 0, 0.25);
+    --color-alto: #d3d3d3;
+    --color-whisper: #f0e9f2;
+}
