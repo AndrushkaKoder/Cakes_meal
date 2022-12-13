@@ -184,31 +184,155 @@ final class Wq //final - класс от которого нельзя насл�
 
     }
 
-    public function set(string $name, $value) : bool{
+    public static function config(){
 
-        if(array_key_exists($name, $this->properties) && !$this->force){
+        static $config;
 
-            return false;
+        if(!$config){
+
+            $config = new class(){
+
+                private array $properties = [];
+
+                private bool $force = false;
+
+                public function set(string $name, $value) : bool{
+
+                    if(array_key_exists($name, $this->properties) && !$this->force){
+
+                        return false;
+
+                    }
+
+                    if(!empty($this->properties[$name]) && is_array($value) && is_array($this->properties[$name])){
+
+                        foreach ($value as $key => $item){
+
+                            $this->properties[$name][$key] = $item;
+
+                        }
+
+                    }else{
+
+                        $this->properties[mb_strtoupper($name)] = $value;
+
+                    }
+
+                    $this->force = false;
+
+                    return true;
+
+                }
+
+                public function force(){
+
+                    $this->force = true;
+
+                    return $this;
+
+                }
+
+                public function WEB(){
+
+                    if($this->force){
+
+                        $this->force = false;
+
+                        return $this->searchProperty('WEB', func_get_args());
+
+                    }
+
+                    $mode = \webQSystem\Router::getMode();
+
+                    $args = func_get_args();
+
+                    if(($key = array_search($mode, $args)) !== false){
+
+                        unset($args[$key]);
+
+                        $args = array_values($args);
+
+                    }
+
+                    $mode = strtoupper($mode);
+
+                    if(array_key_exists($mode, $this->properties)){
+
+                        $res = $this->$mode(...$args);
+
+                        if($res){
+
+                            return $res;
+
+                        }
+
+                    }
+
+                    if(isset($this->properties['WEB'][strtolower($mode)])){
+
+                        array_unshift($args, strtolower($mode));
+
+                        $res = $this->searchProperty('WEB', $args);
+
+                        if($res){
+
+                            return $res;
+
+                        }
+
+                    }
+
+                    return $this->searchProperty('WEB', func_get_args());
+
+                }
+
+                public function __call($name, $arguments){
+
+                    return $this->searchProperty($name, $arguments);
+
+                }
+
+                private function searchProperty($name, $arguments){
+
+                    if(!array_key_exists($name, $this->properties)){
+
+                        return null;
+
+                    }
+
+                    $data = $this->properties[$name];
+
+                    if(is_array($data)){
+
+                        foreach ($arguments as $value){
+
+                            $value = (array)$value;
+
+                            foreach ($value as $item){
+
+                                if(!array_key_exists($item, $data)){
+
+                                    return null;
+
+                                }
+
+                                $data = $data[$item];
+
+                            }
+
+                        }
+
+                    }
+
+                    return $data;
+
+                }
+
+            };
 
         }
 
-        if(!empty($this->properties[$name]) && is_array($value) && is_array($this->properties[$name])){
-
-            foreach ($value as $key => $item){
-
-                $this->properties[$name][$key] = $item;
-
-            }
-
-        }else{
-
-            $this->properties[mb_strtoupper($name)] = $value;
-
-        }
-
-        $this->force = false;
-
-        return true;
+        return $config;
 
     }
 
