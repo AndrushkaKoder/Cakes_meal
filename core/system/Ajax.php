@@ -17,7 +17,7 @@ class Ajax
 
     public static function route(){
 
-        $controller = \WqH::setClassPath(\Wq::config()->WEB('controllersPath', 'user'), 'AjaxController');
+        $controller = \WqH::setClassPath(\Wq::config()->WEB('user', 'namespace'), 'AjaxController');
 
         self::$data = \WqH::isPost() ? $_POST : $_GET;
 
@@ -49,7 +49,7 @@ class Ajax
 
             unset(self::$data['ADMIN_MODE']);
 
-            $controller = \WqH::setClassPath(\Wq::config()->WEB('controllersPath', 'admin'), 'AjaxController');
+            $controller = \WqH::setClassPath(\Wq::config()->WEB('admin', 'namespace'), 'AjaxController');
 
         }
 
