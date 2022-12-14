@@ -22,7 +22,7 @@ class AjaxController extends BaseAdmin
 
         $this->execBase();
 
-        $this->ajajData = Ajax::$data;
+        $this->ajaxData = Ajax::$data;
 
         if($this->ajaxData){
 
@@ -218,7 +218,7 @@ class AjaxController extends BaseAdmin
 
                 $fileData = base64_decode($fileData);
 
-                $fullFileName = $_SERVER['DOCUMENT_ROOT'] . \WqH::correctPath(\Wq::PATH(), \Wq::config()->WEB('upload_dir')) . $fileName;
+                $fullFileName = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('upload_dir')) . $fileName;
 
                 if(file_exists($fullFileName)){
 

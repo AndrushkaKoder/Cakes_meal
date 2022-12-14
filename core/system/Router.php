@@ -51,7 +51,8 @@ class Router
 
         $url = preg_split('/(\/)|(\?.*)/', $adress_str, 0, PREG_SPLIT_NO_EMPTY);
 
-        if(!empty($url[0]) && $url[0] === \Wq::config()->WEB('admin', 'alias')){
+        if((!empty($url[0]) && $url[0] === \Wq::config()->WEB('admin', 'alias')) ||
+            (!empty($_SERVER['HTTP_REFERER']) && \WqH::isAjax()) && preg_match('/\/' . preg_quote(\Wq::config()->WEB('admin', 'alias')) . '\//', $_SERVER['HTTP_REFERER'])){
 
             array_shift($url);
 
