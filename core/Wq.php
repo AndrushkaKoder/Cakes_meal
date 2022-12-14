@@ -442,8 +442,6 @@ final class Wq //final - класс от которого нельзя насл�
 
     }
 
-    private static function config()
-    {
-    }
+
 
 }
