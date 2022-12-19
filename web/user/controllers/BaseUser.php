@@ -17,6 +17,7 @@ abstract class BaseUser extends \webQSystem\Controller
 
     protected $model;
     protected $menu;
+    protected $contacts;
 
     protected function commonData(){
 
@@ -51,6 +52,14 @@ abstract class BaseUser extends \webQSystem\Controller
              'limit' => 1,
              'single' => true
          ]);
+
+
+        $this->contacts = $this->model->get('contacts', [
+
+        ]);
+
     }
+
+
 
 }

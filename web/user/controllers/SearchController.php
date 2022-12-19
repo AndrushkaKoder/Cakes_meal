@@ -1,9 +1,8 @@
 <?php
 
-namespace web\user\controllers;
+namespace webQApplication\controllers;
 
-use core\admin\expansion\VisitorsExpansion;
-use core\user\model\Model;
+use webQApplication\models;
 
 class SearchController extends BaseUser
 {
@@ -51,11 +50,11 @@ class SearchController extends BaseUser
 
             }
 
-            \AppH::redirect();
+            \WqH::redirect();
 
         }
 
-        !$this->model && $this->model = \web\user\models\Model::instance();
+        !$this->model && $this->model = models\Model::instance();
 
         $search = trim(preg_replace('/[^\w\-\s]/u', '', $search));
 

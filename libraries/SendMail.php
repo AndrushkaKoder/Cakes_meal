@@ -18,13 +18,13 @@ class SendMail
 
     private $SMTPAuth = true;
 
-    private $Username = 'ustpromailer';
+    private $Username = 'andrusha.kolmakov';
 
-    private $Password = 'qzwxec11';
+    private $Password = 'qgowpecistlwxllw';
 
-    private $_FromEmail = 'ustpromailer@yandex.ru';
+    private $_FromEmail = 'andrusha.kolmakov@yandex.ru';
 
-    private $_FromName = null;
+    private $_FromName = "cakesmeal40.ru";
 
     private $_templatesPath = '';
 
@@ -61,7 +61,7 @@ class SendMail
 
         if(!$templatesPath){
 
-            $this->_templatesPath= \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('views') ,\Wq::config()->WEB('common')) . 'emailTemplates';
+            $this->_templatesPath = \WqH::correctPath(\Wq::FULL_PATH(), \Wq::config()->WEB('views') ,\Wq::config()->WEB('common')) . 'emailTemplates';
 
         }else{
 
@@ -255,5 +255,6 @@ class SendMail
         return $this->_lastError;
 
     }
+
 
 }

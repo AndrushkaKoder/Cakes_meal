@@ -19,7 +19,7 @@ window.addEventListener("DOMContentLoaded", ()=>{
             muss: 'Муссовый торт для ценителей',
             bento: 'Такой же, как и бисквитный, только маленький'
         }
-        // subtitle.innerText = description.bisquit;
+        subtitle.innerText = description.bisquit;
 
         // показ и скрытие бисквита
         function showBisquitMenu() {

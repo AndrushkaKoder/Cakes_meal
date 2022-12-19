@@ -108,6 +108,8 @@
 }
 .basket_modal_descr{
     font-size: 13px;
+    padding: 5px;
+    text-align: center;
 }
 .basket_total_price{
     font-size: 25px;

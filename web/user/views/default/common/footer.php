@@ -6,7 +6,11 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
 
         <div class="row">
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-center align-items-center">
-                <a href="<?=$this->alias()?>" class="cakes_logo cakes_logo_footer">Cakes Meal</a>
+                <a href="<?=$this->alias()?>" class="cakes_logo">
+
+                    <img src="/userFiles/logo/logo2.png" alt="логотип">
+
+                </a>
             </div>
 
             <div class="col-lg-4 col-md-6 col-sm-12 d-flex justify-content-evenly align-items-center">
@@ -18,7 +22,11 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
 
             <div class="col-lg-4 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
                 <span class="footer_span"> Наш телефон:</span>
-                        <a href="tel:<?=$this->set['phone']?>" class="footer_phone">+7<?=$this->set['phone']?></a>
+                <?php if(!empty($this->contacts)):?>
+                    <?php foreach ($this->contacts as $item):?>
+                        <a href="tel:<?=$item['phone']?>" class="nav_item  nav_phone"><?=$item['phone']?></a>
+                    <?php endforeach;?>
+                <?endif;?>
             </div>
 
         </div>

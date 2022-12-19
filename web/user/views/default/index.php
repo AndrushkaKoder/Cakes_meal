@@ -14,20 +14,37 @@
                     </div>
                 <?php endforeach;?>
             </div>
-
-<!--            <div class="swiper-pagination">-->
-                <!-- <i class="fa-solid fa-cupcake swiper_pagination_img" style="font-size:20px;"></i>
-                <i class="fa-solid fa-cupcake swiper_pagination_img"></i>
-                <i class="fa-solid fa-cupcake swiper_pagination_img"></i> -->
-<!--            </div>-->
-<!--                <div class="swiper-button-prev"></div>-->
-<!--                <div class="swiper-button-next"></div>-->
-
-            <!-- <div class="swiper-scrollbar"></div> -->
         </div>
 
     </section>
 <?php endif;?>
+
+
+
+
+
+
+<!-- АЛЕРТ ПРО БЕТУ -->
+<div class="modal fade beta_alert" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Обратите внимание!</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body text-center">
+                НАШ САЙТ РАБОТАЕТ В РЕЖИМЕ ОТКРЫТОГО БЕТА-ТЕСТИРОВАНИЯ, НЕКОТОРЫЕ ФУНКЦИИ МОГУТ БЫТЬ НЕДОСТУПНЫ
+            </div>
+            <div class="modal-footer justify-content-center">
+                <button type="button" class="btn btn-success close_beta" data-bs-dismiss="modal">Понятно</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- АЛЕРТ ПРО БЕТУ -->
+
+
+
 
 
 
@@ -97,9 +114,7 @@
 
     <!-- ССЫЛКА НА КОНСТРУКТОР -->
     <?php if(!empty($backgroundImage)):?>
-    <?php foreach ($backgroundImage as $item):?>
-        <section class="r_ constructor" style="background: url('<?=$this->img($item['name'])?>') fixed 50% no-repeat">
-    <?php endforeach;?>
+        <section class="r_ constructor">
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-center">

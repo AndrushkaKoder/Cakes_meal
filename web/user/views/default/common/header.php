@@ -32,7 +32,11 @@ $currentClass = '';
         <div class="row">
 
             <div class="col-lg-3 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
-                <a href="<?=$this->alias()?>" class="cakes_logo">Cakes Meal</a>
+                <a href="<?=$this->alias()?>" class="cakes_logo">
+
+                    <img src="/userFiles/logo/logo2.png" alt="логотип">
+
+                </a>
             </div>
             <div class="col-lg-7 col-md-10 col-sm-12 mobile_none">
                 <ul class="header_nav_list">
@@ -57,7 +61,14 @@ $currentClass = '';
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12 d-flex justify-content-center align-items-center" data-nav_wrapper style="position: relative">
 
-                <a href="tel:9623734441" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
+
+                <?php if(!empty($this->contacts)):?>
+                    <?php foreach ($this->contacts as $item):?>
+                            <a href="tel:<?=$item['phone']?>" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
+                    <?php endforeach;?>
+                <?endif;?>
+
+
                 <a href="<?=$this->alias('cart')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i> <span class="cart_counter" data-totalQTY><?=$this->cart['total_qty'] ?? 0?></span></a>
                 <a href="#" class="nav_item" style="display: none" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
 

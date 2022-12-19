@@ -2,7 +2,6 @@
 
 namespace webQApplication\controllers;
 
-use web\user\controllers\SearchController;
 
 class AjaxController extends BaseUser
 {

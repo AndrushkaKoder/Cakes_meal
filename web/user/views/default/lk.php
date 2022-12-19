@@ -53,7 +53,7 @@
                                         <strong>Заказ №</strong>: <?=$item['id']?>
                                     </div>
                                     <div class="total_sum">
-                                      <strong>общая сумма заказа</strong>: <?=$item['total_sum']?>
+                                      <strong>общая сумма заказа</strong>: <?=$item['total_sum']?> &#8381;
                                     </div>
                                     <div class="total_sum">
                                         <strong>всего товаров</strong>: <?=$item['total_qty']?>

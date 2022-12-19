@@ -24,6 +24,7 @@ class Settings
         'categories' => ['name' => 'CATEGORIES'],
         'test_position' => ['name' => 'ПОЗИЦИИ'],
         'visitors' => ['name' => 'Пользователи сайта'],
+        'fake' => ['name'=>'фейк']
     ];
 
     private $templateArr = [

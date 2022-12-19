@@ -1,10 +1,15 @@
 .carousel-inner{
-    height: 450px;
-    margin-bottom: 30px;
+    height: 350px;
     border-radius: 15px !important;
+    width: 80%;
+    margin: 30px auto;
+    border: 15px solid var(--color1);
+    background: var(--color1);
+
 }
 .carousel-inner img{
-    height: 100% !important;
+    width: 100%;
+    height: 100%;
 }
 .product_price_wrapper{
     border: 4px solid black;
@@ -38,21 +43,24 @@
 /*-----*/
 @media screen and (max-width: 991px ){
     .carousel-inner{
-        height: 350px;
+        height: 300px;
         margin: 50px 0;
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 767px ){
     .carousel-inner{
-        height: 350px;
-        margin: 50px 0;
+        height: 300px;
+        margin: 50px auto;
+        width: 80%;
     }
 }
 
 @media screen and (max-width: 575px ){
     .carousel-inner{
-        height: 350px;
+        height: 300px;
+        width: 100%;
         margin: 50px 0;
     }
 
