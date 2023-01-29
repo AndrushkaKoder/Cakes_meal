@@ -1,0 +1,106 @@
+Fault: 13-12-2022 19:26:14.959
+Class \AjaxController does not exist
+/ajax/?cartData={}&id=3&qty=1&ajax=add_to_cart
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 13-12-2022 19:26:36.828
+Class \AjaxController does not exist
+/ajax/?cartData={}&id=1&qty=1&ajax=add_to_cart
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 13-12-2022 19:26:42.282
+Class \AjaxController does not exist
+/ajax/?cartData={}&id=5&qty=1&ajax=add_to_cart
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 13-12-2022 19:33:32.589
+Class webQAdmin\controller\AdminController does not exist
+/admin/admin/
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 13-12-2022 19:36:12.925
+Class \AjaxController does not exist
+/admin/edit/
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 13-12-2022 19:36:49.875
+Class \AjaxController does not exist
+/ajax/?cartData={}&id=2&qty=1&ajax=add_to_cart
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 13-12-2022 19:37:07.977
+Class \AjaxController does not exist
+/ajax/?cartData={}&id=5&qty=1&ajax=add_to_cart
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 13-12-2022 19:39:21.178
+Class \AjaxController does not exist
+/ajax/?cartData={}&id=5&qty=1&ajax=add_to_cart
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 13-12-2022 19:39:52.313
+Class \AjaxController does not exist
+/ajax/?cartData={}&id=3&qty=1&ajax=add_to_cart
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+

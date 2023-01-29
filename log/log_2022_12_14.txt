@@ -1,0 +1,30 @@
+Fault: 14-12-2022 23:31:55.751
+Class webQApplication\controllers\SearchController does not exist
+/search/?search=%D1%87%D0%B8%D0%B7%D0%BA%D0%B5%D0%B9%D0%BA
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 23:32:07.485
+Class webQApplication\controllers\SearchController does not exist
+/search/?search=%D1%87%D0%B8%D0%B7%D0%BA%D0%B5%D0%B9%D0%BA
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 23:54:07.259
+Class webQApplication\controllers\SearchController does not exist
+/search/?search=
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+

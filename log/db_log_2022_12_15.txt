@@ -1,0 +1,200 @@
+Fault: 15-12-2022 0:53:04.613
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 0:53:08.103
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 1:00:56.113
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 1:01:03.512
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 1:01:22.069
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 1:01:32.316
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 1:02:44.103
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 1:02:55.819
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 1:03:49.989
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 15-12-2022 1:03:59.839
+SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'users_id' cannot be null
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 453
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\helpers\DataCreatorsModelHelper.php::add - 53
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\model\Model.php::add - 574
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::setTableParameters - 379
+D:\OpenServer\domains\Cakes_meal.loc\core\admin\controller\AjaxController.php::sortTable - 63
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::inputData - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Ajax.php::execute - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Router.php::route - 40
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::setRoute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+

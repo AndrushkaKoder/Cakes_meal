@@ -1,0 +1,10 @@
+Fault: 19-12-2022 16:41:29.804
+Class webQApplication\controllers\+79623734441Controller does not exist
+/+79623734441/
+file D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php
+In line 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::__construct - 56
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+

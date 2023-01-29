@@ -1,0 +1,1308 @@
+Fault: 11-12-2022 0:26:26
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:26:26
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:26:26
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-SemiBoldItalic.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:26:59
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:26:59
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:26:59
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-SemiBoldItalic.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:28:19
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:28:19
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:28:50
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:28:50
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:29:05
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:29:05
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:30:07
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:30:07
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:30:23
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:30:23
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:31:12
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:31:13
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:31:38
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:31:38
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:31:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:31:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:32:37
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:32:37
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:32:39
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:32:40
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:33:05
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:33:05
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:38:35
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:38:39
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:38:42
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:38:42
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:38:58
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:38:59
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:38:59
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:39:54
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:39:54
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:40:30
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:40:30
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:40:31
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:17
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:17
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:17
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:19
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:19
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:19
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:36
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:36
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:46
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:47
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:41:47
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:42:28
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:42:28
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:42:29
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:43:05
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:43:06
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:43:06
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:44:02
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:44:02
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:44:02
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:44:36
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:44:36
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:44:36
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:45:11
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:45:11
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:45:11
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:48:54
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:48:56
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:49:03
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:49:12
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:49:16
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:49:23
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:53:32
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:53:48
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:53:54
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:53:54
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:58:41
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:58:41
+Class web\user\controllers\FontsController does not exist
+/fonts/Merriweather-Light.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:58:41
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:58:42
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:58:42
+Class web\user\controllers\FontsController does not exist
+/fonts/Merriweather-Light.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:58:42
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:58:47
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:58:47
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:02
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:02
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:02
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:02
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:02
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:03
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:03
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:03
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:28
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:28
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:28
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:28
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:28
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:29
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:29
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 0:59:29
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:13
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:13
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:13
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:14
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:14
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:14
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:54
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:54
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:54
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:55
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:55
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:55
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:58
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:00:58
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:48
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:48
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:48
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:48
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:48
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:49
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:49
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:49
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:52
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:52
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:52
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:53
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:53
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:53
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:53
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:01:53
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:11
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:11
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:11
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:11
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:11
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:12
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:12
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:12
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:37
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:37
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:37
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:38
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:38
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:38
+Class web\user\controllers\FontsController does not exist
+/fonts/MsMadi-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:42
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:02:42
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:03:12
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:03:12
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:03:49
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:03:50
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:05:08
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:05:08
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.woff/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:05:09
+Class web\user\controllers\FontsController does not exist
+/fonts/PlayfairDisplay-Italic-VariableFont_wght.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:05:09
+Class web\user\controllers\FontsController does not exist
+/fonts/Roboto-Regular.ttf/
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:06:59
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:06:59
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:07:33
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:07:33
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:07:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:07:42
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:08:53
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:08:53
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:09:34
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:09:34
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:11:40
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:11:40
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:12:38
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:12:38
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:16:51
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:16:51
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:16:58
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:16:59
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:17:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:17:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:18:38
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:18:38
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:18:56
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:18:56
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:19:10
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:19:10
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:19:26
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:19:26
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:20:07
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:20:07
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:20:54
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:20:54
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:21:21
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:21:21
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:21:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:21:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:23:17
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:23:17
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:23:31
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:23:31
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:23:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:23:42
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:23:43
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:23:43
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:22
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:22
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:25
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:25
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:41
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:44
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:44
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:55
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:56
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:58
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:24:58
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:25:01
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:25:01
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:25:11
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:25:11
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:25:17
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:25:17
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:25:27
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 11-12-2022 1:25:28
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+

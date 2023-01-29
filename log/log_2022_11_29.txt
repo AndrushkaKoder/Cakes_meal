@@ -1,0 +1,24 @@
+Fault: 29-11-2022 22:16:19
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 29-11-2022 22:16:19
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 29-11-2022 22:16:51
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/style/bootstrap.min.css.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+
+Fault: 29-11-2022 22:16:51
+Class web\user\controllers\WebController does not exist
+/web/user/views/default/script/bootstrap.bundle.min.js.map
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+

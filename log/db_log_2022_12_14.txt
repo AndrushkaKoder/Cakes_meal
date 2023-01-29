@@ -1,0 +1,180 @@
+Fault: 14-12-2022 21:22:26.301
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.visible' in 'where clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:25:27.506
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.visible' in 'where clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:25:44.376
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.visible' in 'where clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:28:29.161
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.visible' in 'where clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:30:40.270
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.visible' in 'where clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:33:38.284
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.visible' in 'where clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:33:39.670
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.visible' in 'where clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:37:31.432
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.menu_position' in 'order clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:37:36.985
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.menu_position' in 'order clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 21:55:58.969
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.menu_position' in 'order clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 22:03:28.176
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.menu_position' in 'order clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 14-12-2022 22:03:54.250
+SQLSTATE[42S22]: Column not found: 1054 Unknown column 'delivery.menu_position' in 'order clause'
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 127
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOQuery - 74
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::query - 176
+D:\OpenServer\domains\Cakes_meal.loc\web\user\controllers\CartController.php::get - 66
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::actionInput - 49
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+

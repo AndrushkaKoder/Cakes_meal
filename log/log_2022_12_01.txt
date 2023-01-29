@@ -1,0 +1,6 @@
+Fault: 01-12-2022 22:56:15
+Class core\admin\controllers\CatalogController does not exist
+/admin/catalog
+file D:\OpenServer\domains\Cakes_meal.loc\core\App.php
+In line 74
+

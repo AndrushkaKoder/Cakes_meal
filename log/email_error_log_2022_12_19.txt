@@ -1,0 +1,2 @@
+Fault: 19-12-2022 15:41:13.519
+SMTP connect() failed. https://github.com/PHPMailer/PHPMailer/wiki/Troubleshooting

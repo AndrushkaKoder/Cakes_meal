@@ -1,0 +1,30 @@
+Fault: 19-12-2022 16:35:33.785
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 27
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 27
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOConnection - 51
+D:\OpenServer\domains\Cakes_meal.loc\core\traits\Singleton.php::connect - 35
+D:\OpenServer\domains\Cakes_meal.loc\core\traits\BaseMethods.php::instance - 85
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::checkAuth - 28
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
+Fault: 19-12-2022 16:35:37.163
+SQLSTATE[HY000] [1045] Access denied for user 'root'@'localhost' (using password: YES)
+file D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php
+In line 27
+D:\OpenServer\domains\Cakes_meal.loc\core\models\DbConnection.php::__construct - 27
+D:\OpenServer\domains\Cakes_meal.loc\core\models\BaseModel.php::PDOConnection - 51
+D:\OpenServer\domains\Cakes_meal.loc\core\traits\Singleton.php::connect - 35
+D:\OpenServer\domains\Cakes_meal.loc\core\traits\BaseMethods.php::instance - 85
+D:\OpenServer\domains\Cakes_meal.loc\core\system\Controller.php::checkAuth - 28
+webQSystem\Controller::request
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::invoke - 52
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::execute - 32
+D:\OpenServer\domains\Cakes_meal.loc\core\Wq.php::run - 26
+D:\OpenServer\domains\Cakes_meal.loc\index.php::init - 5
+
