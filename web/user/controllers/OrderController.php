@@ -6,11 +6,17 @@ namespace webQApplication\controllers;
 use webQModels\UserModel;
 use libraries\SendMail;
 use webQApplication\helpers\ValidationHelper;
+use webQSystem\Logger;
 
 class OrderController extends BaseUser
 {
 
     use ValidationHelper;
+
+
+    protected $delivery;
+
+    protected $payments;
 
     protected function actionInput(){
 
@@ -48,7 +54,6 @@ class OrderController extends BaseUser
         $validation = [
             'name' => ['emptyField'],
             'phone' => ['emptyField', 'phoneField', 'numericField'],
-            'email' => ['emptyField', 'emailField'],
             'payments_id' => ['emptyField', 'numericField'],
         ];
 
@@ -121,6 +126,28 @@ class OrderController extends BaseUser
             $this->sendError('Не балуйтесь');
 
         }
+
+        if(in_array('delivery', $this->model->showTables())){
+
+            $this->delivery = $this->model->get('delivery', [
+                'where' => ['visible' => 1],
+                'order' => ['menu_position'],
+                'join_structure' => true
+            ]);
+
+        }
+
+        if(in_array('payments', $this->model->showTables())){
+
+            $this->payments = $this->model->get('payments', [
+                'where' => ['visible' => 1],
+                'order' => ['menu_position'],
+                'join_structure' => true
+            ]);
+
+        }
+
+
 
         if(!empty($validation['delivery_id']) && empty($this->delivery[$_POST['delivery_id']])){
 
@@ -367,7 +394,7 @@ class OrderController extends BaseUser
 
         $sendMail = new SendMail([
             'address' => [$this->set['email'], $arr['visitor']['email']],
-            'Subject' => 'Заказ с интернет магазина №' . $arr['order']['id']
+            'Subject' => 'Заказ из интернет магазина №' . $arr['order']['id']
         ]);
 
         foreach ($arr as $key => $item){
@@ -420,7 +447,7 @@ class OrderController extends BaseUser
 
         if(!$sendMail->send()){
 
-            $this->writeLog($sendMail->getLastError(), 'email_error_log.txt');
+            Logger::instance()->writeLog($sendMail->getError(), 'email_error_log.txt');
 
         }
 

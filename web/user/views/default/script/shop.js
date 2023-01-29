@@ -769,4 +769,21 @@ function phoneValidate(item){
 
     // item.dispatchEvent(new Event('input'))
 
+
+
+
 }
+
+let buttonsToCart = document.querySelectorAll('.assortment_btn_button');
+console.log(buttonsToCart)
+
+buttonsToCart.forEach(el =>{
+    el.addEventListener('click', ()=>{
+
+        setTimeout(()=>{
+            el.style.background = 'lightgreen'
+        }, 500)
+
+
+    })
+})

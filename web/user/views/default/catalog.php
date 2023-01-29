@@ -17,9 +17,9 @@
 
     <!-- ОТКРЫВАШКА ФИЛЬТРА -->
     <?php if(!empty($catalogFilters) || !empty($catalogPrices)):?>
-        <button type="button" class=" filter_button_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">
-            <i class="fa-sharp fa-solid fa-sort"></i>
-        </button>
+<!--        <button type="button" class=" filter_button_btn" data-bs-toggle="modal" data-bs-target="#exampleModal">-->
+<!--            <i class="fa-solid fa-filter"></i>-->
+<!--        </button>-->
 
         <!-- ФИЛЬТР -->
         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

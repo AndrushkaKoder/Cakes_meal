@@ -25,7 +25,7 @@
     border: unset;
     z-index: 50;
     border-radius: 31px;
-    border-radius: 5px;
+    /*border-radius: 5px;*/
     outline: unset;
     transition: .2s ease all;
     box-shadow: 3px 2px 8px 0px rgba(34, 60, 80, 0.2);
@@ -163,6 +163,8 @@ input[type='number'] {
 .assortment_btn_button:active{
     transform: scale(0.9);
 }
+
+
 
 /*МЕДИА ЗАПРОСЫ*/
 @media  screen and (max-width: 1200px) {

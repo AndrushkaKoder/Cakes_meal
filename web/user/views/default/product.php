@@ -5,10 +5,12 @@
             <div class="row p-2">
                 <div class="col-12">
                     <nav aria-label="breadcrumb">
+                        <?php if(!empty($product)):?>
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?= $this->alias('catalog')?>">В каталог</a></li>
-                            <li class="breadcrumb-item active" aria-current="page">Продукт</li>
+                            <li class="breadcrumb-item active" aria-current="page"><?=$product['name']?></li>
                         </ol>
+                        <?php endif;?>
                     </nav>
                 </div>
             </div>

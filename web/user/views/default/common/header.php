@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1" />
-    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Playfair+Display:ital,wght@1,500&family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
     <?php $this->getStyles()?>
     <link rel="shortcut icon" href="/web/user/views/default/images/fav.png" type="image/x-icon">
@@ -16,6 +15,11 @@
 $headerClass = $this->getController() === 'index' ? 'index' : '';
 
 $display = $this->getController() === 'login' ? 'none' : 'block';
+
+$currentClass = '';
+
+
+
 ?>
 <!---->
 <body style="background:url(<?=$this->getTemplateImg()?>bg/bg1.jpg)">
@@ -28,11 +32,15 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
         <div class="row">
 
             <div class="col-lg-3 col-md-12 col-sm-12 d-flex justify-content-center align-items-center">
-                <a href="<?=$this->alias()?>" class="cakes_logo">Cakes Meal</a>
+                <a href="<?=$this->alias()?>" class="cakes_logo">
+
+                    <img src="/userFiles/logo/logo2.png" alt="логотип">
+
+                </a>
             </div>
             <div class="col-lg-7 col-md-10 col-sm-12 mobile_none">
                 <ul class="header_nav_list">
-                    <li class="header_nav_list_item"><a href="<?=$this->alias()?>">Главная</a></li>
+                    <li class="header_nav_list_item"><a class="" href="<?=$this->alias()?>">Главная</a></li>
                     <?php if(!empty($this->menu)):?>
                         <li class="header_nav_list_item dropdownWrapper">
                             <a class="dropdown-toggle" id="no_border" href="<?=$this->alias('catalog')?>" role="button"  aria-expanded="false">Ассортимент</a>
@@ -46,18 +54,25 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
                         </li>
                     <?php endif;?>
 
-                    <li class="header_nav_list_item"><a href="<?=$this->alias('constructor')?>">Конструктор</a></li>
-                    <li class="header_nav_list_item"><a href="<?=$this->alias('about')?>">О нас</a></li>
-                    <li class="header_nav_list_item"><a href="<?=$this->alias('delivery')?>">Доставка</a></li>
+                    <li class="header_nav_list_item"><a class="" href="<?=$this->alias('constructor')?>">Конструктор</a></li>
+                    <li class="header_nav_list_item"><a class="" href="<?=$this->alias('about')?>">О нас</a></li>
+                    <li class="header_nav_list_item"><a class="" href="<?=$this->alias('delivery')?>">Доставка</a></li>
                 </ul>
             </div>
             <div class="col-lg-2 col-md-2 col-sm-12 d-flex justify-content-center align-items-center" data-nav_wrapper style="position: relative">
 
-                <a href="tel:9623734441" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
+
+                <?php if(!empty($this->contacts)):?>
+                    <?php foreach ($this->contacts as $item):?>
+                            <a href="tel:<?=$item['phone']?>" class="nav_item  nav_phone"><i class="fa-solid fa-phone-flip"></i></a>
+                    <?php endforeach;?>
+                <?endif;?>
+
+
                 <a href="<?=$this->alias('cart')?>" class="nav_item nav_bucket"> <i class="fa-solid fa-cart-shopping"></i> <span class="cart_counter" data-totalQTY><?=$this->cart['total_qty'] ?? 0?></span></a>
                 <a href="#" class="nav_item" style="display: none" data-burger_button><i class="fa-solid fa-bars burger_nav_button"></i></a>
 
-                <a href="" class="nav_item search_button"><i class="fa-solid fa-magnifying-glass search_button"></i></a>
+                <a href="" class="nav_item search_button" ><i class="fa-solid fa-magnifying-glass search_button"></i></a>
 
 
                 <!--попап регистрации-->
@@ -142,14 +157,18 @@ $display = $this->getController() === 'login' ? 'none' : 'block';
                 <!--попап регистрации-->
 
             </div>
-            <div class="col-12 position-relative">
-                <form action="" method="GET" class="search_wrapper hideSearch d-flex">
+        </div>
+        <div class="row">
+            <div class="col-12 position-relative" style="top: 20px; right: 10px" >
+                <form action="<?=$this->alias('search')?>" method="GET" class="search_wrapper hideSearch d-flex flex-column position-absolute" data-form-search>
                     <div class="search_area">
-                        <input type="text" id="search_area" class="">
+                        <input type="text" id="search_area" class="" name="search">
                         <button type="submit"><i class="fa-solid fa-magnifying-glass search_button"></i></button>
                     </div>
                 </form>
             </div>
+        </div>
+
 
         </div>
     </div>

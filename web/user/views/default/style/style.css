@@ -37,7 +37,13 @@ body{
     background-size: cover;
 }
 h1,h2,h3,h4,h5,h6{
-    font-family: 'Playfair Display', serif;
+    font-family: 'PlayfairDisplay', serif;
+    font-style: italic;
+    font-weight:600;
+}
+
+h2{
+    font-size: 35px;
 }
 a{
     text-decoration: none;
@@ -79,8 +85,10 @@ header.index{
     width: 100%;
     color: white;
     background: transparent !important;
+
 }
 .header_fixed.index{
+
     width: 100% !important;
     position: fixed !important;
     top: 0;
@@ -105,16 +113,11 @@ header.index{
 }
 
 /*логотип*/
-.cakes_logo{
-    font-family: 'Ms Madi', cursive;
-    font-size: 45px;
-    font-weight: bold;
-    color: var(--color1);
+.cakes_logo img{
+    padding: 10px;
+    width: 290px;
 }
-.cakes_logo a{
-    color: white;
-    font-size: 50px;
-}
+
 .cakes_logo:hover{
     color: #f0c76e;
 }
@@ -135,6 +138,8 @@ header.index{
     color: #f0c76e;
     border-bottom: 2px solid #f0c76e;
 }
+
+
 #no_border:hover{
     border-bottom: unset;
 }
@@ -169,18 +174,22 @@ header.index{
     background: white;
     /*display: none;*/
     width: 50%;
-    margin: 20px auto;
+    margin: auto;
     padding: 5px;
     border-radius: 20px;
     /*border: none;*/
     outline: unset;
     font-size: 16px;
     text-align: center;
-    border: 3px solid black;
+    border: 3px solid white;
     transition: 200ms ease all;
-    opacity: 0.6;
+    /*opacity: 0.6;*/
 }
+
 .search_area:hover{
+    opacity: 1;
+}
+.search_area:active{
     opacity: 1;
 }
 .search_area input{
@@ -193,6 +202,38 @@ header.index{
 .search_button{
     display: block !important;
 }
+
+.search_res{
+    width: 50%;
+    margin: auto;
+    background: white;
+    position: relative;
+    top: -18px;
+    border: 3px solid white;
+    border-top: 0px;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.search_res:hover{
+    opacity: 1;
+}
+.search_res a{
+    display: block;
+    color: black;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+.search_res a:last-child{
+    border-bottom: unset;
+    border-radius: 20px;
+}
+.search_res a:hover{
+    background: var(--color1);
+}
+
+
+
 .lk_button{
     background: transparent;
     border: unset;
@@ -206,7 +247,7 @@ header.index{
     background: white;
     border: none;
     position: absolute;
-    top: 15px;
+    top: 19px;
     right: 10px;
 }
 .showSearch{
@@ -345,7 +386,7 @@ color: var(--color1);
     transition: all;
     background: var(--color2);
     z-index: 10;
-    opacity: 0.9;
+    opacity: 0.95;
     display: none;
 }
 .burger_section_wrapper{
@@ -417,7 +458,7 @@ color: var(--color1);
 }
 .title_adv{
     padding: 40px 0;
-    font-size: 25px;
+    font-size: 30px;
     color: var(--color2);
 }
 
@@ -473,6 +514,11 @@ color: var(--color1);
     position: relative;
     color: white;
     padding: 120px 0;
+    background: url("/userFiles/background_images/banner-footer.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
 }
 .constructor::before{
     content: '';
@@ -653,6 +699,13 @@ color: var(--color1);
     .header{
         padding: 20px;
     }
+    .search_res{
+        width: 100%;
+    }
+
+    .search_container{
+
+    }
     .cakes_logo{
         font-size: 55px !important;
     }
@@ -688,6 +741,9 @@ color: var(--color1);
     }
     .header{
         padding: 20px;
+    }
+    .search_res{
+        width: 100%;
     }
     .header_nav_list{
         display: none;
@@ -767,6 +823,11 @@ color: var(--color1);
     .cakes_logo{
         font-size: 65px !important;
     }
+
+    .search_res{
+        width: 100%;
+    }
+
     .slide_content{
         position: relative;
         z-index: 10;
@@ -820,6 +881,9 @@ color: var(--color1);
         margin: 0 15px;
     }
 
+    .wq-message__wrap{
+        width: 95% !important;
+    }
 
 }
 

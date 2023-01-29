@@ -99,9 +99,8 @@
                                         <h5>Для кого</h5>
                                         <p class="basket_modal_descr">Ваши личные данные в надёжных руках</p>
                                         <div class="item_content item_content_name d-flex flex-column justify-content-center">
-                                            <input type="text" name="name" id="userNameTotal" placeholder="Имя" required>
-                                            <input type="text" name="phone" id="userPhoneTotal" placeholder="Телефон" required>
-                                            <input type="email" name="email" placeholder="e-mail">
+                                            <input type="text" name="name" id="userNameTotal" placeholder="Имя" value="<?=$this->userData['name']?>" required>
+                                            <input type="text" name="phone" id="userPhoneTotal" placeholder="Телефон" value="<?=$this->userData['phone']?>" required>
                                         </div>
                                     </div>
 
@@ -109,7 +108,7 @@
                                         <h5>Дата</h5>
                                         <p class="basket_modal_descr">В какой день привезти Ваш заказ</p>
                                         <div class="item_content item_content_name">
-                                            <input type="date" name="date_delivery" id="userDataTotal" style="width: 100%">
+                                            <input type="date" name="date_delivery" id="userDataTotal" style="width: 100%" required>
                                         </div>
                                     </div>
 
@@ -117,7 +116,7 @@
                                         <h5>Куда Вам привезти?</h5>
                                         <p class="basket_modal_descr">Укажите Ваш адрес, и мы доставим заказ прямо в руки</p>
                                         <div class="item_content item_content_name">
-                                        <input type="text" name="address" id="userAddressTotal" placeholder="Адрес доставки" style="width: 100%;">
+                                        <input type="text" name="address" id="userAddressTotal" placeholder="Адрес доставки" value="<?=$this->userData['address']?>" style="width: 100%;">
                                         </div>
                                     </div>
 
@@ -155,7 +154,7 @@
 
                                     <div class="backet_modal_item text-center">
                                        <div class="item_content d-flex justify-content-center align-items-center">
-                                           <input type="checkbox" name="basket_privacy_check" id="basket_privacy_check" required checked>
+                                           <input type="checkbox" id="basket_privacy_check" required checked>
                                            <p class="privacy_descr">Я согласен(согласна) на обработку персональных данных</p>
                                        </div>
                                         <p><a href="<?=$this->alias('privacy')?>" class="privacy_basket">Политика конфиденциальности</a></p>

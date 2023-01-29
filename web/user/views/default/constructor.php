@@ -280,7 +280,10 @@
                                                     </div>
                                                 </div>
                                             </div>
-                                            <p class=" text-center">Предварительная сумма составит: <span> 5000 </span> &#8381;</p>
+                                            <p class=" text-center">
+                                                <span style="text-decoration: underline; font-weight: normal">Минимальная</span> сумма индивидуального торта составляет <span>3000</span> &#8381;. Наш менеджер
+                                                свяжется с Вами после оформления и уточнит окончательную стоимость.
+                                            </p>
 
                                             <!-- ВЕС ДЛЯ БЕНТО ТОРТА -->
                                             <div class="constructor_item item_after" data-bento_weight>

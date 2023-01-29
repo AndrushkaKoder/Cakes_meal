@@ -60,6 +60,7 @@ class LkController extends BaseUser
                 'join_structure' => true
             ]);
 
+
             if ($orders) {
 
 
@@ -84,7 +85,7 @@ class LkController extends BaseUser
 
                     $delayed = $this->getDelayed();
 
-                    $this->template = TEMPLATE . 'lk_delayed';
+                    $this->template = \Wq::PATH() . 'lk_delayed';
 
                     break;
 

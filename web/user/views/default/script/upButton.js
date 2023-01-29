@@ -1,7 +1,7 @@
 // принимает два параметра: Ширина экрана и на каком скролле от верха (px) появится кнопка
 
 
-function createUpArrow(clientWidth, scrollY){
+function createUpArrow(scrollY){
     const arrowStyle = {
         width: '40px',
         height: '40px',
@@ -34,7 +34,7 @@ function createUpArrow(clientWidth, scrollY){
     })
 
    window.addEventListener('scroll', ()=>{
-       if(window.innerWidth < clientWidth && window.scrollY > scrollY){
+       if(window.scrollY > scrollY){
            arrowUp.style.display = 'flex'
        } else{
            arrowUp.style.display = 'none'
@@ -43,5 +43,5 @@ function createUpArrow(clientWidth, scrollY){
 
 }
 
-createUpArrow(991, 1200)
+createUpArrow( 1200)
 

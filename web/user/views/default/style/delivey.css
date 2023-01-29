@@ -7,9 +7,23 @@
 .delivery_description{
     padding: 30px;
     line-height: 3em;
+    /*list-style-image: url("https://cdn-icons-png.flaticon.com/512/440/440223.png");*/
+
 }
 .delivery_description li{
-    list-style: square outside;
+    position: relative;
+    padding-left: 35px;
+    /*list-style: square outside;*/
+
+}
+.delivery_description li:before{
+    position: absolute;
+    content: url("https://icons.iconarchive.com/icons/icons-land/3d-food/32/Cake-Chocolate-icon.png");
+    width: 25px!important;
+    height: 25px!important;
+    top: 5px;
+    left: 0;
+    z-index: 10;
 }
 .delivery_address{
     font-size: 14px;
